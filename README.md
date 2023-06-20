@@ -1,2 +1,2 @@
-# grupo_06_diseñart
+# Diseñart
 Code goes here :muscle:!
