@@ -1,2 +1,2 @@
-# grupo_06_ecommerce
+# grupo_06_diseñart
 Code goes here :muscle:!
