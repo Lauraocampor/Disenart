@@ -8,8 +8,8 @@ _Nuestro e-commerce ofrecerá camisas personalizables. Los usuarios podrán dise
   _Descripción_
 - **Integrante #2**  
   _Descripción_
-- **Integrante #3**  
-  _Descripción_
+- **Laura Ocampo Rodríguez**  
+  _Soy ingeniera ambiental y tengo 26 años. Hace poco decidí cambiar de rumbo e incursionar en el mundo de la tecnología, así que estoy motivada a aprender_ :smiley:
 - **Desirée Holowiniec**  
   _Tengo 28 años y soy diseñadora de indumentaria. Me interesa el arte en sus distintas expresiones. Me gustaría aplicar el desarrollo web en mi ámbito laboral actual para poder ofrecer una experiencia virtual más inmersiva y dinámica, contando con la ventaja de entender y conocer el producto real a lo largo de todas sus fases. 
 - **Juan Diego Marín Acosta**  
