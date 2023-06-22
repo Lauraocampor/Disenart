@@ -1,6 +1,6 @@
 # Diseñart :shirt:
 
-_Nuestro e-commerce ofrecerá camisas personalizables. Los usuarios podrán diseñar sus prendas como deseen desde el mismo navegador. Apuntamos a un público que, con algunos conocimientos básicos de informática,podrá diseñar camisas a medida para ellos y sus familias._
+_Nuestro e-commerce ofrecerá camisas personalizables. Los usuarios diseñarán sus prendas a gusto desde el navegador. Apuntamos a un público que, con algunos conocimientos básicos de informática, podrá crear camisas a medida para ellos y sus familias._
 
 **Integrantes**
 
