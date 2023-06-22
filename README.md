@@ -21,7 +21,7 @@ _Nuestro e-commerce ofrecerá camisas personalizables. Los usuarios podrán dise
 _razón para escoger referente_  
 **Referente # 2**  
 _razón para escoger referente_  
-[**spreadshirt**](https://www.spreadshirt.es/)
+[**spreadshirt**](https://www.spreadshirt.es/)  
 _La funcionalidad de la página es alusiva a la idea del proyecto, en donde se permite al usuario navegar por medio de diferentes herramientas de diseño para la personalización de un producto._  
 **Referente # 4**  
 _razón para escoger referente_  
