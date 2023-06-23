@@ -7,7 +7,7 @@ _Nuestro e-commerce ofrecerá camisas personalizables. Los usuarios diseñarán 
 - **Integrante #1**  
   _Descripción_
 - **Mercedes Lavezzolo**  
-  _Tengo 30 años y soy Arquitecta. Hace ya unos 5 años que vengo desarrollándome en el mundo del análisis de datos desde una mirada urbanística y social. Para este año decidí comenzar a aprender programación y descubrir un lenguaje nuevo como es JavaScript
+  _Tengo 30 años y soy Arquitecta. Hace ya unos 5 años que vengo desarrollándome en el mundo del análisis de datos desde una mirada urbanística y social. Para este año decidí comenzar a aprender programación y descubrir un lenguaje nuevo como es JavaScript._
 - **Laura Ocampo Rodríguez**  
   _Soy ingeniera ambiental y tengo 26 años. Hace poco decidí cambiar de rumbo e incursionar en el mundo de la tecnología, así que estoy motivada a aprender_ :smiley:.
 - **Desirée Holowiniec**  
@@ -20,7 +20,7 @@ _Nuestro e-commerce ofrecerá camisas personalizables. Los usuarios diseñarán 
 **Referente # 1**  
 _razón para escoger referente_  
 [**cerveza minerva**](https://www.cervezaminerva.mx/menu/cerveza-linea-maestra)
-_El modo que simula como si siempre estuvieras en la misma página  
+_El modo que simula como si siempre estuvieras en la misma página  _
 [**spreadshirt**](https://www.spreadshirt.es/)  
 _La funcionalidad de la página es alusiva a la idea del proyecto, en donde se permite al usuario navegar por medio de diferentes herramientas de diseño para la personalización de un producto._  
 **Referente # 4**  
