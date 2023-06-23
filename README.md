@@ -19,7 +19,7 @@ _Nuestro e-commerce ofrecerá camisas personalizables. Los usuarios diseñarán 
 
 **Referente # 1**  
 _razón para escoger referente_  
-**(https://www.cervezaminerva.mx/menu/cerveza-linea-maestra)**  
+[**cerveza minerva**]([https://www.spreadshirt.es/](https://www.cervezaminerva.mx/menu/cerveza-linea-maestra))
 _El modo que simula como si siempre estuvieras en la misma página  
 [**spreadshirt**](https://www.spreadshirt.es/)  
 _La funcionalidad de la página es alusiva a la idea del proyecto, en donde se permite al usuario navegar por medio de diferentes herramientas de diseño para la personalización de un producto._  
