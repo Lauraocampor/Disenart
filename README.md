@@ -1,6 +1,6 @@
 # Diseñart :shirt:
 
-_Nuestro e-commerce ofrecerá camisas personalizables. Los usuarios diseñarán sus prendas a gusto desde el navegador. Apuntamos a un público que, con algunos conocimientos básicos de informática, podrá crear camisas a medida para ellos y sus familias._
+_Nuestro e-commerce ofrecerá la posibilidad de personalizar prendas y objetos cotidianos, como son remeras, buzos, tazas y bolsas. El  objetivo es que los usuarios tengan la experiencia de convertirse en diseñadores de su propio producto a partir de la incorporación de la API SPOD. Los clientes podrán ver sus creaciones desde el navegador y luego comprar el producto. Apuntamos a un público creativo que busque personalizar estos objetos, ya sea para el uso cotidiano o un evento especial._   
 
 **Integrantes**
 
