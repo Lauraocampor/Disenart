@@ -16,15 +16,14 @@ _Nuestro e-commerce ofrecerá la posibilidad de personalizar prendas y objetos c
   _Tengo 26 años, y me encanta la tecnología. Cuando tengo tiempo miro Linus Tech Tips o leo algún libro. Mi aspiración es convertirme en un excelente desarrollador web_ :mechanical_arm:.
 
 **Referentes**
-
+**Referente # 1**  
+_razón para escoger referente_  
 [**spreadshirt**](https://www.spreadshirt.es/)  
 _La funcionalidad de la página es alusiva a la idea del proyecto, en donde se permite al usuario navegar por medio de diferentes herramientas de diseño para la personalización de un producto._   
 [**cerveza minerva**](https://www.cervezaminerva.mx/menu/cerveza-linea-maestra)  
  _El modo que simula como si siempre estuvieras en la misma página._  
 [**mobiliario rbc**](https://rbcmobilier.com/la-selection/)  
-_La manera en que se agrega dinamismo en las imágenes de la página_ 
-**Referente # 4**  
-_razón para escoger referente_  
+_La manera en que se agrega dinamismo en las imágenes de la página_  
 [**levi**](https://www.levi.com.co/)  
 _La main page está excelente. Es agradable  
 a la vista y no sobrecarga los sentidos._
