@@ -16,15 +16,15 @@ Nuestro e-commerce ofrecerá la posibilidad de personalizar prendas y objetos co
 - *Juan Diego Marín Acosta*  
   Tengo 26 años, y me encanta la tecnología. Cuando tengo tiempo miro Linus Tech Tips o leo algún libro. Mi aspiración es convertirme en un excelente desarrollador web :mechanical_arm:.
 
-*Referentes*     
-[*DISCOR*](https://discord.com/)   
-La razon por la cual elegimo esta pagina por ser muy facil de usar para la comunicacion  
-[*spreadshirt*](https://www.spreadshirt.es/)  
+*Referentes*  
+  
+- [*discord*](https://discord.com/)   
+La simpleza con que discord nos presenta su página de login y registro nos inspiro. Nos gustó mucho.  
+- [*spreadshirt*](https://www.spreadshirt.es/)  
 La funcionalidad de la página es alusiva a la idea del proyecto, en donde se permite al usuario navegar por medio de diferentes herramientas de diseño para la personalización de un producto.   
-[*cerveza minerva*](https://www.cervezaminerva.mx/menu/cerveza-linea-maestra)  
+- [*cerveza minerva*](https://www.cervezaminerva.mx/menu/cerveza-linea-maestra)  
  El modo que simula como si siempre estuvieras en la misma página.  
-[*mobiliario rbc*](https://rbcmobilier.com/la-selection/)  
-La manera en que se agrega dinamismo en las imágenes de la página  
-[*levi*](https://www.levi.com.co/)  
-_La main page está excelente. Es agradable  
-a la vista y no sobrecarga los sentidos._
+- [*mobiliario rbc*](https://rbcmobilier.com/la-selection/)  
+La manera en que se agrega dinamismo en las imágenes de la página. 
+- [*levi*](https://www.levi.com.co/)  
+La main page está excelente. Es agradable a la vista y no sobrecarga los sentidos.
