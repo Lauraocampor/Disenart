@@ -28,3 +28,9 @@ La funcionalidad de la página es alusiva a la idea del proyecto, en donde se pe
 La manera en que se agrega dinamismo en las imágenes de la página. 
 - [*levi*](https://www.levi.com.co/)  
 La main page está excelente. Es agradable a la vista y no sobrecarga los sentidos.
+
+---
+
+***Tablero de scrum***<br>
+
+Pueden acceder a nuestro tablero de scrum haciendo click [aquí](https://trello.com/b/PRJst38Q/tablero-scrum).
