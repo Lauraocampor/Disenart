@@ -1,0 +1,15 @@
+{
+  "name": "grupo_06_e-commerce",
+  "version": "1.0.0",
+  "description": "Nuestro e-commerce ofrecerá la posibilidad de personalizar prendas y objetos cotidianos, como son remeras, buzos, tazas y bolsas. El  objetivo es que los usuarios tengan la experiencia de convertirse en diseñadores de su propio producto a partir de la incorporación de la API SPOD. Los clientes podrán ver sus creaciones desde el navegador y luego comprar el producto. Apuntamos a un público creativo que busque personalizar estos objetos, ya sea para el uso cotidiano o un evento especial.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
