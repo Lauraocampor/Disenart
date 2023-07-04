@@ -5,8 +5,8 @@ Nuestro e-commerce ofrecerá la posibilidad de personalizar prendas y objetos co
 *Integrantes*
 
 - *Israel Urcola*  
-  _Tengo 39 años soy tecnico informatico. hace unos 7 años trabajo en la municipalidad de Neuquen, en el departamento de computos.
-  Y quiero  ser programador._
+  Tengo 39 años soy tecnico informatico. hace unos 7 años trabajo en la municipalidad de Neuquen, en el departamento de computos.
+  Y quiero  ser programador.
 - *Mercedes Lavezzolo*  
   Tengo 30 años y soy Arquitecta. Hace ya unos 5 años que vengo desarrollándome en el mundo del análisis de datos desde una mirada urbanística y social. Para este año decidí comenzar a aprender programación y descubrir un lenguaje nuevo como es JavaScript.
 - *Laura Ocampo Rodríguez*  
