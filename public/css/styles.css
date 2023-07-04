@@ -1,10 +1,10 @@
-/* Todo import debe ir antes de cualquier otra operación */
-/* Normalizador. Setea box-sizing y otras cosas para mejorar compatibilidad. Buena práctica */
-@import "./normalize/modern-normalize.css";
-
 /* Fonts importadas */
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
+/* Todo import debe ir antes de cualquier otra operación */
+
+/* Normalizador. Setea box-sizing y otras cosas para mejorar compatibilidad. Buena práctica */
+@import "./normalize/modern-normalize.css";
 /* Estilos del home */
 @import "/public/css/home/header.css";
 @import "/public/css/home/main.css";

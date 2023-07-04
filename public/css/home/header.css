@@ -1,0 +1,49 @@
+/* Color palletes */
+.colors {
+    color: #9daa9d;
+    color: #bcd1bd;
+    color: #0d3a61;
+    color: #eef0de;
+    color: #bf9a51;
+}
+
+/* Styling */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media queries */
+@media (max-width: 480px){
+    .header {
+        min-width: 300px;
+        width: 100vw;
+    }
+}
+
+@media (min-width: 481px){
+    .header {
+        width: 100vw;
+    }
+}
+
+@media (min-width: 769px){
+        .header {
+        width: 100vw;
+    }
+}
+
+@media (min-width: 1280px){
+        .header {
+        width: 100vw;
+    }
+}
