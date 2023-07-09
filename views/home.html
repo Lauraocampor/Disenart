@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diseñart</title>
-    <link rel="stylesheet" href="../public/css/styles/styles.css">
-    <!-- Sistema de íconos -->
+    <link rel="stylesheet" href="/css/styles/styles.css">
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -13,30 +12,25 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-    <!--Tipografías -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
-
 </head>
 <body>
   <header class="header">
-    <nav class="header__about-nav">
-      <a href="#"><i class="fa-sharp fa-solid fa-bars header__icon header__icon_size-small"></i></a>
+    <nav class="about-nav">
+      <div class="about-nav__wrap"><a href="#" class="about__anchor"><i class="fa-sharp fa-solid fa-bars icon about__icon"></i></a></div>
     </nav>
-    <div class="header__logo">
-      <a href="#"><i class="fa-solid fa-house header__icon header__icon_size-small"></i></a>
+    <div class="logo">
+      <a href="http://localhost:3000/home" class="img__anchor"><img src="/img/logo.png" alt="logo diseñart" class="img"></a>
     </div>
-    <nav class="header__account-nav">
-      <ul class="header__ul">
-        <li class="header__li">
-          <a href="#"><i class="fa-solid fa-magnifying-glass header__icon header__icon_size-small"></i></a>
+    <nav class="account-nav">
+      <ul class="ul">
+        <li class="li">
+          <a href="#"><i class="fa-solid fa-magnifying-glass icon"></i></a>
         </li>
-        <li class="header__li">
-          <a href="#"><i class="fa-solid fa-cart-shopping header__icon header__icon_size-small"></i></a>
+        <li class="li">
+          <a href="#"><i class="fa-solid fa-cart-shopping icon"></i></a>
         </li>
-        <li class="header__li">
-          <a href="#"><i class="fa-regular fa-user header__icon header__icon_size-small"></i></a>
+        <li class="li">
+          <a href="#"><i class="fa-regular fa-user icon"></i></a>
         </li>
       </ul>
     </nav>

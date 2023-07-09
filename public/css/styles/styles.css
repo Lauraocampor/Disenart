@@ -3,14 +3,16 @@
 
 /* Todo import debe ir antes de cualquier otra operación */
 /* Normalizador. Setea box-sizing y otras cosas para mejorar compatibilidad. Buena práctica */
-@import "../../../node_modules/modern-normalize/modern-normalize.css";
+@import "/css/normalize/modern-normalize.css";
+
+/* Estilos del home */
+@import "/css/home/header.css";
+@import "/css/home/main.css";
+@import "/css/home/footer.css";
 
 /* Fonts aplicadas de manera global */
 * {
     font-family: 'Roboto Condensed', 'Nunito Sans',  sans-serif;
 }
 
-/* Estilos del home */
-@import "/css/home/header.css";
-@import "/css/home/main.css";
-@import "/css/home/footer.css";
+
