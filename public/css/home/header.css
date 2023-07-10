@@ -6,6 +6,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-width: 380px;
+    min-height: 80px;
 }
 
 /* ABOUT */
@@ -24,7 +26,7 @@
 
 .about__anchor {
     display: inline-block;
-    width: 1rem;
+    width: 1.5rem;
 }
 
 .about__icon {
@@ -62,7 +64,7 @@
     display: inline-flex;
     justify-content: center;
     width: 50%;
-    max-width: 125px;
+    max-width: 70px;
 }
 
 /* UL */
@@ -84,23 +86,28 @@ ul {
     color: #0d3a61;
 }
 
-/* MEDIA QUERIES */
-@media (max-width: 374px) {
-    .header {
-        width: 374px;        
-    }
+.icon--bigger {
+    font-size: 1.5rem;
 }
-@media (max-height: 666px){
-    .header {
-        height: 80px;
-    }
+.icon--bigger-widener {
+    width: 1.5rem;
 }
 
-@media (min-width: 480px) {
-    /* code */
+.icon--bigger-alt {
+    width: 1rem;
 }
 
-@media (min-width: 768px) {
+
+/* -------------------------------------------------------------------- MEDIA QUERIES  */
+
+/* BREAK #2 */
+@media (min-width: 481px) {
+    .img__anchor {
+        display: inline-flex;
+        justify-content: center;
+        width: 50%;
+        max-width: 90px;
+    }
     .ul {
         list-style-type: none;
         padding: 0px;
@@ -111,14 +118,66 @@ ul {
         max-width: 250px;
     }
     .icon--bigger {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
     .icon--bigger-widener {
-        width: 1.5rem;
+        width: 2.5rem;
+    }
+    
+    .icon--bigger-alt {
+        font-size: 2rem;
+    }
+    
+}
+
+/* BREAK #3 */
+@media (min-width: 769px) {
+    .icon--bigger-alt {
+        font-size: 1.5rem;
     }
 }
 
+/* BREAK #4 */
 @media (min-width: 1280px) {
-    /* code */
+    .header {
+        width: 100vw;
+        height: 10vh;
+        background-color: #eef0de;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 380px;
+        min-height: 80px;
+    }
+    .img__anchor {
+        display: inline-flex;
+        justify-content: center;
+        width: 50%;
+        max-width: 125px;
+    }
+    .ul {
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+        flex: 1 0 100%;
+        display: inline-flex;
+        justify-content: space-around;
+        max-width: 300px;
+    }
+    .about-nav {
+        display: inline-flex;
+        justify-content: flex-start;
+        padding-left: 0px;
+        width: 25%;
+    }
+    .icon--bigger {
+        font-size: 3rem;
+    }
+    .icon--bigger-widener {
+        width: 3rem;
+    }
+    .icon--bigger-alt {
+        font-size: 2rem;
+    }
 }
 
