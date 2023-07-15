@@ -55,10 +55,10 @@
       <h2 class="modal-form__titulo">Bienvenido</h2>
       <form class="modal-form" action="http://localhost:3000/home">
         <label for="email">Correo electrónico</label>
-        <input class="input" type="email" id="email" name="email" required>
+        <input class="input" type="email" id="emailLogin" name="email" required>
 
         <label for="password">Contraseña</label>
-        <input class="input" type="password" id="password" name="password" required>
+        <input class="input" type="password" id="passwordLogin" name="password" required>
         
         <p><a href="#">¿Olvidaste tu contraseña?</a></p>
 
@@ -78,13 +78,13 @@
       <h2 class="modal-form__titulo">Crear una cuenta</h2>
       <form class="modal-form" action="http://localhost:3000/home">
         <label for="email">Correo electrónico</label>
-        <input class="input" type="email" id="email" name="email" required>
+        <input class="input" type="email" id="emailRegister" name="email" required>
 
         <label for="name">Nombre de usuario</label>
-        <input class="input" type="text" name="name" id="name"  required>
+        <input class="input" type="text" name="name" id="nameRegister"  required>
 
         <label for="password">Contraseña</label>
-        <input class="input" type="password" id="password" name="password" required>
+        <input class="input" type="password" id="passwordRegister" name="password" required>
         
         <label for="">Fecha de nacimiento</label>
         <div class="datefields">
@@ -248,7 +248,7 @@
         <button class="modal-submit" type="submit">Continuar</button>
 
         <div class="modal-bottom">
-          <p>¿Ya tienes una cuenta?</p> <a href="http://localhost:3000/login">Iniciar sesión</a> 
+          <p>¿Ya tienes una cuenta?</p> <a onclick="closeModal('modal2'); openModal('modal1')">Iniciar sesión</a> 
         </div>
 
       </form>
