@@ -10,6 +10,10 @@
 @import "/css/home/main.css";
 @import "/css/home/footer.css";
 
+/* Estilos de los Modals */
+@import "/css/forms/forms.css";
+@import "/css/details/details.css";
+
 /* Fonts aplicadas de manera global */
 * {
     font-family: 'Roboto Condensed', 'Nunito Sans',  sans-serif;

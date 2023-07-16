@@ -6,64 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diseñart</title>
     <link rel="stylesheet" href="/css/styles/styles.css">
-    <!-- Sistema de íconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!--Tipografías -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Roboto+Condensed:wght@300&display=swap"
-        rel="stylesheet">
-
-
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 
 <body>
     <header class="header">
-        <nav class="header__about-nav">
-            <a href="#"><i class="fa-sharp fa-solid fa-bars header__icon header__icon_size-small"></i></a>
+        <nav class="about-nav">
+          <div class="about-nav__wrap icon--bigger-widener"><a href="#" class="about__anchor icon--bigger-widener"><i class="fa-sharp fa-solid fa-bars icon about__icon  icon--bigger"></i></a></div>
         </nav>
-        <div class="header__logo">
-            <a href="#"><i class="fa-solid fa-house header__icon header__icon_size-small"></i></a>
+        <div class="logo">
+          <a href="http://localhost:3000/home" class="img__anchor"><img src="/img/logo.png" alt="logo diseñart" class="img"></a>
         </div>
-        <nav class="header__account-nav">
-            <ul class="header__ul">
-                <li class="header__li">
-                    <a href="#"><i class="fa-solid fa-magnifying-glass header__icon header__icon_size-small"></i></a>
-                </li>
-                <li class="header__li">
-                    <a href="#"><i class="fa-solid fa-cart-shopping header__icon header__icon_size-small"></i></a>
-                </li>
-                <li class="header__li">
-                    <a href="#"><i class="fa-regular fa-user header__icon header__icon_size-small"></i></a>
-                </li>
-            </ul>
+        <nav class="account-nav">
+          <ul class="ul">
+            <li class="li">
+              <a href="#"><i class="fa-solid fa-magnifying-glass icon icon--bigger-alt"></i></a>
+            </li>
+            <li class="li">
+              <a href="#"><i class="fa-solid fa-cart-shopping icon icon--bigger-alt"></i></a>
+            </li>
+            <li class="li">
+              <a href="#" onclick="openModal('modal1')" ><i class="fa-regular fa-user icon icon--bigger-alt"></i></a>
+            </li>
+          </ul>
         </nav>
-    </header>
-
+      </header>
 
 
     <main>
-        <img src="/img/remera.jpg">
-        <img src="/img/remera.jpg">
-        <img src="/img/remera.jpg">
-        <img class= "imagen principal" src="/img/remera.jpg">
-        <h2> Nombre del Producto </h2>
-        <h4>color</h4>
-        <button> Color 1</button>
-        <button> Color 2</button>
-        <button> Color 3</button>
-        <h4>talle</h4>
-        <button> Talle 1</button>
-        <button> Talle 2</button>
-        <button> Talle 3</button>
-        <button> Talle 4</button>
-        <h3>precio</h3>
-        <button> Diseñar</button>
-        <section>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+        <h2 class="home-title">Diseñart</h2>
+        <div class="main-body">
+        <section class="main-images">
+        <section class="main-second">
+        <img class= "main-second-images" src="/images/Remeras/remera2.jpg">
+        <img class="main-second-images" src="/images/Remeras/remera3.jpg">
+        <img class="main-second-images" src="/images/Remeras/remera4.jpg">
+    </section>
+    <section class="main-first">
+        <img class= "main-first-images" src="/images/Remeras/remera1.jpg">
+    </section>
+  </section>
+  <div class="main-information-complete">
+    <section class="main-information">
+        <h2 id="name"> Nombre del Producto </h2>
+        <h4 class="info">Color</h4>
+        <section class="main-option"> 
+        <button class="option"> Color 1</button>
+        <button class="option"> Color 2</button>
+        <button class="option"> Color 3</button>
+    </section>
+        <h4 class="info">Talle</h4>
+        <section class="main-option"> 
+        <button class="option"> Talle 1</button>
+        <button class="option"> Talle 2</button>
+        <button class="option"> Talle 3</button>
+        <button class="option"> Talle 4</button>
+    </section >
+          <h3 id="precio">$3900</h3>
+    </section>
+        <button id="finish"> Comprar</button>
+
+        <h2 id="description"> Descripción del Producto </h2>
+        <p id="information-product">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
             ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
             nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.</section>
+            anim id est laborum.</p>
+          </div>
+          </div>
     </main>

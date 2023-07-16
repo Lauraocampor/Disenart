@@ -1,0 +1,268 @@
+body{
+    background-color: #bcd1bd;
+    color: #0d3a61;
+    font-family: 'Roboto Condensed'
+}
+
+.main-images{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.main-second{
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 2;
+    
+}
+
+.main-second-images{
+    padding: 5px;
+    width: 15%;
+    background-color: #eef0de;
+    border: 2px #0d3a61 solid;
+    margin: 10px;
+
+}
+
+.main-first{
+    display: flex;
+     align-items: center;
+    justify-content: center;
+    order: 1;
+}
+
+
+.main-first-images{
+    width: 80%;
+    padding: 5px;
+    background-color:  #eef0de;
+    border: 2px #0d3a61 solid;
+    margin: 10px;
+}
+
+
+.main-information {
+
+    justify-content:flex-start;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+#name{
+     font-size: 40px;
+     margin-bottom: 5px;
+     display: flex;
+    justify-content:center;
+    align-items: center;
+    font-family:'Nunito Sans';
+    font-weight:bolder;
+}
+
+.info{
+    width: 80%;
+    font-size: 20px;
+    margin-bottom: 1px;
+    margin-top: 5px;
+    font-family: 'Roboto Condensed';
+    font-weight:bolder;
+    margin-left: 10%;
+}
+
+
+.main-option{
+display: flex;
+margin: 5px;
+margin-left: 10%;
+margin-right: 10%;
+
+
+}
+
+.option{
+    margin: 2%;
+    background-color: #eef0de;
+    border: none;
+    color: #0d3a61;
+    font-family: 'Roboto Condensed';
+    font-size: 20px;
+}
+
+
+#precio{
+    margin-left: 10%;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+
+#finish{
+    width: 80%;
+    margin-left: 10%;
+    background-color: #bf9a51;
+    color: #0d3a61;
+    font-weight: bolder;
+    font-size: 20px;
+    border: none;
+    margin-bottom: 20px;
+
+}
+
+#description{
+    margin-left: 10%;
+    font-size: 15px;
+}
+
+#information-product{
+    margin: 0 10%;
+    font-size: 10px;
+ 
+}
+
+
+/* -------------------------------------------------------------------- MEDIA QUERIES  */
+
+/* BREAK #2 */
+@media (min-width: 481px) {
+   
+    
+}
+
+/* BREAK #3 */
+@media (min-width: 769px) {
+    
+}
+
+/* BREAK #4 */
+@media (min-width: 1280px) {
+  
+    
+    .main-body{
+        margin-top: 60px;
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+        justify-content: center;
+          width: 100%;
+          
+     
+    }
+
+    .main-images{
+            width: 50%;
+            display: flex;
+        justify-content: center;
+           }
+
+    .main-second {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        order: 1;
+        width: 30%;
+    }
+    
+    .main-second-images {
+        padding: 5px;
+        width: 30%;
+        background-color: #eef0de;
+        border: 2px #0d3a61 solid;
+        margin: 15px;
+    }
+    
+    .main-first {
+         display: flex;
+         order: 2;
+         align-items: center;
+         justify-content: center;
+         width: 60%;
+    }
+    
+    .main-first-images {
+        width:90%;
+        padding: 5px;
+        border: 2px #0d3a61 solid;
+        margin: 10px;
+    }
+    
+    .main-information-complete {
+        justify-content:flex-start;
+        display: flex;
+        width:50%;
+        flex-direction: column;
+    }
+    
+    #name{
+         font-size: 30px;
+         margin-bottom: 5px;
+         margin-left: 10%;
+         display: flex;
+        justify-content:flex-start;
+        font-family:'Nunito Sans';
+        font-weight:bolder;
+    }
+    
+    .info{
+        width: 50%;
+        font-size: 15px;
+        margin-bottom: 1px;
+        margin-top: 5px;
+        font-family: 'Roboto Condensed';
+        font-weight:bolder;
+        margin-left: 10%;
+    }
+    
+    
+    .main-option{
+    display: flex;
+    margin: 5px;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+    }
+    
+    .option{
+        margin: 2%;
+        background-color: #eef0de;
+        border: none;
+        color: #0d3a61;
+        font-family: 'Roboto Condensed';
+        font-size: 16px;
+    }
+    
+    
+    #precio{
+        margin-left: 10%;
+        margin-top: 2px;
+    }
+    
+    
+    #finish{
+        width: 80%;
+        margin-left: 10%;
+        background-color: #bf9a51;
+        color: #0d3a61;
+        font-weight: bolder;
+        font-size: 20px;
+        border: none;
+        margin-bottom: 20px;
+    
+    }
+    
+    #description{
+        margin-left: 10%;
+        font-size: 15px;
+    }
+    
+    #information-product{
+        margin: 0 10%;
+        font-size: 10px;
+     
+    }
+}
+
