@@ -1,17 +1,22 @@
+<!-- HTML -->
 <!DOCTYPE html>
 <html lang="es">
-
+<!-- HEAD -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diseñart</title>
   <link rel="stylesheet" href="/css/styles/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
 </head>
-
+<!-- BODY -->
 <body>
+  <!-- HEADER -->
   <header class="header">
     <nav class="about-nav">
       <div class="about-nav__wrap icon--bigger-widener"><a href="#" class="about__anchor icon--bigger-widener"><i
@@ -35,8 +40,8 @@
       </ul>
     </nav>
   </header>
+  <!-- MAIN -->
   <main>
-    <!-- Desiree -->
     <section class="home-wrap">
       <h2 class="home-title">DISEÑART</h2>
       <div class="home-product-wrap">
@@ -65,9 +70,9 @@
       </div>
     </section>
   </main>
-
-  <!-- Laura - MODALS -->
-  <!-- Formulario Login -->
+  <!-- FOOTER -->
+  <footer class="footer"></footer>
+  <!-- FORMULARIOS -->
   <div id="modal1" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal1')"><i class="fa-solid fa-xmark"></i></span>
@@ -90,7 +95,6 @@
       </form>
     </div>
   </div>
-  <!-- Formulario Register -->
   <div id="modal2" class="modal">
     <div class="modal-content register-modal__transformXY">
       <span class="close" onclick="closeModal('modal2')"><i class="fa-solid fa-xmark"></i></span>
@@ -263,23 +267,14 @@
             <option value="1920">1920</option>
           </select>
         </div>
-
         <button class="modal-submit" type="submit">Continuar</button>
-
         <div class="modal-bottom">
           <p>¿Ya tienes una cuenta?</p> <a onclick="closeModal('modal2'); openModal('modal1')">Iniciar sesión</a>
         </div>
-
       </form>
     </div>
   </div>
-
-  <footer>
-    <!-- Juan Diego -->
-  </footer>
-  <main></main>
-  <footer></footer>
-  <script src="js/main.js"></script> <!-- Modals -->
+  <script src="js/main.js"></script> 
 </body>
 
 </html>

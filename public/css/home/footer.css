@@ -1,0 +1,12 @@
+/* SETUP */
+:root {
+    --darkGreen: #9daa9d;
+    --lightGreen: #bcd1bd;
+    --darkBlue: #0d3a61;
+    --oliveCream: #eef0de;
+    --mustard: #bf9a51;
+}
+
+@media (min-width: 361px) {/*code goes here*/}
+@media (min-width: 769px) {/*code goes here*/}
+@media (min-width: 1280px) {/*code goes here*/}
