@@ -57,7 +57,7 @@
 /* IMG */
 .img {
     display: inline;
-    width: 100%;
+    width: auto;
 }
 
 .img__anchor {

@@ -47,7 +47,8 @@ main {
 
 .home-carousel {
     width: 90%;
-    height: 250px; /* Ajusta la altura según necesidades */
+    aspect-ratio: 1/1;
+    /* se ajusta la altura y el ancho 1-1 */
     overflow: hidden;
     margin: auto;
     position: relative;
@@ -55,7 +56,8 @@ main {
 
 .home-carousel-container {
 
-    height: 400%; /* Ajustar altura según el número de imágenes */
+    height: 400%;
+    /* Ajustar altura según el número de imágenes */
     animation: carousel-animation 15s infinite;
 }
 
@@ -66,20 +68,22 @@ main {
 }
 
 
-.carousel-button-up, .carousel-button-down{
+.carousel-button-up,
+.carousel-button-down {
     position: absolute;
     z-index: 100;
     left: 48%;
 }
 
-.carousel-button-up button, .carousel-button-down button{
+.carousel-button-up button,
+.carousel-button-down button {
     background-color: transparent;
     border: none;
     text-align: center;
     padding: 0px;
 }
 
-.carousel-button-down{
+.carousel-button-down {
     bottom: 0px;
 }
 
@@ -93,7 +97,7 @@ main {
         transform: translateY(-75%);
     }
 
-    100%{
+    100% {
         transform: translateY(0);
     }
 }
@@ -129,31 +133,77 @@ main {
     display: none;
 }
 
-@media(min-width: 481px){
-    
+@media(min-width: 481px) {
+
+
+    .carousel-button-up button i,
+    .carousel-button-down button i {
+        font-size: 28px;
+    }
+
 }
 
 @media(min-width: 769px) {
 
-    /*     .home-product-wrap{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 80%;
-   }
-
-   .home-product-links{
-    display: block;
-}
-
-.home-product-wrap img {
-    width: 40%;
-      
-}  */
-
-}
-
-@media(min-width: 1281px) {
+    .home-product-wrap {
+        display: flex;
+        flex-direction: row;
+        width: 90vw;
+        /* background-color: #bcd1bd; */
+        align-items: center;
+        position: relative;
     
+    }
+
+    .home-carousel {
+        width: 40vw;
+        order: 1;
+        margin-left: 15px;
+        position: relative;
+    }
+
+    .home-carousel-container {
+        width: 100%;
+    }
+
+     .home-product-links {
+        display: block;
+        order: -1;
+        width: 22%;
+
+    } 
+
+    .product-links-content{
+        display: block;
+    }
+
+    .product-links-content li{
+        padding: 8px 0px;
+    }
+    .product-links-content li a{
+        font-family: 'Nunito Sans';
+    }
+
+    .product-links-content li a:visited{
+        color: #0d3a61;
+    }
+
+
+    .home-product-information {
+        width: 35%;
+        padding: 15px 25px;
+        order: -1;
+        margin-right: 12px;
+    }
+
+    .home-button {
+        position: absolute;
+        right: -1%;
+        bottom: -10%;
+
+    }
+
+
 }
+
+@media(min-width: 1281px) {}
