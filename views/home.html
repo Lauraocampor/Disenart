@@ -18,7 +18,7 @@
             class="fa-sharp fa-solid fa-bars icon about__icon  icon--bigger"></i></a></div>
     </nav>
     <div class="logo">
-      <a href="http://localhost:3000/home" class="img__anchor"><img src="/img/logo.png" alt="logo diseñart"
+      <a href="/home" class="img__anchor"><img src="/img/logo.png" alt="logo diseñart"
           class="img"></a>
     </div>
     <nav class="account-nav">
@@ -50,7 +50,7 @@
             <img src="/images/productos/taza2.jpg">
           </div>
         </div>
-        <div class="home-button"> <button class="design-button">Empezá a diseñar</button></div>
+        <div class="home-button"> <a href="/details"><button class="design-button"  >Empezá a diseñar</button></div></a> 
         <p class="home-product-information">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim tempore
           quisquam perferendis deserunt assumenda! Ipsa consequatur saepe ducimus, ipsum ut tempora! Repudiandae
           quisquam rem animi maxime deserunt quasi corrupti blanditiis?</p>
@@ -72,7 +72,7 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal1')"><i class="fa-solid fa-xmark"></i></span>
       <h2 class="modal-form__titulo">Bienvenido</h2>
-      <form class="modal-form" action="http://localhost:3000/home">
+      <form class="modal-form" action="/home">
         <label for="email">Correo electrónico</label>
         <input class="input" type="email" id="emailLogin" name="email" required>
 
@@ -95,7 +95,7 @@
     <div class="modal-content register-modal__transformXY">
       <span class="close" onclick="closeModal('modal2')"><i class="fa-solid fa-xmark"></i></span>
       <h2 class="modal-form__titulo">Crear una cuenta</h2>
-      <form class="modal-form" action="http://localhost:3000/home">
+      <form class="modal-form" action="/home">
         <label for="email">Correo electrónico</label>
         <input class="input" type="email" id="emailRegister" name="email" required>
 

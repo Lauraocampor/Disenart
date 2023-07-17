@@ -10,9 +10,12 @@
 @import "/css/home/main.css";
 @import "/css/home/footer.css";
 
+
+/* Estilos del details */
+@import "/css/details/details.css";
+
 /* Estilos de los Modals */
 @import "/css/forms/forms.css";
-@import "/css/details/details.css";
 
 /* Fonts aplicadas de manera global */
 * {
