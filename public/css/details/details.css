@@ -142,13 +142,15 @@ margin-right: 10%;
   
     
     .main-body{
-        margin-top: 60px;
-       display: flex;
+         display: flex;
        flex-direction: row;
        align-items: center;
         justify-content: center;
-          width: 100%;
-          
+          width: 80%;
+          background-color: #eef0de;
+          padding-top: 30px;
+          padding-bottom: 30px;
+          margin: auto;
      
     }
 
@@ -228,7 +230,7 @@ margin-right: 10%;
     
     .option{
         margin: 2%;
-        background-color: #eef0de;
+        background-color:#bcd1bd ;
         border: none;
         color: #0d3a61;
         font-family: 'Roboto Condensed';
