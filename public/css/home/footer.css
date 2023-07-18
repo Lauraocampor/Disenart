@@ -36,10 +36,11 @@
     font-size: 1rem;
     transition: all 500ms ease-in-out 0s;
 }
-    .linkStyle_transition:hover {
-        opacity: 0.8;
-        font-size: 1.1rem;
-    }
+
+.linkStyle_transition:hover {
+    opacity: 0.8;
+    font-size: 1.1rem;
+}
 
 /* QUERIES */
 /* WIDE PHONE */
