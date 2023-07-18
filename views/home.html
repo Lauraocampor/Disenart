@@ -15,7 +15,8 @@
     />
 </head>
 <!-- BODY -->
-<body>
+<body style="overflow-x: hidden;">
+  <!-- PEQUEÑO HACK PARA EL OVERFLOW -->
   <!-- HEADER -->
   <header class="header">
     <nav class="about-nav">
@@ -71,7 +72,31 @@
     </section>
   </main>
   <!-- FOOTER -->
-  <footer class="footer"></footer>
+  <footer class="footerComponent">
+    <div class="footerComponent__row">
+      <ul>
+        <li>
+          <a href="/home" class="linkStyle linkStyle_transition">Diseñar mi producto</a>
+        </li>
+        <li>
+          <a href="/home" class="linkStyle linkStyle_transition">Instagram</a>
+        </li>
+        <li>
+          <a href="/home" class="linkStyle linkStyle_transition">Contacto</a>
+        </li>
+      </ul>
+    </div>
+    <div class="footerComponent__row">
+      <ul>
+        <li>
+          <a href="/home" class="linkStyle linkStyle_transition">Preguntas frecuentes</a>
+        </li>
+        <li>
+          <a href="/home" class="linkStyle linkStyle_transition">Puntos de venta</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
   <!-- FORMULARIOS -->
   <div id="modal1" class="modal">
     <div class="modal-content">
