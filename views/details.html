@@ -108,19 +108,23 @@
   </div>
 </footer>
 
-
- <!-- Formulario Login -->
- <div id="modal1" class="modal">
+  <!-- FORMULARIOS -->
+<div id="modal1" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal1')"><i class="fa-solid fa-xmark"></i></span>
     <h2 class="modal-form__titulo">Bienvenido</h2>
-    <form class="modal-form" action="/details">
+    <form class="modal-form" action="/">
       <label for="email">Correo electrónico</label>
       <input class="input" type="email" id="emailLogin" name="email" required>
 
       <label for="password">Contraseña</label>
       <input class="input" type="password" id="passwordLogin" name="password" required>
-      
+
+      <div class="checkbox-password">
+        <input type="checkbox" id="remember-password" name="remember-password">
+        <label for="remember-password">Recordarme</label>
+      </div>
+
       <p><a href="#">¿Olvidaste tu contraseña?</a></p>
 
       <button class="modal-submit" type="submit">Iniciar sesión</button>
@@ -132,21 +136,20 @@
     </form>
   </div>
 </div>
-<!-- Formulario Register -->
 <div id="modal2" class="modal">
   <div class="modal-content register-modal__transformXY">
     <span class="close" onclick="closeModal('modal2')"><i class="fa-solid fa-xmark"></i></span>
     <h2 class="modal-form__titulo">Crear una cuenta</h2>
-    <form class="modal-form" action="/details">
+    <form class="modal-form" action="/">
       <label for="email">Correo electrónico</label>
       <input class="input" type="email" id="emailRegister" name="email" required>
 
       <label for="name">Nombre de usuario</label>
-      <input class="input" type="text" name="name" id="nameRegister"  required>
+      <input class="input" type="text" name="name" id="nameRegister" required>
 
       <label for="password">Contraseña</label>
       <input class="input" type="password" id="passwordRegister" name="password" required>
-      
+
       <label for="">Fecha de nacimiento</label>
       <div class="datefields">
         <select class="date" id="date" name="day" required>
@@ -182,7 +185,7 @@
           <option value="29">29</option>
           <option value="30">30</option>
           <option value="31">31</option>
-      
+
         </select>
         <select class="date" id="date" name="month" required>
           <option value="month" selected disabled>Mes</option>
@@ -198,7 +201,7 @@
           <option value="10">Octubre</option>
           <option value="11">Noviembre</option>
           <option value="12">Diciembre</option>
-      </select>
+        </select>
         </select>
         <select class="date" id="date" name="year" required>
           <option value="year" selected disabled>Año</option>
@@ -305,13 +308,10 @@
           <option value="1920">1920</option>
         </select>
       </div>
-
       <button class="modal-submit" type="submit">Continuar</button>
-
       <div class="modal-bottom">
-        <p>¿Ya tienes una cuenta?</p> <a onclick="closeModal('modal2'); openModal('modal1')">Iniciar sesión</a> 
+        <p>¿Ya tienes una cuenta?</p> <a onclick="closeModal('modal2'); openModal('modal1')">Iniciar sesión</a>
       </div>
-
     </form>
   </div>
 </div>
