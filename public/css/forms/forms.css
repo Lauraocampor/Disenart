@@ -13,11 +13,6 @@
     --mostaza: #bf9a51;
 }
 
-/* LOGIN.HTML */
-#login-html{
-    display: block; /* Mostrar el formulario */
-}
-
 /* FORMULARIOS */
 .modal {
     display: none; /* Ocultar inicialmente el modal */
@@ -61,13 +56,21 @@
     font-size: 15px;
     font-family: 'Roboto Condensed';
 }
-
 .modal-form .input{
     margin: 5px 0;
     padding: 5px;
     background-color: var(--azulOscuro);
     color: var(--beige);
     font-size: 15px;
+}
+.checkbox-password{
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.checkbox-password label{
+    font-size: 12px;
+    padding-left: 2px;
 }
 .modal-submit{
     margin: 5px 0;

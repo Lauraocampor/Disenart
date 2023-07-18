@@ -109,12 +109,17 @@
         <label for="password">Contraseña</label>
         <input class="input" type="password" id="passwordLogin" name="password" required>
 
+        <div class="checkbox-password">
+          <input type="checkbox" id="remember-password" name="remember-password">
+          <label for="remember-password">Recordar usuario y contraseña</label>
+        </div>
+
         <p><a href="#">¿Olvidaste tu contraseña?</a></p>
 
         <button class="modal-submit" type="submit">Iniciar sesión</button>
 
         <div class="modal-bottom">
-          <p>¿Necesitas una cuenta?</p> <a href="#" onclick="openModal('modal2')">Registrarse</a>
+          <p>¿Necesitas una cuenta?</p> <a href="#" onclick="closeModal('modal1'); openModal('modal2')">Registrarse</a>
         </div>
 
       </form>
