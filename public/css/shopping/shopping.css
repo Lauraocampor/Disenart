@@ -77,8 +77,11 @@
     justify-content: space-between;
 }
 
-.main-second-images {
+.main-second-images-shopping {
     width: 15%;
+    background-color: #eef0de;
+    border: 2px #0d3a61 solid;
+    margin: 10px;
 }
 
 .shopping-nombre {

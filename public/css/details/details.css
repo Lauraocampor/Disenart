@@ -128,6 +128,7 @@ margin-right: 10%;
 #information-product{
     margin: 0 10%;
     font-size: 10px;
+    margin-bottom: 20px;
  
 }
 
@@ -154,7 +155,7 @@ margin-right: 10%;
        flex-direction: row;
        align-items: center;
         justify-content: center;
-          width: 80%;
+          width: 76%;
           background-color: #eef0de;
           padding-top: 30px;
           padding-bottom: 30px;
