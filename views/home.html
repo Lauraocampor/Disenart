@@ -2,19 +2,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- HEAD -->
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diseñart</title>
   <link rel="stylesheet" href="/css/styles/styles.css">
-  <link 
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <!-- BODY -->
+
 <body style="overflow-x: hidden;">
   <!-- PEQUEÑO HACK PARA EL OVERFLOW -->
   <!-- HEADER -->
@@ -24,19 +23,20 @@
             class="fa-sharp fa-solid fa-bars icon about__icon  icon--bigger"></i></a></div>
     </nav>
     <div class="logo">
-      <a href="/" class="img__anchor"><img src="/img/logo.png" alt="logo diseñart"
-          class="img"></a>
+      <a href="/" class="img__anchor"><img src="/img/logo.png" alt="logo diseñart" class="img"></a>
     </div>
     <nav class="account-nav">
       <ul class="ul">
         <li class="li">
-          <a href="#" class="li__anchor" ><i class="fa-solid fa-magnifying-glass icon icon--bigger-alt"></i></a>
+          <a href="#" class="li__anchor"><i class="fa-solid fa-magnifying-glass icon icon--bigger-alt"></i></a>
         </li>
         <li class="li">
-          <a href="#" class="li__anchor" onclick="openModal('modal3')" ><i class="fa-solid fa-cart-shopping icon icon--bigger-alt"></i></a>
+          <a href="#" class="li__anchor" onclick="openModal('modal3')"><i
+              class="fa-solid fa-cart-shopping icon icon--bigger-alt"></i></a>
         </li>
         <li class="li">
-          <a href="#" class="li__anchor" onclick="openModal('modal1')"><i class="fa-regular fa-user icon icon--bigger-alt"></i></a>
+          <a href="#" class="li__anchor" onclick="openModal('modal1')"><i
+              class="fa-regular fa-user icon icon--bigger-alt"></i></a>
         </li>
       </ul>
     </nav>
@@ -56,7 +56,7 @@
             <img src="/images/productos/taza2.jpg">
           </div>
         </div>
-        <div class="home-button"> <a href="/details"><button class="design-button"  >Empezá a diseñar</button></div></a> 
+        <div class="home-button"> <a href="/details"><button class="design-button">Empezá a diseñar</button></div></a>
         <p class="home-product-information">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim tempore
           quisquam perferendis deserunt assumenda! Ipsa consequatur saepe ducimus, ipsum ut tempora! Repudiandae
           quisquam rem animi maxime deserunt quasi corrupti blanditiis?</p>
@@ -308,23 +308,35 @@
 
       <section class="productos">
         <article class="item">
-          <img class= "main-second-images" src="/images/productos/buzo1.jpg">
+          <img class="main-second-images" src="/images/productos/buzo1.jpg">
           <p class="shopping-nombre">Buzo</p>
-          <p class="shopping-cantidad">1</p>
+          <div class="quantity-item">
+            <button class="button-up-quantity-item"><i class="fa-solid fa-angle-up"></i></button>
+            <p class="shopping-cantidad">1</p>
+            <button class="button-down-quantity-item"><i class="fa-solid fa-angle-down"></i></button>
+          </div>
           <p class="shopping-precio">$3500</p>
         </article>
 
         <article class="item">
           <img class="main-second-images" src="/images/productos/termo1.jpg">
           <p class="shopping-nombre">Termo</p>
-          <p class="shopping-cantidad">1</p>
+          <div class="quantity-item">
+            <button class="button-up-quantity-item"><i class="fa-solid fa-angle-up"></i></button>
+            <p class="shopping-cantidad">1</p>
+            <button class="button-down-quantity-item"><i class="fa-solid fa-angle-down"></i></button>
+          </div>
           <p class="shopping-precio">$15000</p>
         </article>
 
         <article class="item">
           <img class="main-second-images" src="/images/productos/remera-h1.jpg">
           <p class="shopping-nombre">Remera</p>
-          <p class="shopping-cantidad">2</p>
+          <div class="quantity-item">
+            <button class="button-up-quantity-item"><i class="fa-solid fa-angle-up"></i></button>
+            <p class="shopping-cantidad">1</p>
+            <button class="button-down-quantity-item"><i class="fa-solid fa-angle-down"></i></button>
+          </div>
           <p class="shopping-precio">$7800</p>
         </article>
       </section>
@@ -339,6 +351,7 @@
     </div>
   </div>
   <!-- MODAL SCRIPT -->
-  <script src="js/main.js"></script> 
+  <script src="js/main.js"></script>
 </body>
+
 </html>

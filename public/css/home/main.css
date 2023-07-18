@@ -73,6 +73,7 @@ main {
     border: none;
     text-align: center;
     padding: 0px;
+    color: #0d3a61;
 }
 
 .carousel-button-down {
@@ -110,6 +111,12 @@ main {
     border-radius: 5px;
     padding: 5px 0px;
     margin-top: 15px;
+    transition: all 800ms;
+}
+.design-button:hover {
+    background-color: #0d3a61;
+    color: #bcd1bd;
+    scale: 1.2;
 }
 
 .home-product-information {
@@ -124,6 +131,8 @@ main {
 .home-product-links {
     display: none;
 }
+
+
 
 /* MEDIA QUERIE 481*/
 
@@ -178,14 +187,19 @@ main {
     .product-links-content li{
         padding: 8px 0px;
     }
+
     .product-links-content li a{
         font-family: 'Nunito Sans';
+        transition: all 500ms;
     }
 
     .product-links-content li a:visited{
         color: #0d3a61;
     }
-
+    .product-links-content li a:hover{
+        background-color: #bf9a51;
+    }
+    
 
     .home-product-information {
         width: 35%;
