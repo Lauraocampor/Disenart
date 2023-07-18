@@ -24,7 +24,7 @@
             class="fa-sharp fa-solid fa-bars icon about__icon  icon--bigger"></i></a></div>
     </nav>
     <div class="logo">
-      <a href="/home" class="img__anchor"><img src="/img/logo.png" alt="logo diseñart"
+      <a href="/" class="img__anchor"><img src="/img/logo.png" alt="logo diseñart"
           class="img"></a>
     </div>
     <nav class="account-nav">
@@ -33,7 +33,7 @@
           <a href="#"><i class="fa-solid fa-magnifying-glass icon icon--bigger-alt"></i></a>
         </li>
         <li class="li">
-          <a href="#"><i class="fa-solid fa-cart-shopping icon icon--bigger-alt"></i></a>
+          <a href="#" onclick="openModal('modal3')" ><i class="fa-solid fa-cart-shopping icon icon--bigger-alt"></i></a>
         </li>
         <li class="li">
           <a href="#" onclick="openModal('modal1')"><i class="fa-regular fa-user icon icon--bigger-alt"></i></a>
@@ -102,7 +102,7 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal1')"><i class="fa-solid fa-xmark"></i></span>
       <h2 class="modal-form__titulo">Bienvenido</h2>
-      <form class="modal-form" action="/home">
+      <form class="modal-form" action="/">
         <label for="email">Correo electrónico</label>
         <input class="input" type="email" id="emailLogin" name="email" required>
 
@@ -124,7 +124,7 @@
     <div class="modal-content register-modal__transformXY">
       <span class="close" onclick="closeModal('modal2')"><i class="fa-solid fa-xmark"></i></span>
       <h2 class="modal-form__titulo">Crear una cuenta</h2>
-      <form class="modal-form" action="/home">
+      <form class="modal-form" action="/">
         <label for="email">Correo electrónico</label>
         <input class="input" type="email" id="emailRegister" name="email" required>
 
@@ -299,7 +299,61 @@
       </form>
     </div>
   </div>
+<<<<<<< HEAD
+
+<!-- Carrito de compras -->
+<div id="modal3" class="modal">
+  <div class="modal-content-shopping">
+
+    <span class="close-shopping" onclick="closeModal('modal3')"><i class="fa-solid fa-xmark"></i></span>
+    <h2 class="modal-shopping_titulo">Este es tu carrito!</h2>
+
+    <section class="productos">
+      <article class="item">
+        <img class= "main-second-images" src="/images/productos/buzo1.jpg">
+        <p class="shopping-nombre">Buzo</p>
+        <p class="shopping-cantidad">1</p>
+        <p class="shopping-precio">$3500</p>
+      </article>
+
+      <article class="item">
+        <img class="main-second-images" src="/images/productos/termo1.jpg">
+        <p class="shopping-nombre">Termo</p>
+        <p class="shopping-cantidad">1</p>
+        <p class="shopping-precio">$15000</p>
+      </article>
+
+      <article class="item">
+        <img class="main-second-images" src="/images/productos/remera-h1.jpg">
+        <p class="shopping-nombre">Remera</p>
+        <p class="shopping-cantidad">2</p>
+        <p class="shopping-precio">$7800</p>
+      </article>
+    </section>
+
+    <section class="shopping-total">
+      <div class="shopping-total-information">
+        <p class="shopping-total-precio"> TOTAL</p>
+        <p class="shopping-total-precio"> $26300</p>
+      </div>
+      <button id="shopping-pagar"> Pagar</button>
+    </section>
+
+
+  </div>
+
+
+</div>
+
+  <footer>
+    <!-- Juan Diego -->
+  </footer>
+  <main></main>
+  <footer></footer>
+  <script src="js/main.js"></script> <!-- Modals -->
+=======
   <script src="js/main.js"></script> 
+>>>>>>> e34e4e478b885d27bebc452dd21f2f7551271480
 </body>
 
 </html>
