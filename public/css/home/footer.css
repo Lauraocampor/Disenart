@@ -42,7 +42,12 @@
     }
 
 /* QUERIES */
-@media (min-width: 361px) {/*code goes here*/}
+/* WIDE PHONE */
+@media (min-width: 361px) {
+    /*code goes here*/
+}
+
+/* TABLET */
 @media (min-width: 769px) {
     .footerComponent {
         width: 100%;
@@ -61,6 +66,8 @@
         margin-top: 2vh;
     }
 }
+
+/* DESKTOP */
 @media (min-width: 1280px) {
     .footerComponent {
         width: 100%;
