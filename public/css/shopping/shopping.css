@@ -1,0 +1,136 @@
+
+
+.modal-content-shopping {
+    background-color: #eef0de;
+     border: 1px solid #0d3a61;
+         display: flex;
+     flex-direction: column;
+     margin: auto;
+     transform: translateY(15%);
+     position: relative;
+     align-items: center;
+     justify-content: center;
+     padding-bottom: 40px;
+     width: 80%; 
+}
+
+.modal-shopping_titulo{
+    text-align: center;
+    font-family: 'Nunito Sans';
+    font-size: 25px;
+    color: #0d3a61;
+    padding-top: 40px;
+    display: block;
+}
+
+
+.close-shopping {
+    color:#0d3a61;
+    position: absolute;
+    right: 0;
+    top:0;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    border-left: 1px solid #0d3a61 ;
+    border-bottom: 1px solid #0d3a61 ;
+
+}
+  
+.close-shopping:hover,
+.close-shopping:focus {
+    color: #0d3a61;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+.productos{
+display: flex;
+align-items: center;
+flex-direction: column;
+font-size: 18px;
+font-weight: bolder;
+}
+
+.shopping-precio{
+    font-size:30px;
+font-weight: bolder;
+    }
+    
+
+.item{
+    background-color: #bcd1bd;
+    width: 80%;
+    padding: 10px;
+    display: flex;
+    margin: 5px;
+    align-items: center;
+    justify-content:space-between;
+}
+
+
+.shopping-nombre{
+    margin: 5px;
+}
+
+.shopping-total{
+    background-color: #bcd1bd;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+margin: 10px;
+}
+
+.shopping-total-information{
+    display: flex;
+    justify-content: space-around;
+}
+
+.shopping-total-precio{
+    margin: 15px;
+    font-size:20px;
+    font-weight: bolder;
+}
+
+#shopping-pagar{
+     width: 60%;
+    background-color: #bf9a51;
+    color: #0d3a61;
+    font-weight: bolder;
+    font-size: 20px;
+    border: none;
+    margin-bottom: 5px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    
+}
+
+
+
+
+    @media (min-width: 481px) {
+        .modal-shopping_titulo{
+            font-size: 30px;
+        }
+        .modal-content-shopping{
+            max-width: 70%;
+            transform: translateY(5%);
+        }
+    }
+    
+    @media (min-width:769px) {
+        .modal-content-shopping{
+            border: 0;
+        }
+       
+    }
+
+    
+

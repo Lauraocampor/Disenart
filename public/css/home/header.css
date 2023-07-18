@@ -57,7 +57,7 @@
 /* IMG */
 .img {
     display: inline;
-    width: 100%;
+    width: auto;
 }
 
 .img__anchor {
@@ -81,6 +81,10 @@ ul {
     display: inline;
 }
 
+.li__anchor {
+    display: inline-block;
+}
+
 /* ICON */
 .icon {
     color: #0d3a61;
@@ -95,6 +99,7 @@ ul {
 
 .icon--bigger-alt {
     width: 1rem;
+    font-size: 1rem;
 }
 
 
@@ -125,6 +130,7 @@ ul {
     }
     
     .icon--bigger-alt {
+        width: 2rem;
         font-size: 2rem;
     }
     
@@ -133,6 +139,7 @@ ul {
 /* BREAK #3 */
 @media (min-width: 769px) {
     .icon--bigger-alt {
+        width: 1.5rem;
         font-size: 1.5rem;
     }
 }
@@ -177,6 +184,7 @@ ul {
         width: 3rem;
     }
     .icon--bigger-alt {
+        width: 2rem;
         font-size: 2rem;
     }
 }
