@@ -36,14 +36,6 @@ main {
 
 /*carrusel*/
 
-/*.home-carousel {
-    width: 80%;
-    margin: auto;
-    display: block;
-    margin-bottom: 10px;
-    border: 1px solid #bf9a51; 
-    border-radius: 5px;   
-}*/
 
 .home-carousel {
     width: 90%;
@@ -57,7 +49,7 @@ main {
 .home-carousel-container {
 
     height: 400%;
-    /* Ajustar altura según el número de imágenes */
+    /* se ajusta la altura según el número de imágenes */
     animation: carousel-animation 15s infinite;
 }
 
@@ -133,6 +125,8 @@ main {
     display: none;
 }
 
+/* MEDIA QUERIE 481*/
+
 @media(min-width: 481px) {
 
 
@@ -143,20 +137,24 @@ main {
 
 }
 
+/* MEDIA QUERIE 769*/
+
 @media(min-width: 769px) {
 
     .home-product-wrap {
         display: flex;
         flex-direction: row;
         width: 90vw;
-        /* background-color: #bcd1bd; */
         align-items: center;
         position: relative;
+        padding-top: 0px;
+        margin-bottom: 5px;
+        max-width: 1000px;
     
     }
 
     .home-carousel {
-        width: 40vw;
+        width: 35vw;
         order: 1;
         margin-left: 15px;
         position: relative;
@@ -206,4 +204,30 @@ main {
 
 }
 
-@media(min-width: 1281px) {}
+@media(min-width: 1281px) {
+
+    .home-product-wrap{
+        width: 85vw;
+    }
+
+    .home-product-information{
+        font-size: 22px;
+    }
+
+    .product-links-content li a{
+        font-size: 20px;
+    }
+
+    .home-carousel {
+        width: 30vw;
+    }
+    .design-button{
+        font-size: 20px;
+        width: 180px;
+    }
+
+    .home-button{
+        bottom: -10%;
+        right: -1%;
+    }
+}
