@@ -23,4 +23,32 @@
     font-family: 'Roboto Condensed', 'Nunito Sans',  sans-serif;
 }
 
+/* ARREGLANDO CARRITO Y OTROS DETALLES */
+.modal_position {
+    transform: scale(0.9);
+} 
+.bodyXL{
+    height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+.mainPadding{
+    padding: 50px 0px;
+}
 
+/* PHONE IN LANDSCAPE MODE */
+@media (min-width: 680px) and (orientation: landscape ) {
+    .modal_position {
+        transform: scale(0.6);
+        position: relative;
+        bottom: 50px;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1280px) {
+    .modal_position {
+        transform: scale(0.9);
+    }
+}
