@@ -11,18 +11,12 @@ app.set('view engine', 'ejs');
 
 const mainRouter = require('./routes/mainRoutes')
 
-/* falta cambiar bien la ruta 25-7*/
-app.use('/', (req,res) => {
-    res.sendFile (path.join(__dirname, '/views/home.html'))});
+app.use('/', mainRouter);
+
 
  app.get('/details', (req,res) => {
     res.sendFile (path.join(__dirname, '/views/details.html'))});
 
-app.get('/register', (req,res) => {
-     res.sendFile (path.join(__dirname, '/views/register.html'))});
-    
-app.get('/login', (req,res) => {
-    res.sendFile (path.join(__dirname, '/views/login.html'))});
 
 app.get('/productCart', (req,res) => {
      res.sendFile (path.join(__dirname, '/views/productCart.html'))});
