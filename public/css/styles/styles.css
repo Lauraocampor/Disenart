@@ -48,6 +48,9 @@
         position: relative;
         bottom: 50px;
     }
+    .mainPadding{
+        padding: 0px 0px;
+    }
 }
 
 /* DESKTOP */
@@ -57,4 +60,5 @@
         position: relative;
         top: 50px;
     }
+
 }

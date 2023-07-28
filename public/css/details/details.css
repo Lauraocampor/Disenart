@@ -155,11 +155,12 @@ margin-right: 10%;
        flex-direction: row;
        align-items: center;
         justify-content: center;
-          width: 76%;
+          width: 75%;
           background-color: #eef0de;
           padding-top: 30px;
           padding-bottom: 30px;
           margin: auto;
+          margin-bottom: 0px;
      
     }
 
