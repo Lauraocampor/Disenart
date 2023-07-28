@@ -67,12 +67,6 @@ margin-right: 10%;
 }
 
 
-#precio{
-    margin-left: 10%;
-    margin-top: 10px;
-    font-size: 30px;
-}
-
 
 #createProduct-finish{
     width: 80%;
@@ -94,10 +88,7 @@ margin-right: 10%;
     color: #bcd1bd;
     scale: 1.2;
 }
-#description{
-    margin-left: 10%;
-    font-size: 15px;
-}
+
 
 #createProduct-information-product{
     font-size: 10px;
