@@ -1,0 +1,147 @@
+body{
+    background-color: #bcd1bd;
+    color: #0d3a61;
+    font-family: 'Roboto Condensed'
+}
+
+
+.main-createProduct{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.createProduct{
+    justify-content:center;
+    display: flex;
+    align-items:flex-start;
+    width: 80%;
+    flex-direction: column;
+    margin: 20px;
+ }
+
+
+.createProduct-name{
+     font-size: 25px;
+     margin-bottom: 5px;
+     display: flex;
+    font-family:'Nunito Sans';
+    font-weight:bolder;
+
+}
+
+#createProduct-name{
+    width: 100%;
+
+}
+
+
+.createProduct-info{
+    width: 80%;
+    font-size: 20px;
+    margin-bottom: 1px;
+    margin-top: 5px;
+    font-family: 'Roboto Condensed';
+    font-weight:bolder;
+
+}
+
+
+.createProduct-main-option{
+display: flex;
+margin: 5px;
+margin-left: 10%;
+margin-right: 10%;
+
+
+}
+
+.createProduct-option{
+    margin: 2%;
+    background-color: #eef0de;
+    border: none;
+    color: #0d3a61;
+    font-family: 'Roboto Condensed';
+    font-size: 20px;
+
+}
+
+
+
+#createProduct-finish{
+    width: 80%;
+    margin-left: 10%;
+    background-color: #bf9a51;
+    color: #0d3a61;
+    font-weight: bolder;
+    font-size: 20px;
+    border: none;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: all 500ms;
+
+}
+
+#createProduct-finish:hover{
+    background-color: #0d3a61;
+    color: #bcd1bd;
+    scale: 1.2;
+}
+
+
+#createProduct-information-product{
+    font-size: 10px;
+    width: 100%;
+    height: 150px
+    
+    
+ 
+}
+
+
+
+/* BREAK #2 */
+@media (min-width: 481px) {
+   
+    
+}
+
+/* BREAK #3 */
+@media (min-width: 769px) {
+    
+}
+
+/* BREAK #4 */
+@media (min-width: 1280px) {
+  
+    .createProduct{
+        justify-content:flex-start;
+        display: flex;
+        width: 50%;
+        flex-direction: column;
+        margin: 5px;
+     }
+
+    
+    .main-createProduct{
+         display: flex;
+       flex-direction: row;
+       align-items: center;
+        justify-content: center;
+          width: 76%;
+          background-color: #eef0de;
+          margin-top: 10px;
+
+    }
+
+    .createProduct-name{
+        font-size: 30px;
+               align-items: center;
+               justify-content:center;
+               margin-left: 25%;
+               align-content: center;
+
+       }
+         }
+
