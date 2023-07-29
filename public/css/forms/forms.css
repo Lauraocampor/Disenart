@@ -13,7 +13,15 @@
     --mostaza: #bf9a51;
 }
 
-/* FORMULARIOS */
+/*VIEWS*/
+.form{
+    display: block; /* Ocultar inicialmente el modal */
+}
+#register-login-ejs__transformXY{
+    transform: translateY(5%);
+}
+
+/* MODALS */
 .modal {
     display: none; /* Ocultar inicialmente el modal */
     position: fixed; 
@@ -30,7 +38,7 @@
     display: flex;
     flex-direction: column;
     margin: auto;
-    transform: translateY(50%);
+    transform: translateY(10%);
     position: relative;
     align-items: center;
     justify-content: center;
@@ -139,7 +147,7 @@
 
 /* ADICIONALES REGISTER */
 .register-modal__transformXY{
-    transform: translateY(20%);
+    transform: translateY(10%);
 }
 .datefields{
     display: flex;
