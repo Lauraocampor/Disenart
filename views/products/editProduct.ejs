@@ -1,50 +1,399 @@
+<!-- HTML -->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Editar producto</title>
-        <link rel="stylesheet" href="/css/styles/styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
-      </head>
-</head>
-<body>
-    <form class = "createProduct">
-        <div class = "productName">
-        <label for="productName">Nombre del producto</label>
-        <input type="text" id="productName" name= "productName" require >
-        <button class ="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-    </div>
-    
-        <label for="productColor1">Color</label>
-        <input type="color" id="productColor1" name="productColor1" require>
-        <button class ="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-        
-        <label for="productColor2">Color</label>
-        <input type="color" id="productColor2" name="productColor2">
-        <button class ="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-        <label for="productColor3">Color</label>
-        <input type="color" id="productColor3" name="productColor3">
-        <button class ="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-        <label for="productSize">Talle</label> <button class ="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-        <input type="checkbox" value="S"><label>S</label>
-        <input type="checkbox" value="M"><label>M</label>
-        <input type="checkbox" value="L"><label>L</label>
-        <input type="checkbox" value="XL"><label>XL</label>
-        <label for="productPrice">Precio</label><button class ="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-        <input type="number" id="productPrice" name= "productPrice" require >
-        <label for="productDescription">Descripcion</label><button class ="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-        <input type="text" id="productDescription" name= "productDescription" require >
-        <label for="productStock">Cantidad disponible</label><button class ="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-        <input type="number" id="productStock" name= "productStock" require >
-        <label for="productImages">Foto del producto</label><button class ="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-        <input type="file" id="productImages" name= "productImages" accept=".jpg , .png" >
-        <input type="submit" value="Producto editado">
+<html lang="es">
+<!-- HEAD -->
 
-    </form>
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar producto</title>
+    <link rel="stylesheet" href="/css/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="about-nav">
+            <div class="about-nav__wrap icon--bigger-widener"><a href="#" class="about__anchor icon--bigger-widener"><i
+                        class="fa-sharp fa-solid fa-bars icon about__icon  icon--bigger"></i></a></div>
+        </nav>
+        <div class="logo">
+            <a href="/" class="img__anchor"><img src="/img/logo.png" alt="logo diseñart" class="img"></a>
+        </div>
+        <nav class="account-nav">
+            <ul class="ul">
+                <li class="li">
+                    <a href="#" class="li__anchor"><i
+                            class="fa-solid fa-magnifying-glass icon icon--bigger-alt"></i></a>
+                </li>
+                <li class="li">
+                    <a href="#" class="li__anchor" onclick="openModal('modal3')"><i
+                            class="fa-solid fa-cart-shopping icon icon--bigger-alt"></i></a>
+                </li>
+                <li class="li">
+                    <a href="#" class="li__anchor" onclick="openModal('modal1')"><i
+                            class="fa-regular fa-user icon icon--bigger-alt"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- MAIN -->
+    <main class="main-editProduct">
+        <form class="editProduct">
+            <div class="editProduct-title-productName">
+                <label class="editProduct-name" for="productName">Nombre del producto</label>
+                <i class="fa-solid fa-pen-to-square editButton"></i></button>
+            </div>
+            <input id="editProduct-name" type="text" id="productName" name="productName" placeholder="Buzo Oversize" require>
+            <div class="editProduct-title">
+                <label class="editProduct-info" for="productColor1">Color</label>
+                <i class="fa-solid fa-pen-to-square editButton"></i></button>
+            </div>
+            <section class="editProduct-main-option">
+                <label for="productColor1" class="productColor">Color</label>
+                <input class="editProduct-option" type="color" id="productColor1" name="productColor1" require>
+
+                <label for="productColor2" class="productColor">Color</label>
+                <input class="editProduct-option" type="color" id="productColor2" name="productColor2">
+
+                <label for="productColor3" class="productColor">Color</label>
+                <input class="editProduct-option" type="color" id="productColor3" name="productColor3">
+
+            </section>
+            <div class="editProduct-title">
+                <label class="editProduct-info" for="productSize">Talle</label>
+                <i class="fa-solid fa-pen-to-square editButton"></i></button>
+            </div>
+            <section class="editProduct-main-option">
+                <input class="editProduct-option" type="checkbox" value="S"><label>S</label>
+                <input class="editProduct-option" type="checkbox" value="M"><label>M</label>
+                <input class="editProduct-option" type="checkbox" value="L"><label>L</label>
+                <input class="editProduct-option" type="checkbox" value="XL"><label>XL</label>
+            </section>
+            <div class="editProduct-title">
+                <label class="editProduct-info" for="productPrice">Precio</label>
+                <i class="fa-solid fa-pen-to-square editButton"></i></button>
+            </div>
+            <input type="number" id="productPrice" name="productPrice" placeholder="$15.200" require>
+            <div class="editProduct-title">
+                <label class="editProduct-info" for="productDescription">Descripción</label>
+                <i class="fa-solid fa-pen-to-square editButton"></i></button>
+            </div>
+            <textarea id="editProduct-information-product" type="text" id="productDescription" name="productDescription"
+            placeholder="Buzo de rústico calce holgado, disponible en 3 colores y del talle S al XL. Elegí tu estampa favorita para personalizarlo!" require></textarea>
+            <div class="editProduct-title">
+                <label class="editProduct-info" for="productStock">Cantidad disponible</label>
+                <i class="fa-solid fa-pen-to-square editButton"></i></button>
+            </div>
+            <input type="number" id="productStock" name="productStock" placeholder="12">
+            <div class="editProduct-title">
+                <label class="editProduct-info" for="productImages">Foto del producto</label>
+                <i class="fa-solid fa-pen-to-square editButton"></i></button>
+            </div>
+            <input type="file" id="productImages" name="productImages" accept=".jpg , .png">
+
+            <input id="editProduct-finish" type="submit" value="Producto editado">
+        </form>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footerComponent">
+        <div class="footerComponent__row">
+            <ul>
+                <li>
+                    <a href="/" class="linkStyle linkStyle_transition">Diseñar mi producto</a>
+                </li>
+                <li>
+                    <a href="/" class="linkStyle linkStyle_transition">Instagram</a>
+                </li>
+                <li>
+                    <a href="/" class="linkStyle linkStyle_transition">Contacto</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footerComponent__row">
+            <ul>
+                <li>
+                    <a href="/" class="linkStyle linkStyle_transition">Preguntas frecuentes</a>
+                </li>
+                <li>
+                    <a href="/" class="linkStyle linkStyle_transition">Puntos de venta</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <!-- FORMULARIOS -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')"><i class="fa-solid fa-xmark"></i></span>
+            <h2 class="modal-form__titulo">Bienvenido</h2>
+            <form class="modal-form" action="/">
+                <label for="email">Correo electrónico</label>
+                <input class="input" type="email" id="emailLogin" name="email" required>
+
+                <label for="password">Contraseña</label>
+                <input class="input" type="password" id="passwordLogin" name="password" required>
+
+                <div class="checkbox-password">
+                    <input type="checkbox" id="remember-password" name="remember-password">
+                    <label for="remember-password">Recordarme</label>
+                </div>
+
+                <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+
+                <button class="modal-submit" type="submit">Iniciar sesión</button>
+
+                <div class="modal-bottom">
+                    <p>¿Necesitas una cuenta?</p> <a href="#"
+                        onclick="closeModal('modal1'); openModal('modal2')">Registrarse</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="modal-content register-modal__transformXY">
+            <span class="close" onclick="closeModal('modal2')"><i class="fa-solid fa-xmark"></i></span>
+            <h2 class="modal-form__titulo">Crear una cuenta</h2>
+            <form class="modal-form" action="/">
+                <label for="email">Correo electrónico</label>
+                <input class="input" type="email" id="emailRegister" name="email" required>
+
+                <label for="name">Nombre de usuario</label>
+                <input class="input" type="text" name="name" id="nameRegister" required>
+
+                <label for="password">Contraseña</label>
+                <input class="input" type="password" id="passwordRegister" name="password" required>
+
+                <label for="">Fecha de nacimiento</label>
+                <div class="datefields">
+                    <select class="date" id="date" name="day" required>
+                        <option value="day" selected disabled>Día</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+
+                    </select>
+                    <select class="date" id="date" name="month" required>
+                        <option value="month" selected disabled>Mes</option>
+                        <option value="01">Enero</option>
+                        <option value="02">Febrero</option>
+                        <option value="03">Marzo</option>
+                        <option value="04">Abril</option>
+                        <option value="05">Mayo</option>
+                        <option value="06">Junio</option>
+                        <option value="07">Julio</option>
+                        <option value="08">Agosto</option>
+                        <option value="09">Septiembre</option>
+                        <option value="10">Octubre</option>
+                        <option value="11">Noviembre</option>
+                        <option value="12">Diciembre</option>
+                    </select>
+                    </select>
+                    <select class="date" id="date" name="year" required>
+                        <option value="year" selected disabled>Año</option>
+                        <option value="2012">2020</option>
+                        <option value="2012">2019</option>
+                        <option value="2012">2018</option>
+                        <option value="2012">2017</option>
+                        <option value="2012">2016</option>
+                        <option value="2012">2015</option>
+                        <option value="2012">2014</option>
+                        <option value="2011">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                        <option value="2009">2009</option>
+                        <option value="2008">2008</option>
+                        <option value="2007">2007</option>
+                        <option value="2006">2006</option>
+                        <option value="2005">2005</option>
+                        <option value="2004">2004</option>
+                        <option value="2003">2003</option>
+                        <option value="2002">2002</option>
+                        <option value="2001">2001</option>
+                        <option value="2000">2000</option>
+                        <option value="1999">1999</option>
+                        <option value="1998">1998</option>
+                        <option value="1997">1997</option>
+                        <option value="1996">1996</option>
+                        <option value="1995">1995</option>
+                        <option value="1994">1994</option>
+                        <option value="1993">1993</option>
+                        <option value="1992">1992</option>
+                        <option value="1991">1991</option>
+                        <option value="1990">1990</option>
+                        <option value="1989">1989</option>
+                        <option value="1988">1988</option>
+                        <option value="1987">1987</option>
+                        <option value="1986">1986</option>
+                        <option value="1985">1985</option>
+                        <option value="1984">1984</option>
+                        <option value="1983">1983</option>
+                        <option value="1982">1982</option>
+                        <option value="1981">1981</option>
+                        <option value="1980">1980</option>
+                        <option value="1979">1979</option>
+                        <option value="1978">1978</option>
+                        <option value="1977">1977</option>
+                        <option value="1976">1976</option>
+                        <option value="1975">1975</option>
+                        <option value="1974">1974</option>
+                        <option value="1973">1973</option>
+                        <option value="1972">1972</option>
+                        <option value="1971">1971</option>
+                        <option value="1970">1970</option>
+                        <option value="1969">1969</option>
+                        <option value="1968">1968</option>
+                        <option value="1967">1967</option>
+                        <option value="1966">1966</option>
+                        <option value="1965">1965</option>
+                        <option value="1964">1964</option>
+                        <option value="1963">1963</option>
+                        <option value="1962">1962</option>
+                        <option value="1961">1961</option>
+                        <option value="1960">1960</option>
+                        <option value="1959">1959</option>
+                        <option value="1958">1958</option>
+                        <option value="1957">1957</option>
+                        <option value="1956">1956</option>
+                        <option value="1955">1955</option>
+                        <option value="1954">1954</option>
+                        <option value="1953">1953</option>
+                        <option value="1952">1952</option>
+                        <option value="1951">1951</option>
+                        <option value="1950">1950</option>
+                        <option value="1949">1949</option>
+                        <option value="1948">1948</option>
+                        <option value="1947">1947</option>
+                        <option value="1946">1946</option>
+                        <option value="1945">1945</option>
+                        <option value="1944">1944</option>
+                        <option value="1943">1943</option>
+                        <option value="1942">1942</option>
+                        <option value="1941">1941</option>
+                        <option value="1940">1940</option>
+                        <option value="1939">1939</option>
+                        <option value="1938">1938</option>
+                        <option value="1937">1937</option>
+                        <option value="1936">1936</option>
+                        <option value="1935">1935</option>
+                        <option value="1934">1934</option>
+                        <option value="1933">1933</option>
+                        <option value="1932">1932</option>
+                        <option value="1931">1931</option>
+                        <option value="1930">1930</option>
+                        <option value="1929">1929</option>
+                        <option value="1928">1928</option>
+                        <option value="1927">1927</option>
+                        <option value="1926">1926</option>
+                        <option value="1925">1925</option>
+                        <option value="1924">1924</option>
+                        <option value="1923">1923</option>
+                        <option value="1922">1922</option>
+                        <option value="1921">1921</option>
+                        <option value="1920">1920</option>
+                    </select>
+                </div>
+                <button class="modal-submit" type="submit">Continuar</button>
+                <div class="modal-bottom">
+                    <p>¿Ya tienes una cuenta?</p> <a onclick="closeModal('modal2'); openModal('modal1')">Iniciar
+                        sesión</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- CARRITO -->
+    <div id="modal3" class="modal">
+        <div class="modal-content-shopping modal_position">
+
+            <span class="close-shopping" onclick="closeModal('modal3')"><i class="fa-solid fa-xmark"></i></span>
+            <h2 class="modal-shopping_titulo">Este es tu carrito!</h2>
+            <div class="shopping-cart">
+                <section class="productos">
+                    <article class="item">
+                        <img class="main-second-images-shopping " src="/images/productos/buzo1.jpg">
+                        <p class="shopping-nombre">Buzo</p>
+                        <div class="quantity-item">
+                            <button class="button-up-quantity-item"><i class="fa-solid fa-angle-up"></i></button>
+                            <p class="shopping-cantidad">1</p>
+                            <button class="button-down-quantity-item"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <p class="shopping-precio">$3500</p>
+                        <button class="delete-product"><i class="fa-solid fa-xmark"></i></button>
+                    </article>
+
+                    <article class="item">
+                        <img class="main-second-images-shopping " src="/images/productos/termo1.jpg">
+                        <p class="shopping-nombre">Termo</p>
+                        <div class="quantity-item">
+                            <button class="button-up-quantity-item"><i class="fa-solid fa-angle-up"></i></button>
+                            <p class="shopping-cantidad">1</p>
+                            <button class="button-down-quantity-item"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <p class="shopping-precio">$15000</p>
+                        <button class="delete-product"><i class="fa-solid fa-xmark"></i></button>
+
+                    </article>
+
+                    <article class="item">
+                        <img class="main-second-images-shopping " src="/images/productos/remera-h1.jpg">
+                        <p class="shopping-nombre">Remera</p>
+                        <div class="quantity-item">
+                            <button class="button-up-quantity-item"><i class="fa-solid fa-angle-up"></i></button>
+                            <p class="shopping-cantidad">1</p>
+                            <button class="button-down-quantity-item"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <p class="shopping-precio">$7800</p>
+                        <button class="delete-product"><i class="fa-solid fa-xmark"></i></button>
+
+                    </article>
+                </section>
+
+                <section class="shopping-total">
+                    <div class="shopping-total-information">
+                        <p class="shopping-total-precio"> TOTAL</p>
+                        <p class="shopping-total-precio"> $26300</p>
+                    </div>
+                    <button id="shopping-pagar"> Pagar</button>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL SCRIPT -->
+    <script src="/js/main.js"></script>
 </body>
+
 </html>

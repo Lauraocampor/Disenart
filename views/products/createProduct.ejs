@@ -1,79 +1,82 @@
 <!-- HTML -->
 <!DOCTYPE html>
 <html lang="es">
-  <!-- HEAD -->
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Crear producto</title>
-        <link rel="stylesheet" href="/css/styles/styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
-      </head>
-<body>
-    <!-- HEADER -->
-    <header class="header">
-        <nav class="about-nav">
-          <div class="about-nav__wrap icon--bigger-widener"><a href="#" class="about__anchor icon--bigger-widener"><i
-                class="fa-sharp fa-solid fa-bars icon about__icon  icon--bigger"></i></a></div>
-        </nav>
-        <div class="logo">
-          <a href="/" class="img__anchor"><img src="/img/logo.png" alt="logo diseñart" class="img"></a>
-        </div>
-        <nav class="account-nav">
-          <ul class="ul">
-            <li class="li">
-              <a href="#" class="li__anchor"><i class="fa-solid fa-magnifying-glass icon icon--bigger-alt"></i></a>
-            </li>
-            <li class="li">
-              <a href="#" class="li__anchor" onclick="openModal('modal3')"><i
-                  class="fa-solid fa-cart-shopping icon icon--bigger-alt"></i></a>
-            </li>
-            <li class="li">
-              <a href="#" class="li__anchor" onclick="openModal('modal1')"><i
-                  class="fa-regular fa-user icon icon--bigger-alt"></i></a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-        <!-- MAIN -->
-  <main class="main-createProduct">
-    <form class = "createProduct">
-        <label class="createProduct-name" for="productName">Nombre del producto</label>
-        <input id="createProduct-name" type="text" id="productName" name= "productName" require >
+<!-- HEAD -->
 
-        <label class="createProduct-info" for="productColor1">Color</label>
-        <section class="createProduct-main-option"> 
-            <label for="productColor1">Color</label>
-        <input  class="createProduct-option" type="color" id="productColor1" name="productColor1" require>
-        <label for="productColor2">Color</label>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear producto</title>
+  <link rel="stylesheet" href="/css/styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="about-nav">
+      <div class="about-nav__wrap icon--bigger-widener"><a href="#" class="about__anchor icon--bigger-widener"><i
+            class="fa-sharp fa-solid fa-bars icon about__icon  icon--bigger"></i></a></div>
+    </nav>
+    <div class="logo">
+      <a href="/" class="img__anchor"><img src="/img/logo.png" alt="logo diseñart" class="img"></a>
+    </div>
+    <nav class="account-nav">
+      <ul class="ul">
+        <li class="li">
+          <a href="#" class="li__anchor"><i class="fa-solid fa-magnifying-glass icon icon--bigger-alt"></i></a>
+        </li>
+        <li class="li">
+          <a href="#" class="li__anchor" onclick="openModal('modal3')"><i
+              class="fa-solid fa-cart-shopping icon icon--bigger-alt"></i></a>
+        </li>
+        <li class="li">
+          <a href="#" class="li__anchor" onclick="openModal('modal1')"><i
+              class="fa-regular fa-user icon icon--bigger-alt"></i></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- MAIN -->
+  <main class="main-createProduct">
+    <form class="createProduct">
+      <label class="createProduct-name" for="productName">Nombre del producto</label>
+      <input id="createProduct-name" type="text" id="productName" name="productName" require>
+
+      <label class="createProduct-info" for="productColor1">Color</label>
+      <section class="createProduct-main-option">
+        <label for="productColor1" class="productColor">Color</label>
+        <input class="createProduct-option" type="color" id="productColor1" name="productColor1" require>
+        <label for="productColor2" class="productColor">Color</label>
         <input class="createProduct-option" type="color" id="productColor2" name="productColor2">
-        <label for="productColor3">Color</label>
-        <input   class="createProduct-option" type="color" id="productColor3" name="productColor3">
-         </section>
-         <label class="createProduct-info" for="productSize">Talle</label>
-         <section class="createProduct-main-option"> 
+        <label for="productColor3" class="productColor">Color</label>
+        <input class="createProduct-option" type="color" id="productColor3" name="productColor3">
+      </section>
+      <label class="createProduct-info" for="productSize">Talle</label>
+      <section class="createProduct-main-option">
         <input class="createProduct-option" type="checkbox" value="S"><label>S</label>
         <input class="createProduct-option" type="checkbox" value="M"><label>M</label>
         <input class="createProduct-option" type="checkbox" value="L"><label>L</label>
         <input class="createProduct-option" type="checkbox" value="XL"><label>XL</label>
-    </section>
-        <label  class="createProduct-info"  for="productPrice">Precio</label>
-        <input type="number" id="productPrice" name= "productPrice" require >
-        <label class="createProduct-info"  for="productDescription">Descripcion</label>
-        <input id="createProduct-information-product" type="text" id="productDescription" name= "productDescription" require >
-        <label class="createProduct-info"  for="productStock">Cantidad disponible</label>
-        <input type="number" id="productStock" name= "productStock" require >
-        <label class="createProduct-info"  for="productImages">Foto del producto</label>
-        <input type="file" id="productImages" name= "productImages" accept=".jpg , .png" >
-        <input id="createProduct-finish"  type="submit" value="Crear producto">
+      </section>
+      <label class="createProduct-info" for="productPrice">Precio</label>
+      <input type="number" id="productPrice" name="productPrice" require>
+      <label class="createProduct-info" for="productDescription">Descripción</label>
+      <input id="createProduct-information-product" type="text" id="productDescription" name="productDescription"
+        require>
+      <label class="createProduct-info" for="productStock">Cantidad disponible</label>
+      <input type="number" id="productStock" name="productStock" require>
+      <label class="createProduct-info" for="productImages">Foto del producto</label>
+      <input type="file" id="productImages" name="productImages" accept=".jpg , .png">
+      <input id="createProduct-finish" type="submit" value="Crear producto">
     </form>
 
-     </main>
-    
- <!-- FOOTER -->
- <footer class="footerComponent">
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footerComponent">
     <div class="footerComponent__row">
       <ul>
         <li>
@@ -365,4 +368,5 @@
   <!-- MODAL SCRIPT -->
   <script src="/js/main.js"></script>
 </body>
+
 </html>
