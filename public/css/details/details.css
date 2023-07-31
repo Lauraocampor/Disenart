@@ -4,6 +4,25 @@ body{
     font-family: 'Roboto Condensed'
 }
 
+.details-title {
+    font-size: 35px;
+    color: #0d3a61;
+    font-family: 'Nunito Sans';
+    margin-top: 0px;
+    padding-top: 15px;
+    margin-left: 10%;
+    padding-bottom: 15px;
+}
+
+.details-wrap {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+
 .main-images{
     display: flex;
     flex-wrap: wrap;
@@ -149,7 +168,16 @@ margin-right: 10%;
 /* BREAK #4 */
 @media (min-width: 1280px) {
   
-    
+    .details-title {
+        padding-bottom: 0px;
+    }
+
+
+    .details-wrap {
+       padding: 20px 0 0 0;
+    }
+
+
     .main-body{
          display: flex;
        flex-direction: row;

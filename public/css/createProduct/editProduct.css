@@ -15,7 +15,6 @@ body {
     justify-content: center;
     display: flex;
     align-items: flex-start;
-    width: 80%;
     flex-direction: column;
     margin: 20px;
 }
@@ -153,7 +152,7 @@ body {
 @media (min-width: 1280px) {
 
     .editProduct {
-        justify-content: flex-start;
+        justify-content:flex-start;
         display: flex;
         width: 50%;
         flex-direction: column;
@@ -165,10 +164,11 @@ body {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: center;
-        width: 76%;
-        background-color: #eef0de;
-        margin-top: 10px;
+         justify-content: center;
+           width: 70%;
+           background-color: #eef0de;
+           margin-top: 10px;
+           margin-left: 15%;
 
     }
 
