@@ -2,43 +2,11 @@
 <!DOCTYPE html>
 <html lang="es">
   <!-- HEAD -->
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseñart</title>
-    <link rel="stylesheet" href="/css/styles/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
-  </head>
+  <%- include("../partials/head") %>
   <!-- BODY -->
   <body class="bodyXL">
-    <!-- PEQUEÑO HACK PARA EL OVERFLOW -->
     <!-- HEADER -->
-    <header class="header">
-      <nav class="about-nav">
-        <div class="about-nav__wrap icon--bigger-widener"><a href="#" class="about__anchor icon--bigger-widener"><i
-              class="fa-sharp fa-solid fa-bars icon about__icon  icon--bigger"></i></a></div>
-      </nav>
-      <div class="logo">
-        <a href="/" class="img__anchor"><img src="/images/misc/logo.png" alt="logo diseñart" class="img"></a>
-      </div>
-      <nav class="account-nav">
-        <ul class="ul">
-          <li class="li">
-            <a href="#" class="li__anchor"><i class="fa-solid fa-magnifying-glass icon icon--bigger-alt"></i></a>
-          </li>
-          <li class="li">
-            <a href="#" class="li__anchor" onclick="openModal('modal3')"><i
-                class="fa-solid fa-cart-shopping icon icon--bigger-alt"></i></a>
-          </li>
-          <li class="li">
-            <a href="/login" class="li__anchor"><i
-                class="fa-regular fa-user icon icon--bigger-alt"></i></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <%- include('../partials/header') %>
     <!-- MAIN -->
     <main class="mainPadding">
       <section class="home-wrap">
@@ -224,90 +192,8 @@
       </section>
     </main>
     <!-- FOOTER -->
-    <footer class="footerComponent">
-      <div class="footerComponent__row">
-        <ul>
-          <li>
-            <a href="/" class="linkStyle linkStyle_transition">Diseñar mi producto</a>
-          </li>
-          <li>
-            <a href="/" class="linkStyle linkStyle_transition">Instagram</a>
-          </li>
-          <li>
-            <a href="/" class="linkStyle linkStyle_transition">Contacto</a>
-          </li>
-        </ul>
-      </div>
-      <div class="footerComponent__row">
-        <ul>
-          <li>
-            <a href="/" class="linkStyle linkStyle_transition">Preguntas frecuentes</a>
-          </li>
-          <li>
-            <a href="/" class="linkStyle linkStyle_transition">Puntos de venta</a>
-          </li>
-        </ul>
-      </div>
-    </footer>
-
-
-    <!-- CARRITO -->
-    <div id="modal3" class="modal">
-      <div class="modal-content-shopping modal_position">
-
-        <span class="close-shopping" onclick="closeModal('modal3')"><i class="fa-solid fa-xmark"></i></span>
-        <h2 class="modal-shopping_titulo">Este es tu carrito!</h2>
-        <div class="shopping-cart">
-          <section class="productos">
-            <article class="item">
-              <img class="main-second-images-shopping " src="/images/productos/buzo1.jpg">
-              <p class="shopping-nombre">Buzo</p>
-              <div class="quantity-item">
-                <button class="button-up-quantity-item"><i class="fa-solid fa-angle-up"></i></button>
-                <p class="shopping-cantidad">1</p>
-                <button class="button-down-quantity-item"><i class="fa-solid fa-angle-down"></i></button>
-              </div>
-              <p class="shopping-precio">$3500</p>
-              <button class="delete-product"><i class="fa-solid fa-xmark"></i></button>
-            </article>
-
-            <article class="item">
-              <img class="main-second-images-shopping " src="/images/productos/termo1.jpg">
-              <p class="shopping-nombre">Termo</p>
-              <div class="quantity-item">
-                <button class="button-up-quantity-item"><i class="fa-solid fa-angle-up"></i></button>
-                <p class="shopping-cantidad">1</p>
-                <button class="button-down-quantity-item"><i class="fa-solid fa-angle-down"></i></button>
-              </div>
-              <p class="shopping-precio">$15000</p>
-              <button class="delete-product"><i class="fa-solid fa-xmark"></i></button>
-
-            </article>
-
-            <article class="item">
-              <img class="main-second-images-shopping " src="/images/productos/remera-h1.jpg">
-              <p class="shopping-nombre">Remera</p>
-              <div class="quantity-item">
-                <button class="button-up-quantity-item"><i class="fa-solid fa-angle-up"></i></button>
-                <p class="shopping-cantidad">1</p>
-                <button class="button-down-quantity-item"><i class="fa-solid fa-angle-down"></i></button>
-              </div>
-              <p class="shopping-precio">$7800</p>
-              <button class="delete-product"><i class="fa-solid fa-xmark"></i></button>
-
-            </article>
-          </section>
-
-          <section class="shopping-total">
-            <div class="shopping-total-information">
-              <p class="shopping-total-precio"> TOTAL</p>
-              <p class="shopping-total-precio"> $26300</p>
-            </div>
-            <button id="shopping-pagar"> Pagar</button>
-          </section>
-        </div>
-      </div>
-    </div>
+    <% const footerData = { link_01: {name: "Twitter", url: "https://twitter.com/"}, link_02: {name: "Instagram", url: "https://instagram.com/"}, link_03: {name: "Google Maps", url: "https://www.google.com/maps/"},  link_04: {name: "Youtube", url: "https://youtube.com/"}, link_05: {name: "Facebook", url: "https://facebook.com/"},} %>
+    <%- include("../partials/footer", footerData); %>
     <!-- MODAL SCRIPT -->
     <script src="js/main.js"></script>
   </body>
