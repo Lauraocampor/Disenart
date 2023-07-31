@@ -7,8 +7,8 @@
     "dev": "npx nodemon app",
     "start": "node app"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["e-commerce", "shirts", "store"],
+  "author": "grupo_06 DH",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.3.1",

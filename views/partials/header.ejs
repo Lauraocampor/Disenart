@@ -1,0 +1,29 @@
+<header class="header">
+  <!-- GRID -->
+  <nav class="about-nav">
+    <div class="about-nav__wrap icon--bigger-widener"><a href="#" class="about__anchor icon--bigger-widener"><i
+          class="fa-sharp fa-solid fa-bars icon about__icon  icon--bigger"></i></a></div>
+  </nav>
+  <div class="logo">
+    <a href="/" class="img__anchor"><img src="/images/misc/logo.png" alt="logo diseñart" class="img"></a>
+  </div>
+  <nav class="account-nav">
+    <ul class="ul">
+      <li class="li">
+        <a href="#" class="li__anchor"><i class="fa-solid fa-magnifying-glass icon icon--bigger-alt"></i></a>
+      </li>
+      <li class="li">
+        <a href="#" class="li__anchor" onclick="openModal('modal3')"><i
+            class="fa-solid fa-cart-shopping icon icon--bigger-alt"></i></a>
+      </li>
+      <li class="li">
+        <a href="#" class="li__anchor" onclick="openModal('modal1')"><i
+            class="fa-regular fa-user icon icon--bigger-alt"></i></a>
+      </li>
+    </ul>
+  </nav>
+  <!-- FORMULARIOS -->
+  <%- include('./header__login') %>
+  <%- include('./header__register') %>
+  <%- include('./header__cart') %>
+</header>
