@@ -21,6 +21,7 @@
 
 /* Estilos de los editores de producto */
 @import "/css/createProduct/createProduct.css";
+@import "/css/createProduct/editProduct.css";
 
 /* Fonts aplicadas de manera global */
 * {
