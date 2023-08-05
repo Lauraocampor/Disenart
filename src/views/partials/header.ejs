@@ -1,21 +1,50 @@
 <header class="header">
-  <!-- GRID -->
+  <!-- HAMBURGER -->
   <nav class="about-nav">
-    <div class="about-nav__wrap icon--bigger-widener"><a href="#" class="about__anchor icon--bigger-widener"><i
-          class="fa-sharp fa-solid fa-bars icon about__icon  icon--bigger"></i></a></div>
+    <!-- ANIMATION -->
+    <div class="about-nav__wrap icon--bigger-widener">
+      <a href="#" class="about__anchor icon--bigger-widener">
+        <i class="fa-sharp fa-solid fa-bars icon about__icon  icon--bigger"></i>
+      </a>
+    </div>
+    <!-- LIST -->
+    <div class="about-nav__listWrap">
+      <ul class="about-nav__listOfLinks">
+        <li class="about-nav__listItems">
+          <a href="<%= linkHead_01.url %>" class="about-nav__listAnchor"><%= linkHead_01.name %></a>
+        </li>
+        <li class="about-nav__listItems">
+          <a href="<%= linkHead_02.url %>" class="about-nav__listAnchor"><%= linkHead_02.name %></a>
+        </li>
+        <li class="about-nav__listItems">
+          <a href="<%= linkHead_03.url %>" class="about-nav__listAnchor"><%= linkHead_03.name %></a>
+        </li>
+        <li class="about-nav__listItems">
+          <a href="<%= linkHead_04.url %>" class="about-nav__listAnchor"><%= linkHead_04.name %></a>
+        </li>
+        <li class="about-nav__listItems">
+          <a href="<%= linkHead_05.url %>" class="about-nav__listAnchor"><%= linkHead_05.name %></a>
+        </li>
+      </ul>
+    </div>
   </nav>
+  <!-- LOGO -->
   <div class="logo">
     <a href="/" class="img__anchor"><img src="/images/misc/logo.png" alt="logo diseñart" class="img"></a>
   </div>
+  <!-- ACCOUNTS -->
   <nav class="account-nav">
     <ul class="ul">
+      <!-- SEARCH -->
       <li class="li">
         <a href="#" class="li__anchor"><i class="fa-solid fa-magnifying-glass icon icon--bigger-alt"></i></a>
       </li>
+      <!-- CART -->
       <li class="li">
         <a href="#" class="li__anchor" onclick="openModal('modal3')"><i
             class="fa-solid fa-cart-shopping icon icon--bigger-alt"></i></a>
       </li>
+      <!-- LOGIN -->
       <li class="li">
         <a href="#" class="li__anchor" onclick="openModal('modal1')"><i
             class="fa-regular fa-user icon icon--bigger-alt"></i></a>
@@ -23,7 +52,7 @@
     </ul>
   </nav>
   <!-- FORMULARIOS -->
-  <%- include('./header__login') %>
-  <%- include('./header__register') %>
   <%- include('./header__cart') %>
+  <%- include('./header__register') %>
+  <%- include('./header__login') %> 
 </header>

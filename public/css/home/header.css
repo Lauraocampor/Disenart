@@ -1,80 +1,113 @@
+/* COLORS */
+:root {
+  --darkGreen: #9daa9d;
+  --lightGreen: #bcd1bd;
+  --darkBlue: #0d3a61;
+  --oliveCream: #eef0de;
+  --mustard: #bf9a51;
+}
+
 /* HEADER */
 .header {
-    width: 100vw;
-    height: 12vh;
-    background-color: #eef0de;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 380px;
-    min-height: 80px;
+  width: 100vw;
+  height: 12vh;
+  background-color: #eef0de;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 380px;
+  min-height: 80px;
 }
 
 /* ABOUT */
 .about-nav {
-    display: inline-flex;
-    justify-content: flex-start;
-    padding-left: 1vw; 
-    width: 25%
+  display: inline-flex;
+  justify-content: flex-start;
+  padding-left: 1vw; 
+  width: 25%
 }
 
 .about-nav__wrap {
-    display: inline-block;
-    position: relative;
-    left: 10%;
+  display: inline-block;
+  position: relative;
+  left: 10%;
+}
+
+.about-nav__listWrap {
+  z-index: 1;
+  position: absolute;
+  background-color: var(--oliveCream);
+  top: 12vh;
+  left: 0vw;
+  height: max-content;
+  width: max-content;
+}
+
+.about-nav__listOfLinks {
+  padding: 0%;
+  margin: 0%;
+}
+
+.about-nav__listItems {
+  padding: 1.5vw 3vw 2vw 1.5vw;
+}
+
+.about-nav__listAnchor {
+  text-decoration: none;
+  color: var(--darkBlue);
 }
 
 .about__anchor {
-    display: inline-block;
-    width: 1.5rem;
+  display: inline-block;
+  width: 1.5rem;
 }
 
 .about__icon {
-    width: 100%;
+  width: 100%;
 }
 
 /* LOGO */
 .logo {
-    display: inline-flex;
-    justify-content: center;
-    width: 50%;
-    max-height: 100%;
+  display: inline-flex;
+  justify-content: center;
+  width: 50%;
+  max-height: 100%;
 }
 
 /* ACCOUNT */
 .account-nav {
-    display: inline-flex;
-    justify-content: flex-end;
-    padding-right: 2vw;
-    width: 25%;
+  display: inline-flex;
+  justify-content: flex-end;
+  padding-right: 2vw;
+  width: 25%;
 }
 
 .account__anchor {
-    display: inline-block;
-    width: 100%;
+  display: inline-block;
+  width: 100%;
 }
 
 /* IMG */
 .img {
-    display: inline;
-    width: auto;
+  display: inline;
+  width: auto;
 }
 
 .img__anchor {
-    display: inline-flex;
-    justify-content: center;
-    width: 50%;
-    max-width: 70px;
+  display: inline-flex;
+  justify-content: center;
+  width: 50%;
+  max-width: 70px;
 }
 
 /* UL */
-ul {
-    list-style-type: none;
-    padding: 0px;
-    margin: 0px;
-    flex: 1 0 100%;
-    display: inline-flex;
-    justify-content: space-around;
+.ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  flex: 1 0 100%;
+  display: inline-flex;
+  justify-content: space-around;
 }
 
 .li {
@@ -91,66 +124,66 @@ ul {
 }
 
 .icon--bigger {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 .icon--bigger-widener {
-    width: 1.5rem;
+  width: 1.5rem;
 }
 
 .icon--bigger-alt {
-    width: max-content;
-    font-size: 1rem;
+  width: max-content;
+  font-size: 1rem;
 }
 
 /* BREAK #1 */
 @media (min-width: 481px) {
-    .img__anchor {
-        max-width: 90px;
-    }
-    .ul {
-        max-width: 250px;
-    }
-    .icon--bigger {
-        font-size: 2.5rem;
-    }
-    .icon--bigger-widener {
-        width: 2.5rem;
-    }
-    
-    .icon--bigger-alt {
-        font-size: 2rem;
-    }
-    
+  .img__anchor {
+    max-width: 90px;
+  }
+  .ul {
+    max-width: 250px;
+  }
+  .icon--bigger {
+    font-size: 2.5rem;
+  }
+  .icon--bigger-widener {
+    width: 2.5rem;
+  }
+  
+  .icon--bigger-alt {
+    font-size: 2rem;
+  }
+  
 }
 
 /* BREAK #2 */
 @media (min-width: 769px) {
-    .icon--bigger-alt {
-        font-size: 1.5rem;
-    }
+  .icon--bigger-alt {
+    font-size: 1.5rem;
+  }
 }
 
 /* BREAK #3 */
 @media (min-width: 1280px) {
-    .header {
-        height: 10vh;
-    }
-    .img__anchor {
-        max-width: 125px;
-    }
-    .ul {
-        max-width: 300px;
-    }
-    .about-nav {
-        padding-left: 0px;
-    }
-    .icon--bigger {
-        font-size: 3rem;
-    }
-    .icon--bigger-widener {
-        width: 3rem;
-    }
-    .icon--bigger-alt {
-        font-size: 2rem;
-    }
+  .header {
+    height: 10vh;
+  }
+  .img__anchor {
+    max-width: 125px;
+  }
+  .ul {
+    max-width: 300px;
+  }
+  .about-nav {
+    padding-left: 0px;
+  }
+  .icon--bigger {
+    font-size: 3rem;
+  }
+  .icon--bigger-widener {
+    width: 3rem;
+  }
+  .icon--bigger-alt {
+    font-size: 2rem;
+  }
 }

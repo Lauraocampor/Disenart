@@ -24,8 +24,18 @@
 }
 
 /* LINK  */
+.ul__footer {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  flex: 1 0 100%;
+  display: inline-flex;
+  justify-content: space-around;
+}
+
 .linkStyle {
   text-decoration: underline;
+  list-style-type: none;
 }
 
 .linkStyle_transition {
