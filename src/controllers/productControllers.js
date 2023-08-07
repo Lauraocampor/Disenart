@@ -14,6 +14,17 @@ const controller ={
         res.render('editProduct');
     },
 
+ // @GET /products 
+
+    updateProduct: (req, res) => {
+        const id = Number(req.params.id);
+        const nuevosDatos = req.body;
+
+        productModel.updateById(id, nuevosDatos);
+
+        res.redirect('/');
+    },
+
 }
 
 module.exports = controller

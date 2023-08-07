@@ -2,23 +2,31 @@ const express = require ("express");
 const app = express();
 const dotenv = require('dotenv').config();
 const path = require('path'); 
-app.use(express.static('public'));
+const methodOverride = require('method-override');
+
+const mainRouter = require('./routes/mainRoutes');
+const productRouter = require('./routes/productRoutes');
 
 app.set('view engine', 'ejs');
 
 /* se hace la ruta hasta la carpeta, no el archivo */
 app.set('views', [
-    path.join(__dirname, './views/users'),
-    path.join(__dirname, './views/products')
-])
+  path.join(__dirname, './views/users'),
+  path.join(__dirname, './views/products')
+]);
 
 
-const mainRouter = require('./routes/mainRoutes');
-const productRouter = require('./routes/productRoutes');
+// --- Middlewares ---
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(methodOverride('_method'));
 
+
+
+/* --- Routers --- */
 app.use('/', mainRouter);
 app.use('/product', productRouter);
-
 
 
 /* app.get('/productCart', (req,res) => {
