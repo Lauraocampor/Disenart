@@ -33,6 +33,7 @@
   left: 10%;
 }
 
+/* HAMBURGER LINKS */
 .about-nav__listWrap {
   z-index: 1;
   position: absolute;
@@ -41,6 +42,10 @@
   left: 0vw;
   height: max-content;
   width: max-content;
+}
+
+.about-nav-toggler {
+  visibility: hidden;
 }
 
 .about-nav__listOfLinks {
@@ -56,6 +61,7 @@
   text-decoration: none;
   color: var(--darkBlue);
 }
+/* ----------------- */
 
 .about__anchor {
   display: inline-block;
