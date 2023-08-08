@@ -4,8 +4,8 @@
   "description": "Nuestro e-commerce ofrecerá la posibilidad de personalizar prendas y objetos cotidianos, como son remeras, buzos, tazas y bolsas. El  objetivo es que los usuarios tengan la experiencia de convertirse en diseñadores de su propio producto a partir de la incorporación de la API SPOD. Los clientes podrán ver sus creaciones desde el navegador y luego comprar el producto. Apuntamos a un público creativo que busque personalizar estos objetos, ya sea para el uso cotidiano o un evento especial.",
   "main": "app.js",
   "scripts": {
-    "dev": "npx nodemon app",
-    "start": "node app"
+    "dev": "npx nodemon ./src/app",
+    "start": "node ./src/app"
   },
   "keywords": [
     "e-commerce",
