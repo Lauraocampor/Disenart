@@ -162,14 +162,64 @@
   left: 0;
 }
 
+/* SEARCH MODAL FORM */
 .header--searchBox {
-  width: 50vw;
+  width: 60vw;
   height: 20vh;
-  background-color: var(--lightGreen);
-  z-index: 130;
   position: fixed;
-  left: 25vw;
+  left: 20vw;
   top: 40vh;
+  z-index: 130;
+  background-color: var(--lightGreen);
+  border: 2px solid var(--darkBlue);
+  border-radius: 5px;
+}
+
+.header--closeButton {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  border-style: none;
+  border-radius: 3px;
+  background-color: whitesmoke;
+}
+
+.header--closeButton > i {
+  color: var(--darkBlue);
+}
+
+.header--formWrap {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.header--searchTitle {
+  text-align: center;
+}
+
+.header--searchInput {
+  border-style: none;
+  border-radius: 3px;
+  background-color: whitesmoke;
+}
+
+.header--searchInput:focus {
+  outline: none;
+}
+
+.header--searchButton {
+  border-style: none;
+  border-radius: 3px;
+  background-color: whitesmoke;
+  color: var(--darkBlue);
+  width: fit-content;
+  position: relative;
+  bottom: 10px;
 }
 
 /* BREAK #1 */
