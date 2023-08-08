@@ -1,92 +1,92 @@
 [
-    {
-      "id": 1,
-      "firstName": "Laura",
-      "lastName": "Ocampo",
-      "email": "laura_ocampo5@hotmail.com",
-      "password": "lD3!k<asOk",
-      "category": "Admin",
-      "image": "default.jpg"
-    },
-    {
-      "id": 2,
-      "firstName": "Margarette",
-      "lastName": "Bruniges",
-      "email": "mbruniges1@wiley.com",
-      "password": "xD4(_)nY@",
-      "category": "Customer",
-      "image": "default.jpg"
-    },
-    {
-      "id": 3,
-      "firstName": "Lacy",
-      "lastName": "Croall",
-      "email": "lcroall2@gnu.org",
-      "password": "rW8#n(zJ`L8To",
-      "category": "Customer",
-      "image": "default.jpg"
-    },
-    {
-      "id": 4,
-      "firstName": "Margery",
-      "lastName": "Tailour",
-      "email": "mtailour3@elegantthemes.com",
-      "password": "oL9@?}x6Y(",
-      "category": "Customer",
-      "image": "default.jpg"
-    },
-    {
-      "id": 5,
-      "firstName": "Carlynne",
-      "lastName": "Kebbell",
-      "email": "ckebbell4@blinklist.com",
-      "password": "bS2=_=5kh.5",
-      "category": "Customer",
-      "image": "default.jpg"
-    },
-    {
-      "id": 6,
-      "firstName": "Donni",
-      "lastName": "Banstead",
-      "email": "dbanstead5@parallels.com",
-      "password": "nW3=6tB@qW",
-      "category": "Customer",
-      "image": "default.jpg"
-    },
-    {
-      "id": 7,
-      "firstName": "Freedman",
-      "lastName": "Goldine",
-      "email": "fgoldine6@taobao.com",
-      "password": "uV2+*n@OTjN$pt",
-      "category": "Customer",
-      "image": "default.jpg"
-    },
-    {
-      "id": 8,
-      "firstName": "Sergeant",
-      "lastName": "Eagle",
-      "email": "seagle7@ftc.gov",
-      "password": "oQ2!?5|?ua~*W)P",
-      "category": "Customer",
-      "image": "default.jpg"
-    },
-    {
-      "id": 9,
-      "firstName": "Roddy",
-      "lastName": "Iannello",
-      "email": "riannello8@nydailynews.com",
-      "password": "zV8*@U`!}",
-      "category": "Customer",
-      "image": "default.jpg"
-    },
-    {
-      "id": 10,
-      "firstName": "Belinda",
-      "lastName": "Shearme",
-      "email": "bshearme9@github.io",
-      "password": "qS1$7w.qC`.t}g",
-      "category": "Customer",
-      "image": "default.jpg"
-    }
+  {
+    "id": 1,
+    "firstName": "Laura",
+    "lastName": "Ocampo",
+    "email": "laura_ocampo5@hotmail.com",
+    "password": "lD3!k<asOk",
+    "category": "Admin",
+    "image": "default.jpg"
+  },
+  {
+    "id": 2,
+    "firstName": "Mercedes",
+    "lastName": "Lavezzolo",
+    "email": "mer.lavezzolo@gmail.com",
+    "password": "xD4(_)nY@",
+    "category": "Admin",
+    "image": "default.jpg"
+  },
+  {
+    "id": 3,
+    "firstName": "Desirée",
+    "lastName": "Holowiniec",
+    "email": "holowiniec.desiree@gmail.com",
+    "password": "rW8#n(zJ`L8To",
+    "category": "Admin",
+    "image": "default.jpg"
+  },
+  {
+    "id": 4,
+    "firstName": "Juan",
+    "lastName": "Marín",
+    "email": "juandm1109@gmail.com",
+    "password": "oL9@?}x6Y(",
+    "category": "Admin",
+    "image": "default.jpg"
+  },
+  {
+    "id": 5,
+    "firstName": "Carlynne",
+    "lastName": "Kebbell",
+    "email": "ckebbell4@blinklist.com",
+    "password": "bS2=_=5kh.5",
+    "category": "Customer",
+    "image": "default.jpg"
+  },
+  {
+    "id": 6,
+    "firstName": "Donni",
+    "lastName": "Banstead",
+    "email": "dbanstead5@parallels.com",
+    "password": "nW3=6tB@qW",
+    "category": "Customer",
+    "image": "default.jpg"
+  },
+  {
+    "id": 7,
+    "firstName": "Freedman",
+    "lastName": "Goldine",
+    "email": "fgoldine6@taobao.com",
+    "password": "uV2+*n@OTjN$pt",
+    "category": "Customer",
+    "image": "default.jpg"
+  },
+  {
+    "id": 8,
+    "firstName": "Sergeant",
+    "lastName": "Eagle",
+    "email": "seagle7@ftc.gov",
+    "password": "oQ2!?5|?ua~*W)P",
+    "category": "Customer",
+    "image": "default.jpg"
+  },
+  {
+    "id": 9,
+    "firstName": "Roddy",
+    "lastName": "Iannello",
+    "email": "riannello8@nydailynews.com",
+    "password": "zV8*@U`!}",
+    "category": "Customer",
+    "image": "default.jpg"
+  },
+  {
+    "id": 10,
+    "firstName": "Belinda",
+    "lastName": "Shearme",
+    "email": "bshearme9@github.io",
+    "password": "qS1$7w.qC`.t}g",
+    "category": "Customer",
+    "image": "default.jpg"
+  }
 ]
