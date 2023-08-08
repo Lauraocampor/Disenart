@@ -141,6 +141,37 @@
   font-size: 1rem;
 }
 
+/* SEARCH MODAL */
+.searchToggle {
+  visibility: hidden;
+}
+
+.searchToggleBox {
+  visibility: hidden;
+}
+
+.header--searchModal {
+  position: fixed;
+  display: block;
+  width: 120vw;
+  height: 120vh;
+  background-color: gray;
+  opacity: 0.5;
+  z-index: 120;
+  top: 0;
+  left: 0;
+}
+
+.header--searchBox {
+  width: 50vw;
+  height: 20vh;
+  background-color: var(--lightGreen);
+  z-index: 130;
+  position: fixed;
+  left: 25vw;
+  top: 40vh;
+}
+
 /* BREAK #1 */
 @media (min-width: 481px) {
   .img__anchor {
