@@ -1,56 +1,42 @@
 const fs = require('fs');
 const path = require('path');
 
-const model = {
-    // Ruta del archivo JSON
-    route: '../data/productData.json',
+// Ruta del archivo JSON
+const modelo = {fileRoute: path.join(__dirname, '../data/productModel.json'),
+
 
     // Traer todos los productos
     findAll: function () {
-        const productsJSON = fs.readFileSync(path.join(__dirname, this.route), 'utf-8');
+ // Buscamos el contenido del archivo JSON
+ const jsonData = fs.readFileSync(modelo.fileRoute, 'utf-8');
+ // Convertimos el JSON en Javascript
+ const products = JSON.parse(jsonData);
 
-        const products = JSON.parse(productsJSON);
-
-        return products;
-    },
+ return products;
+},
 
     // Traer un producto según su ID
-    findById: function (id) {
-        const products = this.findAll();
-
-        let searched = products.find(product => product.id === id);
-
-        if (!searched) {
-            searched = null;
-        }
-
-        return searched;
+    findById: (id) => {
+        const products = modelo.findAll();
+        const selectedProduct = products.find(productoActual => productoActual.id == id);
+        return selectedProduct;
     },
+
 
  // Editar un producto
 
- updateById: function (id, newData) {
-    // Buscamos el array de productos
-    let products = this.findAll();
+ updateProduct: (updatedProduct) => {
+    // Buscar array de productos ya existentes
+    let products = modelo.findAll();
+    // Conseguir en qué indice de ese array, está guardado el producto del id en cuestión
+    const prodIndex = products.findById(productoActual => productoActual.id === updatedProduct.id);
+    // Modificar el elemento del array en ese índice, por el que nos pasaron por parámetro
+    products[prodIndex] = updatedProduct;
+    // Convertir este nuevo array en JSON
+    const productsJson = JSON.stringify(products);
+    // Guardar todo al JSON
+    fs.writeFileSync(modelo.fileRoute, productsJson, 'utf-8');
 
-    // Con el findIndex, buscamos en qué indice del array de productos, está guardado el elemento buscado
-    const indice = products.findIndex(productoActual => productoActual.id === id);
-
-    // Actualizamos los datos del producto que corresponda, con los datos que nos pasaron por parámetros
-    products[indice].productName = newData.productName ;
-    products[indice].productColor = newData.productColor;
-    products[indice].productSize = newData.productSize;
-    products[indice].productPrice = newData.productPrice;
-    products[indice].productStock = newData.productStock;
-    products[indice].productImages= newData.productImages;
-
-    // Convertimos nuestro array de JS a un array de JSON
-    const productsJSON = JSON.stringify(products);
-
-    // Guardamos este nuevo array de JSON en el archivo correspondiente
-    fs.writeFileSync(path.join(__dirname, this.route), productsJSON);
-
-    return products;
 }
 
 }

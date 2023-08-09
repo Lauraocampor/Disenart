@@ -16,14 +16,25 @@ const controller ={
 
  // @GET /products 
 
-    updateProduct: (req, res) => {
-        const id = Number(req.params.id);
-        const nuevosDatos = req.body;
+ updateProduct: (req, res) => {
+    let updatedProduct = {
+        id: Number(req.params.id)
+    };
 
-        productModel.updateById(id, nuevosDatos);
+    updatedProduct = {
+        ...updatedProduct,
+        ...req.body
+    };
 
-        res.redirect('/');
-    },
+    /* 
+        const updatedProduct = req.body;
+        updatedProduct.id = Number(req.params.id); 
+    */
+
+    productModel.updateProduct(updatedProduct);
+
+    res.redirect('/products/' + updatedProduct.id + '/detail');
+}
 
 }
 
