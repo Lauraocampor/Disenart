@@ -39,13 +39,32 @@ const controller ={
 
     productModel.updateProduct(updatedProduct);
 
+
     res.redirect('/products/details')
     
     
       /* ' + updatedProduct.id + 
      
         detail');    */
-}
+    },
+    store: (req, res) => {
+
+        const filenames = req.files.map(file => file.filename);
+
+        let newProduct = {
+            productName: req.body.productName,
+            productColor: req.body.productColor,
+            productSize: req.body.productSize,
+            productPrice: req.body.productPrice,
+            productDescription: req.body.productDescription,
+            productStock: req.body.productStock,
+            productImages: filenames,
+        }
+
+        const createdProduct = productModel.createProduct(newProduct);
+
+        res.redirect('/products/' + createdProduct.id);
+    }
 }
 
 module.exports = controller

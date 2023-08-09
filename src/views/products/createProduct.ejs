@@ -8,35 +8,34 @@
     <%- include('../partials/header', headerData) %>
   <!-- MAIN -->
   <main class="main-createProduct">
-    <form class="createProduct">
+    <form class="createProduct" action="/products" method="post" enctype="multipart/form-data">
       <label class="createProduct-name" for="productName">Nombre del producto</label>
-      <input id="createProduct-name" type="text" id="productName" name="productName" require>
+      <input id="createProduct-name" type="text" id="productName" name="productName" required>
 
-      <label class="createProduct-info" for="productColor1">Color</label>
+      <label class="createProduct-info" for="productColor">Color</label>
       <section class="createProduct-main-option">
-        <label for="productColor1" class="productColor">Color</label>
-        <input class="createProduct-option" type="color" id="productColor1" name="productColor1" require>
-        <label for="productColor2" class="productColor">Color</label>
-        <input class="createProduct-option" type="color" id="productColor2" name="productColor2">
-        <label for="productColor3" class="productColor">Color</label>
-        <input class="createProduct-option" type="color" id="productColor3" name="productColor3">
+        <input class="createProduct-option" type="color" id="productColor" name="productColor" required>
       </section>
       <label class="createProduct-info" for="productSize">Talle</label>
       <section class="createProduct-main-option">
-        <input class="createProduct-option" type="checkbox" value="S"><label>S</label>
-        <input class="createProduct-option" type="checkbox" value="M"><label>M</label>
-        <input class="createProduct-option" type="checkbox" value="L"><label>L</label>
-        <input class="createProduct-option" type="checkbox" value="XL"><label>XL</label>
+        <select name="productSize" id="size" required>
+          <option value="day" selected disabled>Talle</option>
+          <option class="createProduct-option" value="S">S</option>
+          <option class="createProduct-option" value="M">M</option>
+          <option class="createProduct-option" value="L">L</option>
+          <option class="createProduct-option" value="XL">XL</option>
+          <option class="createProduct-option" value="No Aplica">No Aplica</option>
+        </select>
       </section>
       <label class="createProduct-info" for="productPrice">Precio</label>
-      <input type="number" id="productPrice" name="productPrice" require>
+      <input type="number" id="productPrice" name="productPrice" required>
       <label class="createProduct-info" for="productDescription">Descripción</label>
       <input id="createProduct-information-product" type="text" id="productDescription" name="productDescription"
         require>
       <label class="createProduct-info" for="productStock">Cantidad disponible</label>
-      <input type="number" id="productStock" name="productStock" require>
+      <input type="number" id="productStock" name="productStock" required>
       <label class="createProduct-info" for="productImages">Foto del producto</label>
-      <input type="file" id="productImages" name="productImages" accept=".jpg , .png">
+      <input type="file" id="productImages" name="productImages" accept=".jpg , .png" multiple>
       <input id="createProduct-finish" type="submit" value="Crear producto">
     </form>
 
