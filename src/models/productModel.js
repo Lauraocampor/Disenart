@@ -44,7 +44,7 @@ const modelo = {
     //Crear un producto
 
     createProduct: (bodyData) => {
-        let products = model.findAll();
+        let products = modelo.findAll();
 
         const lastProdId = products[products.length - 1].id;
 
@@ -58,7 +58,7 @@ const modelo = {
         // Convertimos el Javascript en JSON
         const jsonData = JSON.stringify(products);
 
-        fs.writeFileSync(path.join(__dirname, model.route), jsonData, 'utf-8');
+        fs.writeFileSync(modelo.fileRoute, jsonData, 'utf-8');
 
         return newProduct;
     }

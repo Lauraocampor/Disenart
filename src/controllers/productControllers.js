@@ -55,7 +55,7 @@ const controller ={
 
         const createdProduct = productModel.createProduct(newProduct);
 
-        res.redirect('/product/' + createdProduct.id);
+        res.redirect('/products/' + createdProduct.id);
     }
 }
 

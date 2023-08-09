@@ -29,5 +29,15 @@
     "productDescription": "Taza de porcelana de capacidad 300ml. Nuestras tazas son de excelente calidad y terminación. Soportan microondas, resisten abrasivos y limpiadores de cocina. Añadí tu dibujo o imagen personalizada. ",
     "productStock": 50,
     "productImages": "#"
+  },
+  {
+    "id": 5,
+    "productName": "Camisetas",
+    "productColor": "#000000",
+    "productSize": "M",
+    "productPrice": "498",
+    "productDescription": "Camisetas con estampados",
+    "productStock": "2",
+    "productImages": ["1691552713164camiseta.jpg", "1691552713167camiseta2.jpg"]
   }
 ]
