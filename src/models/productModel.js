@@ -1,3 +1,4 @@
+const { json } = require('express');
 const fs = require('fs');
 const path = require('path');
 
@@ -51,6 +52,29 @@ const model = {
     fs.writeFileSync(path.join(__dirname, this.route), productsJSON);
 
     return products;
+    },
+
+    //Crear un producto
+
+    createProduct: (bodyData) => {
+        let products = model.findAll();
+
+        const lastProdId = products[products.length - 1].id;
+
+        let newProduct = {
+			id: lastProdId + 1,
+            ...bodyData
+		}
+
+        products.push(newProduct);
+
+        // Convertimos el Javascript en JSON
+        const jsonData = JSON.stringify(products);
+
+        fs.writeFileSync(path.join(__dirname, model.route), jsonData, 'utf-8');
+
+        return newProduct;
+    }
 }
 
-}
+module.exports = model;
