@@ -8,30 +8,20 @@
     <%- include('../partials/header', headerData) %>
   <!-- MAIN -->
     <main class="main-editProduct">
-        <form class="editProduct">
+        <form class="editProduct" action="/products/<%=product.id%>/editProduct?_method=PUT" method="post">
             <div class="editProduct-title-productName">
                 <label class="editProduct-name" for="productName">Nombre del producto</label>
-                <i class="fa-solid fa-pen-to-square editButton"></i></button>
-            </div>
-            <input id="editProduct-name" type="text" id="productName" name="productName" placeholder="Buzo Oversize" require>
+                     </div>
+            <input id="editProduct-name" type="text" value="<%- product.productName %>" name="productName" placeholder="Buzo Oversize" require>
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productColor1">Color</label>
-                <i class="fa-solid fa-pen-to-square editButton"></i></button>
-            </div>
+                       </div>
             <section class="editProduct-main-option">
                 <label for="productColor1" class="productColor">Color</label>
-                <input class="editProduct-option" type="color" id="productColor1" name="productColor1" require>
-
-                <label for="productColor2" class="productColor">Color</label>
-                <input class="editProduct-option" type="color" id="productColor2" name="productColor2">
-
-                <label for="productColor3" class="productColor">Color</label>
-                <input class="editProduct-option" type="color" id="productColor3" name="productColor3">
-
+                <input class="editProduct-option" type="color" value="<%- product.productColor %>" name="productColor" require>
             </section>
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productSize">Talle</label>
-                <i class="fa-solid fa-pen-to-square editButton"></i></button>
             </div>
             <section class="editProduct-main-option">
                 <input class="editProduct-option" type="checkbox" value="S"><label>S</label>
@@ -41,23 +31,21 @@
             </section>
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productPrice">Precio</label>
-                <i class="fa-solid fa-pen-to-square editButton"></i></button>
+
             </div>
-            <input type="number" id="productPrice" name="productPrice" placeholder="$15.200" require>
+            <input type="number" id="productPrice" value="<%- product.productPrice %>" name="productPrice" require>
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productDescription">Descripción</label>
-                <i class="fa-solid fa-pen-to-square editButton"></i></button>
+
             </div>
-            <textarea id="editProduct-information-product" type="text" id="productDescription" name="productDescription"
-            placeholder="Buzo de rústico calce holgado, disponible en 3 colores y del talle S al XL. Elegí tu estampa favorita para personalizarlo!" require></textarea>
+            <textarea id="editProduct-information-product" type="text"  name="productDescription"
+           require>  <%=product.productDescription %></textarea>
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productStock">Cantidad disponible</label>
-                <i class="fa-solid fa-pen-to-square editButton"></i></button>
-            </div>
-            <input type="number" id="productStock" name="productStock" placeholder="12">
+                            </div>
+            <input type="number" value="<%- product.productStock %>" name="productStock" placeholder="12">
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productImages">Foto del producto</label>
-                <i class="fa-solid fa-pen-to-square editButton"></i></button>
             </div>
             <input type="file" id="productImages" name="productImages" accept=".jpg , .png">
 

@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 
 
@@ -13,8 +14,10 @@ const controller ={
     createProduct:  (req,res) => {
         res.render('createProduct');
     },
-    editProduct:  (req,res) => {
-        res.render('editProduct');
+    editProduct:(req, res) => {
+        const product = productModel.findById(Number(req.params.id));
+
+        res.render('editProduct', { product });
     },
 
  // @GET /products 
@@ -36,7 +39,12 @@ const controller ={
 
     productModel.updateProduct(updatedProduct);
 
-    res.redirect('/products/' + updatedProduct.id + '/detail');
+    res.redirect('/products/details')
+    
+    
+      /* ' + updatedProduct.id + 
+     
+        detail');    */
 }
 }
 
