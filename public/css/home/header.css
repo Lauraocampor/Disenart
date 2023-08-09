@@ -61,8 +61,8 @@
   text-decoration: none;
   color: var(--darkBlue);
 }
-/* ----------------- */
 
+/* HAMBURGER ICON */
 .about__anchor {
   display: inline-block;
   width: 1.5rem;
@@ -141,18 +141,15 @@
   font-size: 1rem;
 }
 
-/* SEARCH MODAL */
+/* SEARCH MODAL GRAY BOX */
 .searchToggle {
-  visibility: hidden;
-}
-
-.searchToggleBox {
   visibility: hidden;
 }
 
 .header--searchModal {
   position: fixed;
   display: block;
+  justify-content: center;
   width: 120vw;
   height: 120vh;
   background-color: gray;
@@ -162,14 +159,33 @@
   left: 0;
 }
 
-/* SEARCH MODAL FORM */
+/* SEARCH MODAL BOX */
+
+.header--searchBoxPosition {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 130;
+}
+.searchToggleBox {
+  visibility: hidden;
+}
+
 .header--searchBox {
   width: 60vw;
+  min-width: 240px;
+  max-width: 500px;
   height: 20vh;
-  position: fixed;
-  left: 20vw;
-  top: 40vh;
-  z-index: 130;
+  min-height: 150px;
+  position: relative;
+  display: inline-block;
+  z-index: 150;
   background-color: var(--lightGreen);
   border: 2px solid var(--darkBlue);
   border-radius: 5px;
@@ -188,6 +204,7 @@
   color: var(--darkBlue);
 }
 
+/* SEARCH MODAL FORM */
 .header--formWrap {
   display: flex;
   flex-direction: column;
