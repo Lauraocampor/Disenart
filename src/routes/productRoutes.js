@@ -10,6 +10,7 @@ router.get('/editProduct/:id', productController.editProduct);
 
 
 // @GET - /products/:id/edit
-router.get('/:id/edit', productController.updateProduct);
+router.put('/:id/editProduct', productController.updateProduct);
+
 
 module.exports = router

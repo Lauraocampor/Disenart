@@ -1,5 +1,8 @@
 const path = require('path');
 
+
+const productModel = require('../models/productModel');
+
 const controller ={
     details: (req,res) => {
         res.render('details');
@@ -35,7 +38,6 @@ const controller ={
 
     res.redirect('/products/' + updatedProduct.id + '/detail');
 }
-
 }
 
 module.exports = controller
