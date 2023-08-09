@@ -12,6 +12,10 @@ document.getElementById("searchButton").addEventListener("click", () => {
   document.getElementById("searchModalBox").classList.toggle("searchToggleBox");
 }, false);
 
+document.getElementById("searchButton").addEventListener("click", () => {
+  document.getElementById("searchBoxPosition").classList.toggle("searchToggleBox");
+}, false);
+
 // CLOSE SEARCH SCRIPT
 document.getElementById("escapeButton").addEventListener("click", () => {
   document.getElementById("searchModal").classList.toggle("searchToggle");
@@ -19,4 +23,8 @@ document.getElementById("escapeButton").addEventListener("click", () => {
 
 document.getElementById("escapeButton").addEventListener("click", () => {
   document.getElementById("searchModalBox").classList.toggle("searchToggleBox");
+}, false);
+
+document.getElementById("escapeButton").addEventListener("click", () => {
+  document.getElementById("searchBoxPosition").classList.toggle("searchToggleBox");
 }, false);

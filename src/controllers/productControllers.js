@@ -1,4 +1,6 @@
 const path = require('path');
+
+
 const productModel = require('../models/productModel');
 
 const controller ={
@@ -17,33 +19,44 @@ const controller ={
 
  // @GET /products 
 
-    updateProduct: (req, res) => {
-        const id = Number(req.params.id);
-        const nuevosDatos = req.body;
+ updateProduct: (req, res) => {
+    let updatedProduct = {
+        id: Number(req.params.id)
+    };
 
-        productModel.updateById(id, nuevosDatos);
+    updatedProduct = {
+        ...updatedProduct,
+        ...req.body
+    };
 
-        res.redirect('/');
+    /* 
+        const updatedProduct = req.body;
+        updatedProduct.id = Number(req.params.id); 
+    */
+
+    productModel.updateProduct(updatedProduct);
+
+
+    res.redirect('/products/' + updatedProduct.id + '/detail');
     },
     store: (req, res) => {
 
         const filenames = req.files.map(file => file.filename);
 
-		let newProduct = {
-			productName: req.body.productName,
-			productColor: req.body.productColor,
-			productSize: req.body.productSize,
-			productPrice: req.body.productPrice,
-			productDescription: req.body.productDescription,
-			productStock: req.body.productStock,
-			productImages: filenames,
-		}
+        let newProduct = {
+            productName: req.body.productName,
+            productColor: req.body.productColor,
+            productSize: req.body.productSize,
+            productPrice: req.body.productPrice,
+            productDescription: req.body.productDescription,
+            productStock: req.body.productStock,
+            productImages: filenames,
+        }
 
-		const createdProduct = productModel.createProduct(newProduct);
+        const createdProduct = productModel.createProduct(newProduct);
 
         res.redirect('/product/' + createdProduct.id);
-	}
-
+    }
 }
 
 module.exports = controller

@@ -26,7 +26,7 @@ app.use(methodOverride('_method'));
 
 /* --- Routers --- */
 app.use('/', mainRouter);
-app.use('/product', productRouter);
+app.use('/products', productRouter);
 
 
 /* app.get('/productCart', (req,res) => {
