@@ -1,6 +1,6 @@
 # Resúmenes de Scrum Weekly
 
->20/07/2023
+>SPRINT #3
 
 Cada uno de los integrantes del equipo hizo un pequeño reporte sobre las tareas que tiene pendientes:
 

@@ -1,6 +1,6 @@
 # Resumenes de Scrum Retrospective
 
->05/08/2023
+>SPRINT #3
 
 El equipo #6 se reunió el cinco de agosto para revisar su desempeño en el sprint número tres. El siguiente reporte cristaliza las reflexiones de sus integrantes:
 
@@ -18,7 +18,7 @@ El equipo #6 se reunió el cinco de agosto para revisar su desempeño en el spri
 
 7. Seguiremos colaborando entre todos. Mantendremos las ceremonias scrum.
 
->20/07/2023
+>SPRINT #2
 
 El equipo #6 se reunió el veinte de julio para ver qué aprendizajes se generaron en el último sprint. A continuación se exponen las concluciones:
 
@@ -32,7 +32,7 @@ El equipo #6 se reunió el veinte de julio para ver qué aprendizajes se generar
 
 Acá concluyen las experiencias del sprint.
 
->01/07/2023
+>SPRINT #1
 
 El equipo #6 se reunió primero de julio para reunir experiencias con el objetivo de mejorar su eficiencia. Luego de un sesión de colaboración en el retrospective board, llegamos a las siguientes conclusiones:
 
