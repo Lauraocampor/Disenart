@@ -8,7 +8,7 @@
     <%- include('../partials/header', headerData) %>
   <!-- MAIN -->
     <main class="main-editProduct">
-        <form class="editProduct" action="/products/<%=product.id%>/editProduct?_method=PUT" method="post">
+        <form class="editProduct" action="/products/<%=product.id%>/editProduct?_method=PUT" method="post" enctype="multipart/form-data">
             <div class="editProduct-title-productName">
                 <label class="editProduct-name" for="productName">Nombre del producto</label>
                      </div>
@@ -17,17 +17,20 @@
                 <label class="editProduct-info" for="productColor1">Color</label>
                        </div>
             <section class="editProduct-main-option">
-                <label for="productColor1" class="productColor">Color</label>
-                <input class="editProduct-option" type="color" value="<%- product.productColor %>" name="productColor" require>
+                       <input class="editProduct-option" type="color" value="<%- product.productColor %>" name="productColor" require>
             </section>
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productSize">Talle</label>
             </div>
             <section class="editProduct-main-option">
-                <input class="editProduct-option" type="checkbox" value="S"><label>S</label>
-                <input class="editProduct-option" type="checkbox" value="M"><label>M</label>
-                <input class="editProduct-option" type="checkbox" value="L"><label>L</label>
-                <input class="editProduct-option" type="checkbox" value="XL"><label>XL</label>
+                <select name="productSize" required>
+                    <option value="" disabled selected>Talle</option>
+                    <option class="createProduct-option" value="S" <% if (product.productSize === 'S') { %>selected<% } %>>S</option>
+                    <option class="createProduct-option" value="M" <% if (product.productSize === 'M') { %>selected<% } %>>M</option>
+                    <option class="createProduct-option" value="L" <% if (product.productSize === 'L') { %>selected<% } %>>L</option>
+                    <option class="createProduct-option" value="XL" <% if (product.productSize === 'XL') { %>selected<% } %>>XL</option>
+                    <option class="createProduct-option" value="No Aplica" <% if (product.productSize === 'No Aplica') { %>selected<% } %>>No Aplica</option>
+                </select>
             </section>
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productPrice">Precio</label>
@@ -47,7 +50,7 @@
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productImages">Foto del producto</label>
             </div>
-            <input type="file" id="productImages" name="productImages" accept=".jpg , .png">
+            <input type="file" value="<%- product.productImages %>"name="productImages" accept=".jpg , .png" multiple>
 
             <input id="editProduct-finish" type="submit" value="Producto editado">
         </form>

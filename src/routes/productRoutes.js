@@ -25,7 +25,7 @@ router.get('/:id/editProduct', productController.editProduct);
 
 
 // @GET - /products/:id/edit
-router.put('/:id/editProduct', productController.updateProduct);
+router.put('/:id/editProduct', upload.any("productImages"), productController.updateProduct);
 
 
 module.exports = router
