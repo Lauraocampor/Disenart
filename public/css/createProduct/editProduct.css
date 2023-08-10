@@ -110,6 +110,10 @@ body {
 }
 
 
+.editProduct-main-option-size{
+    background-color: rgb(244, 236, 236);
+}
+
 
 #editProduct-finish {
     width: 80%;
