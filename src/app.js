@@ -36,6 +36,6 @@ app.use('/products', productRouter);
 
 
 
-app.listen(process.env.PORT || 3000) , () => {
-    console.log ('Servidor corriendo en puerto ' + process.env.PORT || 3000)
-};
+app.listen(process.env.PORT || 3000 , () => {
+    console.log ('Servidor corriendo en puerto ' + (process.env.PORT || 3000))
+});
