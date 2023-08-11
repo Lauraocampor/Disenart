@@ -21,10 +21,11 @@ router.get('/cart', productController.cart);
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/createProduct', productController.createProduct);
-router.get('/:id/editProduct', productController.editProduct);
+router.post('/', upload.any('productImages'), productController.store); 
 
 
 // @GET - /products/:id/edit
+router.get('/:id/editProduct', productController.editProduct);
 router.put('/:id/editProduct', upload.any("productImages"), productController.updateProduct);
 
 
