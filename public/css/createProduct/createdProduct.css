@@ -1,0 +1,198 @@
+body{
+    background-color: #bcd1bd;
+    color: #0d3a61;
+    font-family: 'Roboto Condensed'
+}
+
+
+.createdProduct-main{
+    width: 100vw;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.createdProduct-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.createdProduct-information-complete {
+    width:80%;
+    align-items: center;
+   
+}
+
+
+.createdProduct-images{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+
+.createdProduct-img{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    margin-bottom: 25px;
+    
+}
+
+.createdProduct-img-files{
+    padding: 5px;
+    width: 20%;
+    background-color: #eef0de;
+    border: 2px #0d3a61 solid;
+    margin: 5px;
+    transition: all 500ms;
+
+}
+
+.createdProduct-img-files:hover{
+    scale: 1.2;
+    background-color: none;
+    border: none;
+}
+
+
+
+.createdProduct-main-information {
+
+    justify-content:flex-start;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+#name{
+     font-size: 40px;
+     margin-bottom: 5px;
+     display: flex;
+    justify-content:center;
+    align-items: center;
+    font-family:'Nunito Sans';
+    font-weight:bolder;
+    margin-left: 10%;
+}
+
+.specific-info-createdProduct{
+    width: 80%;
+    font-size: 20px;
+    margin-bottom: 1px;
+    margin-top: 5px;
+    font-family: 'Roboto Condensed';
+    font-weight:bolder;
+    
+}
+
+
+.createdProduct-option{
+display: flex;
+margin-left: 10%;
+
+
+
+
+}
+
+.option{
+    margin: 2%;
+    background-color: #eef0de;
+    border: none;
+    color: #0d3a61;
+    font-family: 'Roboto Condensed';
+    font-size: 20px;
+}
+
+.createdProduct-color{
+    width: 60px;
+    height: 35px;
+    border: none;
+}
+
+
+
+#edit-delete-button{
+    width: 80%;
+    margin-left: 10%;
+    background-color: #bf9a51;
+    color: #0d3a61;
+    font-weight: bolder;
+    font-size: 20px;
+    border: none;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    transition: all 500ms;
+
+}
+
+#edit-delete-button:hover{
+    background-color: #0d3a61;
+    color: #bcd1bd;
+    scale: 1.2;
+}
+
+
+#information-createdProduct{
+    font-size: 12px;
+    margin-bottom: 20px;
+ 
+}
+
+
+/* -------------------------------------------------------------------- MEDIA QUERIES  */
+
+/* BREAK #2 */
+@media (min-width: 481px) {
+    #information-createdProduct{
+        font-size: 14px
+     
+    }
+    
+}
+
+/* BREAK #3 */
+@media (min-width: 769px) {
+    .specific-info-createdProduct{
+        font-size: 25px;
+    }
+
+    .createdProduct-option{
+        font-size: 20px;
+    }
+
+      #information-createdProduct{
+        font-size: 18px
+     
+    }
+
+    
+}
+
+/* BREAK #4 */
+@media (min-width: 1280px) {
+
+    .createdProduct-body{
+         display: flex;
+       flex-direction: row;
+       align-items: center;
+        justify-content: center;
+          width: 75%;
+          background-color: #eef0de;
+          margin: auto;
+          margin-top: 30px;   
+     
+    }
+
+    .createdProduct-option{
+        margin-left: 5%;
+        font-size: 24px;
+    
+    }
+}
+   
+

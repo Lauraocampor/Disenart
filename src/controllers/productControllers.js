@@ -8,7 +8,10 @@ const productModel = require('../models/productModel');
 
 const controller ={
     details: (req,res) => {
-        res.render('details');
+        const productiId = req.params.id;
+        const selectedProduct = productModel.findById(productiId);
+
+        res.render('createdProductDetail', {product : selectedProduct});
     },
     cart: (req,res) => {
         res.render('cart');
@@ -20,6 +23,12 @@ const controller ={
         const product = productModel.findById(Number(req.params.id));
 
         res.render('editProduct', { product });
+    },
+    userProduct: (req,res) => {
+        const productiId = req.params.id;
+        const selectedProduct = productModel.findById(productiId);
+
+        res.render('details', {product : selectedProduct});
     },
 
  // @GET /products 
@@ -63,14 +72,21 @@ updateProduct: (req, res) => {
 
    productModel.updateProduct(updatedProduct);
 
-
-   res.redirect('/products/details')
+//chequear este redirect cuando quede listo el listado de productos
+   res.redirect('/products/productList')
    
    
      /* ' + updatedProduct.id + 
     
        detail');    */
    },
+
+   deleteProduct: (req,res) => {
+    productModel.delete(Number(req.params.id));
+
+    //chequear este redirect cuando quede listo el listado de productos
+    res.redirect('/products/productList')
+   }
 }
 
 module.exports = controller

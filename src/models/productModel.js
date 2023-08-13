@@ -61,6 +61,21 @@ const modelo = {
         fs.writeFileSync(modelo.fileRoute, jsonData, 'utf-8');
 
         return newProduct;
+    },
+
+    //Eliminar un producto
+
+    delete: (id) => {
+        let products = modelo.findAll();
+
+        //filtro todos los productos que sean distintos al id pasado como parametro para poder eliminarlo
+        products - products.filter(productoActual => productoActual.id !== id);
+
+       //convertimos el js a JSON
+        const jsonProducts = JSON.stringify(products);
+
+        fs.writeFileSync(modelo.fileRoute, jsonProducts, 'utf-8');
+
     }
 }
 
