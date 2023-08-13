@@ -1,12 +1,38 @@
 # Resúmenes de Scrum Weekly
 
+>SPRINT #4
+
+Los integrantes del grupo número seis se reunieron para compartir sus avances respecto a las tareas del cuarto sprint.
+
+- Desiree Holowiniec
+
+1. Por el momento no había avanzado con mis tareas asignadas. Me dedicaré a realizarlas el fin de semana.
+2. Por el momento no he tenido dificultades, pero avisaré a mis compañeros en caso de que surjan.
+
+- Juan Diego Marín
+1. Hice el modal de búsqueda y terminé de implementar el menú de hamburguesa.
+2. Planeo implementar la página de resultados y las rutas pendientes. 
+3. De momento no he tenido ninguna dificultad.
+
+- Mercedes Lavezzolo 
+
+1. Terminé de crear la base de datos de los productos. 
+2. Armé los modelos, rutas, vista y controladores de la página EditProduct.
+3. Terminé mis tareas satisfactoriamente y no se me presentó dificultad alguna.
+
+- Laura Ocampo 
+
+1. Hice la base de datos de usuarios. 
+2. Realicé las rutas, modelos y controladores para la creación de productos. 
+3. No encontré dificultad para terminar las tareas asignadas.
+
 >SPRINT #3
 
 Cada uno de los integrantes del equipo hizo un pequeño reporte sobre las tareas que tiene pendientes:
 
-- Desiree Holoviniec
+- Desiree Holowiniec
 
-1. Seguimos avanzando con la actividad iniciada ayer en clase de<br> implementación de ejs, rutas y controladores.<br>
+1. Seguimos avanzando con la actividad iniciada ayer en clase de implementación de ejs, rutas y controladores.
 2. No inicié el formulario de crear y editar productos para ver si hay que sumar alguna funcionalidad la próxima clase.
 
 - Juan Diego Marín
