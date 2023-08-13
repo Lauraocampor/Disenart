@@ -4,13 +4,96 @@
   <%- include("../partials/head") %>
   <body class="bodyXL">
     <!-- HEADER -->
-    <% const headerData = {linkHead_01: {name: "Twitter", url: "https://twitter.com/"}, linkHead_02: {name: "Instagram", url: "https://instagram.com/"}, linkHead_03: {name: "Google Maps", url: "https://www.google.com/maps/"},  linkHead_04: {name: "Youtube", url: "https://youtube.com/"}, linkHead_05: {name: "Facebook", url: "https://facebook.com/"},}; %>
-    <%- include('../partials/header', headerData) %>
+    <% const headerData = {linkHead_01: {name: "Twitter", url:
+    "https://twitter.com/"}, linkHead_02: {name: "Instagram", url:
+    "https://instagram.com/"}, linkHead_03: {name: "Google Maps", url:
+    "https://www.google.com/maps/"}, linkHead_04: {name: "Youtube", url:
+    "https://youtube.com/"}, linkHead_05: {name: "Facebook", url:
+    "https://facebook.com/"},}; %> <%- include('../partials/header', headerData)
+    %>
     <!-- MAIN -->
-    <main></main>
+    <main class="modal-content-shopping modal_position">
+      <h2 class="modal-shopping_titulo">Este es tu carrito!</h2>
+      <div class="shopping-cart">
+        <section class="productos">
+          <article class="item">
+            <img
+              class="main-second-images-shopping"
+              src="/images/productos/Buzo/buzo1.jpg"
+            />
+            <p class="shopping-nombre">Buzo</p>
+            <div class="quantity-item">
+              <button class="button-up-quantity-item">
+                <i class="fa-solid fa-angle-up"></i>
+              </button>
+              <p class="shopping-cantidad">1</p>
+              <button class="button-down-quantity-item">
+                <i class="fa-solid fa-angle-down"></i>
+              </button>
+            </div>
+            <p class="shopping-precio">$3500</p>
+            <button class="delete-product">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </article>
+          <article class="item">
+            <img
+              class="main-second-images-shopping"
+              src="/images/productos/Termo/termo1.jpg"
+            />
+            <p class="shopping-nombre">Termo</p>
+            <div class="quantity-item">
+              <button class="button-up-quantity-item">
+                <i class="fa-solid fa-angle-up"></i>
+              </button>
+              <p class="shopping-cantidad">1</p>
+              <button class="button-down-quantity-item">
+                <i class="fa-solid fa-angle-down"></i>
+              </button>
+            </div>
+            <p class="shopping-precio">$15000</p>
+            <button class="delete-product">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </article>
+          <article class="item">
+            <img
+              class="main-second-images-shopping"
+              src="/images/productos/Remera/remera-h1.jpg"
+            />
+            <p class="shopping-nombre">Remera</p>
+            <div class="quantity-item">
+              <button class="button-up-quantity-item">
+                <i class="fa-solid fa-angle-up"></i>
+              </button>
+              <p class="shopping-cantidad">1</p>
+              <button class="button-down-quantity-item">
+                <i class="fa-solid fa-angle-down"></i>
+              </button>
+            </div>
+            <p class="shopping-precio">$7800</p>
+            <button class="delete-product">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </article>
+        </section>
+        <section class="shopping-total">
+          <div class="shopping-total-information">
+            <p class="shopping-total-precio">TOTAL</p>
+            <p class="shopping-total-precio">$26300</p>
+          </div>
+          <button id="shopping-pagar">Pagar</button>
+        </section>
+      </div>
+    </main>
     <!-- FOOTER -->
-    <% const footerData = {link_01: {name: "Twitter", url: "https://twitter.com/"}, link_02: {name: "Instagram", url: "https://instagram.com/"}, link_03: {name: "Google Maps", url: "https://www.google.com/maps/"},  link_04: {name: "Youtube", url: "https://youtube.com/"}, link_05: {name: "Facebook", url: "https://facebook.com/"},}; %>
-    <%- include("../partials/footer", footerData); %>
+    <% const footerData = {link_01: {name: "Twitter", url:
+    "https://twitter.com/"}, link_02: {name: "Instagram", url:
+    "https://instagram.com/"}, link_03: {name: "Google Maps", url:
+    "https://www.google.com/maps/"}, link_04: {name: "Youtube", url:
+    "https://youtube.com/"}, link_05: {name: "Facebook", url:
+    "https://facebook.com/"},}; %> <%- include("../partials/footer",
+    footerData); %>
     <!-- SCRIPT -->
     <script src="../js/main.js"></script>
     <script src="../js/header.js"></script>
