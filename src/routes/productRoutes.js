@@ -33,7 +33,7 @@ router.put('/:id/editProduct', upload.any("productImages"), productController.up
 router.delete('/:id/delete', productController.deleteProduct);
 
 // @GET - products/:id -> products/1 visualizacion de productos del lado del cliente
-router.get('/:id', productController.userProduct)
+router.get('/:id',upload.any('productImages'), productController.userProduct)
 
 
 module.exports = router
