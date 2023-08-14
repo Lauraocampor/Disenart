@@ -25,10 +25,9 @@ const controller ={
         res.render('editProduct', { product });
     },
     userProduct: (req,res) => {
-        const productiId = req.params.id;
-        const selectedProduct = productModel.findById(productiId);
+        const product = productModel.findById(Number(req.params.id));
 
-        res.render('details', {product : selectedProduct});
+        res.render('details', {product});
     },
 
  // @GET /products 
