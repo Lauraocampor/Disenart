@@ -1,24 +1,30 @@
+<% const footerData = {link_01: {name: "Twitter", url:
+"https://twitter.com/"}, link_02: {name: "Instagram", url:
+"https://instagram.com/"}, link_03: {name: "Google Maps", url:
+"https://www.google.com/maps/"}, link_04: {name: "Youtube", url:
+"https://youtube.com/"}, link_05: {name: "Facebook", url:
+"https://facebook.com/"},}; %>
 <footer class="footerComponent">
   <div class="footerComponent__row">
     <ul class="ul__footer">
       <li>
-        <a href=<%= link_01.url %> class="linkStyle linkStyle_transition"><%= link_01.name %></a>
+        <a href=<%= footerData.link_01.url %> class="linkStyle linkStyle_transition"><%= footerData.link_01.name %></a>
       </li>
       <li>
-        <a href=<%= link_02.url %> class="linkStyle linkStyle_transition"><%= link_02.name %></a>
+        <a href=<%= footerData.link_02.url %> class="linkStyle linkStyle_transition"><%= footerData.link_02.name %></a>
       </li>
       <li>
-        <a href=<%= link_03.url %> class="linkStyle linkStyle_transition"><%= link_03.name %></a>
+        <a href=<%= footerData.link_03.url %> class="linkStyle linkStyle_transition"><%= footerData.link_03.name %></a>
       </li>
     </ul>
   </div>
   <div class="footerComponent__row">
     <ul class="ul__footer">
       <li>
-        <a href=<%= link_04.url %> class="linkStyle linkStyle_transition"><%= link_04.name %></a>
+        <a href=<%= footerData.link_04.url %> class="linkStyle linkStyle_transition"><%= footerData.link_04.name %></a>
       </li>
       <li>
-        <a href=<%= link_05.url %> class="linkStyle linkStyle_transition"><%= link_05.name %></a>
+        <a href=<%=footerData.link_05.url %> class="linkStyle linkStyle_transition"><%= footerData.link_05.name %></a>
       </li>
     </ul>
   </div>
