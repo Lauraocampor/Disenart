@@ -18,15 +18,24 @@
   border-radius: 5px;
   border: 2px solid var(--oliveCream);
   background-color: var(--oliveCream);
-  margin-top: 3vh;
+  margin: 2vh;
+  box-shadow: -5px 5px 5px gray;
 }
 
 .itemBox--anchor {
-  width: 50%;
-  border: 1px solid black;
-  border-radius: 5px;
+  width: 50%; 
+  background-color: gray;
 }
 
 .itemBox--image {
   width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 3px;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.itemBox--image:hover {
+  opacity: 0.7;
 }
