@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('../partials/head') %>
+  <body class="bodyXL">
+    <!-- HEADER -->
+    <% const headerData = {linkHead_01: {name: "Tazas", url:
+    "http://localhost:3000/products/searching/searchResults/Taza"}, linkHead_02:
+    {name: "Termos", url:
+    "http://localhost:3000/products/searching/searchResults/Termo"},
+    linkHead_03: {name: "Buzos", url:
+    "http://localhost:3000/products/searching/searchResults/Buzo"}, linkHead_04:
+    {name: "Remeras", url:
+    "http://localhost:3000/products/searching/searchResults/Remera"},
+    linkHead_05: {name: "Facebook", url: "https://facebook.com/"},}; %> <%-
+    include('../partials/header', headerData) %>
+    <!-- MAIN -->
+    <main class="itemBox">
+      <% for( let i = 0; i < searchResults.length; i++ ) { %>
+      <article class="itemBox--product">
+        <h2><%= searchResults[i].productName %></h2>
+        <a
+          href="http://localhost:3000/products/<%= searchResults[i].id %>/details"
+          class="itemBox--anchor"
+        >
+          <img
+            src="/../images/productos/<%= searchResults[i].productImages[0] %>"
+            alt="<%= searchResults[i].productName %>"
+            class="itemBox--image"
+          />
+        </a>
+        <p><%= searchResults[i].productPrice %></p>
+      </article>
+      <% } %>
+    </main>
+    <!-- FOOTER -->
+    <% const footerData = {link_01: {name: "Twitter", url:
+    "https://twitter.com/"}, link_02: {name: "Instagram", url:
+    "https://instagram.com/"}, link_03: {name: "Google Maps", url:
+    "https://www.google.com/maps/"}, link_04: {name: "Youtube", url:
+    "https://youtube.com/"}, link_05: {name: "Facebook", url:
+    "https://facebook.com/"},}; %> <%- include("../partials/footer",
+    footerData); %>
+    <!-- SCRIPT -->
+    <script src="/../js/main.js"></script>
+    <script src="/../js/header.js"></script>
+  </body>
+</html>

@@ -29,6 +29,10 @@ const controller ={
 
         res.render('details', {product});
     },
+    searchResults: function(req, res) {
+      const searchResults = productModel.categoryResults(req.params.category);
+      res.render("searchResults", {searchResults});
+    },
 
  // @GET /products 
 

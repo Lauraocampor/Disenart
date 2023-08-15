@@ -20,6 +20,9 @@
 @import "/css/createProduct/editProduct.css";
 @import "/css/createProduct/createdProduct.css";
 
+/* Estilos de la página de resultados de búsqueda  */
+@import "/css/searchResults/searchResults.css";
+
 /* Fonts aplicadas de manera global */
 * {
     font-family: 'Roboto Condensed', 'Nunito Sans',  sans-serif;

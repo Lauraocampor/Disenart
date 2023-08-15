@@ -35,5 +35,7 @@ router.delete('/:id/delete', productController.deleteProduct);
 // @GET - products/:id -> products/1 visualizacion de productos del lado del cliente
 router.get('/:id',upload.any('productImages'), productController.userProduct)
 
+// @GET - LISTA DE PRODUCTS
+router.get("/searching/searchResults/:category?", productController.searchResults);
 
 module.exports = router

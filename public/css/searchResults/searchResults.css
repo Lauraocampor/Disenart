@@ -1,0 +1,32 @@
+.itemBox {
+  width: 100%;
+  height: auto;
+  max-height: max-content;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.itemBox--product {
+  width: 30vw;
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  border-radius: 5px;
+  border: 2px solid var(--oliveCream);
+  background-color: var(--oliveCream);
+  margin-top: 3vh;
+}
+
+.itemBox--anchor {
+  width: 50%;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.itemBox--image {
+  width: 100%;
+}
