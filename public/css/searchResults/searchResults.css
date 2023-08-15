@@ -1,8 +1,9 @@
 .itemBox {
   width: 100%;
+  min-width: 380px;
   height: auto;
-  max-height: max-content;
   min-height: 100px;
+  max-height: max-content;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -11,6 +12,7 @@
 
 .itemBox--product {
   width: 30vw;
+  max-width: 350px;
   display: inline-flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -38,4 +40,18 @@
 
 .itemBox--image:hover {
   opacity: 0.7;
+}
+
+@media (min-width: 600px) {
+  .itemBox {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 1200px) {
+  .itemBox {
+    height: 100%;
+  }
 }
