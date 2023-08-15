@@ -87,6 +87,22 @@ const modelo = {
     const productsFiltered = products.filter((x) => x.productName.toLowerCase() === category.toLowerCase());
     return productsFiltered;
   },
+  // SEARCH RESULTS BY QUERY
+  valueCheck: function(object, value) {
+    const valueArray = Object.values(object);
+    const regex = new RegExp(value, 'i'); 
+    for (let i = 0; i < valueArray.length; i++) {
+      if (typeof valueArray[i] === 'string' && regex.test(valueArray[i])) {
+          return true;
+      }
+    }
+    return false;
+  },
+  queryResults: function (query) {
+    const products = modelo.findAll();
+    const productsFiltered = products.filter((x) => modelo.valueCheck(x, query));
+    return productsFiltered;
+  }
 };
 
 module.exports = modelo;

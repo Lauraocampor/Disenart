@@ -14,6 +14,11 @@
     linkHead_05: {name: "Facebook", url: "https://facebook.com/"},}; %> <%-
     include('../partials/header', headerData) %>
     <!-- MAIN -->
+    <% if (searchResults.length === 0) { %>
+    <main class="itemBox">
+      <p class="itemBox--searchError">Lo sentimos, no encontramos información relacionada a tu búsqueda</p>
+    </main>
+    <% } else { %>
     <main class="itemBox">
       <% for( let i = 0; i < searchResults.length; i++ ) { %>
       <article class="itemBox--product">
@@ -32,6 +37,8 @@
       </article>
       <% } %>
     </main>
+    <% } %>
+
     <!-- FOOTER -->
     <% const footerData = {link_01: {name: "Twitter", url:
     "https://twitter.com/"}, link_02: {name: "Instagram", url:
