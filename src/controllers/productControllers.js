@@ -82,7 +82,7 @@ const controller = {
     productModel.delete(Number(req.params.id));
 
     //chequear este redirect cuando quede listo el listado de productos
-    res.redirect("/products/productList");
+    res.redirect("/products//searching/searchResults");
   },
 };
 

@@ -78,7 +78,7 @@ if (updatedProduct.productImages && updatedProduct.productImages.length > 0) {
     let products = modelo.findAll();
 
     //filtro todos los productos que sean distintos al id pasado como parametro para poder eliminarlo
-    products - products.filter((productoActual) => productoActual.id !== id);
+    products = products.filter((productoActual) => productoActual.id !== id);
 
     //convertimos el js a JSON
     const jsonProducts = JSON.stringify(products);
