@@ -19,17 +19,20 @@
     margin: auto;
 }
 
-
+#buttonBackHome{
+    width: 80vw;
+}
 #backHome{
-    width: 80%;
+    width: 100%;
     background-color: #bf9a51;
     color: #0d3a61;
     font-weight: bolder;
     font-size: 20px;
     border: none;
-    margin-bottom: 20px;
     border-radius: 5px;
     transition: all 500ms;
+    margin: auto;
+    
 
 }
 
@@ -80,7 +83,7 @@
      }
     
  
-    #backHome{
+    #buttonBackHome{
         width: 30%;
     }
 }
