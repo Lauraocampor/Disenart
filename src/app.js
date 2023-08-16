@@ -28,6 +28,9 @@ app.use(methodOverride('_method'));
 app.use('/', mainRouter);
 app.use('/products', productRouter);
 
+app.use((req,res)=>{
+  res.render('404')
+})
 
 /* app.get('/productCart', (req,res) => {
   res.sendFile (path.join(__dirname, '/views/productCart.html'));

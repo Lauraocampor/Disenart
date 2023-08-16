@@ -23,6 +23,9 @@
 /* Estilos de la página de resultados de búsqueda  */
 @import "/css/searchResults/searchResults.css";
 
+/* Estilos de la página 404 not found  */
+@import "/css/404/404.css";
+
 /* Fonts aplicadas de manera global */
 * {
     font-family: 'Roboto Condensed', 'Nunito Sans',  sans-serif;
