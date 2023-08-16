@@ -1,3 +1,23 @@
+.search-title {
+  font-size: 35px;
+  color: #0d3a61;
+  font-family: 'Nunito Sans';
+  padding-top: 15px;
+  margin-left: 10%;
+
+}
+
+
+.search-nameProduct{
+  font-size: 1.5em;
+  color: #0d3a61;
+  font-family: 'Nunito Sans';
+  padding-top: 1%;
+  font-weight: bolder;
+
+}
+
+
 .itemBox {
   width: 100%;
   min-width: 380px;
@@ -11,7 +31,7 @@
 }
 
 .itemBox--product {
-  width: 30vw;
+  width: 80%;
   max-width: 350px;
   display: inline-flex;
   flex-direction: column;
@@ -21,11 +41,21 @@
   border: 2px solid var(--oliveCream);
   background-color: var(--oliveCream);
   margin: 2vh;
-  box-shadow: -5px 5px 5px gray;
+  transition: box-shadow 0.10s;
 }
 
+.itemBox--product:hover{
+  box-shadow: 0px 0px 4px 4px rgba(191, 154, 81, 0.2);
+}
+
+.itemBox--product:hover .itemBox--image {
+  opacity: 0.7;
+}
+
+
+
 .itemBox--anchor {
-  width: 50%; 
+  width: 70%; 
   background-color: gray;
 }
 
@@ -38,14 +68,23 @@
   transition: opacity 0.5s;
 }
 
-.itemBox--image:hover {
-  opacity: 0.7;
+
+
+.price-description{
+  color: var(--darkBlue);
+  font-size: 1.5em;
+  font-family: 'Nunito Sans';
 }
+
 
 .itemBox--searchError {
   font-size: 2rem;
   color: var(--darkBlue);
-}
+}  
+
+
+
+
 @media (min-width: 600px) {
   .itemBox {
     flex-direction: row;
@@ -55,7 +94,5 @@
 }
 
 @media (min-width: 1200px) {
-  .itemBox {
-    height: 100%;
-  }
+
 }

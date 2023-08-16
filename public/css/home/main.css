@@ -16,10 +16,9 @@ main {
     font-size: 35px;
     color: #0d3a61;
     font-family: 'Nunito Sans';
-    margin-top: 0px;
     padding-top: 15px;
     margin-left: 10%;
-    padding-bottom: 15px;
+
 }
 
 .home-product-wrap {
@@ -191,10 +190,11 @@ main {
     .product-links-content li a{
         font-family: 'Nunito Sans';
         transition: all 500ms;
+        color:#0d3a61
     }
 
     .product-links-content li a:visited{
-        color: #0d3a61;
+        color: #445345;
     }
     .product-links-content li a:hover{
         background-color: #bf9a51;
@@ -219,6 +219,19 @@ main {
 }
 
 @media(min-width: 1281px) {
+
+    .home-title {
+        font-size: 35px;
+        color: #0d3a61;
+        font-family: 'Nunito Sans';
+        margin-top: 0px;
+        padding-top: 15px;
+        margin-left: 10%;
+        padding-bottom: 15px;
+    }
+
+
+
 
     .home-product-wrap{
         width: 85vw;

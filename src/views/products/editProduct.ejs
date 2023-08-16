@@ -11,16 +11,19 @@
         <form class="editProduct" action="/products/<%=product.id%>/editProduct?_method=PUT" method="post" enctype="multipart/form-data">
             <div class="editProduct-title-productName">
                 <label class="editProduct-name" for="productName">Nombre del producto</label>
+                <i class="fa-solid fa-pen-to-square editButton"></i></button>
                      </div>
             <input id="editProduct-name" type="text" value="<%- product.productName %>" name="productName" placeholder="Buzo Oversize" require>
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productColor1">Color</label>
+                <i class="fa-solid fa-pen-to-square editButton"></i></button>
                        </div>
             <section class="editProduct-main-option">
                        <input class="editProduct-option" type="color" value="<%- product.productColor %>" name="productColor" require>
             </section>
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productSize">Talle</label>
+                <i class="fa-solid fa-pen-to-square editButton"></i></button>
             </div>
             <section class="editProduct-main-option">
                 <select class="editProduct-main-option-size" name="productSize" required>
@@ -34,21 +37,23 @@
             </section>
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productPrice">Precio</label>
-
+                <i class="fa-solid fa-pen-to-square editButton"></i></button>
             </div>
             <input type="number" id="productPrice" value="<%- product.productPrice %>" name="productPrice" require>
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productDescription">Descripción</label>
-
+                <i class="fa-solid fa-pen-to-square editButton"></i></button>
             </div>
             <textarea id="editProduct-information-product" type="text"  name="productDescription"
            require>  <%=product.productDescription %></textarea>
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productStock">Cantidad disponible</label>
+                <i class="fa-solid fa-pen-to-square editButton"></i></button>
                             </div>
             <input type="number" value="<%- product.productStock %>" name="productStock" placeholder="12">
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productImages">Foto del producto</label>
+                <i class="fa-solid fa-pen-to-square editButton"></i></button>
             </div>
             <input type="file" value="<%- product.productImages %>"name="productImages" accept=".jpg , .png" multiple>
 

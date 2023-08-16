@@ -36,8 +36,13 @@ const modelo = {
       (productoActual) => productoActual.id === updatedProduct.id
     );
 
-    // Modificar el elemento del array en ese índice, por el que nos pasaron por parámetro
-    products[prodIndex] = updatedProduct;
+
+// Verificar si se proporcionaron nuevas imágenes
+if (updatedProduct.productImages && updatedProduct.productImages.length > 0) {
+  // Modificar el elemento del array en ese índice con las nuevas imágenes
+  products[prodIndex].productImages = updatedProduct.productImages;
+}
+
 
     // Convertir este nuevo array en JSON
     const productsJson = JSON.stringify(products);

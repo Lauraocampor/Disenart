@@ -75,12 +75,8 @@ const controller = {
     productModel.updateProduct(updatedProduct);
 
     //chequear este redirect cuando quede listo el listado de productos
-    res.redirect("/products/productList");
-
-    /* ' + updatedProduct.id + 
-    
-       detail');    */
-  },
+    res.redirect("/products/" + updatedProduct.id )
+    },
 
   deleteProduct: (req, res) => {
     productModel.delete(Number(req.params.id));

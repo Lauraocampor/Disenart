@@ -5,6 +5,7 @@
     <!-- HEADER -->
     <%- include('../partials/header') %>
     <!-- MAIN -->
+    <h2 class="search-title">DISEÑART</h2>
     <% if (searchResults.length === 0) { %>
     <main class="itemBox">
       <p class="itemBox--searchError">Lo sentimos, no encontramos información relacionada a tu búsqueda</p>
@@ -13,7 +14,7 @@
     <main class="itemBox">
       <% for( let i = 0; i < searchResults.length; i++ ) { %>
       <article class="itemBox--product">
-        <h2><%= searchResults[i].productName %></h2>
+        <h2 class="search-nameProduct"><%= searchResults[i].productName %></h2>
         <a
           href="http://localhost:3000/products/<%= searchResults[i].id %>/details"
           class="itemBox--anchor"
@@ -24,7 +25,7 @@
             class="itemBox--image"
           />
         </a>
-        <p><%= searchResults[i].productPrice %></p>
+        <p class="price-description"></pclass>$<%= searchResults[i].productPrice %></p>
       </article>
       <% } %>
     </main>
