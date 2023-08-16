@@ -14,17 +14,19 @@
     <main class="itemBox">
       <% for( let i = 0; i < searchResults.length; i++ ) { %>
       <article class="itemBox--product">
-        <h2 class="search-nameProduct"><%= searchResults[i].productName %></h2>
+
         <a
           href="http://localhost:3000/products/<%= searchResults[i].id %>/details"
           class="itemBox--anchor"
         >
-          <img
-            src="/../images/productos/<%= searchResults[i].productImages[0] %>"
-            alt="<%= searchResults[i].productName %>"
-            class="itemBox--image"
-          />
+        <img
+        src="/../images/productos/<%= searchResults[i].productImages[0] %>"
+        alt="<%= searchResults[i].productName %>"
+        class="itemBox--image"
+        />
+        <h4 class="search-buyBottom">COMPRAR</h4>
         </a>
+         <h2 class="search-nameProduct"><%= searchResults[i].productName %></h2>
         <p class="price-description"></pclass>$<%= searchResults[i].productPrice %></p>
       </article>
       <% } %>
