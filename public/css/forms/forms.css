@@ -18,7 +18,7 @@
     display: block; /* Ocultar inicialmente el modal */
 }
 #register-login-ejs__transformXY{
-    transform: translateY(5%);
+    transform: translateY(2%);
 }
 
 /* MODALS */
@@ -146,8 +146,11 @@
 }
 
 /* ADICIONALES REGISTER */
+.title_register{
+    padding-top: 0;
+}
 .register-modal__transformXY{
-    transform: translateY(10%);
+    transform: translateY(2%);
 }
 .datefields{
     display: flex;

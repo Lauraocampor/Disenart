@@ -4,89 +4,119 @@
     "firstName": "Laura",
     "lastName": "Ocampo",
     "email": "laura_ocampo5@hotmail.com",
-    "password": "lD3!k<asOk",
+    "password": "$2a$04$quGGnxdnFAcCdLbuZtsczuqkvslq199oCnuu5aXYvZ5.O6SZs5L0K",
     "category": "Admin",
-    "image": "default.jpg"
+    "avatar": "default.jpg",
+    "day": "9",
+    "month": "10",
+    "year": "1999"
   },
   {
     "id": 2,
     "firstName": "Mercedes",
     "lastName": "Lavezzolo",
     "email": "mer.lavezzolo@gmail.com",
-    "password": "xD4(_)nY@",
+    "password": "$2a$04$TDFc/oUKvBmEwMbQOdOCZ.h2sZl0uQsDgV8k3gvm2kd6LgiZ/4N3S",
     "category": "Admin",
-    "image": "default.jpg"
+    "avatar": "default.jpg",
+    "day": "9",
+    "month": "10",
+    "year": "1999"
   },
   {
     "id": 3,
     "firstName": "Desirée",
     "lastName": "Holowiniec",
     "email": "holowiniec.desiree@gmail.com",
-    "password": "rW8#n(zJ`L8To",
+    "password": "$2a$04$hi5IyELIawEjnuoxJBZ8jucTMqG1rn3C8H09/dkQIM5tMnZm45PJm",
     "category": "Admin",
-    "image": "default.jpg"
+    "avatar": "default.jpg",
+    "day": "9",
+    "month": "10",
+    "year": "1999"
   },
   {
     "id": 4,
     "firstName": "Juan",
     "lastName": "Marín",
     "email": "juandm1109@gmail.com",
-    "password": "oL9@?}x6Y(",
+    "password": "$2a$04$HBaZxKsXQOz2KdPsN8F4COnlVu7L.am2uXKCmfJyQIAp7ZxropeSa",
     "category": "Admin",
-    "image": "default.jpg"
+    "avatar": "default.jpg",
+    "day": "9",
+    "month": "10",
+    "year": "1999"
   },
   {
     "id": 5,
     "firstName": "Carlynne",
     "lastName": "Kebbell",
     "email": "ckebbell4@blinklist.com",
-    "password": "bS2=_=5kh.5",
+    "password": "$2a$04$qBjWPqZZdud9GBOR6EOUl.0VrktzUKX0FClb7b8FYZ/eAF/cSXkUu",
     "category": "Customer",
-    "image": "default.jpg"
+    "avatar": "default.jpg",
+    "day": "9",
+    "month": "10",
+    "year": "1999"
   },
   {
     "id": 6,
     "firstName": "Donni",
     "lastName": "Banstead",
     "email": "dbanstead5@parallels.com",
-    "password": "nW3=6tB@qW",
+    "password": "$2a$04$94F7Yl/y051xKDQp7T0Yv.1z7G7Tlp.pttk8fdiPhDt60nADboBci",
     "category": "Customer",
-    "image": "default.jpg"
+    "avatar": "default.jpg",
+    "day": "9",
+    "month": "10",
+    "year": "1999"
   },
   {
     "id": 7,
     "firstName": "Freedman",
     "lastName": "Goldine",
     "email": "fgoldine6@taobao.com",
-    "password": "uV2+*n@OTjN$pt",
+    "password": "$2a$04$AdoU8jUGoFaVcgoJdCJNY.RbJ0CrYNcH9roGMht11oLVdwL4OAQ.2",
     "category": "Customer",
-    "image": "default.jpg"
+    "avatar": "default.jpg",
+    "day": "9",
+    "month": "10",
+    "year": "1999"
   },
   {
     "id": 8,
     "firstName": "Sergeant",
     "lastName": "Eagle",
     "email": "seagle7@ftc.gov",
-    "password": "oQ2!?5|?ua~*W)P",
+    "password": "$2a$04$GbIQirv/5VYG9/QMwvcJHeBMKRuD73uhZQTGXTzsCIZpoMhDiRKca",
     "category": "Customer",
-    "image": "default.jpg"
+    "avatar": "default.jpg",
+    "day": "9",
+    "month": "10",
+    "year": "1999"
   },
   {
     "id": 9,
     "firstName": "Roddy",
     "lastName": "Iannello",
     "email": "riannello8@nydailynews.com",
-    "password": "zV8*@U`!}",
+    "password": "$2a$04$UfNQXU1xVyde13SizNF9oee53neyFElXPssVN.AG87LHY/nVOaYVO",
     "category": "Customer",
-    "image": "default.jpg"
+    "avatar": "default.jpg",
+    "day": "9",
+    "month": "10",
+    "year": "1999"
   },
   {
     "id": 10,
     "firstName": "Belinda",
     "lastName": "Shearme",
     "email": "bshearme9@github.io",
-    "password": "qS1$7w.qC`.t}g",
+    "password": "$2a$04$tUUY0LK9OicVH13jRM3uIu0I6bdZHtG8XAQq3Nymwqkq803euoDEy",
     "category": "Customer",
-    "image": "default.jpg"
+    "avatar": "default.jpg",
+    "day": "9",
+    "month": "10",
+    "year": "1999"
   }
 ]
