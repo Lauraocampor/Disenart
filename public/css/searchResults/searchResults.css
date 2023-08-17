@@ -73,9 +73,9 @@
 
 
 .search-buyBottom{
-background-color: var(--darkBlue);
   font-size: 1.5em;
-  color: var(--oliveCream);
+  background-color: #bf9a51;
+  color: #0d3a61;
   font-family: 'Nunito Sans';
   font-weight: bolder;
   margin: 5% 2%;
@@ -84,12 +84,17 @@ background-color: var(--darkBlue);
   position: absolute;
  z-index: 10;
  top: 150px;
- right: 75px;
+ right: 70px;
  text-align: center;
 opacity: 0;
-transition: opacity 0.5s;
+transition: opacity 0.5s, scale 1s, background-color 1s, color 1s;
 }
 
+.search-buyBottom:hover{
+  background-color: #0d3a61;
+  color: #bcd1bd;
+  scale: 1.2;
+}
 
 .price-description{
   color: var(--darkBlue);
