@@ -4,48 +4,81 @@
   <%- include("../partials/head") %>
   <body class="bodyXL">
     <!-- HEADER -->
-    <% const headerData = {linkHead_01: {name: "Twitter", url: "https://twitter.com/"}, linkHead_02: {name: "Instagram", url: "https://instagram.com/"}, linkHead_03: {name: "Google Maps", url: "https://www.google.com/maps/"},  linkHead_04: {name: "Youtube", url: "https://youtube.com/"}, linkHead_05: {name: "Facebook", url: "https://facebook.com/"},}; %>
-    <%- include('../partials/header', headerData) %>
-  <!-- MAIN -->
-  <main class="main-createProduct">
-    <form class="createProduct" action="/products" method="post" enctype="multipart/form-data">
-      <label class="createProduct-name" for="productName">Nombre del producto</label>
-      <input id="createProduct-name" type="text" id="productName" name="productName" required>
-
-      <label class="createProduct-info" for="productColor">Color</label>
-      <section class="createProduct-main-option">
-        <input class="createProduct-option" type="color" id="productColor" name="productColor" required>
-      </section>
-      <label class="createProduct-info" for="productSize">Talle</label>
-      <section class="createProduct-main-option">
-        <select name="productSize" id="size" required>
-          <option value="day" selected disabled>Talle</option>
-          <option class="createProduct-option" value="S">S</option>
-          <option class="createProduct-option" value="M">M</option>
-          <option class="createProduct-option" value="L">L</option>
-          <option class="createProduct-option" value="XL">XL</option>
-          <option class="createProduct-option" value="No Aplica">No Aplica</option>
-        </select>
-      </section>
-      <label class="createProduct-info" for="productPrice">Precio</label>
-      <input type="number" id="productPrice" name="productPrice" required>
-      <label class="createProduct-info" for="productDescription">Descripción</label>
-      <input id="createProduct-information-product" type="text" id="productDescription" name="productDescription"
-        require>
-      <label class="createProduct-info" for="productStock">Cantidad disponible</label>
-      <input type="number" id="productStock" name="productStock" required>
-      <label class="createProduct-info" for="productImages">Foto del producto</label>
-      <input type="file" id="productImages" name="productImages" accept=".jpg , .png" multiple>
-      <input id="createProduct-finish" type="submit" value="Crear producto">
-    </form>
-
-  </main>
-<!-- FOOTER -->
-<% const footerData = { link_01: {name: "Twitter", url: "https://twitter.com/"}, link_02: {name: "Instagram", url: "https://instagram.com/"}, link_03: {name: "Google Maps", url: "https://www.google.com/maps/"},  link_04: {name: "Youtube", url: "https://youtube.com/"}, link_05: {name: "Facebook", url: "https://facebook.com/"},} %>
-<%- include("../partials/footer", footerData); %>
+    <%- include('../partials/header') %>
+    <!-- MAIN -->
+    <main class="main-createProduct">
+      <form
+        class="createProduct"
+        action="/products"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <label class="createProduct-name" for="productName"
+          >Nombre del producto</label
+        >
+        <input
+          id="createProduct-name"
+          type="text"
+          id="productName"
+          name="productName"
+          required
+        />
+        <label class="createProduct-info" for="productColor">Color</label>
+        <section class="createProduct-main-option">
+          <input
+            class="createProduct-option"
+            type="color"
+            id="productColor"
+            name="productColor"
+            required
+          />
+        </section>
+        <label class="createProduct-info" for="productSize">Talle</label>
+        <section class="createProduct-main-option">
+          <select name="productSize" id="size" required>
+            <option value="day" selected disabled>Talle</option>
+            <option class="createProduct-option" value="S">S</option>
+            <option class="createProduct-option" value="M">M</option>
+            <option class="createProduct-option" value="L">L</option>
+            <option class="createProduct-option" value="XL">XL</option>
+            <option class="createProduct-option" value="No Aplica">
+              No Aplica
+            </option>
+          </select>
+        </section>
+        <label class="createProduct-info" for="productPrice">Precio</label>
+        <input type="number" id="productPrice" name="productPrice" required />
+        <label class="createProduct-info" for="productDescription"
+          >Descripción</label
+        >
+        <input
+          id="createProduct-information-product"
+          type="text"
+          id="productDescription"
+          name="productDescription"
+          require
+        />
+        <label class="createProduct-info" for="productStock"
+          >Cantidad disponible</label
+        >
+        <input type="number" id="productStock" name="productStock" required />
+        <label class="createProduct-info" for="productImages"
+          >Foto del producto</label
+        >
+        <input
+          type="file"
+          id="productImages"
+          name="productImages"
+          accept=".jpg , .png"
+          multiple
+        />
+        <input id="createProduct-finish" type="submit" value="Crear producto" />
+      </form>
+    </main>
+    <!-- FOOTER -->
+    <%- include("../partials/footer"); %>
     <!-- SCRIPT -->
-    <script src="js/main.js"></script>
-    <script src="js/header.js"></script>
-</body>
-
+    <script src="/js/main.js"></script>
+    <script src="/js/header.js"></script>
+  </body>
 </html>
