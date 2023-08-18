@@ -5,16 +5,22 @@
     <!-- HEADER -->
     <%- include('../partials/header') %>
     <!-- MAIN -->
-    <h2 class="search-title">DISEÑART</h2>
+    <!-- <h2 class="search-title">DISEÑART</h2> -->
     <% if (searchResults.length === 0) { %>
     <main class="itemBox">
-      <p class="itemBox--searchError">Lo sentimos, no encontramos información relacionada a tu búsqueda</p>
+      <h2 class="search-title">DISEÑART</h2>
+      <p class="itemBox--searchError">
+        Lo sentimos, no encontramos información relacionada a tu búsqueda. Presiona 
+        <a href="/"  class="itemBox--backText">aquí</a> 
+        para volver al inicio.
+      </p>
+      <img src="/../images/misc/product-notfound.png" alt="error image" class="itemBox-imgError">
     </main>
     <% } else { %>
     <main class="itemBox">
+      <h2 class="search-title">DISEÑART</h2>
       <% for( let i = 0; i < searchResults.length; i++ ) { %>
       <article class="itemBox--product">
-
         <a
           href="http://localhost:3000/products/<%= searchResults[i].id %>/details"
           class="itemBox--anchor"
@@ -26,7 +32,7 @@
         />
         <h4 class="search-buyBottom">COMPRAR</h4>
         </a>
-         <h2 class="search-nameProduct"><%= searchResults[i].productName %></h2>
+        <h2 class="search-nameProduct"><%= searchResults[i].productName %></h2>
         <p class="price-description"></pclass>$<%= searchResults[i].productPrice %></p>
       </article>
       <% } %>
