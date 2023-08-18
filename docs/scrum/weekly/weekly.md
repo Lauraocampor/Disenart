@@ -1,6 +1,31 @@
 # Resúmenes de Scrum Weekly
 
->SPRINT #4
+>SPRINT #4_02
+
+- Desiree Holowiniec 
+
+1. Estuve trabajando en las vistas específicas de los productos y también con la función de delete.                 
+2. Armé la página de error 404 y sumé diferentes imágenes a los productos. 
+3. De momento no hemos asignado tareas porque hasta unos días haremos el próximo sprint.
+
+- Juan Diego Marín                                   
+1. Pulí el header y el footer. Trabajé en los documentos de scrum, e implementé un sistema de búsqueda con expresiones regulares. 
+2. No he tenido dificultades notorias. 
+3. No tengo tareas asignada pues nos falta analizar el sprint.            
+
+- Mercedes Lavezzolo 
+
+1. Trabajé en mejorar partes del diseño y el routing. También implemente persistencia en la imagen de un producto cuando este es actualizado pero no hay reemplazo. 
+2. No he tenido dificultados de momento.
+3. Aún no hemos asignado tareas para el próximo sprint. 
+
+- Laura Ocampo
+
+1. No hice muchos cambios esta semana pues había adelantado mis tareas la semana anterior. 
+2. No tengo dificultades hasta ahora 
+3. Quiero implementar las validaciones necesarias a mis formularios antes que termine la clase. 
+
+>SPRINT #4_01
 
 Los integrantes del grupo número seis se reunieron para compartir sus avances respecto a las tareas del cuarto sprint.
 

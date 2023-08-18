@@ -1,5 +1,19 @@
 # Resumenes de Scrum Retrospective
 
+>SPRINT #4
+
+El equipo #6 se reunió el 16 de agosto para revisar sus avances en el sprint número cuatro. 
+
+1. Buscamos hacer aportes adicionales a las consignas solicitadas por los profesores. Estamos anotándolas bajo tarjetas con el título "adicionales" en el trello. 
+
+2. Nos preocupa la fidelidad gráfica. A veces sentimos que hay impresiciones que se podrían pulir. De a poco las estamos identificando y resolviendo.
+
+3. Sabemos que el trabajo grupo es esencial. Llegamos a la conclusión de que es importante leer el código de mis compañeros para aprender de ellos. 
+
+4. Terminamos este sprint más rápido de lo normal. Terminamos dos días antes. Esperamos seguir así de holgados. 
+
+5. Decidimos que hay que seguir checkeando nuestra web para atrapar cualquier bug que se pueda introducir mientras se codea.
+
 >SPRINT #3
 
 El equipo #6 se reunió el cinco de agosto para revisar su desempeño en el sprint número tres. El siguiente reporte cristaliza las reflexiones de sus integrantes:
