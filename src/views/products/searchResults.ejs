@@ -6,9 +6,9 @@
     <%- include('../partials/header') %>
     <!-- MAIN -->
     <!-- <h2 class="search-title">DISEÑART</h2> -->
+    <h2 class="search-title">DISEÑART</h2>
     <% if (searchResults.length === 0) { %>
-    <main class="itemBox">
-      <h2 class="search-title">DISEÑART</h2>
+      <main class="itemBox">
       <p class="itemBox--searchError">
         Lo sentimos, no encontramos información relacionada a tu búsqueda. Presiona 
         <a href="/"  class="itemBox--backText">aquí</a> 
@@ -18,7 +18,6 @@
     </main>
     <% } else { %>
     <main class="itemBox">
-      <h2 class="search-title">DISEÑART</h2>
       <% for( let i = 0; i < searchResults.length; i++ ) { %>
       <article class="itemBox--product">
         <a

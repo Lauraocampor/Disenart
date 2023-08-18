@@ -3,6 +3,8 @@
   color: #0d3a61;
   font-family: 'Nunito Sans';
   padding-top: 15px;
+  text-align: center;
+  margin: auto;
 }
 
 .itemBox {
@@ -50,6 +52,7 @@
 
 .itemBox--anchor {
   width: 90%; 
+  height: 35vh;
   background-color: gray;
   margin-top: 5%;
 }
