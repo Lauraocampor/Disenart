@@ -14,7 +14,7 @@
           <div id="modal2" class="form">
             <div class="modal-content" id="register-login-ejs__transformXY">
               <h2 class="modal-form__titulo title_register">Crear una cuenta</h2>
-              <form class="modal-form" action="/">
+              <form class="modal-form" action="/users/register" method="POST" enctype="multipart/form-data">
                 <label for="email">Correo electrónico</label>
                 <input class="input" type="email" name="email" required>
       
@@ -34,7 +34,7 @@
                 <input class="input" type="password" name="password" required>
 
                 <label for="avatar">Imagen de perfil</label>
-                <input class="input" type="file"name="avatar" accept=".jpg , .png">
+                <input class="input" type="file" name="avatar" accept=".jpg , .png">
       
                 <label for="">Fecha de nacimiento</label>
                 <div class="datefields">
