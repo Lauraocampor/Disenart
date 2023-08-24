@@ -1,24 +1,12 @@
 const fs = require("fs");
 const path = require("path");
+const uuid = require('uuid');
 
 const User = {
 	fileRoute: path.join(__dirname, "../data/users.json"),
 
-	getData: function () {
-		return JSON.parse(fs.readFileSync(this.fileRoute, 'utf-8'));
-	},
-
-	generateId: function () {
-		let allUsers = this.findAll();
-		let lastUser = allUsers.pop();
-		if (lastUser) {
-			return lastUser.id + 1;
-		}
-		return 1;
-	},
-
 	findAll: function () {
-		return this.getData();
+		return JSON.parse(fs.readFileSync(this.fileRoute, 'utf-8'));
 	},
 
 	findByPk: function (id) {
@@ -36,7 +24,7 @@ const User = {
 	create: function (userData) {
 		let allUsers = this.findAll();
 		let newUser = {
-			id: this.generateId(),
+			id: uuid.v4(),
 			...userData
 		}
 		allUsers.push(newUser);
