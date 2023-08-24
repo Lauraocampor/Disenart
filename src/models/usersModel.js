@@ -1,29 +1,55 @@
-const { json } = require("express");
 const fs = require("fs");
 const path = require("path");
 
-// Ruta del archivo JSON
-const modelo = {
-  fileRoute: path.join(__dirname, "../data/users.json"),
+const User = {
+	fileRoute: path.join(__dirname, "../data/users.json"),
 
-  findAll: () => {
-    // Buscamos el contenido del archivo JSON
-    const jsonData = fs.readFileSync(modelo.fileRoute, "utf-8");
-    // Convertimos el JSON en Javascript
-    const users = JSON.parse(jsonData);
+	getData: function () {
+		return JSON.parse(fs.readFileSync(this.fileRoute, 'utf-8'));
+	},
 
-    return users;
-  },
+	generateId: function () {
+		let allUsers = this.findAll();
+		let lastUser = allUsers.pop();
+		if (lastUser) {
+			return lastUser.id + 1;
+		}
+		return 1;
+	},
 
-  findById: (id) => {
-    const users = modelo.findAll();
+	findAll: function () {
+		return this.getData();
+	},
 
-    const selectedUser = users.find(
-      (userActual) => userActual.id == id
-    );
+	findByPk: function (id) {
+		let allUsers = this.findAll();
+		let userFound = allUsers.find(oneUser => oneUser.id === id);
+		return userFound;
+	},
 
-    return selectedUser;
-  }
-};
+	findByField: function (field, text) {
+		let allUsers = this.findAll();
+		let userFound = allUsers.find(oneUser => oneUser[field] === text);
+		return userFound;
+	},
 
-module.exports = modelo;
+	create: function (userData) {
+		let allUsers = this.findAll();
+		let newUser = {
+			id: this.generateId(),
+			...userData
+		}
+		allUsers.push(newUser);
+		fs.writeFileSync(this.fileRoute, JSON.stringify(allUsers, null,  ' '));
+		return newUser;
+	},
+
+	delete: function (id) {
+		let allUsers = this.findAll();
+		let finalUsers = allUsers.filter(oneUser => oneUser.id !== id);
+		fs.writeFileSync(this.fileRoute, JSON.stringify(finalUsers, null, ' '));
+		return true;
+	}
+}
+
+module.exports = User;
