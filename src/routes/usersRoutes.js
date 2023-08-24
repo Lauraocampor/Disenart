@@ -20,7 +20,9 @@ const uploadFile = multer({ storage });
 const usersController = require ('../controllers/usersController');
 
 const validations = [
-	body('email').notEmpty().withMessage('Tienes que escribir un correo electrónico'),
+	body('email')
+        .notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()
+        .isEmail().withMessage('El correo electrónico no es válido'),
     body('firstName').notEmpty().withMessage('Tienes que escribir un nombre'),
     body('lastName').notEmpty().withMessage('Tienes que escribir un apellido'),
 	body('category').notEmpty().withMessage('Tienes que elegir una categoría'),

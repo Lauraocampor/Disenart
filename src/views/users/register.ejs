@@ -16,7 +16,7 @@
               <h2 class="modal-form__titulo title_register">Crear una cuenta</h2>
               <form class="modal-form" action="/users/register" method="POST" enctype="multipart/form-data">
                 <label for="email">Correo electrónico</label>
-                <input class="input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="email" name="email" value="<%= locals.oldData ? oldData.email : null %>">
+                <input class="input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="text" name="email" value="<%= locals.oldData ? oldData.email : null %>">
                 <% if (locals.errors && errors.email ) { %>
                   <div class="text-danger"> 
                     <%= errors.email.msg %>
