@@ -16,30 +16,60 @@
               <h2 class="modal-form__titulo title_register">Crear una cuenta</h2>
               <form class="modal-form" action="/users/register" method="POST" enctype="multipart/form-data">
                 <label for="email">Correo electrónico</label>
-                <input class="input" type="email" name="email" required>
-      
+                <input class="input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="email" name="email" value="<%= locals.oldData ? oldData.email : null %>">
+                <% if (locals.errors && errors.email ) { %>
+                  <div class="text-danger"> 
+                    <%= errors.email.msg %>
+                  </div>                 
+                <% } %>     
                 <label for="firstName">Nombre</label>
-                <input class="input" type="text" name="firstName" required>
-
+                <input class="input <%= locals.errors && errors.firstName ? 'is-invalid' : null %>" type="text" name="firstName" value="<%= locals.oldData ? oldData.firstName : null %>">
+                <% if (locals.errors && errors.firstName ) { %>
+                  <div class="text-danger"> 
+                    <%= errors.firstName.msg %>
+                  </div>                 
+                <% } %>  
                 <label for="lastName">Apellido</label>
-                <input class="input" type="text" name="lastName" required>
-
+                <input class="input <%= locals.errors && errors.lastName ? 'is-invalid' : null %>" type="text" name="lastName" value="<%= locals.oldData ? oldData.lastName : null %>">
+                <% if (locals.errors && errors.lastName ) { %>
+                  <div class="text-danger"> 
+                    <%= errors.lastName.msg %>
+                  </div>                 
+                <% } %>  
                 <label for="category">Categoría</label>
-                <select class="input" name="category" required>
-                  <option value="admin">Administrador</option>
-                  <option value="customer">Cliente</option>
+                <select class="input <%= locals.errors && errors.category ? 'is-invalid' : null %>" name="category" value="<%= locals.oldData ? oldData.category : null %>">
+                  <option value="category" disabled>Seleccione una categoría</option>
+									<%  
+										let category = ['Administrador', 'Cliente']
+									%>
+									<% for (const oneCategory of category) { %>
+										<option 
+											value="<%= oneCategory %>"
+											<%= locals.oldData && (oneCategory === oldData.category) ? 'selected' : null %> 
+										> <%= oneCategory %> </option>
+									<% } %>           
                 </select>
-      
+                <% if (locals.errors && errors.category ) { %>
+                  <div class="text-danger"> 
+                    <%= errors.category.msg %>
+                  </div>                 
+                <% } %>        
                 <label for="password">Contraseña</label>
-                <input class="input" type="password" name="password" required>
-
+                <input class="input <%= locals.errors && errors.password ? 'is-invalid' : null %>" type="password" name="password" value="<%= locals.oldData ? oldData.password : null %>">
+                <% if (locals.errors && errors.password ) { %>
+                  <div class="text-danger"> 
+                    <%= errors.password.msg %>
+                  </div>                 
+                <% } %>  
                 <label for="avatar">Imagen de perfil</label>
-                <input class="input" type="file" name="avatar" accept=".jpg , .png">
+                <input class="input" type="file" name="avatar" accept=".jpg, .jpeg, .png">
       
                 <label for="">Fecha de nacimiento</label>
                 <div class="datefields">
-                  <select class="date" name="day" required>
+                  <select class="input date <%= locals.errors && errors.day ? 'is-invalid' : null %>" name="day" value="<%= locals.oldData ? oldData.day : null %>">
                     <option value="day" selected disabled>Día</option>
+                    
+
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -71,9 +101,8 @@
                     <option value="29">29</option>
                     <option value="30">30</option>
                     <option value="31">31</option>
-      
                   </select>
-                  <select class="date" name="month" required>
+                  <select class="input date <%= locals.errors && errors.month ? 'is-invalid' : null %>" name="month" value="<%= locals.oldData ? oldData.month : null %>">
                     <option value="month" selected disabled>Mes</option>
                     <option value="01">Enero</option>
                     <option value="02">Febrero</option>
@@ -89,7 +118,7 @@
                     <option value="12">Diciembre</option>
                   </select>
                   </select>
-                  <select class="date" name="year" required>
+                  <select class="input date <%= locals.errors && errors.year ? 'is-invalid' : null %>" name="year" value="<%= locals.oldData ? oldData.year : null %>">
                     <option value="year" selected disabled>Año</option>
                     <option value="2012">2020</option>
                     <option value="2012">2019</option>
@@ -192,8 +221,23 @@
                     <option value="1922">1922</option>
                     <option value="1921">1921</option>
                     <option value="1920">1920</option>
-                  </select>
+                  </select>  
                 </div>
+                <% if (locals.errors && errors.day ) { %>
+                  <div class="text-danger"> 
+                    <%= errors.day.msg %>
+                  </div>                 
+                <% } %>
+                <% if (locals.errors && errors.month ) { %>
+                  <div class="text-danger"> 
+                    <%= errors.month.msg %>
+                  </div>                 
+                <% } %>
+                <% if (locals.errors && errors.year ) { %>
+                  <div class="text-danger"> 
+                    <%= errors.year.msg %>
+                  </div>                 
+                <% } %>
                 <button class="modal-submit" type="submit">Continuar</button>
                 <div class="modal-bottom">
                   <p>¿Ya tienes una cuenta?</p> <a href="/login">Iniciar sesión</a>
@@ -204,7 +248,7 @@
       </section>
     </main>
     <!-- FOOTER -->
-    <%- include("../partials/footer"); %>
+    <%- include("../partials/footer") %>
     <!-- SCRIPT -->
     <script src="js/main.js"></script>
     <script src="js/header.js"></script>

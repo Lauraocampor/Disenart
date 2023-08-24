@@ -15,15 +15,25 @@
 
 /*VIEWS*/
 .form{
-    display: block; /* Ocultar inicialmente el modal */
+    display: block; /* Show modal */
 }
 #register-login-ejs__transformXY{
     transform: translateY(2%);
 }
 
+/* VALIDATIONS */
+.text-danger{
+    margin-bottom: 5px;
+    color: var(--mostaza);
+    font-size: small;
+}
+.is-invalid{
+    border: 1px solid var(--mostaza);
+}
+
 /* MODALS */
 .modal {
-    display: none; /* Ocultar inicialmente el modal */
+    display: none; /* Hide modal */
     position: fixed; 
     z-index: 101; 
     left: 0;
@@ -145,7 +155,7 @@
     justify-content: space-between;
 }
 
-/* ADICIONALES REGISTER */
+/*  ADITIONALS REGISTER */
 .title_register{
     padding-top: 0;
 }
@@ -177,13 +187,13 @@
 }
 
 @media (min-width:769px) {
+        /* GENERAL */
     .modal-content{
         border: 0;
     }
     .modal-form .input{
         background-color: var(--verdeClaro);
         margin: 8px 0;
-        border: 0;
         color: var(--azulOscuro);
         font-size: 18px;
     }
@@ -218,5 +228,9 @@
         color: var(--azulOscuro);
         border: 0;
         font-size: 15px;        
+    }
+        /* VALIDATIONS */
+    .is-invalid{
+        border: 3px solid var(--mostaza);
     }
 }
