@@ -16,6 +16,7 @@ const controller = {
                 oldData: req.body
             })
         }
+        res.send('Bienvenido a tu perfil');
     },
     login: (req,res) => {
         res.render('login');
