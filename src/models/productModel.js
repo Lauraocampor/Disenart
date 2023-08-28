@@ -37,11 +37,17 @@ const modelo = {
     );
 
 
-// Verificar si se proporcionaron nuevas imágenes
-if (updatedProduct.productImages && updatedProduct.productImages.length > 0) {
-  // Modificar el elemento del array en ese índice con las nuevas imágenes
-  products[prodIndex].productImages = updatedProduct.productImages;
-}
+// Verificar si se encontró el producto
+if (prodIndex !== -1) {
+  // Actualizar todos los parámetros del producto excepto las imágenes
+  const { productImages, ...otherParams } = updatedProduct;
+  products[prodIndex] = { ...products[prodIndex], ...otherParams };
+
+  // Actualizar las imágenes si se proporcionaron nuevas
+  if (productImages && productImages.length > 0) {
+    products[prodIndex].productImages = [...productImages];
+  }
+};
 
 
     // Convertir este nuevo array en JSON
