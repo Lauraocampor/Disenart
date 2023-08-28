@@ -23,9 +23,10 @@ const User = {
 
 	create: function (userData) {
 		let allUsers = this.findAll();
+	
 		let newUser = {
 			id: uuid.v4(),
-			...userData
+			...userData,
 		}
 		allUsers.push(newUser);
 		fs.writeFileSync(this.fileRoute, JSON.stringify(allUsers, null,  ' '));

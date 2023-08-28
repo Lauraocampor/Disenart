@@ -28,12 +28,14 @@ const controller = {
 			});
 		}
 
-		let userToCreate = {
-			...req.body,
-            password: bcryptjs.hashSync(req.body.password, 10),
-			avatar: req.file.filename
-		}
+        const profileImage = req.file ? req.file.filename : 'default.png';
 
+		let userToCreate = {
+            ...req.body,
+            password: bcryptjs.hashSync(req.body.password, 10),
+			avatar: profileImage
+		}
+        
 		let userCreated = User.create(userToCreate);
 
 		return res.redirect('/users/login');

@@ -50,7 +50,6 @@ const controller = {
       filenames.push(imagenDefault)
       filenames.push(imagenDefault)
     }
-    console.log(filenames)
 
     let newProduct = {
       productName: req.body.productName,

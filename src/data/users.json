@@ -5,11 +5,8 @@
   "lastName": "Kebbell",
   "email": "ckebbell4@blinklist.com",
   "password": "$2a$04$qBjWPqZZdud9GBOR6EOUl.0VrktzUKX0FClb7b8FYZ/eAF/cSXkUu",
-  "category": "Customer",
-  "avatar": "default.png",
-  "day": "9",
-  "month": "10",
-  "year": "1999"
+  "date": "2000-10-16",
+  "avatar": "default.png"
  },
  {
   "id": "285c3ff5-f2a0-4fbd-b7db-58a0c022274b",
@@ -17,11 +14,8 @@
   "lastName": "Banstead",
   "email": "dbanstead5@parallels.com",
   "password": "$2a$04$94F7Yl/y051xKDQp7T0Yv.1z7G7Tlp.pttk8fdiPhDt60nADboBci",
-  "category": "Customer",
-  "avatar": "default.png",
-  "day": "9",
-  "month": "10",
-  "year": "1999"
+  "date": "1998-12-16",
+  "avatar": "default.png"
  },
  {
   "id": "6b7256aa-c0e6-468c-9640-34a2c3753554",
@@ -29,11 +23,8 @@
   "lastName": "Goldine",
   "email": "fgoldine6@taobao.com",
   "password": "$2a$04$AdoU8jUGoFaVcgoJdCJNY.RbJ0CrYNcH9roGMht11oLVdwL4OAQ.2",
-  "category": "Customer",
-  "avatar": "default.png",
-  "day": "9",
-  "month": "10",
-  "year": "1999"
+  "date": "1970-11-16",
+  "avatar": "default.png"
  },
  {
   "id": "3d691728-f188-4aeb-ae12-e77a7f443dd6",
@@ -41,11 +32,8 @@
   "lastName": "Eagle",
   "email": "seagle7@ftc.gov",
   "password": "$2a$04$GbIQirv/5VYG9/QMwvcJHeBMKRuD73uhZQTGXTzsCIZpoMhDiRKca",
-  "category": "Customer",
-  "avatar": "default.png",
-  "day": "9",
-  "month": "10",
-  "year": "1999"
+  "date": "2010-12-16",
+  "avatar": "default.png"
  },
  {
   "id": "9bf0833c-6c97-4ca4-9274-732709987100",
@@ -53,11 +41,8 @@
   "lastName": "Iannello",
   "email": "riannello8@nydailynews.com",
   "password": "$2a$04$UfNQXU1xVyde13SizNF9oee53neyFElXPssVN.AG87LHY/nVOaYVO",
-  "category": "Customer",
-  "avatar": "default.png",
-  "day": "9",
-  "month": "10",
-  "year": "1999"
+  "date": "2000-10-15",
+  "avatar": "default.png"
  },
  {
   "id": "02a3129a-d313-440f-b5cb-bf418346402b",
@@ -65,22 +50,25 @@
   "lastName": "Shearme",
   "email": "bshearme9@github.io",
   "password": "$2a$04$tUUY0LK9OicVH13jRM3uIu0I6bdZHtG8XAQq3Nymwqkq803euoDEy",
-  "category": "Customer",
-  "avatar": "default.png",
-  "day": "9",
-  "month": "10",
-  "year": "1999"
+  "date": "2003-01-03",
+  "avatar": "default.png"
  },
  {
   "id": "1ead7088-25d1-4701-943e-d8d6e972f960",
   "email": "laura_ocampo5@hotmail.com",
   "firstName": "Laura",
   "lastName": "Ocampo",
-  "category": "Administrador",
   "password": "$2a$10$dNCpfb00q3g50Q0QZmBzK.fas9Swna7pb0gq2hZPoGdPuQoD5cxmC",
-  "day": "5",
-  "month": "Julio",
-  "year": "1996",
+  "date": "1996-07-05",
   "avatar": "1692915888742IMG_20191028_112748_889.jpg"
+ },
+ {
+  "id": "c6cf5200-afb6-409e-9c27-6e520eecd3c6",
+  "email": "dani@gmail.com",
+  "firstName": "dani",
+  "lastName": "casta",
+  "password": "$2a$10$07BUoQuqbz5MZkEi/k41vOULsc3n6BMrElgEisttOsUIEOLmpOPnu",
+  "date": "2020-12-16",
+  "avatar": "default.png"
  }
 ]
