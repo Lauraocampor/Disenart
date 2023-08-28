@@ -43,8 +43,17 @@ const controller = {
 
     if (filenames[3]) {
       // Si el usuario selecciona 4 imágenes, no se hace nada especial
-    } else {
+    } else if (filenames[2]) {
       // Si no se seleccionan todas las imágenes, establecer el nombre de archivo por defecto
+      filenames.push(imagenDefault)
+    } else if(filenames[1]) {
+      filenames.push(imagenDefault)
+      filenames.push(imagenDefault)
+    } else if(filenames[0]) {
+      filenames.push(imagenDefault)
+      filenames.push(imagenDefault)
+      filenames.push(imagenDefault)
+    } else{
       filenames.push(imagenDefault)
       filenames.push(imagenDefault)
       filenames.push(imagenDefault)
