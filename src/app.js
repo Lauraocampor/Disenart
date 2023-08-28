@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 
 const mainRouter = require('./routes/mainRoutes');
 const productRouter = require('./routes/productRoutes');
+const usersRouter = require('./routes/usersRoutes');
 
 app.set('view engine', 'ejs');
 
@@ -27,6 +28,7 @@ app.use(methodOverride('_method'));
 /* --- Routers --- */
 app.use('/', mainRouter);
 app.use('/products', productRouter);
+app.use('/users', usersRouter);
 
 app.use((req,res)=>{
   res.render('404')
