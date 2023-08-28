@@ -39,6 +39,18 @@ const controller = {
 
   store: (req, res) => {
     const filenames = req.files.map((file) => file.filename);
+    let imagenDefault = 'imagen-no-disponible.jpg'
+
+    if (filenames[3]) {
+      // Si el usuario selecciona 4 imágenes, no se hace nada especial
+    } else {
+      // Si no se seleccionan todas las imágenes, establecer el nombre de archivo por defecto
+      filenames.push(imagenDefault)
+      filenames.push(imagenDefault)
+      filenames.push(imagenDefault)
+      filenames.push(imagenDefault)
+    }
+    console.log(filenames)
 
     let newProduct = {
       productName: req.body.productName,
