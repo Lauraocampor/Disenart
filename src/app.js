@@ -1,6 +1,8 @@
 const express = require ("express");
 const app = express();
+const session = require ("express-session");
 const dotenv = require('dotenv').config();
+const cookies = require ("cookie-parser");
 const path = require('path'); 
 const methodOverride = require('method-override');
 
@@ -22,14 +24,18 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
-
+app.use(session({
+  secret: "Is a secret", 
+  resave: false,
+  saveUninitialized: false
+}));
+app.use(cookies());
 
 
 /* --- Routers --- */
 app.use('/', mainRouter);
 app.use('/products', productRouter);
 app.use('/users', usersRouter);
-
 app.use((req,res)=>{
   res.render('404')
 })

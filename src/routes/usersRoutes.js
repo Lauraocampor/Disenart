@@ -18,6 +18,9 @@ router.post('/register', uploadFile.single('avatar'), validations, usersControll
 // @GET LOGIN FORM
 router.get('/login', usersController.login);
 
+// @POST LOGIN FORM
+router.post('/login', validations, usersController.loginProcess);
+
 // @GET PROFILE USER /profile/:userId
 
 module.exports = router;
