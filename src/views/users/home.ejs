@@ -1,46 +1,75 @@
 <!-- HTML -->
 <!DOCTYPE html>
-<html lang="es" style="overflow-x: hidden;">
-  <!-- HEAD -->
-  <%- include("../partials/head") %>
-  <body class="bodyXL">
-    <!-- HEADER -->
-    <%- include('../partials/header') %>
-    <!-- MAIN -->
-    <main class="mainPadding">
-      <section class="home-wrap">
-        <h2 class="home-title">DISEÑART</h2>
-        <div class="home-product-wrap">
-          <div class="home-carousel">
-            <div class="carousel-button-up"><button><i class="fa-solid fa-angle-up"></i></button></div>
-            <div class="carousel-button-down"><button><i class="fa-solid fa-angle-down"></i></button></div>
-            <div class="home-carousel-container">
-              <img src="/images/productos/buzo/buzo2.jpg">
-              <img src="/images/productos/Remera/remera-h1.jpg">
-              <img src="/images/productos/Termo/termo1.jpg">
-              <img src="/images/productos/Taza/taza2.jpg">
-            </div>
-          </div>
-          <div class="home-button"> <a  href="/products//searching/searchResults"><button class="design-button">Empezá a diseñar</button></div></a>
-          <p class="home-product-information">Somos un grupo de diseñadores que lo que buscamos es que puedas personalizar tus productos!. Ponemos a disposición diferentes 
-            artículos para que puedas estampar la imagen que vos más quieras. Si necesitás ayuda con el diseño no dudes en consultarnos!
-          </p>
-          <div class="home-product-links">
-            <ul class="product-links-content">
-              <li><a href="/products//searching/searchResults/Buzo">BUZO OVERSIZE</a></li>
-              <li><a href="/products//searching/searchResults/remera">REMERA OVERSIZE</a></li>
-              <li><a href="/products//searching/searchResults/termo">TERMO PEQUEÑO</a></li>
-              <li><a href="/products//searching/searchResults/taza">TAZA MEDIANA</a></li>
-              <li><a href="/products//searching/searchResults">VER MÁS</a></li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </main>
-    <!-- FOOTER -->
-    <%- include("../partials/footer"); %>
-    <!-- SCRIPT -->
-    <script src="js/main.js"></script>
-    <script src="js/header.js"></script>
-  </body>
+<html
+	lang="es"
+	style="overflow-x: hidden">
+	<!-- HEAD -->
+	<%- include("../partials/head") %>
+	<body class="bodyXL">
+		<!-- HEADER -->
+		<%- include('../partials/header') %>
+		<!-- MAIN -->
+		<main class="mainPadding">
+			<section class="home-wrap">
+				<h2 class="home-title">DISEÑART</h2>
+				<div class="home-product-wrap">
+					<div class="home-carousel">
+						<div class="carousel-button-up">
+							<button><i class="fa-solid fa-angle-up"></i></button>
+						</div>
+						<div class="carousel-button-down">
+							<button><i class="fa-solid fa-angle-down"></i></button>
+						</div>
+						<div class="home-carousel-container">
+							<img src="/images/productos/buzo/buzo2.jpg" />
+							<img src="/images/productos/Remera/remera-h1.jpg" />
+							<img src="/images/productos/Termo/termo1.jpg" />
+							<img src="/images/productos/Taza/taza2.jpg" />
+						</div>
+					</div>
+					<div class="home-button">
+						<a href="/products//searching/searchResults"
+							><button class="design-button">Empezá a diseñar</button></a
+						>
+					</div>
+					<p class="home-product-information">
+						Somos un grupo de diseñadores que lo que buscamos es que puedas
+						personalizar tus productos!. Ponemos a disposición diferentes
+						artículos para que puedas estampar la imagen que vos más quieras. Si
+						necesitás ayuda con el diseño no dudes en consultarnos!
+					</p>
+					<div class="home-product-links">
+						<ul class="product-links-content">
+							<li>
+								<a href="/products//searching/searchResults/Buzo"
+									>BUZO OVERSIZE</a
+								>
+							</li>
+							<li>
+								<a href="/products//searching/searchResults/remera"
+									>REMERA OVERSIZE</a
+								>
+							</li>
+							<li>
+								<a href="/products//searching/searchResults/termo"
+									>TERMO PEQUEÑO</a
+								>
+							</li>
+							<li>
+								<a href="/products//searching/searchResults/taza"
+									>TAZA MEDIANA</a
+								>
+							</li>
+							<li><a href="/products//searching/searchResults">VER MÁS</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</main>
+		<!-- FOOTER -->
+		<%- include("../partials/footer"); %>
+		<!-- SCRIPT -->
+		<script src="js/main.js"></script>
+		<script src="js/header.js"></script>
+	</body>
 </html>
