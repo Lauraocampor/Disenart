@@ -8,23 +8,23 @@ const controller = {
     const productiId = req.params.id;
     const selectedProduct = productModel.findById(productiId);
 
-    res.render("createdProductDetail", { product: selectedProduct });
+    res.render("createdProductDetail", { product: selectedProduct , user: req.session.userToLogged});
   },
   cart: (req, res) => {
-    res.render("cart");
+    res.render("cart",{ user: req.session.userToLogged });
   },
   createProduct: (req, res) => {
-    res.render("createProduct");
+    res.render("createProduct",{ user: req.session.userToLogged });
   },
   editProduct: (req, res) => {
     const product = productModel.findById(Number(req.params.id));
 
-    res.render("editProduct", { product });
+    res.render("editProduct", { product , user: req.session.userToLogged });
   },
   userProduct: (req, res) => {
     const product = productModel.findById(Number(req.params.id));
 
-    res.render("details", { product });
+    res.render("details", { product , user: req.session.userToLogged });
   },
   searchResults: function (req, res) {
     if (!req.params.category) {
@@ -32,7 +32,7 @@ const controller = {
     } else {
       searchResults = productModel.categoryResults(req.params.category);
     }
-    res.render("searchResults", {searchResults});
+    res.render("searchResults", {searchResults, user: req.session.userToLogged });
   },
 
   // @GET /products

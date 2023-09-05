@@ -70,5 +70,14 @@
   "password": "$2a$10$07BUoQuqbz5MZkEi/k41vOULsc3n6BMrElgEisttOsUIEOLmpOPnu",
   "date": "2020-12-16",
   "avatar": "default.png"
+ },
+ {
+  "id": "0bdc16e2-0dab-4ce9-8cb5-414d917aa2fc",
+  "email": "mer.lavezzolo@gmail.com",
+  "firstName": "mercedes",
+  "lastName": "lavezzolo",
+  "password": "$2a$10$xarta94DLL9Kvu8bmJRipe004GbLe0c2JchzbymO9w6zs//BhxIla",
+  "date": "2020-12-17",
+  "avatar": "default.png"
  }
 ]

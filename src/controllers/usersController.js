@@ -5,7 +5,7 @@ const User = require("../models/usersModel");
 
 const controller = {
     register: (req, res) => {
-        res.render('register');
+        res.render('register',{ user: req.session.userToLogged  });
     },
     processRegister: (req, res) => {
         const resultValidation = validationResult(req);
@@ -24,7 +24,7 @@ const controller = {
                         msg: 'Este email ya está registrado'
                     }
                 },
-                oldData: req.body
+                oldData: req.body, 
             });
         }
 
@@ -38,34 +38,53 @@ const controller = {
 
         let userCreated = User.create(userToCreate);
 
-        return res.redirect('/users/login');
+        return res.redirect('/users/login',{ user: req.session.userToLogged });
     },
     login: (req, res) => {
-        res.render('login');
+        const userToLogin = User.findByField (req.body.email)
+
+       res.render('login',{ user: req.session.userToLogged });
     },
   
     loginProcess: (req, res) => {
-        let userToLogin = User.findByField("email", req.body.email);
-        if (userToLogin) {
-            let isOkPasword = bcryptjs.compareSync (req.body.password, userToLogin.password)
-            if(isOkPasword){
-                delete userToLogin.password;
-req.session.userToLogged = userToLogin;
-   
-if (req.body.remember-password){
-    res.cookie("userEmail", req.body.email, {maxAge: (60*60)*24})
-}
-      return res.redirect("/user/profile")
+        const userToLogin = User.findByField("email", req.body.email);
+    
+        if (!userToLogin) {
+            return res.render('login', {
+                errors: {
+                    email: {
+                        msg: "El mail o la contraseña son incorrectos"
+                    }
+                    }, 
+             user: req.session.userToLogged
+               
+            });
         }
-        return res.render("login", {
-            errors: {
-                email: {
-                    msg: "No se encontró el email en la base de datos"
-                }
-            }
-        })
-    }
-},
+    
+        const isOkPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+    
+        if (!isOkPassword) {
+            return res.render('login', {
+                errors: {
+                    email: {
+                        msg: "El mail o la contraseña son incorrectos"
+                    }
+                }, 
+         user: req.session.userToLogged
+           
+            });
+        }
+    
+        delete userToLogin.password;
+        req.session.userToLogged = userToLogin;
+ 
+        if (req.body.remember_password) {
+            res.cookie("userEmail", req.body.email,{ maxAge: 1000 * 60 * 60 * 24 * 365});
+           
+        }
+    
+        return res.redirect("/");
+    },
     profile: (req, res) => {
         return res.render("userProfile",{  
         user: req.session.userToLogged})
@@ -74,8 +93,9 @@ if (req.body.remember-password){
     logout: (req, res) => {
         res.clearCookie("userEmail");
         res.sesion.destroy();
-        return res.redirect ("/")
+        return res.redirect ("/",{ user: req.session.userToLogged })
 },
 }
+
 
     module.exports = controller;

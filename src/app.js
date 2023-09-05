@@ -27,7 +27,7 @@ app.use(methodOverride('_method'));
 app.use(session({
   secret: "Is a secret", 
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: true
 }));
 app.use(cookies());
 
@@ -35,7 +35,7 @@ app.use(cookies());
 /* --- Routers --- */
 app.use('/', mainRouter);
 app.use('/products', productRouter);
-app.use('/users', usersRouter);
+app.use("/users", usersRouter);
 app.use((req,res)=>{
   res.render('404')
 })

@@ -11,8 +11,8 @@ const User = {
 
 	findByPk: function (id) {
 		let allUsers = this.findAll();
-		let userFound = allUsers.find(oneUser => oneUser.id === id);
-		return userFound;
+		let userFound = allUsers.find(oneUser => oneUser.id ===id);
+			return userFound;
 	},
 
 	findByField: function (field, text) {
@@ -40,5 +40,8 @@ const User = {
 		return true;
 	}
 }
+
+
+
 
 module.exports = User;

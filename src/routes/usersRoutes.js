@@ -15,11 +15,12 @@ router.get('/register', usersController.register);
 // @POST PROCESS REGISTER
 router.post('/register', uploadFile.single('avatar'), validations, usersController.processRegister);
 
+
 // @GET LOGIN FORM
 router.get('/login', usersController.login);
 
 // @POST LOGIN FORM
-router.post('/login', validations, usersController.loginProcess);
+router.post('/login', usersController.loginProcess);
 
 // @GET PROFILE USER /profile/:userId
 

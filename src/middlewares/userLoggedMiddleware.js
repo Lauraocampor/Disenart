@@ -19,4 +19,8 @@ if (userFromCookie){
     next();
 }
 
+
+
+
+
 module.exports =userLoggedMiddleware;

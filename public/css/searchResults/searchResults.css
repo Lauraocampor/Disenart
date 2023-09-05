@@ -2,10 +2,11 @@
   font-size: 35px;
   color: #0d3a61;
   font-family: 'Nunito Sans';
-  padding-top: 15px;
-  text-align: center;
-  margin: auto;
+  padding-top: 5px;
+  margin-left: 10%;
 }
+
+
 
 .itemBox {
   width: 100%;

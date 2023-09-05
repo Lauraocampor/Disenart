@@ -1,6 +1,7 @@
 const controller ={
     home: (req,res) => {
-        res.render('home');
+        console.log(req.session.user);
+        res.render('home',{ user: req.session.userToLogged});
     }
 }
 
