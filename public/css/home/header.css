@@ -118,8 +118,6 @@
 
  }
 
-
-
 .li {
   display: inline;
   margin-left: 25%;
@@ -129,6 +127,58 @@
   display: inline-block;
   width: 100%;
 }
+
+/* USER NAV */
+
+.about-user__listWrap {
+  z-index: 1;
+  position: absolute;
+  background-color: var(--oliveCream);
+  top: 12vh;
+  right: 0vw;
+  height: max-content;
+  width: max-content;
+}
+
+.about-user-toggler {
+  visibility: hidden;
+}
+
+.about-user__listOfLinks {
+  padding: 0%;
+  margin: 0%;
+}
+
+.about-user__listItems {
+  padding: 1.5vw 3vw 2vw 1.5vw;
+}
+
+.user_nav {
+  z-index: 1;
+  position: absolute;
+  background-color: var(--oliveCream);
+  top: 12vh;
+  right: 0vw;
+  height: max-content;
+  width: max-content;
+  visibility: hidden;
+}
+
+.user_nav_options {
+  visibility: hidden;
+  padding: 0%;
+  margin: 0%;
+  padding: 1.5vw 3vw 2vw 1.5vw;
+
+}
+
+
+.user_nav_options__listItems{
+  text-decoration: none;
+  color: var(--darkBlue);
+  list-style-type: none
+}
+
 
 .user_li{
   display: flex;
@@ -322,6 +372,7 @@ padding-top: 5px;
 
   .account-nav {
     padding-right: 0vw;
+    
 
   }
 
@@ -336,13 +387,12 @@ padding-top: 5px;
   }
 
   
- 
 .user_li  {
   padding:2px;
   flex: 1 0 20%;
   display: inline-flex;
   justify-content: space-evenly;
-
+  margin-left: 55%;
 
  }
 
