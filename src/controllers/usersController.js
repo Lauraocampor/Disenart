@@ -81,7 +81,7 @@ const controller = {
         req.session.userToLogged = userToLogin;
  
         if (req.body.remember_password) {
-            res.cookie("userId", userToLogin.id,{ maxAge: 1000 * 60 * 60 * 24 * 365});
+            res.cookie("userEmail", userToLogin.email,{ maxAge: 1000 * 60 * 60 * 24 * 365});
            
         }
     
