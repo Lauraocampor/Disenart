@@ -12,7 +12,8 @@ const controller = {
         if (resultValidation.errors.length > 0) {
             return res.render('register', {
                 errors: resultValidation.mapped(),
-                oldData: req.body
+                oldData: req.body, 
+                user: req.session.userToLogged 
             })
         }
         let userInDB = User.findByField('email', req.body.email);
@@ -25,6 +26,7 @@ const controller = {
                     }
                 },
                 oldData: req.body, 
+                user: req.session.userToLogged  
             });
         }
 
@@ -38,7 +40,7 @@ const controller = {
 
         let userCreated = User.create(userToCreate);
 
-        return res.redirect('/users/login',{ user: req.session.userToLogged });
+        return res.redirect('/');
     },
     login: (req, res) => {
         const userToLogin = User.findByField (req.body.email)
@@ -79,7 +81,7 @@ const controller = {
         req.session.userToLogged = userToLogin;
  
         if (req.body.remember_password) {
-            res.cookie("userEmail", req.body.email,{ maxAge: 1000 * 60 * 60 * 24 * 365});
+            res.cookie("userId", userToLogin.id,{ maxAge: 1000 * 60 * 60 * 24 * 365});
            
         }
     

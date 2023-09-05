@@ -20,7 +20,7 @@ router.post('/register', uploadFile.single('avatar'), validations, usersControll
 router.get('/login', usersController.login);
 
 // @POST LOGIN FORM
-router.post('/login', usersController.loginProcess);
+router.post('/login',  validations,usersController.loginProcess);
 
 // @GET PROFILE USER /profile/:userId
 
