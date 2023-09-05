@@ -9,7 +9,7 @@
 
 /* HEADER */
 .header {
-  width: 100vw;
+  width: 100%;
   height: 12vh;
   background-color: #eef0de;
   display: flex;
@@ -75,8 +75,8 @@
 /* LOGO */
 .logo {
   display: inline-flex;
-  justify-content: center;
-  width: 50%;
+  justify-content: right;
+  width: 25%;
   max-height: 100%;
 }
 
@@ -85,7 +85,7 @@
   display: inline-flex;
   justify-content: flex-end;
   padding-right: 2vw;
-  width: 25%;
+  width: 40%;
 }
 
 .account__anchor {
@@ -107,22 +107,51 @@
 }
 
 /* UL */
-.ul {
+.ul  {
   list-style-type: none;
-  padding: 0px;
+  padding-right: 2vw;
   margin: 0px;
   flex: 1 0 100%;
   display: inline-flex;
-  justify-content: space-around;
-}
+  justify-content: flex-end;
+  align-items: center;
+
+ }
+
+
 
 .li {
   display: inline;
-}
+  margin-left: 25%;
+  }
 
 .li__anchor {
   display: inline-block;
+  width: 100%;
 }
+
+.user_li{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding-top: 20px;
+  margin-left: 25%;
+}
+
+.user_avatar{
+  width: 100%;
+  border-radius: 100%;
+}
+
+.user_all_name{
+font-size: 50%;
+padding-top: 5px;
+}
+
+
 
 /* ICON */
 .icon {
@@ -130,7 +159,7 @@
 }
 
 .icon--bigger {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 .icon--bigger-widener {
   width: 1.5rem;
@@ -138,7 +167,7 @@
 
 .icon--bigger-alt {
   width: max-content;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 /* SEARCH MODAL GRAY BOX */
@@ -270,6 +299,7 @@
 
 /* BREAK #3 */
 @media (min-width: 1280px) {
+
   .header {
     height: 10vh;
   }
@@ -279,12 +309,22 @@
   .img__anchor {
     max-width: 125px;
   }
-  .ul {
-    max-width: 300px;
-  }
+  .ul  {
+    padding-right: 3.5vw;
+  margin: 0px;
+    justify-content: space-evenly;
+
+   }
+
   .about-nav {
     padding-left: 0px;
   }
+
+  .account-nav {
+    padding-right: 0vw;
+
+  }
+
   .icon--bigger {
     font-size: 3rem;
   }
@@ -294,4 +334,25 @@
   .icon--bigger-alt {
     font-size: 2rem;
   }
+
+  
+ 
+.user_li  {
+  padding:2px;
+  flex: 1 0 20%;
+  display: inline-flex;
+  justify-content: space-evenly;
+
+
+ }
+
+.user_avatar{
+ width:70%;
+ padding-top: 10px;
+}
+.user_all_name{
+  font-size: 70%;
+  padding-top: 8px;
+  }
+  
 }

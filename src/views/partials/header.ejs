@@ -42,18 +42,33 @@
           <i class="fa-solid fa-magnifying-glass icon icon--bigger-alt"></i>
         </a>
       </li>
-      <!-- CART -->
+        <!-- CART -->
       <li class="li">
         <a href="#" class="li__anchor" onclick="openModal('modal3')">
           <i class="fa-solid fa-cart-shopping icon icon--bigger-alt"></i>
         </a>
       </li>
+
+            <!-- USER -->
+   
+            <% if (user) {  %>
+              <li class="user_li"> 
+               <img class="user_avatar" src="/images/users/<%=user.avatar%>">
+               <div class="user_all_name">
+               <div class= "user_name"><%=user.firstName.charAt(0).toUpperCase() + user.firstName.slice(1).toLowerCase()%></div>
+               <div class= "user_name"> <%=user.lastName.charAt(0).toUpperCase() + user.lastName.slice(1).toLowerCase()%></div>
+              </div>
+             </li>
+        
+             <%} else{%>
+     
       <!-- LOGIN -->
       <li class="li">
         <a href="#" class="li__anchor" onclick="openModal('modal1')">
           <i class="fa-regular fa-user icon icon--bigger-alt"></i>
         </a>
       </li>
+      <%}%>
     </ul>
   </nav>
   <!-- FORMULARIOS -->

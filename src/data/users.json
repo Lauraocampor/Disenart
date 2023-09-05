@@ -81,6 +81,24 @@
   "avatar": "default.png"
  },
  {
+  "id": "26e20834-eb33-48fd-a8cc-f74ed528895d",
+  "email": "mer.lavezzolo@gmail.com",
+  "firstName": "mercedes",
+  "lastName": "lavezzolo",
+  "password": "$2a$10$ymG3iYO4rxFUQQxZZVNu8eqwMMuVkVBwSIiMAKGSDX4K5dVEfzjQS",
+  "date": "2020-12-15",
+  "avatar": "1693877859754foto carnet mercedes lavezzolo.JPG"
+ },
+ {
+  "id": "c4e10427-6b6e-472a-8a6a-8862a5a55e90",
+  "email": "mer.lavezzoiilo@gmail.com",
+  "firstName": "mercedes",
+  "lastName": "lavezzolo",
+  "password": "$2a$10$cec8j.VJgrZkeDc08pB2Z.k75A0/R/37syTeecnekK4ofmabuxDt6",
+  "date": "2020-12-15",
+  "avatar": "default.png"
+ },
+ {
   "id": "99a5a4b0-c74c-4c6f-bc7c-fcb0c4a842db",
   "email": "holowiniec.desiree@gmail.com",
   "firstName": "Desiree",

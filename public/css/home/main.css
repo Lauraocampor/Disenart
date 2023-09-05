@@ -8,7 +8,6 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 20px 0;
 }
 
 
@@ -16,7 +15,7 @@ main {
     font-size: 35px;
     color: #0d3a61;
     font-family: 'Nunito Sans';
-    padding-top: 15px;
+    padding-top: 5px;
     margin-left: 10%;
 
 }

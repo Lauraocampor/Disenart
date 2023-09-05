@@ -24,22 +24,20 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
-app.use(
-	session({
-		secret: 'Is a secret',
-		resave: false,
-		saveUninitialized: false,
-	})
-);
+app.use(session({
+  secret: "Is a secret", 
+  resave: false,
+  saveUninitialized: true
+}));
 app.use(cookies());
 
 /* --- Routers --- */
 app.use('/', mainRouter);
 app.use('/products', productRouter);
-app.use('/users', usersRouter);
-app.use((req, res) => {
-	res.render('404');
-});
+app.use("/users", usersRouter);
+app.use((req,res)=>{
+  res.render('404')
+})
 
 /* app.get('/productCart', (req,res) => {
   res.sendFile (path.join(__dirname, '/views/productCart.html'));

@@ -7,8 +7,8 @@
       <input class="input" type="email" name="email" required>
 <%  if (locals.errors && errors.email){%>
 
-<div class="text error">
-  <%  errors.email.msg%>
+<div class="text-danger">
+  <%=errors.email.msg%>
 </div>
 <%}  %>
       <label for="password">Contraseña</label>
@@ -30,3 +30,4 @@
     </form>
   </div>
   </div>
+  

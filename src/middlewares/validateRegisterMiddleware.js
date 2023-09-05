@@ -8,6 +8,7 @@ const validations = [
     body('lastName').notEmpty().withMessage('Tienes que escribir un apellido'),
 	body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
     body('date').notEmpty().withMessage('Tienes que elegir una fecha')
+   
 ];
 
 module.exports = validations;
