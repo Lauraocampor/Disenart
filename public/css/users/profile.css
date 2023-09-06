@@ -1,0 +1,54 @@
+body{
+    background-color: #bcd1bd;
+    color: #0d3a61;
+    font-family: 'Roboto Condensed'
+}
+.user-profile-main{
+    width: 100vw;
+    align-items: center;
+
+}
+
+.user-profile-welcome{
+margin-left: 10px;
+}
+
+.profile-user-img-section{
+   width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.profile-user-img{
+    width: 70%;
+}
+
+.profile-user-Alldata{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+
+}
+
+.profile-user-data{
+    font-size: 20px;
+    margin: 15px 0
+}
+
+/* BREAK #2 */
+@media (min-width: 481px) {
+    
+}
+
+/* BREAK #3 */
+@media (min-width: 769px) {
+    
+}
+
+/* BREAK #4 */
+@media (min-width: 1280px) {
+
+}
