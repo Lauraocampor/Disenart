@@ -5,4 +5,7 @@ const mainController = require ('../controllers/mainControllers');
 
 router.get('/', mainController.home);
 
+// @GET CERRAR SESIÓN
+router.get('/logout', mainController.logout);
+
 module.exports = router
