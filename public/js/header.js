@@ -3,6 +3,11 @@ document.getElementById("hamburgerButton").addEventListener("click", () => {
   document.getElementById("hamburgerList").classList.toggle("about-nav-toggler");
 }, false);
 
+// USER SCRIPT
+document.getElementById("avatarButton").addEventListener("click", () => {
+  document.getElementById("userList").classList.toggle("about-user-toggler");
+}, false);
+
 // OPEN SEARCH SCRIPT
 document.getElementById("searchButton").addEventListener("click", () => {
   document.getElementById("searchModal").classList.toggle("searchToggle");

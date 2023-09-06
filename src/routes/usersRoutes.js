@@ -27,6 +27,9 @@ router.post('/login',  validations,usersController.loginProcess);
 // @GET PROFILE USER /profile/
 router.get('/profile', /* authMiddleware, */ usersController.profile)
 
+
+
+
 //@GET ALL USERS /allProfiles
 //router.get('/allProfiles', usersController.allProfiles)
 
