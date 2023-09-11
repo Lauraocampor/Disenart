@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+
+    <body class="bodyXL">
+        <!-- HEADER -->
+        <%- include('../partials/header') %>
+            <!-- MAIN -->
+            <main class="user-profile-main">
+                <form class="editProduct" action="/users/profile/edit?_method=PUT" method="post" enctype="multipart/form-data">
+                    <div>
+                        <h2 id="user-profile-welcome"> Editar información del perfil </h2>
+                    </div>
+                    <section class="profile-data-img">
+                        <section class="profile-user-img-section">
+                            <img class="profile-user-img" src="/images/users/<%=user.avatar%>">
+                        </section>
+                        <section class="profile-user-Alldata">
+                            <h2 class> Datos registrados </h2>
+                            <div class="profile-usereachData">
+                                <p class="profile-user-data">
+                                    <input id="editProduct-name" type="text" value="<%= user.firstName %>"
+                                        name="firstName">
+
+                                </p>
+                            </div>
+                            <div class="profile-user-eachData">
+                                <p class="profile-user-data">
+                                    <input id="editProduct-name" type="text" value=" <%= user.lastName %>"
+                                        name="lastName">
+                                </p>
+                            </div>
+                            <div class=" profile-user-eachData">
+                                <p class="profile-user-data">
+                                    <input id="editProduct-name" type="email" value=" <%= user.email %>" name="email">
+                                </p>
+                                <p>
+                                    <label for="avatar">Imagen de perfil</label>
+                                    <input class="input" type="file" name="avatar" accept=".jpg, .jpeg, .png, .gif"
+                                        title="Editar">
+                                </p>
+                            </div>
+                        </section>
+                    </section>
+                    <a href="http://localhost:3000/users/profile">
+                        <input id="edit-delete-button" type="submit" value="Guardar datos">
+                    </a>
+                </form>
+                <a href="http://localhost:3000/users/profile">
+                    <button id="edit-delete-button">Volver al perfil</button>
+                </a>
+            </main>
+            <!-- FOOTER -->
+            <%- include("../partials/footer"); %>
+                <!-- SCRIPT -->
+                <script src="/../js/main.js"></script>
+                <script src="/../js/header.js"></script>
+    </body>
+
+</html>

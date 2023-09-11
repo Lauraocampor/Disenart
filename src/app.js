@@ -6,6 +6,7 @@ const dotenv = require('dotenv').config();
 const cookies = require('cookie-parser');
 const path = require('path');
 const methodOverride = require('method-override');
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 
 const mainRouter = require('./routes/mainRoutes');
 const productRouter = require('./routes/productRoutes');
@@ -30,6 +31,7 @@ app.use(session({
   saveUninitialized: true
 }));
 app.use(cookies());
+app.use(userLoggedMiddleware)
 
 /* --- Routers --- */
 app.use('/', mainRouter);

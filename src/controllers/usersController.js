@@ -93,9 +93,41 @@ const controller = {
         return res.redirect("/");
     },
     profile: (req, res) => {
-        return res.render("userProfile",{  
-        user: req.session.userToLogged})
+        console.log({ user: req.session.userToLogged })
+        return res.render("userProfile",
+        { user: req.session.userToLogged })
     }, 
+
+    editProfile: (req,res) => {
+        console.log({ user: req.session.userToLogged })
+        return res.render("editProfile",
+        { user: req.session.userToLogged })
+    },
+
+    logout: (req, res) => {
+		res.clearCookie('userEmail');
+		req.session.destroy();
+		return res.redirect('/');
+	}
+    ,
+    updateProfile: (req,res) => {
+        console.log({ user: req.session.userToLogged })
+        return res.render("userProfile",
+        { user: req.session.userToLogged })
+
+    }
+
+ /*    updateProduct: (req, res) => {
+        const filenames = req.files.map((file) => file.filename);
+        let updatedProduct = {
+          id: Number(req.params.id),
+        };
+    
+        updatedProduct = {
+          ...updatedProduct,
+          ...req.body,
+          productImages: filenames,
+        }; */
 
 
 }

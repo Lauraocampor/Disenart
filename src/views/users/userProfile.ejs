@@ -1,17 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include('../partials/head') %>
-  <body class="bodyXL">
-    <!-- HEADER -->
-    <%- include('../partials/header') %>
-        <!-- MAIN -->
-<h2> Hi user <%= user.firstName %> </h2>
+<%- include('../partials/head') %>
 
-<img src="/images/users/default.png">
-    <!-- FOOTER -->
-    <%- include("../partials/footer"); %>
-    <!-- SCRIPT -->
-    <script src="/../js/main.js"></script>
-    <script src="/../js/header.js"></script>
-  </body>
+    <body class="bodyXL">
+        <!-- HEADER -->
+        <%- include('../partials/header') %>
+            <!-- MAIN -->
+            <main class="user-profile-main">
+                <div>
+                    <h2 id="user-profile-welcome"> Bienvenido <%= user.firstName %>! </h2>
+                </div>
+                <section class="profile-data-img">
+                    <section class="profile-user-img-section">
+                        <img class="profile-user-img" src="/images/users/<%=user.avatar%>">
+                    </section>
+                    <section class="profile-user-Alldata">
+                        <h2 class> Datos registrados </h2>
+                        <div class="profile-usereachData">
+                            <p class="profile-user-data">
+                                <%= user.firstName %>
+                            </p>
+                        </div>
+                        <div class="profile-user-eachData">
+                            <p class="profile-user-data">
+                                <%= user.lastName %>
+                            </p>
+                        </div>
+                        <div class=" profile-user-eachData">
+                            <p class="profile-user-data">
+                                <%= user.email %>
+                            </p>
+                        </div>
+                    </section>
+                </section>
+                <a href="http://localhost:3000/users/profile/edit">
+                    <button id="edit-delete-button">Editar datos</button>
+                </a>
+                <a href="http://localhost:3000/products/createProduct">
+                    <button id="edit-delete-button">Crear producto</button>
+                </a>
+                <a href="http://localhost:3000/products//searching/searchResults">
+                    <button id="edit-delete-button">Ver productos</button>
+                </a>
+
+            </main>
+            <!-- FOOTER -->
+            <%- include("../partials/footer"); %>
+                <!-- SCRIPT -->
+                <script src="/../js/main.js"></script>
+                <script src="/../js/header.js"></script>
+    </body>
+
 </html>

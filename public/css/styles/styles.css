@@ -26,6 +26,9 @@
 /* Estilos de la página 404 not found  */
 @import "/css/404/404.css";
 
+/* Estilos del profile  */
+@import "/css/users/profile.css";
+
 /* Fonts aplicadas de manera global */
 * {
     font-family: 'Roboto Condensed', 'Nunito Sans',  sans-serif;
