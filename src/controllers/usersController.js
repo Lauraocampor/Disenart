@@ -98,6 +98,13 @@ const controller = {
         return res.render("editProfile",
         { user: req.session.userToLogged })
     },
+
+    logout: (req, res) => {
+		res.clearCookie('userEmail');
+		req.session.destroy();
+		return res.redirect('/');
+	}
+    ,
     updateProfile: (req,res) => {
         console.log({ user: req.session.userToLogged })
         return res.render("userProfile",
