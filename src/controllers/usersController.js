@@ -93,11 +93,29 @@ const controller = {
         { user: req.session.userToLogged })
     }, 
 
-    edit: (req,res) => {
+    editProfile: (req,res) => {
         console.log({ user: req.session.userToLogged })
         return res.render("editProfile",
         { user: req.session.userToLogged })
+    },
+    updateProfile: (req,res) => {
+        console.log({ user: req.session.userToLogged })
+        return res.render("userProfile",
+        { user: req.session.userToLogged })
+
     }
+
+ /*    updateProduct: (req, res) => {
+        const filenames = req.files.map((file) => file.filename);
+        let updatedProduct = {
+          id: Number(req.params.id),
+        };
+    
+        updatedProduct = {
+          ...updatedProduct,
+          ...req.body,
+          productImages: filenames,
+        }; */
 
 
 }
