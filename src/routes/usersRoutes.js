@@ -25,7 +25,10 @@ router.get('/login', usersController.login);
 router.post('/login',  validations,usersController.loginProcess);
 
 // @GET PROFILE USER /profile/
-router.get('/profile', /* authMiddleware, */ usersController.profile)
+router.get('/profile', authMiddleware,  usersController.profile)
+
+// @GET PROFILE USER EDIT -> /users/profile/edit
+router.get('/profile/edit', authMiddleware, usersController.edit)
 
 
 

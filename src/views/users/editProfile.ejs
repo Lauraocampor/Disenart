@@ -8,7 +8,7 @@
             <!-- MAIN -->
             <main class="user-profile-main">
                 <div>
-                    <h2 id="user-profile-welcome"> Bienvenido <%= user.firstName %>! </h2>
+                    <h2 id="user-profile-welcome"> Editar información del perfil </h2>
                 </div>
                 <section class="profile-data-img">
                     <section class="profile-user-img-section">
@@ -18,29 +18,31 @@
                         <h2 class> Datos registrados </h2>
                         <div class="profile-usereachData">
                             <p class="profile-user-data">
-                                <%= user.firstName %>
+                                <input id="editProduct-name" type="text" value="<%= user.firstName %>" name="firstName">
+
                             </p>
                         </div>
                         <div class="profile-user-eachData">
                             <p class="profile-user-data">
-                                <%= user.lastName %>
+                                <input id="editProduct-name" type="text" value=" <%= user.lastName %>" name="lastName">
                             </p>
                         </div>
                         <div class=" profile-user-eachData">
                             <p class="profile-user-data">
-                                <%= user.email %>
+                                <input id="editProduct-name" type="email" value=" <%= user.email %>" name="email">
+                            </p>
+                            <p>
+                                <label for="avatar">Imagen de perfil</label>
+                                <input class="input" type="file" name="avatar" accept=".jpg, .jpeg, .png, .gif" title="Editar">
                             </p>
                         </div>
                     </section>
                 </section>
-                <a href="http://localhost:3000/users/profile/edit">
-                    <button id="edit-delete-button">Editar datos</button>
+                <a href="http://localhost:3000/users/profile">
+                    <button id="edit-delete-button">Guardar datos</button>
                 </a>
-                <a href="http://localhost:3000/products/createProduct">
-                    <button id="edit-delete-button">Crear producto</button>
-                </a>
-                <a href="http://localhost:3000/products//searching/searchResults">
-                    <button id="edit-delete-button">Ver productos</button>
+                <a href="http://localhost:3000/users/profile">
+                    <button id="edit-delete-button">Volver al perfil</button>
                 </a>
 
             </main>

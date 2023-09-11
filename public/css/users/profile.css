@@ -9,12 +9,13 @@ body{
 
 }
 
-.user-profile-welcome{
+#user-profile-welcome{
 margin-left: 10px;
 }
 
 .profile-user-img-section{
    width: 100vw;
+   height: auto;
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -22,6 +23,7 @@ margin-left: 10px;
 
 .profile-user-img{
     width: 70%;
+    border-radius: 50%;
 }
 
 .profile-user-Alldata{
@@ -40,15 +42,53 @@ margin-left: 10px;
 
 /* BREAK #2 */
 @media (min-width: 481px) {
+  
+    .profile-user-img-section{
+         display: flex;
+         justify-content: center;
+         align-items: center; 
+     }
+
+    .profile-data-img{
+        display: flex;
+        flex-direction: row;
+    }
+
+        .profile-user-data{
+            font-size: 16px;
+            margin: 10px 0
+        }
+    
+
+    .profile-user-img-section, .profile-user-Alldata{
+        margin-bottom: 15px;
+        flex: 1
+    }
     
 }
 
 /* BREAK #3 */
 @media (min-width: 769px) {
-    
+
+    .profile-user-data{
+        font-size: 25px;
+    }
+
+    .profile-user-img{
+        max-width: 350px;
+    }
+
+    .profile-user-Alldata {
+        align-items: self-start
+    }
+    .profile-user-img-section, .profile-user-Alldata{
+        margin-bottom: 25px;
+    }
 }
 
 /* BREAK #4 */
 @media (min-width: 1280px) {
+
+   
 
 }

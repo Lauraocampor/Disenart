@@ -88,9 +88,16 @@ const controller = {
         return res.redirect("/");
     },
     profile: (req, res) => {
+        console.log({ user: req.session.userToLogged })
         return res.render("userProfile",
         { user: req.session.userToLogged })
     }, 
+
+    edit: (req,res) => {
+        console.log({ user: req.session.userToLogged })
+        return res.render("editProfile",
+        { user: req.session.userToLogged })
+    }
 
 
 }
