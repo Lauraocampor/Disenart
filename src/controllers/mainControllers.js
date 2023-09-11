@@ -1,3 +1,4 @@
+
 const controller ={
     home: (req,res) => {
         console.log(req.session.user);

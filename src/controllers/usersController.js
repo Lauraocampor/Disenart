@@ -4,6 +4,10 @@ const { validationResult } = require('express-validator');
 const User = require("../models/usersModel");
 
 const controller = {
+    mostrarModal: (req, res) => {
+        // Renderiza la página que contiene el modal
+        res.render('home',{ showModal: true });
+    }, 
     register: (req, res) => {
         res.render('register',{ user: req.session.userToLogged  });
     },
@@ -13,7 +17,8 @@ const controller = {
             return res.render('register', {
                 errors: resultValidation.mapped(),
                 oldData: req.body, 
-                user: req.session.userToLogged 
+                user: req.session.userToLogged,
+                showModal: true, 
             })
         }
         let userInDB = User.findByField('email', req.body.email);

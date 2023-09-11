@@ -5,12 +5,11 @@
     <form class="modal-form" action="/">
       <label for="email">Correo electrónico</label>
       <input class="input" type="email" name="email" required>
-<%  if (locals.errors && errors.email){%>
-
-<div class="text-danger">
-  <%=errors.email.msg%>
-</div>
-<%}  %>
+      <% if (locals.errors && errors.email ) { %>
+        <div class="text-danger">
+            <%=errors.email.msg%>
+        </div>
+    <% } %>
       <label for="password">Contraseña</label>
       <input class="input" type="password" name="password" required>
 
