@@ -33,6 +33,36 @@ const User = {
 		return newUser;
 	},
 
+	updateProfile: (updatedProfile) => {
+		// Buscar array de usuarios ya existentes
+		let users = User.findAll();
+	
+		// Conseguir en qué indice de ese array, está guardado el usuario del id en cuestión
+		const userIndex = users.findIndex(
+		  (usuarioActual) => usuarioActual.id === updatedProfile.id
+		);
+	
+	
+		// Verificar si se encontró el usuario
+		if (userIndex !== -1) {
+		  // Actualizar todos los parámetros del usuario excepto las imágenes
+		  const { avatar, ...otherParams } = updatedProfile;
+		  users[userIndex] = { ...users[userIndex], ...otherParams };
+
+		  // Actualizar la imagen de perfil si se seleccionó una nueva
+	 if (avatar.length > 0) {
+		users[userIndex].avatar = avatar;
+	  }
+	
+		};
+	
+	
+		// Convertir este nuevo array en JSON
+		const usersJson = JSON.stringify(users);
+		// Guardar todo al JSON
+		fs.writeFileSync(User.fileRoute, usersJson, "utf-8");
+	  },
+
 	delete: function (id) {
 		let allUsers = this.findAll();
 		let finalUsers = allUsers.filter(oneUser => oneUser.id !== id);

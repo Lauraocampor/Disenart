@@ -28,6 +28,8 @@
 
 /* Estilos del profile  */
 @import "/css/users/profile.css";
+@import "/css/users/allUsers.css";
+@import "/css/users/editProfile.css";
 
 /* Fonts aplicadas de manera global */
 * {
