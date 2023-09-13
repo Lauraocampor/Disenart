@@ -1,39 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('../partials/head') %>
-
-    <body class="bodyXL">
-        <!-- HEADER -->
-        <%- include('../partials/header') %>
-            <!-- MAIN -->
-            <main>
-                <h2 class="userList-title">Usuarios activos</h2>
-
-                <section class="userList">
-                    <% allUsers.forEach(users=> { %>
-                        <article class="userProfile">
-                            <img src="/images/users/<%=users.avatar%>" class="userList-img">
-                            <p class="userList-data">
-                                <%= users.email %>
-                            </p>
-                            <p class="userList-data">
-                                <%= users.firstName %>
-                                    <%= users.lastName %>
-                            </p>
-                            <a href="http://localhost:3000/users/profile/<%=users.id%>/detail">
-                                <button id="edit-delete-button">Ver datos</button>
-                            </a>
-
-                            <% }); %>
-                        </article>
-
-                </section>
-            </main>
-            <!-- FOOTER -->
-            <%- include("../partials/footer"); %>
-                <!-- SCRIPT -->
-                <script src="/../js/main.js"></script>
-                <script src="/../js/header.js"></script>
-    </body>
-
+	<%- include('../partials/head') %>
+	<body class="bodyXL">
+		<!-- HEADER -->
+		<%- include('../partials/header') %>
+		<!-- MAIN -->
+		<main>
+			<h2 class="userList-title">Usuarios activos</h2>
+			<section class="userList">
+				<% allUsers.forEach(users=> { %>
+				<article class="userProfile">
+					<img src="/images/users/<%=users.avatar%>" class="userList-img" />
+					<p class="userList-data"><%= users.email %></p>
+					<p class="userList-data">
+						<%= users.firstName %> <%= users.lastName %>
+					</p>
+					<a href="http://localhost:3000/users/profile/<%=users.id%>/detail">
+						<button id="edit-delete-button">Ver datos</button>
+					</a>
+				</article>
+				<% }); %>
+			</section>
+		</main>
+		<!-- FOOTER -->
+		<%- include("../partials/footer"); %>
+		<!-- SCRIPT -->
+		<script src="/../js/main.js"></script>
+		<script src="/../js/header.js"></script>
+	</body>
 </html>
