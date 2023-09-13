@@ -40,12 +40,14 @@
     .userList {
         width: 100vw;
         display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-start;
     }
 
     .userProfile {
-        width: 45vw;
+        width: 30vw;
+
 
     }
 

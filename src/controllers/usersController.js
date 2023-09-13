@@ -147,9 +147,9 @@ const controller = {
     profileDetail: (req,res) => { //no esta funcionando
         const allUsers = User.findAll();
         const id = req.params.id
-        const user = User.findByPk(id);
+        const users = User.findByPk(id);
 
-        return res.render('profileDetail',  {user: user, allUsers: allUsers, user: req.session.userToLogged })
+        return res.render('profileDetail',  {users: users, allUsers: allUsers, user: req.session.userToLogged })
     }
 
 
