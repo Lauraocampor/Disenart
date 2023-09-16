@@ -1,5 +1,35 @@
 # Resúmenes de Scrum Weekly
 
+> SPRINT #5_02
+
+- Desiree Holowiniec
+
+1. Estuve trabajando en las vistas de profile, editProfile, allUsers y profileDetail.
+
+2. Me surgieron problemas mas que nada con la parte de edicion.
+
+3. Investigué un poco cómo hacer para que el usuario siga loggeado cuando se actualizan los datos pero no pude resolverlo. Hay que volver a iniciar sesión cuando se cambian los datos del usuario.
+
+4. Otro problema al momento de editar/actualizar fue la contraseña, al ser eliminada no la podía requerir y se sobrescribia el json sin la contraseña. Momentaneamente comenté la línea que elimina la contraseña.
+
+5. Al momento de configurar el css de allUsers para que aparezcan usuarios en fila cuando se agranda la pantalla, no funcionaba. Fue un tema de que estaba mal cerrado el forEach.
+
+6. Hay un problema de que en todos los res.render necesitamos exportar el userToLogged porque sino se rompe el código, creo que el problema viene del ejs del header. Lo solucionaremos bien para el próximo sprint.
+
+- Juan Diego Marín
+
+1. Tuve unas cuestiones personales así que durante este sprint no hice mucho. Me comprometí a hacer los pendientes del trello en el sprint de base de datos. También integramos ESlint y prettier a nuestro proyecto para mantener un formato consistente.
+
+2. Para el sprint de API haré colaboraciones mas sustaciales.
+
+3. Tuve problemas para manejar el tiempo pero ya lo resolví.
+
+- Laura Ocampo
+
+1. Configuré las rutas para los users que estaban logueados y no logueados.
+
+2. Intenté darle uso a los modales, sin embargo se presentaban inconvenientes cuando se realizaba el post. Por ello, a medida que avancemos en el proyecto continuaré investigando cómo evitar que se cierren los modales y se puedan mostrar los errores de validación.
+
 > SPRINT #5_01
 
 - Desiree Holowiniec
@@ -105,5 +135,3 @@ Cada uno de los integrantes del equipo hizo un pequeño reporte sobre las tareas
 - Israel Urcola
 
 1. Voy a hacer los controladores.
-
-Acá termina el weekly de la semana.
