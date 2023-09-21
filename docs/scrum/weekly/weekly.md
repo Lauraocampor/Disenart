@@ -24,6 +24,10 @@
 
 3. Tuve problemas para manejar el tiempo pero ya lo resolví.
 
+- Mercedes Lavezzolo
+
+1. Realicé toda la parte del login del usuario, manteniendo activa la sesión. Todavía tenemos problemas con los modales.
+
 - Laura Ocampo
 
 1. Configuré las rutas para los users que estaban logueados y no logueados.
