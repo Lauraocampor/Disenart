@@ -1,13 +1,9 @@
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 
-const User = require("../models/usersModel");
+const User = require('../models/usersModel');
 
 const controller = {
-    mostrarModal: (req, res) => {
-        // Renderiza la página que contiene el modal
-        res.render('home',{ showModal: true });
-    }, 
     register: (req, res) => {
         res.render('register',{ user: req.session.userToLogged  });
     },
@@ -17,120 +13,149 @@ const controller = {
             return res.render('register', {
                 errors: resultValidation.mapped(),
                 oldData: req.body, 
-                user: req.session.userToLogged,
-                showModal: true, 
+                user: req.session.userToLogged 
             })
         }
         let userInDB = User.findByField('email', req.body.email);
 
-        if (userInDB) {
-            return res.render('register', {
-                errors: {
-                    email: {
-                        msg: 'Este email ya está registrado'
-                    }
-                },
-                oldData: req.body, 
-                user: req.session.userToLogged  
-            });
-        }
+		if (userInDB) {
+			return res.render('register', {
+				errors: {
+					email: {
+						msg: 'Este email ya está registrado',
+					},
+				},
+				oldData: req.body,
+				user: req.session.userToLogged,
+			});
+		}
 
-        const profileImage = req.file ? req.file.filename : 'default.png';
+		const profileImage = req.file ? req.file.filename : 'default.png';
 
-        let userToCreate = {
-            ...req.body,
-            password: bcryptjs.hashSync(req.body.password, 10),
-            avatar: profileImage
-        }
+		let userToCreate = {
+			...req.body,
+			password: bcryptjs.hashSync(req.body.password, 10),
+			avatar: profileImage,
+		};
 
-        let userCreated = User.create(userToCreate);
+		let userCreated = User.create(userToCreate);
 
-        return res.redirect('/');
-    },
-    login: (req, res) => {
-        const userToLogin = User.findByField (req.body.email)
+		return res.redirect('/');
+	},
+	login: (req, res) => {
+		const userToLogin = User.findByField(req.body.email);
 
-       res.render('login',{ user: req.session.userToLogged });
-    },
-  
-    loginProcess: (req, res) => {
-        const userToLogin = User.findByField("email", req.body.email);
-    
-        if (!userToLogin) {
-            return res.render('login', {
-                errors: {
-                    email: {
-                        msg: "El mail o la contraseña son incorrectos"
-                    }
-                    }, 
-             user: req.session.userToLogged
-               
-            });
-        }
-    
-        const isOkPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
-    
-        if (!isOkPassword) {
-            return res.render('login', {
-                errors: {
-                    email: {
-                        msg: "El mail o la contraseña son incorrectos"
-                    }
-                }, 
-         user: req.session.userToLogged
-           
-            });
-        }
-    
-        delete userToLogin.password;
-        req.session.userToLogged = userToLogin;
- 
-        if (req.body.remember_password) {
-            res.cookie("userEmail", userToLogin.email,{ maxAge: 1000 * 60 * 60 * 24 * 365});
-           
-        }
-    
-        return res.redirect("/");
-    },
-    profile: (req, res) => {
-        console.log({ user: req.session.userToLogged })
-        return res.render("userProfile",
-        { user: req.session.userToLogged })
-    }, 
+		res.render('login', { user: req.session.userToLogged });
+	},
 
-    editProfile: (req,res) => {
-        console.log({ user: req.session.userToLogged })
-        return res.render("editProfile",
-        { user: req.session.userToLogged })
-    },
+	loginProcess: (req, res) => {
+		const userToLogin = User.findByField('email', req.body.email);
 
-    logout: (req, res) => {
+		if (!userToLogin) {
+			return res.render('login', {
+				errors: {
+					email: {
+						msg: 'El mail o la contraseña son incorrectos',
+					},
+				},
+				user: req.session.userToLogged,
+			});
+		}
+
+		const isOkPassword = bcryptjs.compareSync(
+			req.body.password,
+			userToLogin.password,
+		);
+
+		if (!isOkPassword) {
+			return res.render('login', {
+				errors: {
+					email: {
+						msg: 'El mail o la contraseña son incorrectos',
+					},
+				},
+				user: req.session.userToLogged,
+			});
+		}
+
+		//delete userToLogin.password; lo comente para poder traer la contraseña en el updatedProfile
+		req.session.userToLogged = userToLogin;
+
+		if (req.body.remember_password) {
+			res.cookie('userEmail', userToLogin.email, {
+				maxAge: 1000 * 60 * 60 * 24 * 365,
+			});
+		}
+
+		return res.redirect('/');
+	},
+	profile: (req, res) => {
+		console.log({ user: req.session.userToLogged });
+		return res.render('userProfile', { user: req.session.userToLogged });
+	},
+
+	editProfile: (req, res) => {
+		console.log({ user: req.session.userToLogged });
+		return res.render('editProfile', { user: req.session.userToLogged });
+	},
+
+	updateProfile: (req, res) => {
+		console.log({ user: req.session.userToLogged });
+
+		let updatedProfile = {
+			id: req.session.userToLogged.id,
+		};
+
+		const profileImage = req.file
+			? req.file.filename
+			: req.session.userToLogged.avatar;
+
+		updatedProfile = {
+			...updatedProfile,
+			...req.body,
+			password: bcryptjs.hashSync(req.body.password, 10),
+			avatar: profileImage,
+		};
+
+		User.updateProfile(updatedProfile);
+
+		return res.render('userProfile', { user: req.session.userToLogged });
+	},
+	logout: (req, res) => {
 		res.clearCookie('userEmail');
 		req.session.destroy();
 		return res.redirect('/');
-	}
-    ,
-    updateProfile: (req,res) => {
-        console.log({ user: req.session.userToLogged })
-        return res.render("userProfile",
-        { user: req.session.userToLogged })
+	},
 
-    }
+	delete: (req, res) => {
+		console.log('usuario a eliminar' + { user: req.session.userToLogged });
 
- /*    updateProduct: (req, res) => {
-        const filenames = req.files.map((file) => file.filename);
-        let updatedProduct = {
-          id: Number(req.params.id),
-        };
-    
-        updatedProduct = {
-          ...updatedProduct,
-          ...req.body,
-          productImages: filenames,
-        }; */
+		let id = req.session.userToLogged.id;
 
+		User.delete(id);
+		return res.redirect('/');
+	},
 
-}
+	allProfiles: (req, res) => {
+		const allUsers = User.findAll();
 
+		return res.render('allUsers', {
+			allUsers: allUsers,
+			user: req.session.userToLogged,
+		});
+	},
 
-    module.exports = controller;
+	profileDetail: (req, res) => {
+		const allUsers = User.findAll();
+		const id = req.params.id;
+		const users = User.findByPk(id);
+
+		return res.render('profileDetail', {
+			users: users,
+			allUsers: allUsers,
+			user: req.session.userToLogged,
+		});
+	},
+};
+
+module.exports = controller;

@@ -1,84 +1,84 @@
 <!-- HTML -->
 <!DOCTYPE html>
 <html lang="es">
-  <%- include("../partials/head") %>
-  <body class="bodyXL">
-    <!-- HEADER -->
-    <%- include('../partials/header') %>
-    <!-- MAIN -->
-    <main class="main-createProduct">
-      <form
-        class="createProduct"
-        action="/products"
-        method="post"
-        enctype="multipart/form-data"
-      >
-        <label class="createProduct-name" for="productName"
-          >Nombre del producto</label
-        >
-        <input
-          id="createProduct-name"
-          type="text"
-          id="productName"
-          name="productName"
-          required
-        />
-        <label class="createProduct-info" for="productColor">Color</label>
-        <section class="createProduct-main-option">
-          <input
-            class="createProduct-option"
-            type="color"
-            id="productColor"
-            name="productColor"
-            required
-          />
-        </section>
-        <label class="createProduct-info" for="productSize">Talle</label>
-        <section class="createProduct-main-option">
-          <select name="productSize" id="size" required>
-            <option value="day" selected disabled>Talle</option>
-            <option class="createProduct-option" value="S">S</option>
-            <option class="createProduct-option" value="M">M</option>
-            <option class="createProduct-option" value="L">L</option>
-            <option class="createProduct-option" value="XL">XL</option>
-            <option class="createProduct-option" value="No Aplica">
-              No Aplica
-            </option>
-          </select>
-        </section>
-        <label class="createProduct-info" for="productPrice">Precio</label>
-        <input type="number" id="productPrice" name="productPrice" required />
-        <label class="createProduct-info" for="productDescription"
-          >Descripción</label
-        >
-        <input
-          id="createProduct-information-product"
-          type="text"
-          id="productDescription"
-          name="productDescription"
-          require
-        />
-        <label class="createProduct-info" for="productStock"
-          >Cantidad disponible</label
-        >
-        <input type="number" id="productStock" name="productStock" required />
-        <label class="createProduct-info" for="productImages"
-          >Foto del producto</label
-        >
-        <input
-          type="file"
-          id="productImages"
-          name="productImages"
-          accept=".jpg, .jpeg, .png, .gif"
-          multiple
-        />
-        <input id="createProduct-finish" type="submit" value="Crear producto" />
-      </form>
-    </main>
-    <!-- FOOTER -->
-    <%- include("../partials/footer"); %>
-    <!-- SCRIPT -->
-    <script src="/js/main.js"></script>
-    <script src="/js/header.js"></script>
-  </body>
+	<%- include("../partials/head") %>
+	<body class="bodyXL">
+		<!-- HEADER -->
+		<%- include('../partials/header') %>
+		<!-- MAIN -->
+		<main class="main-createProduct">
+			<form
+				class="createProduct"
+				action="/products"
+				method="post"
+				enctype="multipart/form-data"
+			>
+				<label class="createProduct-name" for="productName"
+					>Nombre del producto</label
+				>
+				<input
+					id="createProduct-name"
+					type="text"
+					id="productName"
+					name="productName"
+					required
+				/>
+				<label class="createProduct-info" for="productColor">Color</label>
+				<section class="createProduct-main-option">
+					<input
+						class="createProduct-option"
+						type="color"
+						id="productColor"
+						name="productColor"
+						required
+					/>
+				</section>
+				<label class="createProduct-info" for="productSize">Talle</label>
+				<section class="createProduct-main-option">
+					<select name="productSize" id="size" required>
+						<option value="day" selected disabled>Talle</option>
+						<option class="createProduct-option" value="S">S</option>
+						<option class="createProduct-option" value="M">M</option>
+						<option class="createProduct-option" value="L">L</option>
+						<option class="createProduct-option" value="XL">XL</option>
+						<option class="createProduct-option" value="No Aplica">
+							No Aplica
+						</option>
+					</select>
+				</section>
+				<label class="createProduct-info" for="productPrice">Precio</label>
+				<input type="number" id="productPrice" name="productPrice" required />
+				<label class="createProduct-info" for="productDescription"
+					>Descripción</label
+				>
+				<input
+					id="createProduct-information-product"
+					type="text"
+					id="productDescription"
+					name="productDescription"
+					require
+				/>
+				<label class="createProduct-info" for="productStock"
+					>Cantidad disponible</label
+				>
+				<input type="number" id="productStock" name="productStock" required />
+				<label class="createProduct-info" for="productImages"
+					>Foto del producto</label
+				>
+				<input
+					type="file"
+					id="productImages"
+					name="productImages"
+					accept=".jpg, .jpeg, .png, .gif"
+					multiple
+				/>
+				<input id="createProduct-finish" type="submit" value="Crear producto" />
+			</form>
+		</main>
+		<!-- FOOTER -->
+		<%- include("../partials/footer"); %>
+		<!-- SCRIPT -->
+		<script src="/js/main.js"></script>
+		<script src="/js/header.js"></script>
+	</body>
 </html>
