@@ -16,8 +16,8 @@ VALUES
   ('XL'),
   ('No Aplica');
   
--- Poblar la tabla "productsData"
-INSERT INTO productsData (id_product, name_product, colour_id, size_id, price_product, quantity_product, description_product, image_product)
+-- Poblar la tabla "products_data"
+INSERT INTO products_data (id_product, name_product, colour_id, size_id, price_product, quantity_product, description_product, image_product)
 VALUES
   (1, 'Remera', 1, 1, 3600, 25, 'Remera de algodón. Nuestro algodón, al ser cultivado orgánicamente, tiene una calidad y suavidad superior al algodón convencional, proporcionando una mayor comodidad y durabilidad en tus prendas. A su vez, cuenta con propiedades hipoalergénicas, evitando la exposición de tu piel a sustancias tóxicas. Añadí tu dibujo o imagen personalizada.', '{"1693188281114remera-h1.jpg", "1693188281119remera-h2.jpg", "1693188281123remera-m1.jpg", "1693188281126remera-m2.jpg"}'),
   (2, 'Remera', 1, 4, 3600, 15, 'Remera de algodón. Nuestro algodón, al ser cultivado orgánicamente, tiene una calidad y suavidad superior al algodón convencional, proporcionando una mayor comodidad y durabilidad en tus prendas. A su vez, cuenta con propiedades hipoalergénicas, evitando la exposición de tu piel a sustancias tóxicas. Añadí tu dibujo o imagen personalizada.', '{"1691687048870remera-m2.jpg", "1691687048858remera-h1.jpg", "1691687048863remera-h2.jpg", "1691687048867remera-m1.jpg"}'),
@@ -34,7 +34,7 @@ VALUES
   
   
   -- Poblar la tabla "usersCategories" 
-  INSERT INTO usersCategories (id_category, category)
+  INSERT INTO users_categories (id_category, category)
 VALUES
     (1, 'cliente'),
     (2, 'administrador');
@@ -57,7 +57,7 @@ VALUES
     
     
     -- Poblar la tabla "shoppingCart"
-INSERT INTO shoppingCart (user_id, quantity_shop, tprice_shop)
+INSERT INTO shopping_cart (user_id, quantity_shop, tprice_shop)
 VALUES
     ('9a342b32-78aa-4baf-b260-c20b6ad1407b', 3, 1150.00),
     ('6b7256aa-c0e6-468c-9640-34a2c3753554', 1, 2500.00),
@@ -70,7 +70,7 @@ VALUES
     
     -- Poblar la tabla "productSales"
 -- Población de la tabla "productSales" para coincidir con los 7 carritos de compras
-INSERT INTO productSales (shopping_id, product_id, quantity_sale, colour_id, size_id)
+INSERT INTO product_sales (shopping_id, product_id, quantity_sale, colour_id, size_id)
 VALUES
     (1, 1, 1, 1, 1),
     (1, 2, 2, 2, 2),
