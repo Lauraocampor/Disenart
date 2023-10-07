@@ -33,5 +33,15 @@ module.exports = (sequelize, DataTypes) => {
 
 	const Cart = sequelize.define(alias, cols, config);
 
+	Cart.associate = (models) => {
+		Cart.hasMany(models.ProductSale, {
+			as: 'productSale',
+			timestamps: false,
+			foreignKey: 'shopping_id',
+		});
+
+		//falta relacion con users
+	};
+
 	return Cart;
 };
