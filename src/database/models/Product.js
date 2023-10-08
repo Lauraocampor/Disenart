@@ -30,14 +30,17 @@ module.exports = (sequelize, DataTypes) => {
 				key: 'id_size',
 			},
 		},
+
 		price_product: {
 			type: DataTypes.DECIMAL,
 			allowNull: false,
 		},
+
 		description_product: {
 			type: DataTypes.TEXT,
 			allowNull: false,
 		},
+
 		image_product: {
 			type: DataTypes.STRING,
 			allowNull: true, // cambio a true

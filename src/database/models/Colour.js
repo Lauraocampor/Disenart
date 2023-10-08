@@ -1,7 +1,7 @@
 //falta rechequear si es necesario que el nombre del form coincida con el de la tabla
 
 module.exports = (sequelize, DataTypes) => {
-	const alias = 'Size';
+	const alias = 'Colour';
 
 	const cols = {
 		id_colour: {
