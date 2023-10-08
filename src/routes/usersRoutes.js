@@ -7,11 +7,12 @@ const usersController = require ('../controllers/usersController');
 // Middlewares
 const uploadFile = require('../middlewares/multerMiddleware');
 const validations = require('../middlewares/validateRegisterMiddleware');
+const guestMiddleware = require('../middlewares/guestMiddleware')
 const authMiddleware = require('../middlewares/authMiddleware');
 
 
 // @GET REGISTER FORM
-router.get('/register', usersController.register);
+router.get('/register', guestMiddleware, usersController.register);
 
 
 // @POST PROCESS REGISTER
@@ -19,7 +20,7 @@ router.post('/register', uploadFile.single('avatar'), validations, usersControll
 
 
 // @GET LOGIN FORM
-router.get('/login', usersController.login);
+router.get('/login', guestMiddleware, usersController.login);
 
 // @POST LOGIN FORM
 router.post('/login',  validations,usersController.loginProcess);

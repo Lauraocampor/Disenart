@@ -1,23 +1,29 @@
 const fs = require('fs');
 const path = require('path');
 
-const productModel = require('../models/productModel');
+const productModel = require('../models/productModel'); // sacar despues de hacer todo
 const { Product, Colour, Size } = require('../database/models');
 
 const controller = {
+
+/* 	details: (req, res) => {
+		const productiId = req.params.id;
+		const selectedProduct = productModel.findById(productiId);
+
+		res.render('createdProductDetail', {
+			product: selectedProduct,
+			user: req.session.userToLogged
+		});
+	}, */
 	details: async (req, res) => {
 		try {
 			const selectedProduct = await Product.findByPk(req.params.id, {
 				raw: true,
 			});
-			res.render('createdProductDetail', selectedProduct, {
-				user: req.session.userToLogged,
-			});
+			res.render('createdProductDetail', selectedProduct, {user: req.session.userLogged});
 		} catch (error) {
 			console.log(error);
 		}
-		//const productiId = req.params.id;
-		//const selectedProduct = productModel.findById(productiId);
 	},
 
 	cart: (req, res) => {
