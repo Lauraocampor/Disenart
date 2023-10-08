@@ -48,42 +48,44 @@
           <i class="fa-solid fa-cart-shopping icon icon--bigger-alt"></i>
         </a>
       </li>
-            <!-- USER -->
-               <% if (user) {  %>
-                <nav class="about-user__wrap icon--bigger-widener">
-               <div  class="about_avatar" id="avatarButton">
-                <a href="#" class="user_icon">
-                 <li class="user_li"> 
-               <img class="user_avatar" src="/images/users/<%=user.avatar%>">
-               <div class="user_all_name">
-               <div class= "user_name"><%=user.firstName.charAt(0).toUpperCase() + user.firstName.slice(1).toLowerCase()%></div>
-               <div class= "user_name"> <%=user.lastName.charAt(0).toUpperCase() + user.lastName.slice(1).toLowerCase()%></div>
+      <!-- USER -->
+      <% if (user) {  %>
+        <nav class="about-user__wrap icon--bigger-widener">
+          <div  class="about_avatar" id="avatarButton">
+            <a href="#" class="user_icon">
+            <li class="user_li"> 
+              <img class="user_avatar" src="/images/users/<%=user.avatar%>">
+              <div class="user_all_name">
+                <div class= "user_name"><%=user.firstName.charAt(0).toUpperCase() + user.firstName.slice(1).toLowerCase()%></div>
+              <div class= "user_name"> <%=user.lastName.charAt(0).toUpperCase() + user.lastName.slice(1).toLowerCase()%></div>
               </div>
-            </div>
-             </li>
-            </a>
-        <!-- LIST USER -->
-        <div class="about-user__listWrap about-user-toggler" id="userList">
-          <ul class="user_listOfLinks">
-            <li class="user_nav_options__listItems">
-              <a href="/users/profile" class="about-nav__listAnchor">Ver perfil</a>
             </li>
-            <li class="user_nav_options__listItems">
-              <a href= "/logout" class="about-nav__listAnchor">Cerrar sesión</a>
+            </a>
+          </div>
+          <!-- LIST USER -->
+          <div class="about-user__listWrap about-user-toggler" id="userList">
+            <ul class="user_listOfLinks">
+              <li class="user_nav_options__listItems">
+                <a href="/users/profile" class="about-nav__listAnchor">Ver perfil</a>
+              </li>
+              <li class="user_nav_options__listItems">
+                <a href= "/logout" class="about-nav__listAnchor">Cerrar sesión</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      <%} else {%>
+      <!-- LOGIN -->
+      <nav> 
+          <ul> 
+            <li class="li">
+              <a href="#" class="li__anchor" onclick="openModal('modal1')">
+                <i class="fa-regular fa-user icon icon--bigger-alt"></i>
+              </a>
             </li>
           </ul>
-          </div>
-             <%} else{%>
-     
-      <!-- LOGIN -->
-      <ul> 
-      <li class="li">
-        <a href="#" class="li__anchor" onclick="openModal('modal1')">
-          <i class="fa-regular fa-user icon icon--bigger-alt"></i>
-        </a>
-      </li>
+      </nav>
       <%}%>
-    </ul>
   </nav>
   <!-- FORMULARIOS -->
   <%- include('./header__cart') %>

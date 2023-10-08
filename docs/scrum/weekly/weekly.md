@@ -1,5 +1,35 @@
 # Resúmenes de Scrum Weekly
 
+> SPRINT #6_01
+
+- Desiree Holowiniec
+
+1. Estuve avanzando con los modelos de product, productSale, cart y tablas secundarias.
+
+2. Configuré el config.js que estaba escrito como .json y por eso no levantaba la base de datos.
+
+3. Haciendo los modelos me surgió la duda de si era necesario que el nombre de la tabla sea igual al name del input. Al final nos dimos cuenta que sí.
+
+4. Seguiré avanzando con el CRUD de todo lo que corresponde a productos.
+
+- Juan Diego Marín
+
+1. Logré ponerme al día con las clases. Luego tendré que hacer las ejercitaciones de las unidades de DB, API y JS front.
+
+2. Planeo hacer algunos de los items adicionales del trello durante el fin de semana.
+
+3. Durante la próxima semana espero entrar de lleno con las validaciones y tomar el ritmo que mantuve hasta el sprint #4, aportando código al grupo.
+
+4. También estoy preparando un borrador de mi CV siguiendo los consejos del PDP de DH.
+
+- Laura Ocampo
+
+1. Esta semana sólo estuve conectando la database_diseñart en el proyecto. Teniendo en cuenta que Mercedes dejó los sql creados.
+
+2. Además, realicé la instalación de sequelize para empezar a crear los modelos relacionados con los usuarios.
+
+3. Estaba un poco confundida, teniendo en cuenta la cantidad de material que hemos visto, y no sabía cuál era el siguiente paso. Sin embargo mis compañeros solucionaron mis dudas.
+
 > SPRINT #5_02
 
 - Desiree Holowiniec
