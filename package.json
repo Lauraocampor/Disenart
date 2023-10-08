@@ -1,37 +1,37 @@
 {
-  "name": "grupo_06_e-commerce",
-  "version": "1.0.0",
-  "description": "Nuestro e-commerce ofrecerá la posibilidad de personalizar prendas y objetos cotidianos, como son remeras, buzos, tazas y bolsas. El  objetivo es que los usuarios tengan la experiencia de convertirse en diseñadores de su propio producto a partir de la incorporación de la API SPOD. Los clientes podrán ver sus creaciones desde el navegador y luego comprar el producto. Apuntamos a un público creativo que busque personalizar estos objetos, ya sea para el uso cotidiano o un evento especial.",
-  "main": "app.js",
-  "scripts": {
-    "dev": "npx nodemon ./src/app",
-    "start": "node ./src/app"
-  },
-  "keywords": [
-    "e-commerce",
-    "shirts",
-    "store"
-  ],
-  "author": "grupo_06 DH",
-  "license": "ISC",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "cookie-parser": "^1.4.6",
-    "dotenv": "^16.3.1",
-    "ejs": "^3.1.9",
-    "express": "^4.18.2",
-    "express-session": "^1.17.3",
-    "express-validator": "^7.0.1",
-    "method-override": "^3.0.0",
-    "multer": "^1.4.5-lts.1",
-    "mysql2": "^3.6.1",
-    "nodemon": "^3.0.1",
-    "sequelize": "^6.33.0",
-    "uuid": "^9.0.0"
-  },
-  "devDependencies": {
-    "eslint": "^8.48.0",
-    "eslint-config-prettier": "^9.0.0",
-    "prettier": "3.0.3"
-  }
+	"name": "grupo_06_e-commerce",
+	"version": "1.0.0",
+	"description": "Nuestro e-commerce ofrecerá la posibilidad de personalizar prendas y objetos cotidianos, como son remeras, buzos, tazas y bolsas. El  objetivo es que los usuarios tengan la experiencia de convertirse en diseñadores de su propio producto a partir de la incorporación de la API SPOD. Los clientes podrán ver sus creaciones desde el navegador y luego comprar el producto. Apuntamos a un público creativo que busque personalizar estos objetos, ya sea para el uso cotidiano o un evento especial.",
+	"main": "app.js",
+	"scripts": {
+		"dev": "npm nodemon ./src/app",
+		"start": "node ./src/app"
+	},
+	"keywords": [
+		"e-commerce",
+		"shirts",
+		"store"
+	],
+	"author": "grupo_06 DH",
+	"license": "ISC",
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"cookie-parser": "^1.4.6",
+		"dotenv": "^16.3.1",
+		"ejs": "^3.1.9",
+		"express": "^4.18.2",
+		"express-session": "^1.17.3",
+		"express-validator": "^7.0.1",
+		"method-override": "^3.0.0",
+		"multer": "^1.4.5-lts.1",
+		"mysql2": "^3.6.1",
+		"sequelize": "^6.33.0",
+		"uuid": "^9.0.0"
+	},
+	"devDependencies": {
+		"eslint": "^8.48.0",
+		"eslint-config-prettier": "^9.0.0",
+		"nodemon": "^3.0.1",
+		"prettier": "3.0.3"
+	}
 }
