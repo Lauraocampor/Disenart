@@ -1,8 +1,8 @@
-const guestMiddleware = function (req, res, next){
-    if (req.session.userToLogged) {
+const guestMiddleware = function (req, res, next) {
+	if (req.session.userLogged) {
 		return res.redirect('/users/profile');
 	}
 	next();
-}
+};
 
 module.exports = guestMiddleware;
