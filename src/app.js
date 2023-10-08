@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 
 // MIDDLEWARE REQUIRE'S
+require('dotenv').config(); // I'll setup an special secret for our sessions!
 const session = require('express-session');
 const cookies = require('cookie-parser');
 const path = require('path');
@@ -26,15 +27,15 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
+app.use(cookies());
+app.use(userLoggedMiddleware);
 app.use(
 	session({
-		secret: 'Is a secret',
+		secret: process.env.SESSION_SECRET,
 		resave: false,
 		saveUninitialized: true,
 	}),
 );
-app.use(cookies());
-app.use(userLoggedMiddleware);
 
 // ROUTERS USAGE
 app.use('/', mainRouter);
