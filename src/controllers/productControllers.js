@@ -11,7 +11,7 @@ const controller = {
 				raw: true,
 			});
 			res.render('createdProductDetail', selectedProduct, {
-				user: req.session.userToLogged,
+				user: req.session.userLogged,
 			});
 		} catch (error) {
 			console.log(error);
