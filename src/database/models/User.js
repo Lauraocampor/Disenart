@@ -9,17 +9,16 @@ module.exports = (sequelize, DataTypes) => {
 
 		name_user: {
 			type: DataTypes.STRING(100),
-			allowNull: false,
 		},
 
 		lastname_user: {
 			type: DataTypes.STRING(100),
-			allowNull: false,
 		},
 
 		email_user: {
 			type: DataTypes.STRING,
 			allowNull: false,
+			unique: true,
 		},
 
 		password_user: {
@@ -33,14 +32,15 @@ module.exports = (sequelize, DataTypes) => {
 
 		image_user: {
 			type: DataTypes.STRING,
-			allowNull: true,
+			allowNull: true, // verificar
 		},
 
 		category_id: {
 			type: DataTypes.INTEGER,
 			references: {
-				model: 'usercategories',
+				model: 'user_categories',
 				key: 'id_category',
+				allowNull: false,
 			},
 		},
 	};

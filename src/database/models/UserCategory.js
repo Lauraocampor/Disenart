@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
 		id_category: {
 			type: DataTypes.INTEGER(11),
 			primaryKey: true,
+			autoIncrement: true,
 		},
 
 		category: {
@@ -14,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
 	};
 
 	const config = {
-		tableName: 'userscategories',
+		tableName: 'users_categories',
 		timestamps: false,
 	};
 
