@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
 
 	const cols = {
 		id_category: {
-			type: DataTypes.INTEGER(11),
+			type: DataTypes.INTEGER(11).UNSIGNED,
 			primaryKey: true,
 			autoIncrement: true,
 		},
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
 		UserCategory.hasMany(models.User, {
 			as: 'users',
 			timestamps: false,
-			foreignKey: 'id_shopping',
+			foreignKey: 'category_id',
 		});
 	};
 
