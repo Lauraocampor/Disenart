@@ -56,7 +56,7 @@ module.exports = (sequelize, DataTypes) => {
 		User.belongsTo(models.UserCategory, {
 			as: 'category',
 			timestamps: false,
-			foreignKey: 'id_category',
+			foreignKey: 'category_id',
 		});
 
 		User.hasMany(models.Cart, {
