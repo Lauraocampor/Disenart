@@ -7,7 +7,6 @@ function userLoggedMiddleware(req, res, next) {
 	req.session = {
 		userLogged: userFromCookie,
 	};
-	console.log(req.session);
 	if (req.session.userLogged) {
 		res.locals.isLogged = true;
 		res.locals.userLogged = req.session.userLogged;

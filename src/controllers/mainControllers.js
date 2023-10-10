@@ -1,10 +1,11 @@
 const controller = {
 	home: (req, res) => {
-		console.log(req.session.user);
 		res.render('home', { user: req.session.userLogged });
 	},
 	logout: (req, res) => {
-		if (req.session) {
+		req.session = { ...req.session.userLogged };
+		console.log(req.session.userLogged);
+		if (req.session.userLogged) {
 			req.session.destroy((err) => {
 				if (err) {
 					console.error('Error al destruir la sesión:', err);
