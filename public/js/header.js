@@ -9,15 +9,6 @@ document.getElementById('hamburgerButton').addEventListener(
 	false,
 );
 
-// USER SCRIPT
-document.getElementById('avatarButton').addEventListener(
-	'click',
-	() => {
-		document.getElementById('userList').classList.toggle('about-user-toggler');
-	},
-	false,
-);
-
 // OPEN SEARCH SCRIPT
 document.getElementById('searchButton').addEventListener(
 	'click',
@@ -31,7 +22,7 @@ document.getElementById('searchButton').addEventListener(
 	'click',
 	() => {
 		document
-			.getElementById('searchModalBox')
+			.getElementById('searchBoxPosition')
 			.classList.toggle('searchToggleBox');
 	},
 	false,
@@ -41,7 +32,7 @@ document.getElementById('searchButton').addEventListener(
 	'click',
 	() => {
 		document
-			.getElementById('searchBoxPosition')
+			.getElementById('searchModalBox')
 			.classList.toggle('searchToggleBox');
 	},
 	false,
@@ -72,6 +63,16 @@ document.getElementById('escapeButton').addEventListener(
 		document
 			.getElementById('searchBoxPosition')
 			.classList.toggle('searchToggleBox');
+	},
+	false,
+);
+
+// LEAVE HERE, IF PUT BEFORE WILL CAUSE A BUG
+// USER SCRIPT
+document.getElementById('avatarButton').addEventListener(
+	'click',
+	() => {
+		document.getElementById('userList').classList.toggle('about-user-toggler');
 	},
 	false,
 );
