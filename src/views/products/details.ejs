@@ -17,35 +17,31 @@
               <section class="main-images" style="
       justify-content: center;">
                 <section class="main-second">
-                  <img class="main-second-images" src="/images/productos/<%= product.productImages[1] %>">
-                  <img class="main-second-images" src="/images/productos/<%= product.productImages[2] %>">
-                  <img class="main-second-images" src="/images/productos/<%= product.productImages[3] %>">
+                  <img class="main-second-images" src=  "https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw5bfadec5/products/UA_1360980-001/UA_1360980-001-1.JPG" >
+                  <img class="main-second-images" src="https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw5bfadec5/products/UA_1360980-001/UA_1360980-001-1.JPG"">
+                  <img class="main-second-images" src="https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw5bfadec5/products/UA_1360980-001/UA_1360980-001-1.JPG">
                 </section>
                 <section class="main-first">
-                  <img class="main-first-images" src="/images/productos/<%= product.productImages[0] %>">
+                  <img class="main-first-images" src="https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw5bfadec5/products/UA_1360980-001/UA_1360980-001-1.JPG">
                 </section>
               </section>
               <div class="main-information-complete">
                 <section class="main-information">
-                  <h2 id="name"> <%= product.productName %> </h2>
+                  <h2 id="name"> <%= product.name_product %> </h2>
                   <h4 class="info">Color</h4>
                   <section class="main-option">
-                    <button class="option"> Color 1</button>
-                    <button class="option"> Color 2</button>
-                    <button class="option"> Color 3</button>
+                    <button class="option" > <%- product.colour.colour %></button> 
+
                   </section>
                   <h4 class="info">Talle</h4>
                   <section class="main-option">
-                    <button class="option"> Talle 1</button>
-                    <button class="option"> Talle 2</button>
-                    <button class="option"> Talle 3</button>
-                    <button class="option"> Talle 4</button>
+                    <button class="option"> <%- product.size.size %></button>
                   </section>
-                  <h3 id="precio"> $<%= product.productPrice %></h3>
+                  <h3 id="precio"> $<%= product.price_product %></h3>
                 </section>
                 <a href="#" onclick="openModal('modal3')"> <button id="finish">Comprar</button></a>
                 <h2 id="description"> Descripción del Producto </h2>
-                <p id="information-product"><%= product.productDescription %></p>
+                <p id="information-product"><%= product.description_product %></p>
               </div>
             </div>
           </section>

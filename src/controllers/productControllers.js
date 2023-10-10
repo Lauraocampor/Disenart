@@ -6,21 +6,18 @@ const { Product, Colour, Size } = require('../database/models');
 
 const controller = {
 
-/* 	details: (req, res) => {
-		const productiId = req.params.id;
-		const selectedProduct = productModel.findById(productiId);
 
-		res.render('createdProductDetail', {
-			product: selectedProduct,
-			user: req.session.userToLogged
-		});
-	}, */
 	details: async (req, res) => {
 		try {
-			const selectedProduct = await Product.findByPk(req.params.id, {
+			const product = await Product.findByPk(req.params.id, {
 				raw: true,
+				include: ['size', 'colour'],
+				nest: true
 			});
-			res.render('createdProductDetail', selectedProduct, {user: req.session.userLogged});
+			console.log(product)
+			res.render('createdProductDetail',{ product, user: req.session.userLogged});
+
+			//quedo la vista cargada con imagenes random para ver que funciona
 		} catch (error) {
 			console.log(error);
 		}
@@ -29,20 +26,58 @@ const controller = {
 	cart: (req, res) => {
 		res.render('cart', { user: req.session.userToLogged });
 	},
-	createProduct: (req, res) => {
-		res.render('createProduct', { user: req.session.userToLogged });
-	},
-	editProduct: (req, res) => {
-		const product = productModel.findById(Number(req.params.id));
 
-		res.render('editProduct', { product, user: req.session.userToLogged });
-	},
-	userProduct: (req, res) => {
-		const product = productModel.findById(Number(req.params.id));
+	createProduct: async (req, res) => { //get
 
-		res.render('details', { product, user: req.session.userToLogged });
+		try{
+			const sizes = await Size.findAll ({raw : true})
+			const colours = await Colour.findAll ({raw : true})
+
+			res.render('createProduct', { sizes, colours, user: req.session.userToLogged });
+		} catch (error) {
+			console.log(error)
+		}
 	},
-	searchResults: function (req, res) {
+
+
+	editProduct: async (req, res) => {
+
+
+		try {
+			const product = await Product.findByPk(req.params.id, {
+				raw: true,
+				include: ['size', 'colour'],
+				nest: true
+			});
+			const colours = await Colour.findAll();
+			const sizes = await Size.findAll();
+	
+			res.render('editProduct', { product, colours, sizes, user: req.session.userToLogged });
+
+		}catch (error) {
+			console.log(error)
+		}
+	},
+
+
+	userProduct: async (req, res) => {
+
+
+			try {
+				const product = await Product.findByPk(req.params.id, {
+					raw: true,
+					include: ['size', 'colour'],
+					nest: true
+				});
+				res.render('details', { product, user: req.session.userToLogged });
+		}
+		catch(error){
+			console.log(error)
+		}
+
+	},
+	
+	searchResults: async (req, res) => {
 		if (!req.params.category) {
 			searchResults = productModel.queryResults(req.query.searchinfo);
 		} else {
@@ -56,7 +91,7 @@ const controller = {
 
 	// @GET /products
 
-	store: (req, res) => {
+	store: async (req, res) => {
 		const filenames = req.files.map((file) => file.filename);
 		let imagenDefault = 'imagen-no-disponible.jpg';
 
@@ -79,32 +114,56 @@ const controller = {
 			filenames.push(imagenDefault);
 		}
 
-		let newProduct = {
-			productName: req.body.productName,
-			productColor: req.body.productColor,
-			productSize: req.body.productSize,
-			productPrice: req.body.productPrice,
-			productDescription: req.body.productDescription,
-			productStock: req.body.productStock,
-			productImages: filenames,
+		
+
+		const newProduct = {
+			name_product: req.body.productName,
+			colour_id: req.body.productColor,
+			size_id: req.body.productSize,
+			price_product: req.body.productPrice,
+			quantity_product: req.body.productStock,
+			description_product: req.body.productDescription,
+			image_product: [filenames],
 		};
 
-		const createdProduct = productModel.createProduct(newProduct);
+		try {
 
-		res.redirect('/products/' + createdProduct.id);
+			const createdProduct = await Product.create (newProduct)
+
+			res.redirect('/products/' + createdProduct.dataValues.id);
+		} catch (error){
+			console.log(error)
+		}
+
 	},
 
-	updateProduct: (req, res) => {
+	updateProduct: async (req, res) => {
 		const filenames = req.files.map((file) => file.filename);
+
 		let updatedProduct = {
 			id: Number(req.params.id),
 		};
 
 		updatedProduct = {
 			...updatedProduct,
-			...req.body,
-			productImages: filenames,
+			name_product: req.body.productName,
+			colour_id: req.body.productColor,
+			size_id: req.body.productSize,
+			price_product: req.body.productPrice,
+			quantity_product: req.body.productStock,
+			description_product: req.body.productDescription,
+			image_product: [filenames],
 		};
+
+		try {
+			await Product.update(updatedProduct, {
+				where: {
+					id: req.params.id
+				}
+			})
+		} catch (error) {
+			console.log(error)
+		}
 
 		/* 
        const updatedProduct = req.body;
@@ -117,8 +176,17 @@ const controller = {
 		res.redirect('/products/' + updatedProduct.id);
 	},
 
-	deleteProduct: (req, res) => {
-		productModel.delete(Number(req.params.id));
+	deleteProduct: async (req, res) => {
+		const id = req.params.id
+		try{
+			await Product.destroy({
+				where: {
+					id
+				}
+			})
+		} catch (error) {
+			console.log(error)
+		}
 
 		//chequear este redirect cuando quede listo el listado de productos
 		res.redirect('/products//searching/searchResults');

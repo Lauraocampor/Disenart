@@ -18,7 +18,7 @@
 				<div class="createdProduct-body">
 					<div class="createdProduct-information-complete">
 						<section class="createdProduct-information">
-							<h2 id="name"><%= product.productName %></h2>
+							<h2 id="name"><%= product.name_product %></h2>
 
 							<h3 class="specific-info-createdProduct">Color</h3>
 							<section class="createdProduct-option">
@@ -31,33 +31,37 @@
 							</section>
 							<h3 class="specific-info-createdProduct">Talle</h3>
 							<section class="createdProduct-option">
-								<p><%= product.productSize %></p>
+								<p><%= product.size.size %></p>
 							</section>
 							<h3 class="specific-info-createdProduct">Precio</h3>
 							<section class="createdProduct-option">
-								<p>$<%= product.productPrice %></p>
+								<p>$<%= product.price_product %></p>
 							</section>
 							<h3 class="specific-info-createdProduct">Cantidad disponible</h3>
 							<section class="createdProduct-option">
-								<p><%= product.productStock %> unidades</p>
+								<p><%= product.quantity_product %> unidades</p>
 							</section>
 						</section>
 
 						<h3 class="specific-info-createdProduct">Descripción</h3>
 						<p id="information-createdProduct">
-							<%= product.productDescription %>
+							<%= product.description_product %>
 						</p>
 
 						<h3 class="specific-info-createdProduct">Fotos del producto</h3>
 						<section class="createdProduct-img">
-							<% product.productImages.forEach(filename=> { %>
-							<img
-								class="createdProduct-img-files"
-								src="/images/productos/<%= filename %>"
-								width="20%"
-							/>
-							<% }) %>
-						</section>
+							
+								<img class="createdProduct-img-files" 
+									src="https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw5bfadec5/products/UA_1360980-001/UA_1360980-001-1.JPG" width="20%">	
+									<img class="createdProduct-img-files" 
+									src="https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw5bfadec5/products/UA_1360980-001/UA_1360980-001-1.JPG" width="20%">	
+									<img class="createdProduct-img-files" 
+									src="https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw5bfadec5/products/UA_1360980-001/UA_1360980-001-1.JPG" width="20%">	
+									<img class="createdProduct-img-files" 
+									src="https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw5bfadec5/products/UA_1360980-001/UA_1360980-001-1.JPG" width="20%">	
+						
+								</section>
+
 
 						<a href="/products/<%= product.id%>/editProduct">
 							<button id="edit-delete-button">Editar producto</button>

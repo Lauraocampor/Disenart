@@ -68,10 +68,6 @@ CREATE TABLE
     shopping_id INT,
     product_id INT,
     quantity_sale INT,
-    colour_id INT,
-    size_id INT,
     FOREIGN KEY (shopping_id) REFERENCES shopping_cart (id_shopping),
     FOREIGN KEY (product_id) REFERENCES products_data (id_product),
-    FOREIGN KEY (colour_id) REFERENCES colours (id_colour),
-    FOREIGN KEY (size_id) REFERENCES sizes (id_size)
   );

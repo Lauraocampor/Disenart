@@ -8,18 +8,18 @@
     <%- include('../partials/header', headerData) %>
   <!-- MAIN -->
     <main class="main-editProduct">
-        <form class="editProduct" action="/products/<%=product.id%>/editProduct?_method=PUT" method="post" enctype="multipart/form-data">
+        <form class="editProduct" action="/products/<%=product.id_product%>/editProduct?_method=PUT" method="post" enctype="multipart/form-data">
             <div class="editProduct-title-productName">
                 <label class="editProduct-name" for="productName">Nombre del producto</label>
                 <i class="fa-solid fa-pen-to-square editButton"></i></button>
                      </div>
-            <input id="editProduct-name" type="text" value="<%- product.productName %>" name="productName" placeholder="Buzo Oversize" require>
+            <input id="editProduct-name" type="text" value="<%- product.name_product %>" name="productName" placeholder="Buzo Oversize" require>
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productColor1">Color</label>
                 <i class="fa-solid fa-pen-to-square editButton"></i></button>
                        </div>
             <section class="editProduct-main-option">
-                       <input class="editProduct-option" type="color" value="<%- product.productColor %>" name="productColor" require>
+                       <input class="editProduct-option" type="color" value="<%- product.colour.colour %>" name="productColor" require>
             </section>
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productSize">Talle</label>
@@ -28,34 +28,34 @@
             <section class="editProduct-main-option">
                 <select class="editProduct-main-option-size" name="productSize" required>
                     <option value="" disabled selected>Talle</option>
-                    <option class="editProduct-option-size" value="S" <% if (product.productSize === 'S') { %>selected<% } %>>S</option>
-                    <option class="editProduct-option-size" value="M" <% if (product.productSize === 'M') { %>selected<% } %>>M</option>
-                    <option class="editProduct-option-size" value="L" <% if (product.productSize === 'L') { %>selected<% } %>>L</option>
-                    <option class="editProduct-option-size" value="XL" <% if (product.productSize === 'XL') { %>selected<% } %>>XL</option>
-                    <option class="editProduct-option-size" value="No Aplica" <% if (product.productSize === 'No Aplica') { %>selected<% } %>>No Aplica</option>
+                    <option class="editProduct-option-size" value="S" <% if (product.size.size === 'S') { %>selected<% } %>>S</option>
+                    <option class="editProduct-option-size" value="M" <% if (product.size.size === 'M') { %>selected<% } %>>M</option>
+                    <option class="editProduct-option-size" value="L" <% if (product.size.size === 'L') { %>selected<% } %>>L</option>
+                    <option class="editProduct-option-size" value="XL" <% if (product.size.size === 'XL') { %>selected<% } %>>XL</option>
+                    <option class="editProduct-option-size" value="No Aplica" <% if (product.size.size === 'No Aplica') { %>selected<% } %>>No Aplica</option>
                 </select>
             </section>
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productPrice">Precio</label>
                 <i class="fa-solid fa-pen-to-square editButton"></i></button>
             </div>
-            <input type="number" id="productPrice" value="<%- product.productPrice %>" name="productPrice" require>
+            <input type="number" id="productPrice" value="<%- product.price_product %>" name="productPrice" require>
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productDescription">Descripción</label>
                 <i class="fa-solid fa-pen-to-square editButton"></i></button>
             </div>
             <textarea id="editProduct-information-product" type="text"  name="productDescription"
-           require>  <%=product.productDescription %></textarea>
+           require>  <%=product.description_product %></textarea>
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productStock">Cantidad disponible</label>
                 <i class="fa-solid fa-pen-to-square editButton"></i></button>
                             </div>
-            <input type="number" value="<%- product.productStock %>" name="productStock" placeholder="12">
+            <input type="number" value="<%- product.quantity_product %>" name="productStock" placeholder="12">
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productImages">Foto del producto</label>
                 <i class="fa-solid fa-pen-to-square editButton"></i></button>
             </div>
-            <input type="file" value="<%- product.productImages %>"name="productImages" accept=".jpg , .png" multiple>
+            <input type="file" value="<%- product.image_product %>"name="productImages" accept=".jpg , .png" multiple>
 
             <input id="editProduct-finish" type="submit" value="Producto editado">
         </form>

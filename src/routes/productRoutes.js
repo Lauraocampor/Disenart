@@ -17,25 +17,25 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 //@GET products/:id/details -> products/2/details
-router.get('/:id/details', productController.details);
-router.get('/cart', productController.cart);
+router.get('/:id/details', productController.details);  // cambiado, falta chequear tema imagenes. quedo la vista cargada con imagenes random para ver que funciona
+router.get('/cart', productController.cart); // no cambiado
 
 /*** CREATE ONE PRODUCT ***/ 
-router.get('/createProduct', productController.createProduct);
-router.post('/', upload.any('productImages'), productController.store); 
+router.get('/createProduct', productController.createProduct); // cambiado
+router.post('/', upload.any('productImages'), productController.store);   // cambiado, falta chequear tema imagenes
 
 
 // @GET - /products/:id/edit
-router.get('/:id/editProduct', productController.editProduct);
-router.put('/:id/editProduct', upload.any("productImages"), productController.updateProduct);
+router.get('/:id/editProduct', productController.editProduct); // cambiado 
+router.put('/:id/editProduct', upload.any("productImages"), productController.updateProduct);  // cambiado, falta chequear tema imagenes
 
-//@DELETE - /products/:id/delete -- falta chequear el redirect cuando quede hecho el productList
-router.delete('/:id/delete', productController.deleteProduct);
+//@DELETE - /products/:id/delete --
+router.delete('/:id/delete', productController.deleteProduct); // cambiado
 
 // @GET - products/:id -> products/1 visualizacion de productos del lado del cliente
-router.get('/:id',upload.any('productImages'), productController.userProduct)
+router.get('/:id',upload.any('productImages'), productController.userProduct) // cambiado, falta chequear tema imagenes
 
 // @GET - LISTA DE PRODUCTS
-router.get("/searching/searchResults/:category?", productController.searchResults);
+router.get("/searching/searchResults/:category?", productController.searchResults); // ok cambiado el ejs, no el controller
 
 module.exports = router

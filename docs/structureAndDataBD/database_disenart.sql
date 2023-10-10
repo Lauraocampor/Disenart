@@ -104,7 +104,7 @@ VALUES
     3600.00,
     25,
     'Remera de algodón. Nuestro algodón, al ser cultivado orgánicamente, tiene una calidad y suavidad superior al algodón convencional, proporcionando una mayor comodidad y durabilidad en tus prendas. A su vez, cuenta con propiedades hipoalergénicas, evitando la exposición de tu piel a sustancias tóxicas. Añadí tu dibujo o imagen personalizada.',
-    '{\"1693188281114remera-h1.jpg\", \"1693188281119remera-h2.jpg\", \"1693188281123remera-m1.jpg\", \"1693188281126remera-m2.jpg\"}'
+    '[\"1693188281114remera-h1.jpg\", \"1693188281119remera-h2.jpg\", \"1693188281123remera-m1.jpg\", \"1693188281126remera-m2.jpg\"]'
   ),
   (
     2,
@@ -114,7 +114,7 @@ VALUES
     3600.00,
     15,
     'Remera de algodón. Nuestro algodón, al ser cultivado orgánicamente, tiene una calidad y suavidad superior al algodón convencional, proporcionando una mayor comodidad y durabilidad en tus prendas. A su vez, cuenta con propiedades hipoalergénicas, evitando la exposición de tu piel a sustancias tóxicas. Añadí tu dibujo o imagen personalizada.',
-    '{\"1691687048870remera-m2.jpg\", \"1691687048858remera-h1.jpg\", \"1691687048863remera-h2.jpg\", \"1691687048867remera-m1.jpg\"}'
+    '[\"1691687048870remera-m2.jpg\", \"1691687048858remera-h1.jpg\", \"1691687048863remera-h2.jpg\", \"1691687048867remera-m1.jpg\"]'
   ),
   (
     3,
@@ -233,8 +233,7 @@ CREATE TABLE
     `shopping_id` int (11) DEFAULT NULL,
     `product_id` int (11) DEFAULT NULL,
     `quantity_sale` int (11) DEFAULT NULL,
-    `colour_id` int (11) DEFAULT NULL,
-    `size_id` int (11) DEFAULT NULL
+
   ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
 --
@@ -246,20 +245,19 @@ INSERT INTO
     `shopping_id`,
     `product_id`,
     `quantity_sale`,
-    `colour_id`,
-    `size_id`
+
   )
 VALUES
-  (1, 1, 1, 1, 1, 1),
-  (2, 1, 2, 2, 2, 2),
-  (3, 2, 4, 1, 2, 4),
-  (4, 3, 5, 2, 1, 1),
-  (5, 4, 6, 4, 2, 2),
-  (6, 5, 7, 1, 1, 3),
-  (7, 6, 9, 2, 1, 1),
-  (8, 7, 10, 1, 2, 2),
-  (9, 7, 11, 1, 1, 3),
-  (10, 7, 12, 1, 2, 4);
+  (1, 1, 1, 1),
+  (2, 1, 2, 2),
+  (3, 2, 4, 1),
+  (4, 3, 5, 2),
+  (5, 4, 6, 4),
+  (6, 5, 7, 1),
+  (7, 6, 9, 2),
+  (8, 7, 10, 1),
+  (9, 7, 11, 1),
+  (10, 7, 12, 1);
 
 -- --------------------------------------------------------
 --
