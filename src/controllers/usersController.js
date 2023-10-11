@@ -62,7 +62,8 @@ const controller = {
 			if (isOkThePassword) {
 				//delete userToLogin.password; lo comente para poder traer la contraseña en el updatedProfile
 				req.session.userLogged = userToLogin;
-				console.log(req.session.userLogged);
+
+				//Aquí el inicio de sesión debería estar funcionando, hay que revisar el userLoggedMiddleware
 
 				if (req.body.remember_password) {
 					res.cookie('userEmail', req.body.email, {
@@ -91,50 +92,9 @@ const controller = {
 				user: req.session.userLogged,
 			},
 		});
-		/* 		let userToLogin = User.findByField('email', req.body.email);
-
-		if (!userToLogin) {
-			return res.render('login', {
-				errors: {
-					email: {
-						msg: 'El mail o la contraseña son incorrectos',
-					},
-				},
-				user: req.session.userLogged,
-			});
-		}
-
-		const isOkPassword = bcryptjs.compareSync(
-			req.body.password,
-			userToLogin.password,
-		);
-
-		if (!isOkPassword) {
-			return res.render('login', {
-				errors: {
-					email: {
-						msg: 'El mail o la contraseña son incorrectos',
-					},
-				},
-				user: req.session.userLogged,
-			});
-		}
-
-		//delete userToLogin.password; lo comente para poder traer la contraseña en el updatedProfile
-		req.session.userLogged = userToLogin;
-
-		if (req.body.remember_password) {
-			res.cookie('userEmail', userToLogin.email, {
-				maxAge: 1000 * 60 * 60 * 24 * 365,
-			});
-		}
-
-		return res.redirect('/'); */
 	},
 
 	profile: (req, res) => {
-		/* 		const id = req.body.id;
-		let userProfile = User.findByPk(id); */
 		console.log({ user: req.session.userLogged });
 		return res.render('userProfile', {
 			user: req.session.userLogged,
