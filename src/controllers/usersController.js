@@ -28,7 +28,7 @@ const controller = {
 				where: { email_user: email },
 				raw: true,
 			});
-			console.log(userInDB); // Sólo funciona así, verificar
+			console.log(userInDB); // Sólo funciona con el console, verificar por qué
 
 			if (userInDB) {
 				return res.render('register', {
@@ -44,11 +44,6 @@ const controller = {
 
 			const profileImage = req.file ? req.file.filename : 'default.png';
 
-			/* let userToCreate = {
-				...req.body,
-				password: bcryptjs.hashSync(req.body.password, 10),
-				avatar: profileImage,
-			}; */
 			let userToCreate = {
 				id_user: uuid.v4(),
 				name_user: req.body.firstName,
@@ -69,53 +64,62 @@ const controller = {
 	},
 
 	login: (req, res) => {
-		UserOld.findByField(req.body.email);
-
 		res.render('login', { user: req.session.userLogged });
 	},
 
 	loginProcess: async (req, res) => {
-		let userToLogin = UserOld.findByField('email', req.body.email);
+		try {
+			const email = req.body.email;
+			let userToLogin = await User.findOne({
+				where: { email_user: email },
+				raw: true,
+			});
 
-		if (userToLogin) {
-			let isOkThePassword = bcryptjs.compareSync(
-				req.body.password,
-				userToLogin.password,
-			);
+			let password = req.body.password;
 
-			if (isOkThePassword) {
-				//delete userToLogin.password; lo comente para poder traer la contraseña en el updatedProfile
-				req.session.userLogged = userToLogin;
+			if (userToLogin) {
+				let isOkThePassword = bcryptjs.compareSync(
+					password,
+					userToLogin.password_user,
+				);
 
-				//Aquí el inicio de sesión debería estar funcionando, hay que revisar el userLoggedMiddleware
+				if (isOkThePassword) {
+					//delete userToLogin.password; lo comente para poder traer la contraseña en el updatedProfile
+					req.session.userLogged = userToLogin;
+					console.log(userToLogin);
 
-				if (req.body.remember_password) {
-					res.cookie('userEmail', req.body.email, {
-						maxAge: 1000 * 60 * 60 * 24 * 365,
-					});
+					//Aquí el inicio de sesión debería estar funcionando, hay que revisar el userLoggedMiddleware
+
+					if (req.body.remember_password) {
+						res.cookie('userEmail', req.body.email, {
+							maxAge: 1000 * 60 * 60 * 24 * 365,
+						});
+					}
+
+					return res.redirect('/');
 				}
 
-				return res.redirect('/');
+				return res.render('login', {
+					errors: {
+						email: {
+							msg: 'El mail o la contraseña son incorrectos',
+						},
+					},
+					user: req.session.userLogged,
+				});
 			}
 
-			return res.render('login', {
+			return res.render('Login', {
 				errors: {
 					email: {
 						msg: 'El mail o la contraseña son incorrectos',
 					},
+					user: req.session.userLogged,
 				},
-				user: req.session.userLogged,
 			});
+		} catch (error) {
+			console.log(error);
 		}
-
-		return res.render('Login', {
-			errors: {
-				email: {
-					msg: 'El mail o la contraseña son incorrectos',
-				},
-				user: req.session.userLogged,
-			},
-		});
 	},
 
 	profile: (req, res) => {
