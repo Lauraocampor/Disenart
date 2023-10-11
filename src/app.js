@@ -31,7 +31,7 @@ app.use(cookies());
 app.use(userLoggedMiddleware);
 app.use(
 	session({
-		secret: process.env.SESSION_SECRET,
+		secret: process.env.SESSION_SECRET || "It's a buatiful secret!",
 		resave: false,
 		saveUninitialized: true,
 	}),
