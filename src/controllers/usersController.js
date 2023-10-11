@@ -5,7 +5,7 @@ const User = require('../models/usersModel');
 
 const controller = {
 	register: (req, res) => {
-		res.render('register', { user: req.session.userToLogged });
+		res.render('register', { user: req.session.userLogged });
 	},
 
 	processRegister: (req, res) => {
@@ -14,7 +14,7 @@ const controller = {
 			return res.render('register', {
 				errors: resultValidation.mapped(),
 				oldData: req.body,
-				user: req.session.userToLogged,
+				user: req.session.userLogged,
 			});
 		}
 		let userInDB = User.findByField('email', req.body.email);
@@ -27,7 +27,7 @@ const controller = {
 					},
 				},
 				oldData: req.body,
-				user: req.session.userToLogged,
+				user: req.session.userLogged,
 			});
 		}
 
@@ -47,7 +47,7 @@ const controller = {
 	login: (req, res) => {
 		const userToLogin = User.findByField(req.body.email);
 
-		res.render('login', { user: req.session.userToLogged });
+		res.render('login', { user: req.session.userLogged });
 	},
 
 	loginProcess: (req, res) => {
@@ -60,7 +60,7 @@ const controller = {
 						msg: 'El mail o la contraseña son incorrectos',
 					},
 				},
-				user: req.session.userToLogged,
+				user: req.session.userLogged,
 			});
 		}
 
@@ -76,12 +76,12 @@ const controller = {
 						msg: 'El mail o la contraseña son incorrectos',
 					},
 				},
-				user: req.session.userToLogged,
+				user: req.session.userLogged,
 			});
 		}
 
 		//delete userToLogin.password; lo comente para poder traer la contraseña en el updatedProfile
-		req.session.userToLogged = userToLogin;
+		req.session.userLogged = userToLogin;
 
 		if (req.body.remember_password) {
 			res.cookie('userEmail', userToLogin.email, {
@@ -93,25 +93,25 @@ const controller = {
 	},
 
 	profile: (req, res) => {
-		console.log({ user: req.session.userToLogged });
-		return res.render('userProfile', { user: req.session.userToLogged });
+		console.log({ user: req.session.userLogged });
+		return res.render('userProfile', { user: req.session.userLogged });
 	},
 
 	editProfile: (req, res) => {
-		console.log({ user: req.session.userToLogged });
-		return res.render('editProfile', { user: req.session.userToLogged });
+		console.log({ user: req.session.userLogged });
+		return res.render('editProfile', { user: req.session.userLogged });
 	},
 
 	updateProfile: (req, res) => {
-		console.log({ user: req.session.userToLogged });
+		console.log({ user: req.session.userLogged });
 
 		let updatedProfile = {
-			id: req.session.userToLogged.id,
+			id: req.session.userLogged.id,
 		};
 
 		const profileImage = req.file
 			? req.file.filename
-			: req.session.userToLogged.avatar;
+			: req.session.userLogged.avatar;
 
 		updatedProfile = {
 			...updatedProfile,
@@ -122,7 +122,7 @@ const controller = {
 
 		User.updateProfile(updatedProfile);
 
-		return res.render('userProfile', { user: req.session.userToLogged });
+		return res.render('userProfile', { user: req.session.userLogged });
 	},
 
 	logout: (req, res) => {
@@ -132,9 +132,9 @@ const controller = {
 	},
 
 	delete: (req, res) => {
-		console.log('usuario a eliminar' + { user: req.session.userToLogged });
+		console.log('usuario a eliminar' + { user: req.session.userLogged });
 
-		let id = req.session.userToLogged.id;
+		let id = req.session.userLogged.id;
 
 		User.delete(id);
 		return res.redirect('/');
@@ -145,7 +145,7 @@ const controller = {
 
 		return res.render('allUsers', {
 			allUsers: allUsers,
-			user: req.session.userToLogged,
+			user: req.session.userLogged,
 		});
 	},
 
@@ -157,7 +157,7 @@ const controller = {
 		return res.render('profileDetail', {
 			users: users,
 			allUsers: allUsers,
-			user: req.session.userToLogged,
+			user: req.session.userLogged,
 		});
 	},
 };
