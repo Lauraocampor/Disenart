@@ -4,19 +4,20 @@ const { validationResult } = require('express-validator');
 const User = require('../models/usersModel');
 
 const controller = {
-    register: (req, res) => {
-        res.render('register',{ user: req.session.userToLogged  });
-    },
-    processRegister: (req, res) => {
-        const resultValidation = validationResult(req);
-        if (resultValidation.errors.length > 0) {
-            return res.render('register', {
-                errors: resultValidation.mapped(),
-                oldData: req.body, 
-                user: req.session.userToLogged 
-            })
-        }
-        let userInDB = User.findByField('email', req.body.email);
+	register: (req, res) => {
+		res.render('register', { user: req.session.userToLogged });
+	},
+
+	processRegister: (req, res) => {
+		const resultValidation = validationResult(req);
+		if (resultValidation.errors.length > 0) {
+			return res.render('register', {
+				errors: resultValidation.mapped(),
+				oldData: req.body,
+				user: req.session.userToLogged,
+			});
+		}
+		let userInDB = User.findByField('email', req.body.email);
 
 		if (userInDB) {
 			return res.render('register', {
@@ -42,6 +43,7 @@ const controller = {
 
 		return res.redirect('/');
 	},
+
 	login: (req, res) => {
 		const userToLogin = User.findByField(req.body.email);
 
@@ -89,6 +91,7 @@ const controller = {
 
 		return res.redirect('/');
 	},
+
 	profile: (req, res) => {
 		console.log({ user: req.session.userToLogged });
 		return res.render('userProfile', { user: req.session.userToLogged });
@@ -121,6 +124,7 @@ const controller = {
 
 		return res.render('userProfile', { user: req.session.userToLogged });
 	},
+
 	logout: (req, res) => {
 		res.clearCookie('userEmail');
 		req.session.destroy();
