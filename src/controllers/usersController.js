@@ -1,7 +1,10 @@
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
+const db = require('../database/models');
 
-const User = require('../models/usersModel');
+const UserOld = require('../models/usersModel');
+
+const User = db.User;
 
 const controller = {
 	register: (req, res) => {
@@ -17,7 +20,7 @@ const controller = {
 				user: req.session.userLogged,
 			});
 		}
-		let userInDB = User.findByField('email', req.body.email);
+		let userInDB = UserOld.findByField('email', req.body.email);
 
 		if (userInDB) {
 			return res.render('register', {
@@ -39,19 +42,19 @@ const controller = {
 			avatar: profileImage,
 		};
 
-		User.create(userToCreate);
+		UserOld.create(userToCreate);
 
 		return res.redirect('/');
 	},
 
 	login: (req, res) => {
-		User.findByField(req.body.email);
+		UserOld.findByField(req.body.email);
 
 		res.render('login', { user: req.session.userLogged });
 	},
 
 	loginProcess: (req, res) => {
-		let userToLogin = User.findByField('email', req.body.email);
+		let userToLogin = UserOld.findByField('email', req.body.email);
 
 		if (userToLogin) {
 			let isOkThePassword = bcryptjs.compareSync(
@@ -124,7 +127,7 @@ const controller = {
 			avatar: profileImage,
 		};
 
-		User.updateProfile(updatedProfile);
+		UserOld.updateProfile(updatedProfile);
 
 		return res.render('userProfile', { user: req.session.userLogged });
 	},
@@ -140,29 +143,38 @@ const controller = {
 
 		let id = req.session.userLogged.id;
 
-		User.delete(id);
+		UserOld.delete(id);
 		return res.redirect('/');
 	},
 
-	allProfiles: (req, res) => {
-		const allUsers = User.findAll();
+	allProfiles: async (req, res) => {
+		try {
+			const allUsers = await User.findAll({ raw: true });
+			console.log(allUsers);
 
-		return res.render('allUsers', {
-			allUsers: allUsers,
-			user: req.session.userLogged,
-		});
+			return res.render('allUsers', {
+				allUsers: allUsers,
+				user: req.session.userLogged,
+			});
+		} catch (error) {
+			console.log(error);
+		}
 	},
 
-	profileDetail: (req, res) => {
-		const allUsers = User.findAll();
-		const id = req.params.id;
-		const users = User.findByPk(id);
+	profileDetail: async (req, res) => {
+		try {
+			const allUsers = await User.findAll();
+			const id = req.params.id;
+			const users = await User.findByPk(id);
 
-		return res.render('profileDetail', {
-			users: users,
-			allUsers: allUsers,
-			user: req.session.userLogged,
-		});
+			return res.render('profileDetail', {
+				users: users,
+				allUsers: allUsers,
+				user: req.session.userLogged,
+			});
+		} catch (error) {
+			console.log(error);
+		}
 	},
 };
 
