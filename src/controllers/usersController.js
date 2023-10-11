@@ -1,6 +1,7 @@
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
+const uuid = require('uuid');
 
 const UserOld = require('../models/usersModel');
 
@@ -11,40 +12,60 @@ const controller = {
 		res.render('register', { user: req.session.userLogged });
 	},
 
-	processRegister: (req, res) => {
-		const resultValidation = validationResult(req);
-		if (resultValidation.errors.length > 0) {
-			return res.render('register', {
-				errors: resultValidation.mapped(),
-				oldData: req.body,
-				user: req.session.userLogged,
-			});
-		}
-		let userInDB = UserOld.findByField('email', req.body.email);
+	processRegister: async (req, res) => {
+		try {
+			const resultValidation = validationResult(req);
+			if (resultValidation.errors.length > 0) {
+				return res.render('register', {
+					errors: resultValidation.mapped(),
+					oldData: req.body,
+					user: req.session.userLogged,
+				});
+			}
+			const email = req.body.email;
 
-		if (userInDB) {
-			return res.render('register', {
-				errors: {
-					email: {
-						msg: 'Este email ya está registrado',
+			let userInDB = await User.findOne({
+				where: { email_user: email },
+				raw: true,
+			});
+			console.log(userInDB); // Sólo funciona así, verificar
+
+			if (userInDB) {
+				return res.render('register', {
+					errors: {
+						email: {
+							msg: 'Este email ya está registrado',
+						},
 					},
-				},
-				oldData: req.body,
-				user: req.session.userLogged,
-			});
+					oldData: req.body,
+					user: req.session.userLogged,
+				});
+			}
+
+			const profileImage = req.file ? req.file.filename : 'default.png';
+
+			/* let userToCreate = {
+				...req.body,
+				password: bcryptjs.hashSync(req.body.password, 10),
+				avatar: profileImage,
+			}; */
+			let userToCreate = {
+				id_user: uuid.v4(),
+				name_user: req.body.firstName,
+				lastname_user: req.body.lastName,
+				email_user: req.body.email,
+				password_user: bcryptjs.hashSync(req.body.password, 10),
+				bdate_user: req.body.date,
+				image_user: profileImage,
+				category_id: 1,
+			};
+
+			await User.create(userToCreate);
+
+			return res.redirect('/');
+		} catch (error) {
+			console.log(error);
 		}
-
-		const profileImage = req.file ? req.file.filename : 'default.png';
-
-		let userToCreate = {
-			...req.body,
-			password: bcryptjs.hashSync(req.body.password, 10),
-			avatar: profileImage,
-		};
-
-		UserOld.create(userToCreate);
-
-		return res.redirect('/');
 	},
 
 	login: (req, res) => {
@@ -53,7 +74,7 @@ const controller = {
 		res.render('login', { user: req.session.userLogged });
 	},
 
-	loginProcess: (req, res) => {
+	loginProcess: async (req, res) => {
 		let userToLogin = UserOld.findByField('email', req.body.email);
 
 		if (userToLogin) {
