@@ -39,19 +39,59 @@ const controller = {
 			avatar: profileImage,
 		};
 
-		let userCreated = User.create(userToCreate);
+		User.create(userToCreate);
 
 		return res.redirect('/');
 	},
 
 	login: (req, res) => {
-		const userToLogin = User.findByField(req.body.email);
+		User.findByField(req.body.email);
 
 		res.render('login', { user: req.session.userLogged });
 	},
 
 	loginProcess: (req, res) => {
-		const userToLogin = User.findByField('email', req.body.email);
+		let userToLogin = User.findByField('email', req.body.email);
+
+		if (userToLogin) {
+			let isOkThePassword = bcryptjs.compareSync(
+				req.body.password,
+				userToLogin.password,
+			);
+
+			if (isOkThePassword) {
+				//delete userToLogin.password; lo comente para poder traer la contraseña en el updatedProfile
+				req.session.userLogged = userToLogin;
+				console.log(req.session.userLogged);
+
+				if (req.body.remember_password) {
+					res.cookie('userEmail', req.body.email, {
+						maxAge: 1000 * 60 * 60 * 24 * 365,
+					});
+				}
+
+				return res.redirect('/');
+			}
+
+			return res.render('login', {
+				errors: {
+					email: {
+						msg: 'El mail o la contraseña son incorrectos',
+					},
+				},
+				user: req.session.userLogged,
+			});
+		}
+
+		return res.render('Login', {
+			errors: {
+				email: {
+					msg: 'El mail o la contraseña son incorrectos',
+				},
+				user: req.session.userLogged,
+			},
+		});
+		/* 		let userToLogin = User.findByField('email', req.body.email);
 
 		if (!userToLogin) {
 			return res.render('login', {
@@ -89,12 +129,16 @@ const controller = {
 			});
 		}
 
-		return res.redirect('/');
+		return res.redirect('/'); */
 	},
 
 	profile: (req, res) => {
+		/* 		const id = req.body.id;
+		let userProfile = User.findByPk(id); */
 		console.log({ user: req.session.userLogged });
-		return res.render('userProfile', { user: req.session.userLogged });
+		return res.render('userProfile', {
+			user: req.session.userLogged,
+		});
 	},
 
 	editProfile: (req, res) => {
