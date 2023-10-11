@@ -50,7 +50,6 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING,
 			allowNull: true, // cambio a true
 		},
-
 	};
 
 	const config = {
@@ -79,11 +78,11 @@ module.exports = (sequelize, DataTypes) => {
 			foreignKey: 'product_id', // chequear si es el product_id de ProductSale o si es id_product de Product
 		});
 
-		Product.hasMany(models.Image, { // chequear si esta ok esto
+		Product.hasMany(models.Image, {
+			// chequear si esta ok esto
 			as: 'image',
 			timestamps: false,
 			foreignKey: 'product_id',
-
 		});
 	};
 
