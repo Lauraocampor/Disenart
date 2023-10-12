@@ -8,22 +8,25 @@
 		<!-- MAIN -->
 		<main class="user-profile-main">
 			<div>
-				<h2 id="user-profile-welcome">Bienvenido <%= user.firstName %>!</h2>
+				<h2 id="user-profile-welcome">Bienvenido <%= user.name_user %>!</h2>
 			</div>
 			<section class="profile-data-img">
 				<section class="profile-user-img-section">
-					<img class="profile-user-img" src="/images/users/<%=user.avatar%>" />
+					<img
+						class="profile-user-img"
+						src="/images/users/<%=user.image_user%>"
+					/>
 				</section>
 				<section class="profile-user-Alldata">
 					<h2 class>Datos registrados</h2>
 					<div class="profile-usereachData">
-						<p class="profile-user-data"><%= user.firstName %></p>
+						<p class="profile-user-data"><%= user.name_user %></p>
 					</div>
 					<div class="profile-user-eachData">
-						<p class="profile-user-data"><%= user.lastName %></p>
+						<p class="profile-user-data"><%= user.lastname_user %></p>
 					</div>
 					<div class="profile-user-eachData">
-						<p class="profile-user-data"><%= user.email %></p>
+						<p class="profile-user-data"><%= user.email_user %></p>
 					</div>
 				</section>
 			</section>

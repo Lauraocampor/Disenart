@@ -3,8 +3,6 @@ const { validationResult } = require('express-validator');
 const db = require('../database/models');
 const uuid = require('uuid');
 
-const UserOld = require('../models/usersModel');
-
 const User = db.User;
 
 const controller = {
@@ -88,8 +86,6 @@ const controller = {
 					req.session.userLogged = userToLogin;
 					console.log(userToLogin);
 
-					//Aquí el inicio de sesión debería estar funcionando, hay que revisar el userLoggedMiddleware
-
 					if (req.body.remember_password) {
 						res.cookie('userEmail', req.body.email, {
 							maxAge: 1000 * 60 * 60 * 24 * 365,
@@ -134,27 +130,36 @@ const controller = {
 		return res.render('editProfile', { user: req.session.userLogged });
 	},
 
-	updateProfile: (req, res) => {
-		console.log({ user: req.session.userLogged });
+	updateProfile: async (req, res) => {
+		try {
+			console.log({ user: req.session.userLogged });
 
-		let updatedProfile = {
-			id: req.session.userLogged.id,
-		};
+			let updatedProfile = {
+				id_user: req.session.userLogged.id_user,
+			};
 
-		const profileImage = req.file
-			? req.file.filename
-			: req.session.userLogged.avatar;
+			const profileImage = req.file
+				? req.file.filename
+				: req.session.userLogged.image_user;
 
-		updatedProfile = {
-			...updatedProfile,
-			...req.body,
-			password: bcryptjs.hashSync(req.body.password, 10),
-			avatar: profileImage,
-		};
+			updatedProfile = {
+				...updatedProfile,
+				name_user: req.body.firstName,
+				lastname_user: req.body.lastName,
+				password_user: bcryptjs.hashSync(req.body.password, 10),
+				image_user: profileImage,
+			};
 
-		UserOld.updateProfile(updatedProfile);
+			await User.update(updatedProfile, {
+				where: {
+					id_user: req.session.userLogged.id_user,
+				},
+			});
 
-		return res.render('userProfile', { user: req.session.userLogged });
+			return res.redirect('/users/Profile');
+		} catch (error) {
+			console.log(error);
+		}
 	},
 
 	logout: (req, res) => {
@@ -163,13 +168,23 @@ const controller = {
 		return res.redirect('/');
 	},
 
-	delete: (req, res) => {
-		console.log('usuario a eliminar' + { user: req.session.userLogged });
+	delete: async (req, res) => {
+		try {
+			console.log('usuario a eliminar' + { user: req.session.userLogged });
 
-		let id = req.session.userLogged.id;
+			let id = req.session.userLogged.id_user;
 
-		UserOld.delete(id);
-		return res.redirect('/');
+			await User.destroy({
+				where: {
+					id_user: id,
+				},
+			});
+			res.clearCookie('userEmail');
+			req.session.destroy();
+			return res.redirect('/');
+		} catch (error) {
+			console.log(error);
+		}
 	},
 
 	allProfiles: async (req, res) => {

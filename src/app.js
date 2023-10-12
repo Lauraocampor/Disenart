@@ -28,7 +28,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(cookies());
-app.use(userLoggedMiddleware);
 app.use(
 	session({
 		secret: process.env.SESSION_SECRET || "It's a buatiful secret!",
@@ -36,6 +35,7 @@ app.use(
 		saveUninitialized: true,
 	}),
 );
+app.use(userLoggedMiddleware); // debe estar después del session secret
 
 // ROUTERS USAGE
 app.use('/', mainRouter);
