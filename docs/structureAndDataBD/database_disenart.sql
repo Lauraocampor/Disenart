@@ -232,8 +232,7 @@ CREATE TABLE
     `id_productSale` int (11) NOT NULL,
     `shopping_id` int (11) DEFAULT NULL,
     `product_id` int (11) DEFAULT NULL,
-    `quantity_sale` int (11) DEFAULT NULL,
-
+    `quantity_sale` int (11) DEFAULT NULL
   ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
 --
@@ -244,8 +243,7 @@ INSERT INTO
     `id_productSale`,
     `shopping_id`,
     `product_id`,
-    `quantity_sale`,
-
+    `quantity_sale`
   )
 VALUES
   (1, 1, 1, 1),
