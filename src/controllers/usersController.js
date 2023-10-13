@@ -118,16 +118,36 @@ const controller = {
 		}
 	},
 
-	profile: (req, res) => {
-		console.log({ user: req.session.userLogged });
-		return res.render('userProfile', {
-			user: req.session.userLogged,
-		});
+	profile: async (req, res) => {
+		try {
+			console.log({ user: req.session.userLogged });
+			const id = req.session.userLogged.id_user;
+			const user = await User.findOne({
+				where: { id_user: id },
+				raw: true,
+			});
+			return res.render('userProfile', {
+				user: user,
+			});
+		} catch (error) {
+			console.log(error);
+		}
 	},
 
-	editProfile: (req, res) => {
-		console.log({ user: req.session.userLogged });
-		return res.render('editProfile', { user: req.session.userLogged });
+	editProfile: async (req, res) => {
+		try {
+			console.log({ user: req.session.userLogged });
+			const id = req.session.userLogged.id_user;
+			const user = await User.findOne({
+				where: { id_user: id },
+				raw: true,
+			});
+			return res.render('editProfile', {
+				user: user,
+			});
+		} catch (error) {
+			console.log(error);
+		}
 	},
 
 	updateProfile: async (req, res) => {
