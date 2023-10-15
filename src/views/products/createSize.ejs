@@ -1,0 +1,37 @@
+<!-- HTML -->
+<!doctype html>
+<html lang="es">
+	<%- include("../partials/head") %>
+	<body class="bodyXL">
+		<!-- HEADER -->
+		<%- include('../partials/header') %>
+		<!-- MAIN -->
+		<main class="main-createProduct">
+			<div class="colour-size-list">
+				<% sizes.forEach(size => { %>
+				<ul>
+					<li><%= size.size %></li>
+				</ul>
+				<% }) %>
+			</div>
+			<br />
+			<form class="createProduct" action="/products/sizes" method="post">
+				<label class="createProduct-name">Nuevo Talle</label>
+				<input
+					class="createProduct-name"
+					type="text"
+					id="productSize"
+					name="productSize"
+					required
+				/>
+
+				<input id="createProduct-finish" type="submit" value="Crear Talle" />
+			</form>
+		</main>
+		<!-- FOOTER -->
+		<%- include("../partials/footer"); %>
+		<!-- SCRIPT -->
+		<script src="/js/main.js"></script>
+		<script src="/js/header.js"></script>
+	</body>
+</html>

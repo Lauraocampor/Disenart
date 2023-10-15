@@ -46,8 +46,16 @@ router.get(
 	productController.searchResults,
 ); // ok cambiado el ejs, no el controller
 
-// @GET - color
+// @GET y @POST - color
 router.get('/colours', productController.createColour);
 router.post('/colours', productController.createdColour);
+
+// @GET y @POST - color
+router.get('/colours', productController.createColour);
+router.post('/colours', productController.createdColour);
+
+// @GET y @POST - size
+router.get('/sizes', productController.createSize);
+router.post('/sizes', productController.createdSize);
 
 module.exports = router;

@@ -260,6 +260,35 @@ const controller = {
 			console.log(error);
 		}
 	},
+
+	createSize: async (req, res) => {
+		try {
+			const sizes = await Size.findAll({ raw: true });
+
+			res.render('createSize', {
+				sizes,
+				user: req.session.userLogged,
+			});
+		} catch (error) {
+			console.log(error);
+		}
+	},
+
+	createdSize: async (req, res) => {
+		const newSize = {
+			size: req.body.productSize,
+		};
+
+		try {
+			const createdSize = await Size.create(newSize);
+
+			console.log(createdSize);
+
+			res.redirect('/products/sizes');
+		} catch (error) {
+			console.log(error);
+		}
+	},
 };
 
 module.exports = controller;
