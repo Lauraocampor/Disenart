@@ -12,13 +12,13 @@ const controller = {
 				include: ['size', 'colour'],
 				nest: true,
 			});
+
+			product.image_product = JSON.parse(product.image_product);
 			console.log(product);
 			res.render('createdProductDetail', {
 				product,
 				user: req.session.userLogged,
 			});
-
-			//quedo la vista cargada con imagenes random para ver que funciona
 		} catch (error) {
 			console.log(error);
 		}
@@ -97,22 +97,14 @@ const controller = {
 		const filenames = req.files.map((file) => file.filename);
 		let imagenDefault = 'imagen-no-disponible.jpg';
 
-		if (filenames[3]) {
-			// Si el usuario selecciona 4 imágenes, no se hace nada especial
-		} else if (filenames[2]) {
-			// Si no se seleccionan todas las imágenes, establecer el nombre de archivo por defecto
-			filenames.push(imagenDefault);
-		} else if (filenames[1]) {
-			filenames.push(imagenDefault);
-			filenames.push(imagenDefault);
-		} else if (filenames[0]) {
-			filenames.push(imagenDefault);
-			filenames.push(imagenDefault);
-			filenames.push(imagenDefault);
-		} else {
-			filenames.push(imagenDefault);
-			filenames.push(imagenDefault);
-			filenames.push(imagenDefault);
+		// Verificar cuántas imágenes cargo el usuario
+		const numUserImages = filenames.length;
+
+		// calcular cuantas se deben agregar x default
+		const numDefaultImagesToAdd = 4 - numUserImages;
+
+		// se agregan las imagenes faltantes correspondientes
+		for (let i = 0; i < numDefaultImagesToAdd; i++) {
 			filenames.push(imagenDefault);
 		}
 
@@ -129,7 +121,9 @@ const controller = {
 		try {
 			const createdProduct = await Product.create(newProduct);
 
-			res.redirect('/products/' + createdProduct.dataValues.id);
+			const productId = createdProduct.get('id_product');
+
+			res.redirect('/products/' + productId + '/details');
 		} catch (error) {
 			console.log(error);
 		}

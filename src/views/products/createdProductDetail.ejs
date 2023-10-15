@@ -45,26 +45,13 @@
 
 						<h3 class="specific-info-createdProduct">Fotos del producto</h3>
 						<section class="createdProduct-img">
+							<% product.image_product.forEach(filename=> { %>
 							<img
 								class="createdProduct-img-files"
-								src="https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw5bfadec5/products/UA_1360980-001/UA_1360980-001-1.JPG"
+								src="/images/productos/<%= filename %>"
 								width="20%"
 							/>
-							<img
-								class="createdProduct-img-files"
-								src="https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw5bfadec5/products/UA_1360980-001/UA_1360980-001-1.JPG"
-								width="20%"
-							/>
-							<img
-								class="createdProduct-img-files"
-								src="https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw5bfadec5/products/UA_1360980-001/UA_1360980-001-1.JPG"
-								width="20%"
-							/>
-							<img
-								class="createdProduct-img-files"
-								src="https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw5bfadec5/products/UA_1360980-001/UA_1360980-001-1.JPG"
-								width="20%"
-							/>
+							<% }) %>
 						</section>
 
 						<a href="/products/<%= product.id%>/editProduct">
