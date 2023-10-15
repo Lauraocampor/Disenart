@@ -44,11 +44,11 @@ CREATE TABLE `colours` (
 --
 
 INSERT INTO `colours` (`id_colour`, `colour`) VALUES
-(1, '#000000'),
-(2, '#FFFFFF'),
-(3, '#808080'),
-(4, '#008000'),
-(5, '#0000FF');
+(1, 'Negro'),
+(2, 'Blanco'),
+(3, '#Rojo'),
+(4, 'Azul'),
+(5, 'Verde');
 
 -- --------------------------------------------------------
 

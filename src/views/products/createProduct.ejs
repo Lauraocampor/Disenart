@@ -1,5 +1,5 @@
 <!-- HTML -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 	<%- include("../partials/head") %>
 	<body class="bodyXL">
@@ -24,7 +24,7 @@
 					required
 				/>
 				<label class="createProduct-info" for="productColor">Color</label>
-				<section class="createProduct-main-option">
+				<!-- 				<section class="createProduct-main-option">
 					<input
 						class="createProduct-option"
 						type="color"
@@ -32,18 +32,30 @@
 						name="productColor"
 						required
 					/>
+				</section> -->
+				<section class="createProduct-main-option">
+					<select name="productColor" id="productColor" required>
+						<option value="day" selected disabled>Color</option>
+						<% colours.forEach(colour => { %>
+						<option
+							class="createProduct-option"
+							value="<%= colour.id_colour %>"
+						>
+							<%= colour.colour %>
+						</option>
+						<% }) %>
+					</select>
 				</section>
+
 				<label class="createProduct-info" for="productSize">Talle</label>
 				<section class="createProduct-main-option">
 					<select name="productSize" id="size" required>
 						<option value="day" selected disabled>Talle</option>
-						<option class="createProduct-option" value="S">S</option>
-						<option class="createProduct-option" value="M">M</option>
-						<option class="createProduct-option" value="L">L</option>
-						<option class="createProduct-option" value="XL">XL</option>
-						<option class="createProduct-option" value="No Aplica">
-							No Aplica
+						<% sizes.forEach(size => { %>
+						<option class="createProduct-option" value="<%= size.id_size %>">
+							<%= size.size %>
 						</option>
+						<% }) %>
 					</select>
 				</section>
 				<label class="createProduct-info" for="productPrice">Precio</label>

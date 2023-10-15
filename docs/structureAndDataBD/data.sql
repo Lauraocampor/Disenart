@@ -1,11 +1,11 @@
 -- Poblar la tabla "colours"
 INSERT INTO colours (colour)
 VALUES
-  ('#000000'), -- Negro
-  ('#FFFFFF'), -- Blanco
-  ('#808080'), -- Gris
-  ('#008000'), -- Verde
-  ('#0000FF'); -- Azul
+  ('Negro'), -- Negro
+  ('Blanco'), -- Blanco
+  ('Rojo'), -- Rojo
+  ('Azul'), -- Azul
+  ('Verde'); -- Verde
 
 -- Poblar la tabla "sizes"
 INSERT INTO sizes (size)

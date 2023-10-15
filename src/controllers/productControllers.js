@@ -34,7 +34,7 @@ const controller = {
 		try {
 			const sizes = await Size.findAll({ raw: true });
 			const colours = await Colour.findAll({ raw: true });
-
+			console.log(colours);
 			res.render('createProduct', {
 				sizes,
 				colours,
@@ -94,7 +94,7 @@ const controller = {
 	// @GET /products
 
 	store: async (req, res) => {
-		/* 	const filenames = req.files.map((file) => file.filename);
+		const filenames = req.files.map((file) => file.filename);
 		let imagenDefault = 'imagen-no-disponible.jpg';
 
 		if (filenames[3]) {
@@ -115,7 +115,7 @@ const controller = {
 			filenames.push(imagenDefault);
 			filenames.push(imagenDefault);
 		}
- */
+
 		const newProduct = {
 			name_product: req.body.productName,
 			colour_id: req.body.productColor,
@@ -123,7 +123,7 @@ const controller = {
 			price_product: req.body.productPrice,
 			quantity_product: req.body.productStock,
 			description_product: req.body.productDescription,
-			image_product: req.file,
+			image_product: JSON.stringify(filenames),
 		};
 
 		try {
