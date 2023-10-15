@@ -54,6 +54,7 @@ const controller = {
 			});
 			const colours = await Colour.findAll();
 			const sizes = await Size.findAll();
+			product.image_product = JSON.parse(product.image_product);
 
 			res.render('editProduct', {
 				product,
@@ -75,6 +76,7 @@ const controller = {
 			});
 
 			product.image_product = JSON.parse(product.image_product);
+
 			res.render('details', { product, user: req.session.userLogged });
 		} catch (error) {
 			console.log(error);
@@ -82,15 +84,50 @@ const controller = {
 	},
 
 	searchResults: async (req, res) => {
-		if (!req.params.category) {
-			searchResults = productModel.queryResults(req.query.searchinfo);
-		} else {
-			searchResults = productModel.categoryResults(req.params.category);
+		let searchResults = null;
+
+		try {
+			const categoryResults = async (category) => {
+				const products = await Product.findAll();
+				const productsFiltered = products.filter((x) => {
+					if (x.productName && typeof x.productName === 'string') {
+						return x.productName.toLowerCase() === category.toLowerCase();
+					}
+					return false;
+				});
+				return productsFiltered;
+			};
+
+			const valueCheck = (object, value) => {
+				const valueArray = Object.values(object);
+				const regex = new RegExp(value, 'i');
+				for (let i = 0; i < valueArray.length; i++) {
+					if (typeof valueArray[i] === 'string' && regex.test(valueArray[i])) {
+						return true;
+					}
+				}
+				return false;
+			};
+
+			const queryResults = async (query) => {
+				const products = await Product.findAll();
+				const productsFiltered = products.filter((x) => valueCheck(x, query));
+				return productsFiltered;
+			};
+
+			if (!req.params.category) {
+				searchResults = await queryResults(req.query.searchinfo);
+			} else {
+				searchResults = await categoryResults(req.params.category);
+			}
+
+			res.render('searchResults', {
+				searchResults,
+				user: req.session.userLogged,
+			});
+		} catch (error) {
+			console.log(error);
 		}
-		res.render('searchResults', {
-			searchResults,
-			user: req.session.userLogged,
-		});
 	},
 
 	// @GET /products
@@ -133,38 +170,47 @@ const controller = {
 
 	updateProduct: async (req, res) => {
 		const filenames = req.files.map((file) => file.filename);
-		let imagenDefault = 'imagen-no-disponible.jpg';
 
-		// verifica cuantas imágenes cargo el usuario
+		// cantidad de imgs que cargo el usuario
 		const numUserImages = filenames.length;
 
-		// calcula cuantas se deben agregar x default
-		const numDefaultImagesToAdd = 4 - numUserImages;
-
-		// se agregan las imagenes faltantes correspondientes
-		for (let i = 0; i < numDefaultImagesToAdd; i++) {
-			filenames.push(imagenDefault);
-		}
-
-		const updatedProduct = {
-			name_product: req.body.productName,
-			colour_id: req.body.productColor,
-			size_id: req.body.productSize,
-			price_product: req.body.productPrice,
-			quantity_product: req.body.productStock,
-			description_product: req.body.productDescription,
-			image_product: JSON.stringify(filenames),
-		};
-
 		try {
-			await Product.update(updatedProduct, {
+			//busca el producto
+			const existingProduct = await Product.findOne({
 				where: {
 					id_product: req.params.id,
 				},
 			});
 
-			// redirect al producto actualizado
-			res.redirect('/products/' + req.params.id + '/details');
+			if (existingProduct) {
+				const existingImages = JSON.parse(existingProduct.image_product);
+				const maxImagesToKeep = 4; // maximo 4 imagenes por producto
+
+				// cuantas imgs se mantienen y cuantas se actualizan
+				const numImagesToKeep = Math.max(0, maxImagesToKeep - numUserImages);
+				const imagesToKeep = existingImages.slice(-numImagesToKeep);
+				const imagesToUpdate = filenames.slice(0, maxImagesToKeep);
+
+				const updatedImages = imagesToKeep.concat(imagesToUpdate);
+				const updatedProduct = {
+					name_product: req.body.productName,
+					colour_id: req.body.productColor,
+					size_id: req.body.productSize,
+					price_product: req.body.productPrice,
+					quantity_product: req.body.productStock,
+					description_product: req.body.productDescription,
+					image_product: JSON.stringify(updatedImages),
+				};
+
+				await Product.update(updatedProduct, {
+					where: {
+						id_product: req.params.id,
+					},
+				});
+
+				// Redirige al producto actualizado
+				res.redirect('/products/' + req.params.id + '/details');
+			}
 		} catch (error) {
 			console.log(error);
 		}

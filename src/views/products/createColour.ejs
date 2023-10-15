@@ -1,0 +1,29 @@
+<!-- HTML -->
+<!doctype html>
+<html lang="es">
+	<%- include("../partials/head") %>
+	<body class="bodyXL">
+		<!-- HEADER -->
+		<%- include('../partials/header') %>
+		<!-- MAIN -->
+		<main class="main-createProduct">
+			<form class="createProduct" action="/products/colours" method="post">
+				<label class="createProduct-name" for="productName">Nuevo Color</label>
+				<input
+					id="createProduct-name"
+					type="text"
+					id="productName"
+					name="productName"
+					required
+				/>
+
+				<input id="createProduct-finish" type="submit" value="Crear color" />
+			</form>
+		</main>
+		<!-- FOOTER -->
+		<%- include("../partials/footer"); %>
+		<!-- SCRIPT -->
+		<script src="/js/main.js"></script>
+		<script src="/js/header.js"></script>
+	</body>
+</html>

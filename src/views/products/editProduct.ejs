@@ -65,8 +65,19 @@
                             </div>
             <input type="number" value="<%- product.quantity_product %>" name="productStock" placeholder="12">
             <div class="editProduct-title">
-                <label class="editProduct-info" for="productImages">Foto del producto</label>
+                <label class="editProduct-info" for="productImages">Fotos del producto</label>
                 <i class="fa-solid fa-pen-to-square editButton"></i></button>
+
+                <section class="createdProduct-img">
+                    <% product.image_product.forEach(filename=> { %>
+                    <img
+                        class="createdProduct-img-files"
+                        src="/images/productos/<%= filename %>"
+                        width="20%"
+                    />
+                    <% }) %>
+                </section>
+
             </div>
             <input type="file" value="<%- product.image_product %>"name="productImages" accept=".jpg , .png" multiple>
 
