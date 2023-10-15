@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const productModel = require('../models/productModel'); // sacar despues de hacer todo
+//const productModel = require('../models/productModel'); // sacar despues de hacer todo
 const { Product, Colour, Size } = require('../database/models');
 
 const controller = {
@@ -131,41 +131,41 @@ const controller = {
 
 	updateProduct: async (req, res) => {
 		const filenames = req.files.map((file) => file.filename);
+		let imagenDefault = 'imagen-no-disponible.jpg';
 
-		let updatedProduct = {
-			id: Number(req.params.id),
-		};
+		// verifica cuantas imágenes cargo el usuario
+		const numUserImages = filenames.length;
 
-		updatedProduct = {
-			...updatedProduct,
+		// calcula cuantas se deben agregar x default
+		const numDefaultImagesToAdd = 4 - numUserImages;
+
+		// se agregan las imagenes faltantes correspondientes
+		for (let i = 0; i < numDefaultImagesToAdd; i++) {
+			filenames.push(imagenDefault);
+		}
+
+		const updatedProduct = {
 			name_product: req.body.productName,
 			colour_id: req.body.productColor,
 			size_id: req.body.productSize,
 			price_product: req.body.productPrice,
 			quantity_product: req.body.productStock,
 			description_product: req.body.productDescription,
-			image_product: [filenames],
+			image_product: JSON.stringify(filenames),
 		};
 
 		try {
 			await Product.update(updatedProduct, {
 				where: {
-					id: req.params.id,
+					id_product: req.params.id,
 				},
 			});
+
+			// redirect al producto actualizado
+			res.redirect('/products/' + req.params.id + '/details');
 		} catch (error) {
 			console.log(error);
 		}
-
-		/* 
-       const updatedProduct = req.body;
-       updatedProduct.id = Number(req.params.id); 
-   */
-
-		productModel.updateProduct(updatedProduct);
-
-		//chequear este redirect cuando quede listo el listado de productos
-		res.redirect('/products/' + updatedProduct.id);
 	},
 
 	deleteProduct: async (req, res) => {
@@ -173,15 +173,15 @@ const controller = {
 		try {
 			await Product.destroy({
 				where: {
-					id,
+					id_product: id,
 				},
 			});
 		} catch (error) {
 			console.log(error);
 		}
 
-		//chequear este redirect cuando quede listo el listado de productos
-		res.redirect('/products//searching/searchResults');
+		//CAMBIAR ESTE REDIRECT CUANDO ESTE OK EL LISTADO DE PRODUCTOS
+		res.redirect('/products/1/details');
 	},
 };
 

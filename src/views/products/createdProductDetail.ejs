@@ -54,11 +54,11 @@
 							<% }) %>
 						</section>
 
-						<a href="/products/<%= product.id%>/editProduct">
+						<a href="/products/<%= product.id_product%>/editProduct">
 							<button id="edit-delete-button">Editar producto</button>
 						</a>
 						<form
-							action="/products/<%= product.id%>/delete?_method=DELETE"
+							action="/products/<%= product.id_product%>/delete?_method=DELETE"
 							method="post"
 						>
 							<input

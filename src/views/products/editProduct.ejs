@@ -19,7 +19,17 @@
                 <i class="fa-solid fa-pen-to-square editButton"></i></button>
                        </div>
             <section class="editProduct-main-option">
-                       <input class="editProduct-option" type="color" value="<%- product.colour.colour %>" name="productColor" require>
+
+                       <select class="editProduct-main-option-size" name="productColor" required>
+                        <% colours.forEach(colour => { %>
+                            <% if (colour.id_colour === product.colour_id) { %>
+                                <option selected value="<%= colour.id_colour %>"><%= colour.colour %></option>
+                            <% } else { %>
+                                <option value="<%= colour.id_colour %>"><%= colour.colour %></option>
+                            <% } %>
+                        <% }) %>
+                    </select>
+
             </section>
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productSize">Talle</label>
@@ -27,14 +37,17 @@
             </div>
             <section class="editProduct-main-option">
                 <select class="editProduct-main-option-size" name="productSize" required>
-                    <option value="" disabled selected>Talle</option>
-                    <option class="editProduct-option-size" value="S" <% if (product.size.size === 'S') { %>selected<% } %>>S</option>
-                    <option class="editProduct-option-size" value="M" <% if (product.size.size === 'M') { %>selected<% } %>>M</option>
-                    <option class="editProduct-option-size" value="L" <% if (product.size.size === 'L') { %>selected<% } %>>L</option>
-                    <option class="editProduct-option-size" value="XL" <% if (product.size.size === 'XL') { %>selected<% } %>>XL</option>
-                    <option class="editProduct-option-size" value="No Aplica" <% if (product.size.size === 'No Aplica') { %>selected<% } %>>No Aplica</option>
+                    <% sizes.forEach(size => { %>
+                        <% if (size.id_size === product.size_id) { %>
+                            <option selected value="<%= size.id_size %>"><%= size.size %></option>
+                        <% } else { %>
+                            <option value="<%= size.id_size %>"><%= size.size %></option>
+                        <% } %>
+                    <% }) %>
                 </select>
             </section>
+
+
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productPrice">Precio</label>
                 <i class="fa-solid fa-pen-to-square editButton"></i></button>
