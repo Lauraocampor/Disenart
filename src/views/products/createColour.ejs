@@ -7,13 +7,21 @@
 		<%- include('../partials/header') %>
 		<!-- MAIN -->
 		<main class="main-createProduct">
+			<div class="colour-size-list">
+				<% colours.forEach(colour => { %>
+				<ul>
+					<li><%= colour.colour %></li>
+				</ul>
+				<% }) %>
+			</div>
+			<br />
 			<form class="createProduct" action="/products/colours" method="post">
-				<label class="createProduct-name" for="productName">Nuevo Color</label>
+				<label class="createProduct-name">Nuevo Color</label>
 				<input
-					id="createProduct-name"
+					class="createProduct-name"
 					type="text"
-					id="productName"
-					name="productName"
+					id="productColor"
+					name="productColor"
 					required
 				/>
 

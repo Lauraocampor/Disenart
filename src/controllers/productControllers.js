@@ -130,7 +130,7 @@ const controller = {
 		}
 	},
 
-	// @GET /products
+	// @POST /products
 
 	store: async (req, res) => {
 		const filenames = req.files.map((file) => file.filename);
@@ -230,6 +230,35 @@ const controller = {
 
 		//CAMBIAR ESTE REDIRECT CUANDO ESTE OK EL LISTADO DE PRODUCTOS
 		res.redirect('/products/1/details');
+	},
+
+	createColour: async (req, res) => {
+		try {
+			const colours = await Colour.findAll({ raw: true });
+
+			res.render('createColour', {
+				colours,
+				user: req.session.userLogged,
+			});
+		} catch (error) {
+			console.log(error);
+		}
+	},
+
+	createdColour: async (req, res) => {
+		const newColour = {
+			colour: req.body.productColor,
+		};
+
+		try {
+			const createdColour = await Colour.create(newColour);
+
+			console.log(createdColour);
+
+			res.redirect('/products/colours');
+		} catch (error) {
+			console.log(error);
+		}
 	},
 };
 

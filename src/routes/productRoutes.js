@@ -33,8 +33,12 @@ router.put(
 //@DELETE - /products/:id/delete --
 router.delete('/:id/delete', productController.deleteProduct); // cambiado
 
-// @GET - products/:id -> products/1 visualizacion de productos del lado del cliente
-router.get('/:id', upload.any('productImages'), productController.userProduct); // cambiado
+// @GET - products/:id/cliente -> products/1 visualizacion de productos del lado del cliente
+router.get(
+	'/:id/cliente',
+	upload.any('productImages'),
+	productController.userProduct,
+); // cambiado
 
 // @GET - LISTA DE PRODUCTS
 router.get(
@@ -43,7 +47,7 @@ router.get(
 ); // ok cambiado el ejs, no el controller
 
 // @GET - color
-//router.get('/colours', productController.createColour);
-//router.post('/colours', productController.createdColour);
+router.get('/colours', productController.createColour);
+router.post('/colours', productController.createdColour);
 
 module.exports = router;
