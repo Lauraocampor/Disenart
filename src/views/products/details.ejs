@@ -1,56 +1,75 @@
 <!-- HTML - PRODUCTO DEL LADO DEL CLIENTE -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<%- include("../partials/head") %>
-  <body class="bodyXL">
-    <!-- HEADER -->
-    <% const headerData={linkHead_01: {name: "Twitter" , url: "https://twitter.com/" }, linkHead_02: {name: "Instagram"
-      , url: "https://instagram.com/" }, linkHead_03: {name: "Google Maps" , url: "https://www.google.com/maps/" },
-      linkHead_04: {name: "Youtube" , url: "https://youtube.com/" }, linkHead_05: {name: "Facebook" ,
-      url: "https://facebook.com/" },}; %>
-      <%- include('../partials/header', headerData) %>
-        <!-- MAIN -->
-        <main class="mainPadding">
-          <section class="details-wrap">
-            <h2 class="details-title">DISEÑART</h2>
-            <div class="main-body">
-              <section class="main-images" style="
-      justify-content: center;">
-                <section class="main-second">
-                  <img class="main-second-images" src=  "https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw5bfadec5/products/UA_1360980-001/UA_1360980-001-1.JPG" >
-                  <img class="main-second-images" src="https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw5bfadec5/products/UA_1360980-001/UA_1360980-001-1.JPG"">
-                  <img class="main-second-images" src="https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw5bfadec5/products/UA_1360980-001/UA_1360980-001-1.JPG">
-                </section>
-                <section class="main-first">
-                  <img class="main-first-images" src="https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw5bfadec5/products/UA_1360980-001/UA_1360980-001-1.JPG">
-                </section>
-              </section>
-              <div class="main-information-complete">
-                <section class="main-information">
-                  <h2 id="name"> <%= product.name_product %> </h2>
-                  <h4 class="info">Color</h4>
-                  <section class="main-option">
-                    <button class="option" > <%- product.colour.colour %></button> 
-
-                  </section>
-                  <h4 class="info">Talle</h4>
-                  <section class="main-option">
-                    <button class="option"> <%- product.size.size %></button>
-                  </section>
-                  <h3 id="precio"> $<%= product.price_product %></h3>
-                </section>
-                <a href="#" onclick="openModal('modal3')"> <button id="finish">Comprar</button></a>
-                <h2 id="description"> Descripción del Producto </h2>
-                <p id="information-product"><%= product.description_product %></p>
-              </div>
-            </div>
-          </section>
-        </main>
-        <!-- FOOTER -->
-        <% const footerData={ link_01: {name: "Twitter" , url: "https://twitter.com/" }, link_02: {name: "Instagram" , url: "https://instagram.com/" }, link_03: {name: "Google Maps" , url: "https://www.google.com/maps/" }, link_04: {name: "Youtube" , url: "https://youtube.com/" }, link_05: {name: "Facebook" , url: "https://facebook.com/" },} %>
-        <%- include("../partials/footer", footerData); %>
-        <!-- SCRIPTS -->
-          <script src="/js/main.js"></script>
-          <script src="/js/header.js"></script>
-  </body>
+	<%- include("../partials/head") %>
+	<body class="bodyXL">
+		<!-- HEADER -->
+		<% const headerData={linkHead_01: {name: "Twitter" , url:
+		"https://twitter.com/" }, linkHead_02: {name: "Instagram" , url:
+		"https://instagram.com/" }, linkHead_03: {name: "Google Maps" , url:
+		"https://www.google.com/maps/" }, linkHead_04: {name: "Youtube" , url:
+		"https://youtube.com/" }, linkHead_05: {name: "Facebook" , url:
+		"https://facebook.com/" },}; %> <%- include('../partials/header',
+		headerData) %>
+		<!-- MAIN -->
+		<main class="mainPadding">
+			<section class="details-wrap">
+				<h2 class="details-title">DISEÑART</h2>
+				<div class="main-body">
+					<section class="main-images" style="justify-content: center">
+						<section class="main-second">
+							<img
+								class="main-second-images"
+								src="/images/productos/<%= product.image_product[1] %>"
+							/>
+							<img
+								class="main-second-images"
+								src="/images/productos/<%= product.image_product[2] %>"
+							/>
+							<img
+								class="main-second-images"
+								src="/images/productos/<%= product.image_product[3] %>"
+							/>
+						</section>
+						<section class="main-first">
+							<img
+								class="main-first-images"
+								src="/images/productos/<%= product.image_product[0] %>"
+							/>
+						</section>
+					</section>
+					<div class="main-information-complete">
+						<section class="main-information">
+							<h2 id="name"><%= product.name_product %></h2>
+							<h4 class="info">Color</h4>
+							<section class="main-option">
+								<button class="option"><%- product.colour.colour %></button>
+							</section>
+							<h4 class="info">Talle</h4>
+							<section class="main-option">
+								<button class="option"><%- product.size.size %></button>
+							</section>
+							<h3 id="precio">$<%= product.price_product %></h3>
+						</section>
+						<a href="#" onclick="openModal('modal3')">
+							<button id="finish">Comprar</button></a
+						>
+						<h2 id="description">Descripción del Producto</h2>
+						<p id="information-product"><%= product.description_product %></p>
+					</div>
+				</div>
+			</section>
+		</main>
+		<!-- FOOTER -->
+		<% const footerData={ link_01: {name: "Twitter" , url:
+		"https://twitter.com/" }, link_02: {name: "Instagram" , url:
+		"https://instagram.com/" }, link_03: {name: "Google Maps" , url:
+		"https://www.google.com/maps/" }, link_04: {name: "Youtube" , url:
+		"https://youtube.com/" }, link_05: {name: "Facebook" , url:
+		"https://facebook.com/" },} %> <%- include("../partials/footer",
+		footerData); %>
+		<!-- SCRIPTS -->
+		<script src="/js/main.js"></script>
+		<script src="/js/header.js"></script>
+	</body>
 </html>

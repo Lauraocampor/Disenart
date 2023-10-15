@@ -73,6 +73,8 @@ const controller = {
 				include: ['size', 'colour'],
 				nest: true,
 			});
+
+			product.image_product = JSON.parse(product.image_product);
 			res.render('details', { product, user: req.session.userLogged });
 		} catch (error) {
 			console.log(error);
