@@ -89,6 +89,9 @@ const controller = {
 		try {
 			const categoryResults = async (category) => {
 				const products = await Product.findAll();
+				products.forEach((product) => {
+					product.image_product = JSON.parse(product.image_product);
+				});
 				const productsFiltered = products.filter((x) => {
 					if (x.productName && typeof x.productName === 'string') {
 						return x.productName.toLowerCase() === category.toLowerCase();
@@ -111,6 +114,9 @@ const controller = {
 
 			const queryResults = async (query) => {
 				const products = await Product.findAll();
+				products.forEach((product) => {
+					product.image_product = JSON.parse(product.image_product);
+				});
 				const productsFiltered = products.filter((x) => valueCheck(x, query));
 				return productsFiltered;
 			};
@@ -120,6 +126,8 @@ const controller = {
 			} else {
 				searchResults = await categoryResults(req.params.category);
 			}
+
+			console.log(searchResults);
 
 			res.render('searchResults', {
 				searchResults,
