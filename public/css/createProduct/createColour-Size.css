@@ -1,0 +1,111 @@
+.main-colour-size {
+	box-sizing: border-box;
+	width: 100%;
+	margin: auto;
+}
+
+.colour-size-content {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.colour-size-list {
+	display: flex;
+	flex-direction: row;
+	max-width: 80%;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.colour-size-name {
+	font-size: 25px;
+	margin-bottom: 5px;
+	display: flex;
+	justify-content: center;
+	font-family: 'Nunito Sans';
+	font-weight: bolder;
+}
+
+.create-color-size {
+	justify-content: center;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	margin: 20px;
+}
+.create-color-size .colour-size-name {
+	margin: auto;
+}
+
+.colour-size-input {
+	border: none;
+	border-radius: 3px;
+	margin: auto;
+	height: 25px;
+	width: 80%;
+}
+
+#colour-size-finish {
+	width: 80%;
+	margin-left: 10%;
+	background-color: #bf9a51;
+	color: #0d3a61;
+	font-weight: bolder;
+	font-size: 20px;
+	border: none;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	margin-top: 20px;
+	transition: all 500ms;
+}
+
+#colour-size-finish:hover {
+	background-color: #0d3a61;
+	color: #bcd1bd;
+	scale: 1.2;
+}
+
+/* BREAK #2 */
+@media (min-width: 481px) {
+	.main-colour-size {
+		width: 90%;
+	}
+}
+
+/* BREAK #3 */
+@media (min-width: 769px) {
+	.main-colour-size {
+		width: 80%;
+	}
+
+	.colour-size-name {
+		font-size: 30px;
+	}
+
+	.colour-size-list ul li {
+		font-size: 20px;
+	}
+
+	.colour-size-input {
+		height: 30px;
+	}
+	#colour-size-finish {
+		font-size: 25px;
+	}
+}
+
+/* BREAK #4 */
+@media (min-width: 1280px) {
+	.main-colour-size {
+		width: 70%;
+		background-color: #eef0de;
+		margin-top: 10px;
+		margin-left: 15%;
+	}
+
+	.colour-size-name {
+		font-size: 30px;
+
+		align-content: center;
+	}
+}

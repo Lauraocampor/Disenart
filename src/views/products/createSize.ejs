@@ -6,27 +6,40 @@
 		<!-- HEADER -->
 		<%- include('../partials/header') %>
 		<!-- MAIN -->
-		<main class="main-createProduct">
-			<div class="colour-size-list">
-				<% sizes.forEach(size => { %>
-				<ul>
-					<li><%= size.size %></li>
-				</ul>
-				<% }) %>
+
+		<main class="main-colour-size">
+			<div class="">
+				<label class="colour-size-name">Talles Existentes</label>
+			</div>
+			<div class="colour-size-content">
+				<div class="colour-size-list">
+					<% sizes.forEach(size => { %>
+					<ul>
+						<li><%= size.size %></li>
+					</ul>
+					<% }) %>
+				</div>
 			</div>
 			<br />
-			<form class="createProduct" action="/products/sizes" method="post">
-				<label class="createProduct-name">Nuevo Talle</label>
+			<div class="">
+				<label class="colour-size-name">Nuevo Talle</label>
+			</div>
+			<form class="create-color-size" action="/products/sizes" method="post">
 				<input
-					class="createProduct-name"
+					class="colour-size-input"
 					type="text"
 					id="productSize"
 					name="productSize"
 					required
 				/>
 
-				<input id="createProduct-finish" type="submit" value="Crear Talle" />
+				<input id="colour-size-finish" type="submit" value="Crear Talle" />
 			</form>
+			<br />
+
+			<a href="/products/createProduct">
+				<button id="colour-size-finish">Crear producto</button>
+			</a>
 		</main>
 		<!-- FOOTER -->
 		<%- include("../partials/footer"); %>

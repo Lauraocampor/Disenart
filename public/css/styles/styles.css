@@ -2,72 +2,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 /* Estilos del home */
-@import "/css/home/header.css";
-@import "/css/home/main.css";
-@import "/css/home/footer.css";
-
+@import '/css/home/header.css';
+@import '/css/home/main.css';
+@import '/css/home/footer.css';
 
 /* Estilos del details */
-@import "/css/details/details.css";
+@import '/css/details/details.css';
 
 /* Estilos de los Modals */
-@import "/css/forms/forms.css";
-@import "/css/shopping/shopping.css";
-
+@import '/css/forms/forms.css';
+@import '/css/shopping/shopping.css';
 
 /* Estilos de los editores de producto */
-@import "/css/createProduct/createProduct.css";
-@import "/css/createProduct/editProduct.css";
-@import "/css/createProduct/createdProduct.css";
+@import '/css/createProduct/createProduct.css';
+@import '/css/createProduct/editProduct.css';
+@import '/css/createProduct/createdProduct.css';
+@import '/css/createProduct/createColour-Size.css';
 
 /* Estilos de la página de resultados de búsqueda  */
-@import "/css/searchResults/searchResults.css";
+@import '/css/searchResults/searchResults.css';
 
 /* Estilos de la página 404 not found  */
-@import "/css/404/404.css";
+@import '/css/404/404.css';
 
 /* Estilos del profile  */
-@import "/css/users/profile.css";
-@import "/css/users/allUsers.css";
-@import "/css/users/editProfile.css";
+@import '/css/users/profile.css';
+@import '/css/users/allUsers.css';
+@import '/css/users/editProfile.css';
 
 /* Fonts aplicadas de manera global */
 * {
-    font-family: 'Roboto Condensed', 'Nunito Sans',  sans-serif;
+	font-family: 'Roboto Condensed', 'Nunito Sans', sans-serif;
 }
 
 /* ARREGLANDO CARRITO Y OTROS DETALLES */
 .modal_position {
-    transform: scale(0.9);
-} 
-.bodyXL{
-    height: 100vh;
-    overflow-x: hidden;
-    display: flex;
-    flex-wrap: wrap;
+	transform: scale(0.9);
 }
-.mainPadding{
-    padding: 0px 0px;
+.bodyXL {
+	height: 100vh;
+	overflow-x: hidden;
+	display: flex;
+	flex-wrap: wrap;
+}
+.mainPadding {
+	padding: 0px 0px;
 }
 
 /* PHONE IN LANDSCAPE MODE */
-@media (min-width: 680px) and (orientation: landscape ) {
-    .modal_position {
-        transform: scale(0.6);
-        position: relative;
-        bottom: 50px;
-    }
-    .mainPadding{
-        padding: 0px 0px;
-    }
+@media (min-width: 680px) and (orientation: landscape) {
+	.modal_position {
+		transform: scale(0.6);
+		position: relative;
+		bottom: 50px;
+	}
+	.mainPadding {
+		padding: 0px 0px;
+	}
 }
 
 /* DESKTOP */
 @media (min-width: 1280px) {
-    .modal_position {
-        transform: scale(0.9);
-        position: relative;
-        top: 50px;
-    }
-
+	.modal_position {
+		transform: scale(0.9);
+		position: relative;
+		top: 50px;
+	}
 }

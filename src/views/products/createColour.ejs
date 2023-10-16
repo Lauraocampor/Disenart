@@ -6,27 +6,40 @@
 		<!-- HEADER -->
 		<%- include('../partials/header') %>
 		<!-- MAIN -->
-		<main class="main-createProduct">
-			<div class="colour-size-list">
-				<% colours.forEach(colour => { %>
-				<ul>
-					<li><%= colour.colour %></li>
-				</ul>
-				<% }) %>
+
+		<main class="main-colour-size">
+			<div class="">
+				<label class="colour-size-name">Colores Existentes</label>
+			</div>
+			<div class="colour-size-content">
+				<div class="colour-size-list">
+					<% colours.forEach(colour => { %>
+					<ul>
+						<li><%= colour.colour %></li>
+					</ul>
+					<% }) %>
+				</div>
 			</div>
 			<br />
-			<form class="createProduct" action="/products/colours" method="post">
-				<label class="createProduct-name">Nuevo Color</label>
+			<div class="">
+				<label class="colour-size-name">Nuevo Color</label>
+			</div>
+			<form class="create-color-size" action="/products/colours" method="post">
 				<input
-					class="createProduct-name"
+					class="colour-size-input"
 					type="text"
 					id="productColor"
 					name="productColor"
 					required
 				/>
 
-				<input id="createProduct-finish" type="submit" value="Crear color" />
+				<input id="colour-size-finish" type="submit" value="Crear color" />
 			</form>
+			<br />
+
+			<a href="/products/createProduct">
+				<button id="colour-size-finish">Crear producto</button>
+			</a>
 		</main>
 		<!-- FOOTER -->
 		<%- include("../partials/footer"); %>
