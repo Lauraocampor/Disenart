@@ -85,9 +85,10 @@ const controller = {
 	},
 
 	searchResults: async (req, res) => {
-		let searchResults = null;
+		let searchResults = [];
 
 		try {
+			// CATEGORY SEARCH
 			const categoryResults = async (category) => {
 				const products = await Product.findAll();
 				products.forEach((product) => {
@@ -101,7 +102,8 @@ const controller = {
 				});
 				return productsFiltered;
 			};
-
+			// QUERY SEARCH
+			// 1. VALUE CHECKER
 			const valueCheck = (object, value) => {
 				const valueArray = Object.values(object);
 				const regex = new RegExp(value, 'i');
@@ -112,7 +114,7 @@ const controller = {
 				}
 				return false;
 			};
-
+			// 2. RESULT GIVER
 			const queryResults = async (query) => {
 				const products = await Product.findAll();
 				products.forEach((product) => {
@@ -121,15 +123,11 @@ const controller = {
 				const productsFiltered = products.filter((x) => valueCheck(x, query));
 				return productsFiltered;
 			};
-
-			if (!req.params.category) {
-				searchResults = await queryResults(req.query.searchinfo);
-			} else {
-				searchResults = await categoryResults(req.params.category);
-			}
-
-			console.log(searchResults);
-
+			// VALUE CREATOR
+			req.params.category
+				? (searchResults = await categoryResults(req.params.category))
+				: (searchResults = await queryResults(req.query.searchinfo));
+			// RENDERER
 			res.render('searchResults', {
 				searchResults,
 				user: req.session.userLogged,
