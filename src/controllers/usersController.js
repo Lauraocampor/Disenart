@@ -26,7 +26,7 @@ const controller = {
 				where: { email_user: email },
 				raw: true,
 			});
-			console.log(userInDB); // Sólo funciona con el console, verificar por qué
+			// console.log(userInDB); // Sólo funciona con el console, verificar por qué
 
 			if (userInDB) {
 				return res.render('register', {
@@ -84,7 +84,7 @@ const controller = {
 				if (isOkThePassword) {
 					//delete userToLogin.password; lo comente para poder traer la contraseña en el updatedProfile
 					req.session.userLogged = userToLogin;
-					console.log(userToLogin);
+					// console.log(userToLogin);
 
 					if (req.body.remember_password) {
 						res.cookie('userEmail', req.body.email, {
@@ -120,7 +120,7 @@ const controller = {
 
 	profile: async (req, res) => {
 		try {
-			console.log({ user: req.session.userLogged });
+			// console.log({ user: req.session.userLogged });
 			const id = req.session.userLogged.id_user;
 			const user = await User.findOne({
 				where: { id_user: id },
@@ -136,7 +136,7 @@ const controller = {
 
 	editProfile: async (req, res) => {
 		try {
-			console.log({ user: req.session.userLogged });
+			// console.log({ user: req.session.userLogged });
 			const id = req.session.userLogged.id_user;
 			const user = await User.findOne({
 				where: { id_user: id },
@@ -152,7 +152,7 @@ const controller = {
 
 	updateProfile: async (req, res) => {
 		try {
-			console.log({ user: req.session.userLogged });
+			// console.log({ user: req.session.userLogged });
 
 			let updatedProfile = {
 				id_user: req.session.userLogged.id_user,
@@ -210,7 +210,7 @@ const controller = {
 	allProfiles: async (req, res) => {
 		try {
 			const allUsers = await User.findAll({ raw: true });
-			console.log(allUsers);
+			// console.log(allUsers);
 
 			return res.render('allUsers', {
 				allUsers: allUsers,
