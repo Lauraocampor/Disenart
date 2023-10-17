@@ -85,21 +85,26 @@ const controller = {
 	},
 
 	searchResults: async (req, res) => {
-		let searchResults = [];
-
 		try {
 			// CATEGORY SEARCH
 			const categoryResults = async (category) => {
+				// category normalization
+				category = category.toLowerCase();
+				// product list invocation and image name organizing
 				const products = await Product.findAll();
 				products.forEach((product) => {
 					product.image_product = JSON.parse(product.image_product);
 				});
-				const productsFiltered = products.filter((x) => {
-					if (x.productName && typeof x.productName === 'string') {
-						return x.productName.toLowerCase() === category.toLowerCase();
-					}
-					return false;
+				// product list selection
+				let productsFiltered = products.filter((product) => {
+					let searchTerm = product.dataValues.name_product.toLowerCase(); // db name normalization
+					return searchTerm.includes(category);
 				});
+				// response formatting
+				for (let index = 0; index < productsFiltered.length; index++) {
+					productsFiltered[index] = productsFiltered[index].dataValues;
+				}
+				// ending
 				return productsFiltered;
 			};
 			// QUERY SEARCH
@@ -124,6 +129,7 @@ const controller = {
 				return productsFiltered;
 			};
 			// VALUE CREATOR
+			let searchResults = [];
 			req.params.category
 				? (searchResults = await categoryResults(req.params.category))
 				: (searchResults = await queryResults(req.query.searchinfo));
