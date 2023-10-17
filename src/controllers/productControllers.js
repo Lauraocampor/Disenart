@@ -1,5 +1,6 @@
-const fs = require('fs');
-const path = require('path');
+// const fs = require('fs');
+// const path = require('path');
+// Parece que estos require no se utilizan. Borrar al final del sprint.
 
 //const productModel = require('../models/productModel'); // sacar despues de hacer todo
 const { Product, Colour, Size } = require('../database/models');
