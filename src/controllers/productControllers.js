@@ -1,7 +1,3 @@
-// const fs = require('fs');
-// const path = require('path');
-// Parece que estos require no se utilizan. Borrar al final del sprint.
-
 //const productModel = require('../models/productModel'); // sacar despues de hacer todo
 const { Product, Colour, Size } = require('../database/models');
 
@@ -108,24 +104,29 @@ const controller = {
 				return productsFiltered;
 			};
 			// QUERY SEARCH
-			// 1. VALUE CHECKER
-			const valueCheck = (object, value) => {
-				const valueArray = Object.values(object);
-				const regex = new RegExp(value, 'i');
-				for (let i = 0; i < valueArray.length; i++) {
-					if (typeof valueArray[i] === 'string' && regex.test(valueArray[i])) {
-						return true;
-					}
-				}
-				return false;
-			};
-			// 2. RESULT GIVER
 			const queryResults = async (query) => {
+				// product list invocation and image name organizing
 				const products = await Product.findAll();
 				products.forEach((product) => {
 					product.image_product = JSON.parse(product.image_product);
 				});
-				const productsFiltered = products.filter((x) => valueCheck(x, query));
+				// product list formatting
+				for (let index = 0; index < products.length; index++) {
+					products[index] = products[index].dataValues;
+				}
+				// value regex
+				const valueCheck = (product, query) => {
+					const regex = new RegExp(query, 'i');
+					return (
+						product.name_product.match(regex) ||
+						product.description_product.match(regex)
+					);
+				};
+				// product filtering
+				const productsFiltered = products.filter((product) =>
+					valueCheck(product, query),
+				);
+				// ending
 				return productsFiltered;
 			};
 			// VALUE CREATOR
