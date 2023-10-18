@@ -1,5 +1,21 @@
 # Resumenes de Scrum Retrospective
 
+> SPRINT #6
+
+El equipo #6 se ha reunido el día diecisiete de octubre para ver qué aprendizajes nos ha dejado el sprint.
+
+1. Es importante hacer commits pequeños y constantes para evitar merges grandes y facilitar la identificación de errores introducidos al código.
+
+2. Saber organizar las tareas por orden de prioridad y necesidad. Tuvimos que dejar algunas implementaciones de lado, como la del modal, para darle importancia a nuestros requerimientos.
+
+3. Estamos preparados para pulir los últimos detalles de nuestro proyecto.
+
+4. Nos gustaría implementar alguna técnica para hacer estimaciones en nuestros sprints.
+
+5. Queremos tener más cuidado con el manejo de BD, cometimos unos errores básicos que nos retrasaron en nuestras tareas.
+
+6. Queremos seguir ayudándonos el uno al otro para superar los retos del final del proyecto.
+
 > SPRINT #5
 
 El equipo #6 se encontró el quince de septiembre para revisar sus aciertos y errores en el quinto sprint.
