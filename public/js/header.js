@@ -69,6 +69,7 @@ document.getElementById('escapeButton').addEventListener(
 
 // LEAVE HERE, IF PUT BEFORE WILL CAUSE A BUG
 // USER SCRIPT
+// I KNOW HOW TO SOLVE THIS, I'LL DO IT LATER
 document.getElementById('avatarButton').addEventListener(
 	'click',
 	() => {
