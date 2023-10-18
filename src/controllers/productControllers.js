@@ -11,7 +11,7 @@ const controller = {
 			});
 
 			product.image_product = JSON.parse(product.image_product);
-			console.log(product);
+			//console.log(product);
 			res.render('createdProductDetail', {
 				product,
 				user: req.session.userLogged,
@@ -265,9 +265,10 @@ const controller = {
 		};
 
 		try {
+			// eslint-disable-next-line no-unused-vars
 			const createdColour = await Colour.create(newColour);
 
-			console.log(createdColour);
+			// console.log(createdColour);
 
 			res.redirect('/products/colours');
 		} catch (error) {
@@ -294,9 +295,10 @@ const controller = {
 		};
 
 		try {
+			// eslint-disable-next-line no-unused-vars
 			const createdSize = await Size.create(newSize);
 
-			console.log(createdSize);
+			// console.log(createdSize);
 
 			res.redirect('/products/sizes');
 		} catch (error) {
