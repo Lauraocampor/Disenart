@@ -1,106 +1,64 @@
 <!doctype html>
 <html lang="es">
-	<%- include('../partials/head') %>
+<%- include('../partials/head') %>
 
-	<body class="bodyXL">
-		<!-- HEADER -->
-		<%- include('../partials/header') %>
-		<!-- MAIN -->
-		<main class="edit-profile-main">
-			<div>
-				<h2 id="edit-profile-welcome">Editar información del perfil</h2>
-			</div>
-			<form
-				class="editProfile"
-				action="/users/profile/edit?_method=PUT"
-				method="post"
-				enctype="multipart/form-data"
-			>
-				<section class="edit-profile-data-img">
-					<section class="edit-profile-user-img-section">
-						<img
-							class="edit-profile-user-img"
-							src="/images/users/<%=user.image_user%>"
-						/>
-					</section>
-					<section class="edit-profile-user-Alldata">
-						<h2 class>Datos registrados</h2>
-						<div class="edit-profile-usereachData">
-							<p class="edit-profile-user-data">
-								<input
-									class="edit-profile-input"
-									type="text"
-									value="<%=user.name_user %>"
-									name="firstName"
-								/>
-							</p>
-						</div>
-						<div class="edit-profile-user-eachData">
-							<p class="edit-profile-user-data">
-								<input
-									class="edit-profile-input"
-									type="text"
-									value="<%=user.lastname_user %>"
-									name="lastName"
-								/>
-							</p>
-						</div>
-						<div class="edit-profile-user-eachData">
-							<p class="edit-profile-user-data">
-								<input
-									class="edit-profile-input"
-									type="password"
-									placeholder="Contraseña"
-									name="password"
-									required
-								/>
-							</p>
-						</div>
-						<div class="edit-profile-user-eachData">
-							<p class="edit-profile-user-data">
-								<input
-									class="edit-profile-input"
-									type="email"
-									value=" <%=user.email_user %>"
-									name="email"
-								/>
-							</p>
-							<p>
-								<label for="avatar">Imagen de perfil</label>
-								<input
-									class="input"
-									type="file"
-									name="avatar"
-									accept=".jpg, .jpeg, .png, .gif"
-									title="Editar"
-								/>
-							</p>
-						</div>
-						<a href="http://localhost:3000/users/profile">
-							<input
-								id="profile-edit-button"
-								type="submit"
-								value="Guardar datos"
-							/>
-						</a>
-					</section>
-				</section>
-			</form>
-			<a href="http://localhost:3000/users/profile">
-				<button id="profile-back-delete-button">Volver al perfil</button>
-			</a>
-			<form action="/users/profile/delete?_method=DELETE" method="post">
-				<input
-					id="profile-back-delete-button"
-					type="submit"
-					value="Eliminar usuario"
-				/>
-			</form>
-		</main>
-		<!-- FOOTER -->
-		<%- include("../partials/footer"); %>
-		<!-- SCRIPT -->
-		<script src="/../js/main.js"></script>
-		<script src="/../js/header.js"></script>
-	</body>
+<body class="bodyXL">
+  <!-- HEADER -->
+  <%- include('../partials/header') %>
+  <!-- MAIN -->
+  <main class="edit-profile-main">
+    <div>
+      <h2 id="edit-profile-welcome">Editar información del perfil</h2>
+    </div>
+    <form class="editProfile" action="/users/profile/edit?_method=PUT" method="post" enctype="multipart/form-data">
+      <section class="edit-profile-data-img">
+        <section class="edit-profile-user-img-section">
+          <img class="edit-profile-user-img" src="/images/users/<%=user.image_user%>" />
+        </section>
+        <section class="edit-profile-user-Alldata">
+          <h2 class>Datos registrados</h2>
+          <div class="edit-profile-usereachData">
+            <p class="edit-profile-user-data">
+              <input class="edit-profile-input" type="text" value="<%=user.name_user %>" name="firstName" />
+            </p>
+          </div>
+          <div class="edit-profile-user-eachData">
+            <p class="edit-profile-user-data">
+              <input class="edit-profile-input" type="text" value="<%=user.lastname_user %>" name="lastName" />
+            </p>
+          </div>
+          <div class="edit-profile-user-eachData">
+            <p class="edit-profile-user-data">
+              <input class="edit-profile-input" type="password" placeholder="Contraseña" name="password" required />
+            </p>
+          </div>
+          <div class="edit-profile-user-eachData">
+            <p class="edit-profile-user-data">
+              <input class="edit-profile-input" type="email" value=" <%=user.email_user %>" name="email" />
+            </p>
+            <p>
+              <label for="avatar">Imagen de perfil</label>
+              <input class="input" type="file" name="avatar" accept=".jpg, .jpeg, .png, .gif" title="Editar" />
+            </p>
+          </div>
+          <a href="http://localhost:8080/users/profile">
+            <input id="profile-edit-button" type="submit" value="Guardar datos" />
+          </a>
+        </section>
+      </section>
+    </form>
+    <a href="http://localhost:8080/users/profile">
+      <button id="profile-back-delete-button">Volver al perfil</button>
+    </a>
+    <form action="/users/profile/delete?_method=DELETE" method="post">
+      <input id="profile-back-delete-button" type="submit" value="Eliminar usuario" />
+    </form>
+  </main>
+  <!-- FOOTER -->
+  <%- include("../partials/footer"); %>
+  <!-- SCRIPT -->
+  <script src="/../js/main.js"></script>
+  <script src="/../js/header.js"></script>
+</body>
+
 </html>

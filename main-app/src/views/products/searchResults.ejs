@@ -1,45 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include('../partials/head') %>
-  <body class="bodyXL">
-    <!-- HEADER -->
-    <%- include('../partials/header') %>
-    <!-- MAIN -->
-    <h2 class="search-title">DISEÑART</h2>
-    <% if (searchResults.length === 0) { %>
-      <main class="itemBox">
-      <p class="itemBox--searchError">
-        Lo sentimos, no encontramos información relacionada a tu búsqueda. Presiona 
-        <a href="/"  class="itemBox--backText">aquí</a> 
-        para volver al inicio.
-      </p>
-      <img src="/../images/misc/product-notfound.png" alt="error image" class="itemBox-imgError">
-    </main>
-    <% } else { %>
-    <main class="itemBox">
-      <% for( let i = 0; i < searchResults.length; i++ ) { %>
-      <article class="itemBox--product">
-        <a
-          href="http://localhost:3000/products/<%= searchResults[i].id_product %>/details"
-          class="itemBox--anchor"
-        >
-        <img
-        src="/../images/productos/<%= searchResults[i].image_product[0] %>"
-        alt="<%= searchResults[i].name_product %>"
-        class="itemBox--image"
-        />
+<%- include('../partials/head') %>
+
+<body class="bodyXL">
+  <!-- HEADER -->
+  <%- include('../partials/header') %>
+  <!-- MAIN -->
+  <h2 class="search-title">DISEÑART</h2>
+  <% if (searchResults.length === 0) { %>
+  <main class="itemBox">
+    <p class="itemBox--searchError">
+      Lo sentimos, no encontramos información relacionada a tu búsqueda. Presiona
+      <a href="/" class="itemBox--backText">aquí</a>
+      para volver al inicio.
+    </p>
+    <img src="/../images/misc/product-notfound.png" alt="error image" class="itemBox-imgError">
+  </main>
+  <% } else { %>
+  <main class="itemBox">
+    <% for( let i = 0; i < searchResults.length; i++ ) { %>
+    <article class="itemBox--product">
+      <a href="http://localhost:8080/products/<%= searchResults[i].id_product %>/details" class="itemBox--anchor">
+        <img src="/../images/productos/<%= searchResults[i].image_product[0] %>" alt="<%= searchResults[i].name_product %>" class="itemBox--image" />
         <h4 class="search-buyBottom">COMPRAR</h4>
-        </a>
-        <h2 class="search-nameProduct"><%= searchResults[i].name_product %></h2>
-        <p class="price-description"></pclass>$<%= searchResults[i].price_product %></p>
-      </article>
-      <% } %>
-    </main>
+      </a>
+      <h2 class="search-nameProduct"><%= searchResults[i].name_product %></h2>
+      <p class="price-description">
+        </pclass>$<%= searchResults[i].price_product %></p>
+    </article>
     <% } %>
-    <!-- FOOTER -->
-    <%- include("../partials/footer"); %>
-    <!-- SCRIPT -->
-    <script src="/../js/main.js"></script>
-    <script src="/../js/header.js"></script>
-  </body>
+  </main>
+  <% } %>
+  <!-- FOOTER -->
+  <%- include("../partials/footer"); %>
+  <!-- SCRIPT -->
+  <script src="/../js/main.js"></script>
+  <script src="/../js/header.js"></script>
+</body>
+
 </html>

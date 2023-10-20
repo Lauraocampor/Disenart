@@ -1,33 +1,33 @@
 <!doctype html>
 <html lang="es">
-	<%- include('../partials/head') %>
-	<body class="bodyXL">
-		<!-- HEADER -->
-		<%- include('../partials/header') %>
-		<!-- MAIN -->
-		<main>
-			<h2 class="userList-title">Usuarios activos</h2>
-			<section class="userList">
-				<% allUsers.forEach(users=> { %>
-				<article class="userProfile">
-					<img src="/images/users/<%=users.image_user%>" class="userList-img" />
-					<p class="userList-data"><%= users.email_user %></p>
-					<p class="userList-data">
-						<%= users.name_user %> <%= users.lastname_user %>
-					</p>
-					<a
-						href="http://localhost:3000/users/profile/<%=users.id_user%>/detail"
-					>
-						<button id="edit-delete-button">Ver datos</button>
-					</a>
-				</article>
-				<% }); %>
-			</section>
-		</main>
-		<!-- FOOTER -->
-		<%- include("../partials/footer"); %>
-		<!-- SCRIPT -->
-		<script src="/../js/main.js"></script>
-		<script src="/../js/header.js"></script>
-	</body>
+<%- include('../partials/head') %>
+
+<body class="bodyXL">
+  <!-- HEADER -->
+  <%- include('../partials/header') %>
+  <!-- MAIN -->
+  <main>
+    <h2 class="userList-title">Usuarios activos</h2>
+    <section class="userList">
+      <% allUsers.forEach(users=> { %>
+      <article class="userProfile">
+        <img src="/images/users/<%=users.image_user%>" class="userList-img" />
+        <p class="userList-data"><%= users.email_user %></p>
+        <p class="userList-data">
+          <%= users.name_user %> <%= users.lastname_user %>
+        </p>
+        <a href="http://localhost:8080/users/profile/<%=users.id_user%>/detail">
+          <button id="edit-delete-button">Ver datos</button>
+        </a>
+      </article>
+      <% }); %>
+    </section>
+  </main>
+  <!-- FOOTER -->
+  <%- include("../partials/footer"); %>
+  <!-- SCRIPT -->
+  <script src="/../js/main.js"></script>
+  <script src="/../js/header.js"></script>
+</body>
+
 </html>
