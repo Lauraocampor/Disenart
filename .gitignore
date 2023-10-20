@@ -1,40 +1,24 @@
 # dependencies
-./main-app/node_modules
-./react-app/node_modules
-./main-app/.pnp.js
-./react-app/.pnp
+/node_modules
+/.pnp
+.pnp.js
 
 # testing
-./main-app/coverage
-./react-app/coverage
+/coverage
 
 # production
-./main-app/build
-./react-app/build
+/build
 
 # misc
-./main-app/.env
-./react-app/.env
-./main-app/.env.local
-./react-app/.env.local
-./main-app/.env.development.local
-./react-app/.env.development.local
-./main-app/.env.test.local
-./react-app/.env.test.local
-./main-app/.env.production.local
-./react-app/.env.production.local
-./main-app/.DS_Store
-./react-app/.DS_Store
-./main-app/npm-debug.log*
-./react-app/npm-debug.log*
-./main-app/yarn-debug.log*
-./react-app/yarn-debug.log*
-./main-app/yarn-error.log*
-./react-app/yarn-error.log*
-
-
-
-
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 
 
