@@ -9,19 +9,6 @@ document.getElementById('hamburgerButton').addEventListener(
 	false,
 );
 
-// USER SCRIPT -- BUG SOLVED
-if (typeof locals !== 'undefined') {
-	document.getElementById('avatarButton').addEventListener(
-		'click',
-		() => {
-			document
-				.getElementById('userList')
-				.classList.toggle('about-user-toggler');
-		},
-		false,
-	);
-}
-
 // OPEN SEARCH SCRIPT
 document.getElementById('searchButton').addEventListener(
 	'click',
@@ -76,6 +63,15 @@ document.getElementById('escapeButton').addEventListener(
 		document
 			.getElementById('searchBoxPosition')
 			.classList.toggle('searchToggleBox');
+	},
+	false,
+);
+
+//Keep it here. Always at the end.
+document.getElementById('avatarButton').addEventListener(
+	'click',
+	() => {
+		document.getElementById('userList').classList.toggle('about-user-toggler');
 	},
 	false,
 );
