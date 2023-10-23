@@ -9,6 +9,19 @@ document.getElementById('hamburgerButton').addEventListener(
 	false,
 );
 
+// USER SCRIPT -- BUG SOLVED
+if (typeof locals !== 'undefined') {
+	document.getElementById('avatarButton').addEventListener(
+		'click',
+		() => {
+			document
+				.getElementById('userList')
+				.classList.toggle('about-user-toggler');
+		},
+		false,
+	);
+}
+
 // OPEN SEARCH SCRIPT
 document.getElementById('searchButton').addEventListener(
 	'click',
@@ -63,17 +76,6 @@ document.getElementById('escapeButton').addEventListener(
 		document
 			.getElementById('searchBoxPosition')
 			.classList.toggle('searchToggleBox');
-	},
-	false,
-);
-
-// LEAVE HERE, IF PUT BEFORE WILL CAUSE A BUG
-// USER SCRIPT
-// I KNOW HOW TO SOLVE THIS, I'LL DO IT LATER
-document.getElementById('avatarButton').addEventListener(
-	'click',
-	() => {
-		document.getElementById('userList').classList.toggle('about-user-toggler');
 	},
 	false,
 );
