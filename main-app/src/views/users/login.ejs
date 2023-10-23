@@ -1,50 +1,54 @@
 <!-- HTML -->
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html lang="es" style="overflow-x: hidden;">
-  <!-- HEAD -->
-  <%- include("../partials/head") %>  
-  <!-- BODY -->
-  <body class="bodyXL">
-    <!-- HEADER -->
-    <%- include('../partials/header') %>
-    <!-- MAIN -->
-    <main class="mainPadding">
-        <section class="home-wrap">
-                    <div class="form">
-                        <div class="modal-content" id="register-login-ejs__transformXY">
-                          <h2 class="modal-form__titulo">Bienvenido</h2>
-                            <form class="modal-form" action="/users/login" method="POST">
-                                <label for="email">Correo electrónico</label>
-                                <input class="input" type="email" name="email" required>
-                                <% if (locals.errors && errors.email ) { %>
-                                  <div class="text-danger">
-                                      <%=errors.email.msg%>
-                                  </div>
-                              <% } %>
-                                <label for="password">Contraseña</label>
-                                <input class="input" type="password" name="password" required>
-                    
-                                <div class="checkbox-password">
-                                    <input type="checkbox" name="remember_password">
-                                    <label for="remember_password">Recordarme</label>
-                                </div>
-                    
-                                <p><a href="#">¿Olvidaste tu contraseña?</a></p>
-                    
-                                <button class="modal-submit" type="submit">Iniciar sesión</button>
-                    
-                                <div class="modal-bottom">
-                                    <p>¿Necesitas una cuenta?</p> <a href="register">Registrarse</a>
-                                </div>
-                    
-                            </form>
-                        </div>
-                    </div>
-        </section>
-    </main>
-    <!-- FOOTER -->
-    <%- include("../partials/footer"); %>
-    <!-- SCRIPT -->
-    <script src="/../js/header.js"></script>
-  </body>
+<!-- HEAD -->
+<%- include("../partials/head") %>
+<!-- BODY -->
+
+<body class="bodyXL">
+  <!-- HEADER -->
+  <%- include('../partials/header') %>
+  <!-- MAIN -->
+  <main class="mainPadding">
+    <section class="home-wrap">
+      <div class="form">
+        <div class="modal-content" id="register-login-ejs__transformXY">
+          <h2 class="modal-form__titulo">Bienvenido</h2>
+          <!-- FORM -->
+          <form class="modal-form" action="/users/login" method="POST">
+            <label for="email">Correo electrónico</label>
+            <input class="input" type="email" name="email" required>
+            <% if (locals.errors && errors.email ) { %>
+            <div class="text-danger">
+              <%=errors.email.msg%>
+            </div>
+            <% } %>
+            <!-- PASSWORD -->
+            <label for="password">Contraseña</label>
+            <input class="input" type="password" name="password" required>
+            <!-- REMEMBER ME -->
+            <div class="checkbox-password">
+              <input type="checkbox" name="remember_password">
+              <label for="remember_password">Recordarme</label>
+            </div>
+            <!-- RECOVER -->
+            <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+            <!-- SUBMIT -->
+            <button class="modal-submit" type="submit">Iniciar sesión</button>
+            <!-- REGISTER REDIRECT -->
+            <div class="modal-bottom">
+              <p>¿Necesitas una cuenta?</p> <a href="register">Registrarse</a>
+            </div>
+          </form>
+          <!-- FORM -->
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- FOOTER -->
+  <%- include("../partials/footer"); %>
+  <!-- SCRIPT -->
+  <script src="/../js/header.js"></script>
+</body>
+
 </html>
