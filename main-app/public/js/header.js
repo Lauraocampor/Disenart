@@ -67,4 +67,15 @@ window.addEventListener('load', () => {
 		},
 		false,
 	);
+
+	//Keep it here. Always at the end.
+	document.getElementById('avatarButton').addEventListener(
+		'click',
+		() => {
+			document
+				.getElementById('userList')
+				.classList.toggle('about-user-toggler');
+		},
+		false,
+	);
 });
