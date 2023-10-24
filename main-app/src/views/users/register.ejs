@@ -16,14 +16,16 @@
         <div class="modal-content" id="register-login-ejs__transformXY">
           <h2 class="modal-form__titulo title_register">Crear una cuenta</h2>
           <!-- START -->
-          <form class="modal-form" action="/users/register" method="POST" enctype="multipart/form-data">
+          <form class="modal-form" action="/users/register" method="POST" enctype="multipart/form-data" id="registerForm">
             <!-- MAIL  -->
             <label for="email">Correo electrónico</label>
-            <input class="input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="text" name="email" value="<%= locals.oldData ? oldData.email : null %>" />
+            <input class="input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="text" name="email" value="<%= locals.oldData ? oldData.email : null %>" id="inputEmailRegister" />
             <!-- BACKEND MAIL ERROR -->
             <% if (locals.errors && errors.email ) { %>
             <div class="text-danger"><%= errors.email.msg %></div>
             <% } %>
+            <!-- FRONTEND MAIL ERROR -->
+            <div class="text-danger" id="emailErrorRegister"></div>
             <!-- NAME -->
             <label for="firstName">Nombre</label>
             <input class="input <%= locals.errors && errors.firstName ? 'is-invalid' : null %>" type="text" name="firstName" value="<%= locals.oldData ? oldData.firstName : null %>" />
@@ -56,7 +58,7 @@
             <label for="avatar">Imagen de perfil</label>
             <input class="input" type="file" name="avatar" accept=".jpg, .jpeg, .png, .gif" />
             <!-- SUBMIT -->
-            <button class="modal-submit" type="submit">
+            <button class="modal-submit" type="submit" id="registerButton">
               <a href="/users/login">Continuar</a>
             </button>
             <!-- LOGIN REDIRECT -->
@@ -73,6 +75,7 @@
   <%- include("../partials/footer"); %>
   <!-- SCRIPT -->
   <script src="/../js/header.js"></script>
+  <script src="/../js/register.js"></script>
 </body>
 
 </html>

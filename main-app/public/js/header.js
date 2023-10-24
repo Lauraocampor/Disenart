@@ -33,7 +33,7 @@ window.addEventListener('load', () => {
 			false,
 		);
 	} catch (error) {
-		console.log('testing');
+		console.log('There is no user logged at the moment.');
 	}
 
 	// HAMBURGER SCRIPT
