@@ -21,6 +21,21 @@ window.addEventListener('load', () => {
 		}
 	});
 
+	// USER BUTTON LOGIN CREATOR
+	try {
+		document.getElementById('avatarButton').addEventListener(
+			'click',
+			() => {
+				document
+					.getElementById('userList')
+					.classList.toggle('about-user-toggler');
+			},
+			false,
+		);
+	} catch (error) {
+		console.log('testing');
+	}
+
 	// HAMBURGER SCRIPT
 	document.getElementById('hamburgerButton').addEventListener(
 		'click',
@@ -86,17 +101,6 @@ window.addEventListener('load', () => {
 			document
 				.getElementById('searchBoxPosition')
 				.classList.toggle('searchToggleBox');
-		},
-		false,
-	);
-
-	//Keep it here. Always at the end.
-	document.getElementById('avatarButton').addEventListener(
-		'click',
-		() => {
-			document
-				.getElementById('userList')
-				.classList.toggle('about-user-toggler');
 		},
 		false,
 	);
