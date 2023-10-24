@@ -1,4 +1,26 @@
 window.addEventListener('load', () => {
+	// SEARCH VALIDATOR
+	let searchBarButton = document.querySelector('.header--searchButton');
+	let searchBarForm = document.querySelector('#searchBarForm');
+	let searchBarInput = document.querySelector('#inputSearch');
+	let searchBarMsg = document.querySelector('#searchBarMsg');
+
+	searchBarButton.addEventListener('click', (event) => {
+		event.preventDefault();
+		let searchErrors = {};
+		if (searchBarInput.value.length < 1 || searchBarInput.value.length > 50) {
+			searchErrors.searchBarInput =
+				'Tu búsqueda debe tener entre uno y cincuenta carácteres';
+		}
+		if (Object.keys(searchErrors).length > 0) {
+			searchBarMsg.innerText = searchErrors.searchBarInput;
+			searchBarMsg.style.color = 'var(--mustard)';
+			searchBarMsg.style.textAlign = 'center  ';
+		} else {
+			searchBarForm.submit();
+		}
+	});
+
 	// HAMBURGER SCRIPT
 	document.getElementById('hamburgerButton').addEventListener(
 		'click',
