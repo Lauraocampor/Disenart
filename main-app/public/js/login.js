@@ -1,4 +1,4 @@
-window.onload = () => {
+window.addEventListener('load', () => {
 	// DECLARATIONS
 	let button = document.querySelector('#formButtonSub');
 	let form = document.querySelector('#loginModalForm');
@@ -27,4 +27,4 @@ window.onload = () => {
 			form.submit();
 		}
 	});
-};
+});
