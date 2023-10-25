@@ -28,35 +28,45 @@
             <div class="text-danger" id="emailErrorRegister"></div>
             <!-- NAME -->
             <label for="firstName">Nombre</label>
-            <input class="input <%= locals.errors && errors.firstName ? 'is-invalid' : null %>" type="text" name="firstName" value="<%= locals.oldData ? oldData.firstName : null %>" />
+            <input class="input <%= locals.errors && errors.firstName ? 'is-invalid' : null %>" type="text" name="firstName" value="<%= locals.oldData ? oldData.firstName : null %>" id="inputNameRegister" />
             <!-- BACKEND NAME ERROR -->
             <% if (locals.errors && errors.firstName ) { %>
             <div class="text-danger"><%= errors.firstName.msg %></div>
             <% } %>
+            <!-- FRONTEND NAME ERROR -->
+            <div class="text-danger" id="nameErrorRegister"></div>
             <!-- LAST NAME -->
             <label for="lastName">Apellido</label>
-            <input class="input <%= locals.errors && errors.lastName ? 'is-invalid' : null %>" type="text" name="lastName" value="<%= locals.oldData ? oldData.lastName : null %>" />
+            <input class="input <%= locals.errors && errors.lastName ? 'is-invalid' : null %>" type="text" name="lastName" value="<%= locals.oldData ? oldData.lastName : null %>" id="inputLastNameRegister" />
             <!-- BACKEND LAST NAME ERROR -->
             <% if (locals.errors && errors.lastName ) { %>
             <div class="text-danger"><%= errors.lastName.msg %></div>
             <% } %>
+            <!-- FRONTEND REGISTER ERROR -->
+            <div class="text-danger" id="lastNameRegisterError"></div>
             <!-- PASSWORD -->
             <label for="password">Contraseña</label>
-            <input class="input <%= locals.errors && errors.password ? 'is-invalid' : null %>" type="password" name="password" value="<%= locals.oldData ? oldData.password : null %>" />
+            <input class="input <%= locals.errors && errors.password ? 'is-invalid' : null %>" type="password" name="password" value="<%= locals.oldData ? oldData.password : null %>" id="inputPassRegister" />
             <!-- BACKEND PASSWORD ERROR -->
             <% if (locals.errors && errors.password ) { %>
             <div class="text-danger"><%= errors.password.msg %></div>
             <% } %>
+            <!-- FRONTEND REGISTER ERROR -->
+            <div class="text-danger" id="passRegisterError"></div>
             <!-- BIRTH -->
             <label for="date">Fecha de nacimiento</label>
-            <input class="input <%= locals.errors && errors.date ? 'is-invalid' : null %>" type="date" name="date" min="1920-01-01" max="2020-12-31" value="<%= locals.oldData ? oldData.date : null %>" />
+            <input class="input <%= locals.errors && errors.date ? 'is-invalid' : null %>" type="date" name="date" min="1920-01-01" max="2020-12-31" value="<%= locals.oldData ? oldData.date : null %>" id="inputBirthRegister" />
             <!-- BACKEND BIRTH -->
             <% if (locals.errors && errors.date ) { %>
             <div class="text-danger"><%= errors.date.msg %></div>
             <% } %>
+            <!-- FRONTEND BIRTH ERROR -->
+            <div class="text-danger" id="birthRegisterError"></div>
             <!-- IMG UPLOAD -->
             <label for="avatar">Imagen de perfil</label>
-            <input class="input" type="file" name="avatar" accept=".jpg, .jpeg, .png, .gif" />
+            <input class="input" type="file" name="avatar" accept=".jpg, .jpeg, .png, .gif" id="inputImgRegister" />
+            <!-- FRONTEND IMG ERROR -->
+            <div class="text-danger" id="imgRegisterError"></div>
             <!-- SUBMIT -->
             <button class="modal-submit" type="submit" id="registerButton">
               <a href="/users/login">Continuar</a>
