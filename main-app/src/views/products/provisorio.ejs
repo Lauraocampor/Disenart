@@ -1,0 +1,108 @@
+<!-- HTML -->
+<!doctype html>
+<html lang="es">
+	<%- include("../partials/head") %>
+	<body class="bodyXL">
+		<!-- HEADER -->
+		<%- include('../partials/header') %>
+		<!-- MAIN -->
+		<main class="main-createProduct">
+			<form
+				class="createProduct"
+				action="/products"
+				method="post"
+				enctype="multipart/form-data"
+			>
+				<label class="createProduct-name" for="productName">Nombre del producto</label>
+					<input id="createProduct-name" id="productName" class="input <%= locals.errors && errors.productName ? 'is-invalid' : null %>" 
+					type="text" name="productName"
+					required 
+					value="<%= locals.oldData ? oldData.firstName : null %>" />
+					<% if (locals.errors && errors.productName ) { %>
+					<div class="text-danger"><%= errors.productName.msg %></div>
+					<% } %>
+				
+				<label class="createProduct-info" for="productColor">Color</label>
+				<section class="createProduct-main-option">
+					<select name="productColor" id="productColor" required>
+						<option value="day" selected disabled>Color</option>
+						<% colours.forEach(colour => { %>
+						<option
+							class="createProduct-option"
+							value="<%= colour.id_colour %>"
+						>
+							<%= colour.colour %>
+						</option>
+						<% }) %>
+					</select>
+				</section>
+
+				<label class="createProduct-info" for="productSize">Talle</label>
+				<section class="createProduct-main-option">
+					<select name="productSize" id="size" required>
+						<option value="day" selected disabled>Talle</option>
+						<% sizes.forEach(size => { %>
+						<option class="createProduct-option" value="<%= size.id_size %>">
+							<%= size.size %>
+						</option>
+						<% }) %>
+					</select>
+				</section>
+				<label class="createProduct-info" for="productPrice">Precio</label>
+				<input id="productPrice" class="input <%= locals.errors && errors.productPrice ? 'is-invalid' : null %>" 
+				type="number" name="productPrice"
+				required 
+				value="<%= locals.oldData ? oldData.productPrice : null %>" />
+				<% if (locals.errors && errors.productPrice ) { %>
+				<div class="text-danger"><%= errors.productPrice.msg %></div>
+				<% } %>
+
+				<label class="createProduct-info" for="productDescription"
+					>Descripción</label>
+
+				<input id="createProduct-information-product productDescription" class=" <%= locals.errors && errors.productPrice ? 'is-invalid' : null %>" 
+				type="text" name="productDescription"
+				required 
+				value="<%= locals.oldData ? oldData.productDescription : null %>" />
+				<% if (locals.errors && errors.productDescription ) { %>
+				<div class="text-danger"><%= errors.productDescription.msg %></div>
+				<% } %>
+
+
+				
+				<label class="createProduct-info" for="productStock"
+					>Cantidad disponible</label
+				>
+				<input type="number" id="productStock" name="productStock" required />
+				<label class="createProduct-info" for="productImages"
+					>Foto del producto</label
+				>
+
+				<input id="productImages" class="input <%= locals.errors && errors.productImages ? 'is-invalid' : null %>" 
+				type="file" name="productImages"
+				accept=".jpg, .jpeg, .png, .gif" multiple
+				value="<%= locals.oldData ? oldData.productImages : null %>" />
+				<% if (locals.errors && errors.productImages ) { %>
+				<div class="text-danger"><%= errors.productImages.msg %></div>
+				<% } %>
+
+				<input id="createProduct-finish" type="submit" value="Crear producto" />
+			</form>
+			<div class="buttons-color-size">
+				<a href="/products/colours">
+					<button class="create-color-size-button">Crear color</button>
+				</a>
+
+				<a href="/products/sizes">
+					<button class="create-color-size-button">Crear talle</button>
+				</a>
+			</div>
+		</main>
+
+		<!-- FOOTER -->
+		<%- include("../partials/footer"); %>
+		<!-- SCRIPT -->
+		<script src="/js/main.js"></script>
+		<script src="/js/header.js"></script>
+	</body>
+</html>

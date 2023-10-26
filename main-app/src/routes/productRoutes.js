@@ -3,6 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 
 const productController = require('../controllers/productControllers');
+const validateProductMiddleware = require('../middlewares/validateProductMiddleware');
 
 const storage = multer.diskStorage({
 	destination: (req, file, cb) => {
@@ -22,7 +23,7 @@ router.get('/cart', productController.cart); // no cambiado
 
 /*** CREATE ONE PRODUCT ***/
 router.get('/createProduct', productController.createProduct); // cambiado
-router.post('/', upload.any('productImages'), productController.store); // cambiado
+router.post('/', upload.any('productImages'), validateProductMiddleware, productController.store); // cambiado
 
 // @GET - /products/:id/edit
 router.get('/:id/editProduct', productController.editProduct); // cambiado

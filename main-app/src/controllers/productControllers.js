@@ -1,5 +1,6 @@
 //const productModel = require('../models/productModel'); // sacar despues de hacer todo
 const { Product, Colour, Size } = require('../database/models');
+const { validationResult } = require ("express-validator")
 
 const controller = {
 	details: async (req, res) => {
@@ -31,7 +32,7 @@ const controller = {
 		try {
 			const sizes = await Size.findAll({ raw: true });
 			const colours = await Colour.findAll({ raw: true });
-			console.log(colours);
+			//console.log(colours);
 			res.render('createProduct', {
 				sizes,
 				colours,
@@ -171,10 +172,25 @@ const controller = {
 			image_product: JSON.stringify(filenames),
 		};
 
-		try {
-			const createdProduct = await Product.create(newProduct);
+		const resultValidation = validationResult(req);
+		const sizes = await Size.findAll({ raw: true });
+		const colours = await Colour.findAll({ raw: true });
 
+		if (resultValidation.errors.length > 0) {
+			return res.render('createProduct', {sizes,
+				colours,
+				errors: resultValidation.mapped(),
+				oldData: req.body,
+				user: req.session.userLogged,
+			});
+		}
+
+		try {
+
+			const createdProduct = await Product.create(newProduct);
+			
 			const productId = createdProduct.get('id_product');
+			
 
 			res.redirect('/products/' + productId + '/details');
 		} catch (error) {
