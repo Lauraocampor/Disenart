@@ -28,7 +28,8 @@ router.post('/', upload.any('productImages'), validateProductMiddleware, product
 router.get('/:id/editProduct', productController.editProduct); // cambiado
 router.put(
 	'/:id/editProduct',
-	upload.any('productImages'),
+	upload.any('productImages'), 
+	validateProductMiddleware, 
 	productController.updateProduct,
 );
 //@DELETE - /products/:id/delete --
