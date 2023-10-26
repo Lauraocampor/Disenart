@@ -15,8 +15,15 @@
                 <label class="editProduct-name" for="productName">Nombre del producto</label>
                 <i class="fa-solid fa-pen-to-square editButton"></i></button>
             </div>
-            <input id="editProduct-name" type="text" value="<%- product.name_product %>" name="productName" placeholder="Buzo Oversize" require>
-            <!-- FRONTEND NAME ERROR -->
+            <input id="editProduct-name" type="text" name="productName" required
+            <% if (locals.errors && errors.productName) { %>
+                class="is-invalid"
+            <% } %>
+            value="<%= locals.errors && errors.productName ? (oldData ? oldData.productName : product.name_product) : product.name_product %>" />
+        <% if (locals.errors && errors.productName) { %>
+            <div class="text-danger"><%= errors.productName.msg %></div>
+        <% } %>            
+        <!-- FRONTEND NAME ERROR -->
             <div class="text-danger" id="editProduct-nameError"></div>
             <!--COLOR-->
             <div class="editProduct-title">
@@ -59,16 +66,30 @@
                 <label class="editProduct-info" for="productPrice">Precio</label>
                 <i class="fa-solid fa-pen-to-square editButton"></i></button>
             </div>
-            <input type="number" id="productPrice" value="<%- product.price_product %>" name="productPrice" require>
-            <!-- FRONTEND PRICE ERROR -->
+            <input id="productPrice" type="number" name="productPrice" required
+            <% if (locals.errors && errors.productPrice) { %>
+                class="is-invalid"
+            <% } %>
+            value="<%= locals.errors && errors.productPrice ? (oldData ? oldData.productPrice : product.price_product) : product.price_product %>" />
+        <% if (locals.errors && errors.productPrice) { %>
+            <div class="text-danger"><%= errors.productPrice.msg %></div>
+        <% } %>             
+        <!-- FRONTEND PRICE ERROR -->
             <div class="text-danger" id="productPriceError"></div>
             <!--DESCRIPTION-->
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productDescription">Descripción</label>
                 <i class="fa-solid fa-pen-to-square editButton"></i></button>
             </div>
-            <textarea id="editProduct-information-product" type="text"  name="productDescription" require>  <%=product.description_product %></textarea>
-            <!-- FRONTEND DESCRIPTION ERROR -->
+            <textarea id="editProduct-information-product" name="productDescription" required
+            <% if (locals.errors && errors.productDescription) { %>
+                class="is-invalid"
+            <% } %>
+        ><%= locals.errors && errors.productDescription ? (oldData ? oldData.productDescription : product.description_product) : product.description_product %></textarea>
+        <% if (locals.errors && errors.productDescription) { %>
+            <div class="text-danger"><%= errors.productDescription.msg %></div>
+        <% } %>             
+        <!-- FRONTEND DESCRIPTION ERROR -->
             <div class="text-danger" id="editProduct-information-productError"></div>
             <!--STOCK-->
             <div class="editProduct-title">
@@ -93,8 +114,16 @@
                     <% }) %>
                 </section>
 
-            </div>
-            <input type="file" value="<%- product.image_product %>"name="productImages" accept=".jpg , .png" id="editProduct-images" multiple>
+            </div>            
+            <input type="file"  name="productImages" accept=".jpg, .jpeg, .png, .gif" id="editProduct-images" multiple 
+            <% if (locals.errors && errors.productImages) { %>
+                class="is-invalid"
+            <% } %>
+            value="<%= locals.errors && errors.productImages ? (oldData ? oldData.productImages : product.image_product) : product.image_product %>" />
+        <% if (locals.errors && errors.productImages) { %>
+            <div class="text-danger"><%= errors.productImages.msg %></div>
+        <% } %>            
+
             <!-- FRONTEND IMAGES ERROR -->
             <div class="text-danger" id="editProduct-imagesError"></div>
             <!--SUBMIT-->

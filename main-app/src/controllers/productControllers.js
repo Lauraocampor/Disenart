@@ -202,15 +202,22 @@ const controller = {
 
 	updateProduct: async (req, res) => {
 
+		// busco el producto para poder volver a mandar la vista edit en caso de error
 		const product = await Product.findByPk(req.params.id, {
 			raw: true,
 			include: ['size', 'colour'],
 			nest: true,
 		});
+
+		// convierto en array la columna de imagenes para poder hacer el forEach en la vista
 		product.image_product = JSON.parse(product.image_product);
-		const resultValidation = validationResult(req);
+		
+		// busco los colores y talles para poder volver a mandar la vista edit en caso de error
 		const sizes = await Size.findAll({ raw: true });
 		const colours = await Colour.findAll({ raw: true });
+	
+		// hago las validaciones 
+		const resultValidation = validationResult(req);
 
 
 		if (resultValidation.errors.length > 0) {
