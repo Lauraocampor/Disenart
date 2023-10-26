@@ -8,7 +8,7 @@
   <!-- MAIN -->
   <main class="user-profile-main">
     <div>
-      <h2 id="user-profile-welcome">Bienvenido <%= user.name_user %>!</h2>
+      <h2 id="user-profile-welcome">Bienvenido <%= user.name_user.charAt(0).toUpperCase() + user.name_user.slice(1).toLowerCase() %>!</h2>
     </div>
     <section class="profile-data-img">
       <section class="profile-user-img-section">
@@ -17,10 +17,10 @@
       <section class="profile-user-Alldata">
         <h2 class>Datos registrados</h2>
         <div class="profile-usereachData">
-          <p class="profile-user-data"><%= user.name_user %></p>
+          <p class="profile-user-data"><%= user.name_user.charAt(0).toUpperCase() + user.name_user.slice(1).toLowerCase() %></p>
         </div>
         <div class="profile-user-eachData">
-          <p class="profile-user-data"><%= user.lastname_user %></p>
+          <p class="profile-user-data"><%= user.lastname_user.charAt(0).toUpperCase() + user.lastname_user.slice(1).toLowerCase() %></p>
         </div>
         <div class="profile-user-eachData">
           <p class="profile-user-data"><%= user.email_user %></p>

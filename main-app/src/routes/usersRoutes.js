@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+
 // Controller
 const usersController = require('../controllers/usersController');
 
@@ -13,7 +14,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 // @GET REGISTER FORM
 router.get('/register', guestMiddleware, usersController.register);
 
-// @POST PROCESS REGISTER
+/// @POST PROCESS REGISTER
 router.post(
 	'/register',
 	uploadFile.single('avatar'),
@@ -37,6 +38,7 @@ router.get('/profile/edit', authMiddleware, usersController.editProfile);
 router.put(
 	'/profile/edit',
 	uploadFile.single('avatar'),
+	validations,
 	usersController.updateProfile,
 );
 

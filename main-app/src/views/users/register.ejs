@@ -65,6 +65,10 @@
             <!-- IMG UPLOAD -->
             <label for="avatar">Imagen de perfil</label>
             <input class="input" type="file" name="avatar" accept=".jpg, .jpeg, .png, .gif" id="inputImgRegister" />
+               <!-- BACKEND IMG ERROR -->
+               <% if (locals.errors && errors.avatar ) { %>
+                <div class="text-danger"><%= errors.avatar.msg %></div>
+                <% } %>
             <!-- FRONTEND IMG ERROR -->
             <div class="text-danger" id="imgRegisterError"></div>
             <!-- SUBMIT -->

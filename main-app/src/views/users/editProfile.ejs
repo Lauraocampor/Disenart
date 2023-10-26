@@ -19,12 +19,16 @@
           <h2 class>Datos registrados</h2>
           <div class="edit-profile-usereachData">
             <p class="edit-profile-user-data">
-              <input class="edit-profile-input" type="text" value="<%=user.name_user %>" name="firstName" />
+              <input class="edit-profile-input <%= locals.errors && errors.firstName ? 'is-invalid' : null %>" type="text" value="<%=user.name_user.charAt(0).toUpperCase() + user.name_user.slice(1).toLowerCase()  %>" name="firstName" />
+              <!-- BACKEND NAME ERROR -->
+            <% if (locals.errors && errors.firstName ) { %>
+              <div class="text-danger"><%= errors.firstName.msg %></div>
+              <% } %>
             </p>
           </div>
           <div class="edit-profile-user-eachData">
             <p class="edit-profile-user-data">
-              <input class="edit-profile-input" type="text" value="<%=user.lastname_user %>" name="lastName" />
+              <input class="edit-profile-input" type="text" value="<%=user.lastname_user.charAt(0).toUpperCase() + user.lastname_user.slice(1).toLowerCase()  %>" name="lastName" />
             </p>
           </div>
           <div class="edit-profile-user-eachData">

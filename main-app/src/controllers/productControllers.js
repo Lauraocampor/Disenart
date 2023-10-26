@@ -306,6 +306,7 @@ const controller = {
 	},
 
 	createdSize: async (req, res) => {
+		
 		const newSize = {
 			size: req.body.productSize,
 		};
