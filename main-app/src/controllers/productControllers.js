@@ -58,6 +58,7 @@ const controller = {
 				product,
 				colours,
 				sizes,
+				oldData: req.body,
 				user: req.session.userLogged,
 			});
 		} catch (error) {
@@ -176,6 +177,7 @@ const controller = {
 		const sizes = await Size.findAll({ raw: true });
 		const colours = await Colour.findAll({ raw: true });
 
+
 		if (resultValidation.errors.length > 0) {
 			return res.render('createProduct', {sizes,
 				colours,
@@ -199,10 +201,40 @@ const controller = {
 	},
 
 	updateProduct: async (req, res) => {
+
+		// busco el producto para poder volver a mandar la vista edit en caso de error
+		const product = await Product.findByPk(req.params.id, {
+			raw: true,
+			include: ['size', 'colour'],
+			nest: true,
+		});
+
+		// convierto en array la columna de imagenes para poder hacer el forEach en la vista
+		product.image_product = JSON.parse(product.image_product);
+		
+		// busco los colores y talles para poder volver a mandar la vista edit en caso de error
+		const sizes = await Size.findAll({ raw: true });
+		const colours = await Colour.findAll({ raw: true });
+	
+		// hago las validaciones 
+		const resultValidation = validationResult(req);
+
+
+		if (resultValidation.errors.length > 0) {
+			return res.render('editProduct', {product, 
+				sizes,
+				colours,
+				errors: resultValidation.mapped(),
+				oldData: req.body,
+				user: req.session.userLogged,
+			});
+		}
+
 		const filenames = req.files.map((file) => file.filename);
 
 		// cantidad de imgs que cargo el usuario
 		const numUserImages = filenames.length;
+		
 
 		try {
 			//busca el producto
@@ -258,8 +290,8 @@ const controller = {
 			console.log(error);
 		}
 
-		//CAMBIAR ESTE REDIRECT CUANDO ESTE OK EL LISTADO DE PRODUCTOS
-		res.redirect('/products/1/details');
+		
+		res.redirect('/products//searching/searchResults');
 	},
 
 	createColour: async (req, res) => {

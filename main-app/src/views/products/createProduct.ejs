@@ -11,9 +11,14 @@
     <!-- FORMULARIO CREATE PRODUCT -->
     <form class="createProduct" action="/products" method="post" enctype="multipart/form-data" id="createProductForm">
       <!--NAME-->
-      <label class="createProduct-name" for="productName">Nombre del producto</label>
-      <input id="createProduct-name" type="text" id="productName" name="productName" required />
-      <!-- FRONTEND NAME ERROR -->
+      <label class="createProduct-name" for="productName">Nombre del producto</label>	  
+	  <input id="createProduct-name" id="productName" class="input <%= locals.errors && errors.productName ? 'is-invalid' : null %>" 
+	  type="text" name="productName" required 
+	  value="<%= locals.oldData ? oldData.firstName : null %>" />
+	  <% if (locals.errors && errors.productName ) { %>
+	  <div class="text-danger"><%= errors.productName.msg %></div>
+	  <% } %> 
+	  <!-- FRONTEND NAME ERROR -->
       <div class="text-danger" id="createProduct-nameError"></div>
       <!--COLOR-->
       <label class="createProduct-info" for="productColor">Color</label>
@@ -45,13 +50,23 @@
       <div class="text-danger" id="sizeError"></div>
       <!--PRICE-->
       <label class="createProduct-info" for="productPrice">Precio</label>
-      <input type="number" id="productPrice" name="productPrice" required />
+	  <input id="productPrice" class="input <%= locals.errors && errors.productPrice ? 'is-invalid' : null %>" 
+	  type="number" name="productPrice" required 
+	  value="<%= locals.oldData ? oldData.productPrice : null %>" /> 
+	  <% if (locals.errors && errors.productPrice ) { %>
+		<div class="text-danger"><%= errors.productPrice.msg %></div>
+		<% } %>
       <!-- FRONTEND PRICE ERROR -->
       <div class="text-danger" id="productPriceError"></div>
       <!--DESCRIPTION-->
       <label class="createProduct-info" for="productDescription">Descripción</label>
-      <input id="createProduct-information-product" type="text" id="productDescription" name="productDescription" require />
-      <!-- FRONTEND DESCRIPTION ERROR -->
+	  <input id="createProduct-information-product" class=" <%= locals.errors && errors.productPrice ? 'is-invalid' : null %>" 
+	  type="text" name="productDescription" required 
+	  value="<%= locals.oldData ? oldData.productDescription : null %>" />
+	  <% if (locals.errors && errors.productDescription ) { %>
+	  <div class="text-danger"><%= errors.productDescription.msg %></div>
+	  <% } %>
+	  <!-- FRONTEND DESCRIPTION ERROR -->
       <div class="text-danger" id="createProduct-information-productError"></div>
       <!--STOCK-->
       <label class="createProduct-info" for="productStock">Cantidad disponible</label>
@@ -60,7 +75,13 @@
       <div class="text-danger" id="productStockError"></div>
       <!--IMAGES-->
       <label class="createProduct-info" for="productImages">Foto del producto</label>
-      <input type="file" id="productImages" name="productImages" accept=".jpg, .jpeg, .png, .gif" multiple />
+	  <input id="productImages" class="input <%= locals.errors && errors.productImages ? 'is-invalid' : null %>" 
+	  type="file" name="productImages"
+	  accept=".jpg, .jpeg, .png, .gif" multiple
+	  value="<%= locals.oldData ? oldData.productImages : null %>" />
+	  <% if (locals.errors && errors.productImages ) { %>
+	  <div class="text-danger"><%= errors.productImages.msg %></div>
+	  <% } %>
       <!-- FRONTEND IMAGES ERROR -->
       <div class="text-danger" id="productImagesError"></div>
       <!--SUBMIT-->
