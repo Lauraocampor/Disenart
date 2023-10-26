@@ -24,15 +24,15 @@
 			<div class="">
 				<label class="colour-size-name">Nuevo Color</label>
 			</div>
-			<form class="create-color-size" action="/products/colours" method="post">
-				<input
-					class="colour-size-input"
-					type="text"
-					id="productColor"
-					name="productColor"
-					required
-				/>
-
+			<form id="createColorForm" class="create-color-size" action="/products/colours" method="post">
+					<input
+						class="colour-size-input"
+						type="text"
+						id="productColor"
+						name="productColor"
+					/>
+					<!-- FRONTEND COLOR ERROR -->
+					<div class="text-danger" id="productColorError" style="margin: auto;"></div>
 				<input id="colour-size-finish" type="submit" value="Crear color" />
 			</form>
 			<br />
@@ -45,5 +45,6 @@
 		<%- include("../partials/footer"); %>
 		<!-- SCRIPT -->
 		<script src="/js/header.js"></script>
+		<script src="/js/createColor.js"></script>
 	</body>
 </html>

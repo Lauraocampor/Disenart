@@ -10,11 +10,26 @@ window.addEventListener('load', () => {
     let priceError = document.querySelector('#productPriceError');
     let description = document.querySelector('#createProduct-information-product');
     let descriptionError = document.querySelector('#createProduct-information-productError');
+    let contador = document.getElementById("contador");
+    let caracteres = document.getElementById("caracteres");
     let stock = document.querySelector('#productStock');
     let stockError = document.querySelector('#productStockError');
     let images = document.querySelector('#productImages');
     let imagesError = document.querySelector('#productImagesError');
     let submit = document.querySelector('#createProduct-finish');
+
+    description.addEventListener("input", () => {
+        const inputDescription = description.value;
+        const numeroCaracteres = inputDescription.length;
+
+        contador.textContent = numeroCaracteres;
+
+        if (numeroCaracteres >= 20) {
+        caracteres.classList.remove("text-danger");
+        caracteres.style.fontSize = 'small'
+
+        }
+    });
 
     submit.addEventListener('click', (event) => {
         event.preventDefault();

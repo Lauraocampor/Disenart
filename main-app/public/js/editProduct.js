@@ -16,6 +16,7 @@ window.addEventListener('load', () => {
     let imagesError = document.querySelector('#editProduct-imagesError'); */
     let submit = document.querySelector('#editProduct-finish');
 
+
     submit.addEventListener('click', (event) => {
         event.preventDefault();
 

@@ -24,14 +24,15 @@
 			<div class="">
 				<label class="colour-size-name">Nuevo Talle</label>
 			</div>
-			<form class="create-color-size" action="/products/sizes" method="post">
+			<form id='createSizeForm' class="create-color-size" action="/products/sizes" method="post">
 				<input
 					class="colour-size-input"
 					type="text"
 					id="productSize"
 					name="productSize"
-					required
 				/>
+				<!-- FRONTEND SIZE ERROR -->
+				<div class="text-danger" id="productSizeError" style="margin: auto;"></div>
 
 				<input id="colour-size-finish" type="submit" value="Crear Talle" />
 			</form>
@@ -45,5 +46,6 @@
 		<%- include("../partials/footer"); %>
 		<!-- SCRIPT -->
 		<script src="/js/header.js"></script>
+		<script src="/js/createSize.js"></script>
 	</body>
 </html>
