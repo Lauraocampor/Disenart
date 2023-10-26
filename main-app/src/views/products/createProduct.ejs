@@ -15,6 +15,7 @@
 	  <input id="createProduct-name" id="productName" class="input <%= locals.errors && errors.productName ? 'is-invalid' : null %>" 
 	  type="text" name="productName" required 
 	  value="<%= locals.oldData ? oldData.firstName : null %>" />
+    <!-- BACKEND NAME ERROR -->
 	  <% if (locals.errors && errors.productName ) { %>
 	  <div class="text-danger"><%= errors.productName.msg %></div>
 	  <% } %> 
@@ -24,7 +25,7 @@
       <label class="createProduct-info" for="productColor">Color</label>
       <section class="createProduct-main-option">
         <select name="productColor" id="productColor" required>
-          <option value="day" selected disabled>Color</option>
+          <option value="Color" selected disabled>Color</option>
           <% colours.forEach(colour => { %>
           <option class="createProduct-option" value="<%= colour.id_colour %>">
             <%= colour.colour %>
@@ -38,7 +39,7 @@
       <label class="createProduct-info" for="productSize">Talle</label>
       <section class="createProduct-main-option">
         <select name="productSize" id="size" required>
-          <option value="day" selected disabled>Talle</option>
+          <option value="Talle" selected disabled>Talle</option>
           <% sizes.forEach(size => { %>
           <option class="createProduct-option" value="<%= size.id_size %>">
             <%= size.size %>
@@ -53,6 +54,7 @@
 	  <input id="productPrice" class="input <%= locals.errors && errors.productPrice ? 'is-invalid' : null %>" 
 	  type="number" name="productPrice" required 
 	  value="<%= locals.oldData ? oldData.productPrice : null %>" /> 
+    <!-- BACKEND PRICE ERROR -->
 	  <% if (locals.errors && errors.productPrice ) { %>
 		<div class="text-danger"><%= errors.productPrice.msg %></div>
 		<% } %>
@@ -63,6 +65,7 @@
 	  <input id="createProduct-information-product" class=" <%= locals.errors && errors.productPrice ? 'is-invalid' : null %>" 
 	  type="text" name="productDescription" required 
 	  value="<%= locals.oldData ? oldData.productDescription : null %>" />
+    <!-- BACKEND DESCRIPTION ERROR -->
 	  <% if (locals.errors && errors.productDescription ) { %>
 	  <div class="text-danger"><%= errors.productDescription.msg %></div>
 	  <% } %>
@@ -79,6 +82,7 @@
 	  type="file" name="productImages"
 	  accept=".jpg, .jpeg, .png, .gif" multiple
 	  value="<%= locals.oldData ? oldData.productImages : null %>" />
+    <!-- BACKEND IMAGES ERROR -->
 	  <% if (locals.errors && errors.productImages ) { %>
 	  <div class="text-danger"><%= errors.productImages.msg %></div>
 	  <% } %>

@@ -20,7 +20,8 @@
                 class="is-invalid"
             <% } %>
             value="<%= locals.errors && errors.productName ? (oldData ? oldData.productName : product.name_product) : product.name_product %>" />
-        <% if (locals.errors && errors.productName) { %>
+        <!-- BACKEND NAME ERROR -->
+            <% if (locals.errors && errors.productName) { %>
             <div class="text-danger"><%= errors.productName.msg %></div>
         <% } %>            
         <!-- FRONTEND NAME ERROR -->
@@ -71,7 +72,8 @@
                 class="is-invalid"
             <% } %>
             value="<%= locals.errors && errors.productPrice ? (oldData ? oldData.productPrice : product.price_product) : product.price_product %>" />
-        <% if (locals.errors && errors.productPrice) { %>
+        <!-- BACKEND PRICE ERROR -->
+            <% if (locals.errors && errors.productPrice) { %>
             <div class="text-danger"><%= errors.productPrice.msg %></div>
         <% } %>             
         <!-- FRONTEND PRICE ERROR -->
@@ -86,6 +88,7 @@
                 class="is-invalid"
             <% } %>
         ><%= locals.errors && errors.productDescription ? (oldData ? oldData.productDescription : product.description_product) : product.description_product %></textarea>
+        <!-- BACKEND DESCRIPTION ERROR -->
         <% if (locals.errors && errors.productDescription) { %>
             <div class="text-danger"><%= errors.productDescription.msg %></div>
         <% } %>             
@@ -120,7 +123,8 @@
                 class="is-invalid"
             <% } %>
             value="<%= locals.errors && errors.productImages ? (oldData ? oldData.productImages : product.image_product) : product.image_product %>" />
-        <% if (locals.errors && errors.productImages) { %>
+        <!-- BACKEND IMAGES ERROR -->
+            <% if (locals.errors && errors.productImages) { %>
             <div class="text-danger"><%= errors.productImages.msg %></div>
         <% } %>            
 
