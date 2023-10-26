@@ -41,7 +41,7 @@ window.addEventListener('load', () => {
 		}
 		//PASSWORD
 		if (password.value.length < 8) {
-			errors.password = 'La contraseña debe tener por lo menos 8 carácteres';
+			errors.password = 'La contraseña debe tener por lo menos 8 caracteres';
 		}
 		if (Object.keys(errors).length > 0) {
 			passwordError.innerText = errors.password ? errors.password : '';

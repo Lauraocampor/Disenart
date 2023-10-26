@@ -19,6 +19,7 @@ const upload = multer({ storage });
 router.get('/:id/details', productController.details); // cambiado
 router.get('/cart', productController.cart); // no cambiado
 
+
 /*** CREATE ONE PRODUCT ***/
 router.get('/createProduct', productController.createProduct); // cambiado
 router.post('/', upload.any('productImages'), productController.store); // cambiado
