@@ -1,79 +1,107 @@
-// HAMBURGER SCRIPT
-document.getElementById('hamburgerButton').addEventListener(
-	'click',
-	() => {
-		document
-			.getElementById('hamburgerList')
-			.classList.toggle('about-nav-toggler');
-	},
-	false,
-);
+window.addEventListener('load', () => {
+	// SEARCH VALIDATOR
+	let searchBarButton = document.querySelector('.header--searchButton');
+	let searchBarForm = document.querySelector('#searchBarForm');
+	let searchBarInput = document.querySelector('#inputSearch');
+	let searchBarMsg = document.querySelector('#searchBarMsg');
 
-// OPEN SEARCH SCRIPT
-document.getElementById('searchButton').addEventListener(
-	'click',
-	() => {
-		document.getElementById('searchModal').classList.toggle('searchToggle');
-	},
-	false,
-);
+	searchBarButton.addEventListener('click', (event) => {
+		event.preventDefault();
+		let searchErrors = {};
+		if (searchBarInput.value.length < 1 || searchBarInput.value.length > 50) {
+			searchErrors.searchBarInput =
+				'Tu búsqueda debe tener entre uno y cincuenta carácteres';
+		}
+		if (Object.keys(searchErrors).length > 0) {
+			searchBarMsg.innerText = searchErrors.searchBarInput;
+			searchBarMsg.style.color = 'var(--mustard)';
+			searchBarMsg.style.textAlign = 'center  ';
+		} else {
+			searchBarForm.submit();
+		}
+	});
 
-document.getElementById('searchButton').addEventListener(
-	'click',
-	() => {
-		document
-			.getElementById('searchBoxPosition')
-			.classList.toggle('searchToggleBox');
-	},
-	false,
-);
+	// USER BUTTON LOGIN CREATOR
+	try {
+		document.getElementById('avatarButton').addEventListener(
+			'click',
+			() => {
+				document
+					.getElementById('userList')
+					.classList.toggle('about-user-toggler');
+			},
+			false,
+		);
+	} catch (error) {
+		console.log('There is no user logged at the moment.');
+	}
 
-document.getElementById('searchButton').addEventListener(
-	'click',
-	() => {
-		document
-			.getElementById('searchModalBox')
-			.classList.toggle('searchToggleBox');
-	},
-	false,
-);
+	// HAMBURGER SCRIPT
+	document.getElementById('hamburgerButton').addEventListener(
+		'click',
+		() => {
+			document
+				.getElementById('hamburgerList')
+				.classList.toggle('about-nav-toggler');
+		},
+		false,
+	);
 
-// CLOSE SEARCH SCRIPT
-document.getElementById('escapeButton').addEventListener(
-	'click',
-	() => {
-		document.getElementById('searchModal').classList.toggle('searchToggle');
-	},
-	false,
-);
+	// OPEN SEARCH SCRIPT
+	document.getElementById('searchButton').addEventListener(
+		'click',
+		() => {
+			document.getElementById('searchModal').classList.toggle('searchToggle');
+		},
+		false,
+	);
 
-document.getElementById('escapeButton').addEventListener(
-	'click',
-	() => {
-		document
-			.getElementById('searchModalBox')
-			.classList.toggle('searchToggleBox');
-	},
-	false,
-);
+	document.getElementById('searchButton').addEventListener(
+		'click',
+		() => {
+			document
+				.getElementById('searchBoxPosition')
+				.classList.toggle('searchToggleBox');
+		},
+		false,
+	);
 
-document.getElementById('escapeButton').addEventListener(
-	'click',
-	() => {
-		document
-			.getElementById('searchBoxPosition')
-			.classList.toggle('searchToggleBox');
-	},
-	false,
-);
+	document.getElementById('searchButton').addEventListener(
+		'click',
+		() => {
+			document
+				.getElementById('searchModalBox')
+				.classList.toggle('searchToggleBox');
+		},
+		false,
+	);
 
-// LEAVE HERE, IF PUT BEFORE WILL CAUSE A BUG
-// USER SCRIPT
-// I KNOW HOW TO SOLVE THIS, I'LL DO IT LATER
-document.getElementById('avatarButton').addEventListener(
-	'click',
-	() => {
-		document.getElementById('userList').classList.toggle('about-user-toggler');
-	},
-	false,
-);
+	// CLOSE SEARCH SCRIPT
+	document.getElementById('escapeButton').addEventListener(
+		'click',
+		() => {
+			document.getElementById('searchModal').classList.toggle('searchToggle');
+		},
+		false,
+	);
+
+	document.getElementById('escapeButton').addEventListener(
+		'click',
+		() => {
+			document
+				.getElementById('searchModalBox')
+				.classList.toggle('searchToggleBox');
+		},
+		false,
+	);
+
+	document.getElementById('escapeButton').addEventListener(
+		'click',
+		() => {
+			document
+				.getElementById('searchBoxPosition')
+				.classList.toggle('searchToggleBox');
+		},
+		false,
+	);
+});

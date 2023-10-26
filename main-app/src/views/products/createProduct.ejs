@@ -1,97 +1,87 @@
 <!-- HTML -->
 <!doctype html>
 <html lang="es">
-	<%- include("../partials/head") %>
-	<body class="bodyXL">
-		<!-- HEADER -->
-		<%- include('../partials/header') %>
-		<!-- MAIN -->
-		<main class="main-createProduct">
-			<form
-				class="createProduct"
-				action="/products"
-				method="post"
-				enctype="multipart/form-data"
-			>
-				<label class="createProduct-name" for="productName"
-					>Nombre del producto</label
-				>
-				<input
-					id="createProduct-name"
-					type="text"
-					id="productName"
-					name="productName"
-					required
-				/>
-				<label class="createProduct-info" for="productColor">Color</label>
-				<section class="createProduct-main-option">
-					<select name="productColor" id="productColor" required>
-						<option value="day" selected disabled>Color</option>
-						<% colours.forEach(colour => { %>
-						<option
-							class="createProduct-option"
-							value="<%= colour.id_colour %>"
-						>
-							<%= colour.colour %>
-						</option>
-						<% }) %>
-					</select>
-				</section>
+<%- include("../partials/head") %>
 
-				<label class="createProduct-info" for="productSize">Talle</label>
-				<section class="createProduct-main-option">
-					<select name="productSize" id="size" required>
-						<option value="day" selected disabled>Talle</option>
-						<% sizes.forEach(size => { %>
-						<option class="createProduct-option" value="<%= size.id_size %>">
-							<%= size.size %>
-						</option>
-						<% }) %>
-					</select>
-				</section>
-				<label class="createProduct-info" for="productPrice">Precio</label>
-				<input type="number" id="productPrice" name="productPrice" required />
-				<label class="createProduct-info" for="productDescription"
-					>Descripción</label
-				>
-				<input
-					id="createProduct-information-product"
-					type="text"
-					id="productDescription"
-					name="productDescription"
-					require
-				/>
-				<label class="createProduct-info" for="productStock"
-					>Cantidad disponible</label
-				>
-				<input type="number" id="productStock" name="productStock" required />
-				<label class="createProduct-info" for="productImages"
-					>Foto del producto</label
-				>
-				<input
-					type="file"
-					id="productImages"
-					name="productImages"
-					accept=".jpg, .jpeg, .png, .gif"
-					multiple
-				/>
-				<input id="createProduct-finish" type="submit" value="Crear producto" />
-			</form>
-			<div class="buttons-color-size">
-				<a href="/products/colours">
-					<button class="create-color-size-button">Crear color</button>
-				</a>
+<body class="bodyXL">
+  <!-- HEADER -->
+  <%- include('../partials/header') %>
+  <!-- MAIN -->
+  <main class="main-createProduct">
+    <!-- FORMULARIO CREATE PRODUCT -->
+    <form class="createProduct" action="/products" method="post" enctype="multipart/form-data" id="createProductForm">
+      <!--NAME-->
+      <label class="createProduct-name" for="productName">Nombre del producto</label>
+      <input id="createProduct-name" type="text" id="productName" name="productName" required />
+      <!-- FRONTEND NAME ERROR -->
+      <div class="text-danger" id="createProduct-nameError"></div>
+      <!--COLOR-->
+      <label class="createProduct-info" for="productColor">Color</label>
+      <section class="createProduct-main-option">
+        <select name="productColor" id="productColor" required>
+          <option value="day" selected disabled>Color</option>
+          <% colours.forEach(colour => { %>
+          <option class="createProduct-option" value="<%= colour.id_colour %>">
+            <%= colour.colour %>
+          </option>
+          <% }) %>
+        </select>
+      </section>
+      <!-- FRONTEND COLOR ERROR -->
+      <div class="text-danger" id="productColorError"></div>
+      <!--SIZE-->
+      <label class="createProduct-info" for="productSize">Talle</label>
+      <section class="createProduct-main-option">
+        <select name="productSize" id="size" required>
+          <option value="day" selected disabled>Talle</option>
+          <% sizes.forEach(size => { %>
+          <option class="createProduct-option" value="<%= size.id_size %>">
+            <%= size.size %>
+          </option>
+          <% }) %>
+        </select>
+      </section>
+      <!-- FRONTEND SIZE ERROR -->
+      <div class="text-danger" id="sizeError"></div>
+      <!--PRICE-->
+      <label class="createProduct-info" for="productPrice">Precio</label>
+      <input type="number" id="productPrice" name="productPrice" required />
+      <!-- FRONTEND PRICE ERROR -->
+      <div class="text-danger" id="productPriceError"></div>
+      <!--DESCRIPTION-->
+      <label class="createProduct-info" for="productDescription">Descripción</label>
+      <input id="createProduct-information-product" type="text" id="productDescription" name="productDescription" require />
+      <!-- FRONTEND DESCRIPTION ERROR -->
+      <div class="text-danger" id="createProduct-information-productError"></div>
+      <!--STOCK-->
+      <label class="createProduct-info" for="productStock">Cantidad disponible</label>
+      <input type="number" id="productStock" name="productStock" required />
+      <!-- FRONTEND STOCK ERROR -->
+      <div class="text-danger" id="productStockError"></div>
+      <!--IMAGES-->
+      <label class="createProduct-info" for="productImages">Foto del producto</label>
+      <input type="file" id="productImages" name="productImages" accept=".jpg, .jpeg, .png, .gif" multiple />
+      <!-- FRONTEND IMAGES ERROR -->
+      <div class="text-danger" id="productImagesError"></div>
+      <!--SUBMIT-->
+      <input id="createProduct-finish" type="submit" value="Crear producto" />
+    </form>
+    <div class="buttons-color-size">
+      <a href="/products/colours">
+        <button class="create-color-size-button">Crear color</button>
+      </a>
 
-				<a href="/products/sizes">
-					<button class="create-color-size-button">Crear talle</button>
-				</a>
-			</div>
-		</main>
+      <a href="/products/sizes">
+        <button class="create-color-size-button">Crear talle</button>
+      </a>
+    </div>
+  </main>
 
-		<!-- FOOTER -->
-		<%- include("../partials/footer"); %>
-		<!-- SCRIPT -->
-		<script src="/js/main.js"></script>
-		<script src="/js/header.js"></script>
-	</body>
+  <!-- FOOTER -->
+  <%- include("../partials/footer"); %>
+  <!-- SCRIPT -->
+  <script src="/js/header.js"></script>
+  <script src="/js/createProduct.js"></script>
+</body>
+
 </html>

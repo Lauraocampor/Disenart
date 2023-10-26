@@ -105,7 +105,7 @@ const controller = {
 				});
 			}
 
-			return res.render('Login', {
+			return res.render('login', {
 				errors: {
 					email: {
 						msg: 'El mail o la contraseña son incorrectos',

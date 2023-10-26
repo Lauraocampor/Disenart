@@ -1,5 +1,33 @@
 # Resúmenes de Scrum Weekly
 
+> SPRINT #7_01
+
+- Desiree Holowiniec
+
+1. Estoy armando las validaciones de creación y edición de productos desde el backend.
+
+2. Por ahora no he tenido problemas. Sí tuve que mirar el contenido de las clases de validaciones de express para acordarme del procedimiento.
+
+- Juan Diego Marín
+
+1. Ya terminé las validaciones que se me asignaron en el frontend.
+
+2. También separé el proyecto en main-app y react-app, reconfigurando prettier y eslint.
+
+3. Ahora me concentraré a ver las clases de react durante el fin de semana.
+
+- Laura Ocampo
+
+1. Estoy realizando las validaciones de frontend de los productos. Por ahora me estoy enfocando en createProduct y editProduct.
+
+2. El día de mañana revisaré qué otros formularios faltan.
+
+- Mercedes Lavezzolo
+
+1. Estoy armando las verificaciones de inicio de sesión y registro en el banckend.
+
+2. ambién estoy verificando los fomularios secundarios de edición de usuario, color y talle.
+
 > SPRINT #6_01
 
 - Desiree Holowiniec

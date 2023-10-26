@@ -1,26 +1,30 @@
 <!-- HTML -->
 <!DOCTYPE html>
 <html lang="es">
-  <%- include("../partials/head") %>
-  <body class="bodyXL">
+    <%- include("../partials/head") %>
+    <body class="bodyXL">
     <!-- HEADER -->
     <% const headerData = {linkHead_01: {name: "Twitter", url: "https://twitter.com/"}, linkHead_02: {name: "Instagram", url: "https://instagram.com/"}, linkHead_03: {name: "Google Maps", url: "https://www.google.com/maps/"},  linkHead_04: {name: "Youtube", url: "https://youtube.com/"}, linkHead_05: {name: "Facebook", url: "https://facebook.com/"},}; %>
     <%- include('../partials/header', headerData) %>
-  <!-- MAIN -->
+    <!-- MAIN -->
     <main class="main-editProduct">
-        <form class="editProduct" action="/products/<%=product.id_product%>/editProduct?_method=PUT" method="post" enctype="multipart/form-data">
+        <!-- FORMULARIO EDIT PRODUCT -->
+        <form id="editProductForm" class="editProduct" action="/products/<%=product.id_product%>/editProduct?_method=PUT" method="post" enctype="multipart/form-data">
+            <!--NAME-->
             <div class="editProduct-title-productName">
                 <label class="editProduct-name" for="productName">Nombre del producto</label>
                 <i class="fa-solid fa-pen-to-square editButton"></i></button>
-                     </div>
+            </div>
             <input id="editProduct-name" type="text" value="<%- product.name_product %>" name="productName" placeholder="Buzo Oversize" require>
+            <!-- FRONTEND NAME ERROR -->
+            <div class="text-danger" id="editProduct-nameError"></div>
+            <!--COLOR-->
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productColor1">Color</label>
                 <i class="fa-solid fa-pen-to-square editButton"></i></button>
-                       </div>
+            </div>
             <section class="editProduct-main-option">
-
-                       <select class="editProduct-main-option-size" name="productColor" required>
+                <select class="editProduct-main-option-size" name="productColor" id="editProduct-color" required>
                         <% colours.forEach(colour => { %>
                             <% if (colour.id_colour === product.colour_id) { %>
                                 <option selected value="<%= colour.id_colour %>"><%= colour.colour %></option>
@@ -28,15 +32,17 @@
                                 <option value="<%= colour.id_colour %>"><%= colour.colour %></option>
                             <% } %>
                         <% }) %>
-                    </select>
-
+                </select>
             </section>
+            <!-- FRONTEND COLOR ERROR -->
+            <div class="text-danger" id="editProduct-colorError"></div>
+            <!--SIZE-->
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productSize">Talle</label>
                 <i class="fa-solid fa-pen-to-square editButton"></i></button>
             </div>
             <section class="editProduct-main-option">
-                <select class="editProduct-main-option-size" name="productSize" required>
+                <select class="editProduct-main-option-size" name="productSize" id="editProduct-size" required>
                     <% sizes.forEach(size => { %>
                         <% if (size.id_size === product.size_id) { %>
                             <option selected value="<%= size.id_size %>"><%= size.size %></option>
@@ -46,24 +52,33 @@
                     <% }) %>
                 </select>
             </section>
-
-
+            <!-- FRONTEND SIZE ERROR -->
+            <div class="text-danger" id="editProduct-sizeError"></div>
+            <!--PRICE-->
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productPrice">Precio</label>
                 <i class="fa-solid fa-pen-to-square editButton"></i></button>
             </div>
             <input type="number" id="productPrice" value="<%- product.price_product %>" name="productPrice" require>
+            <!-- FRONTEND PRICE ERROR -->
+            <div class="text-danger" id="productPriceError"></div>
+            <!--DESCRIPTION-->
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productDescription">Descripción</label>
                 <i class="fa-solid fa-pen-to-square editButton"></i></button>
             </div>
-            <textarea id="editProduct-information-product" type="text"  name="productDescription"
-           require>  <%=product.description_product %></textarea>
+            <textarea id="editProduct-information-product" type="text"  name="productDescription" require>  <%=product.description_product %></textarea>
+            <!-- FRONTEND DESCRIPTION ERROR -->
+            <div class="text-danger" id="editProduct-information-productError"></div>
+            <!--STOCK-->
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productStock">Cantidad disponible</label>
                 <i class="fa-solid fa-pen-to-square editButton"></i></button>
-                            </div>
-            <input type="number" value="<%- product.quantity_product %>" name="productStock" placeholder="12">
+            </div>
+            <input type="number" value="<%- product.quantity_product %>" name="productStock" placeholder="12" id="editProduct-stock">
+            <!-- FRONTEND STOCK ERROR -->
+            <div class="text-danger" id="editProduct-stockError"></div>
+            <!--IMAGES-->
             <div class="editProduct-title">
                 <label class="editProduct-info" for="productImages">Fotos del producto</label>
                 <i class="fa-solid fa-pen-to-square editButton"></i></button>
@@ -79,8 +94,10 @@
                 </section>
 
             </div>
-            <input type="file" value="<%- product.image_product %>"name="productImages" accept=".jpg , .png" multiple>
-
+            <input type="file" value="<%- product.image_product %>"name="productImages" accept=".jpg , .png" id="editProduct-images" multiple>
+            <!-- FRONTEND IMAGES ERROR -->
+            <div class="text-danger" id="editProduct-imagesError"></div>
+            <!--SUBMIT-->
             <input id="editProduct-finish" type="submit" value="Producto editado">
         </form>
         
@@ -95,12 +112,12 @@
         </div>
     </main>
 
- <!-- FOOTER -->
+    <!-- FOOTER -->
 <% const footerData = { link_01: {name: "Twitter", url: "https://twitter.com/"}, link_02: {name: "Instagram", url: "https://instagram.com/"}, link_03: {name: "Google Maps", url: "https://www.google.com/maps/"},  link_04: {name: "Youtube", url: "https://youtube.com/"}, link_05: {name: "Facebook", url: "https://facebook.com/"},} %>
 <%- include("../partials/footer", footerData); %>
     <!-- SCRIPT -->
-    <script src="js/main.js"></script>
     <script src="js/header.js"></script>
+    <script src="js/editProduct.js"></script>
 </body>
 
 </html>
