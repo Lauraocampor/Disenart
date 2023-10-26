@@ -12,9 +12,7 @@
     <form class="createProduct" action="/products" method="post" enctype="multipart/form-data" id="createProductForm">
       <!--NAME-->
       <label class="createProduct-name" for="productName">Nombre del producto</label>	  
-	  <input id="createProduct-name" id="productName" class="input <%= locals.errors && errors.productName ? 'is-invalid' : null %>" 
-	  type="text" name="productName" required 
-	  value="<%= locals.oldData ? oldData.firstName : null %>" />
+    <input id="createProduct-name" id="productName" class="input <%= locals.errors && errors.productName ? 'is-invalid' : null %>" type="text" name="productName" value="<%= locals.oldData ? oldData.productName : null %>" />
     <!-- BACKEND NAME ERROR -->
 	  <% if (locals.errors && errors.productName ) { %>
 	  <div class="text-danger"><%= errors.productName.msg %></div>
@@ -24,35 +22,43 @@
       <!--COLOR-->
       <label class="createProduct-info" for="productColor">Color</label>
       <section class="createProduct-main-option">
-        <select name="productColor" id="productColor" required>
+        <select name="productColor" id="productColor" class="input <%= locals.errors && errors.productColor ? 'is-invalid' : null %>" required>
           <option value="Color" selected disabled>Color</option>
           <% colours.forEach(colour => { %>
-          <option class="createProduct-option" value="<%= colour.id_colour %>">
+          <option class="createProduct-option" value="<%= colour.colour %>" <%= locals.oldData && (colour.colour === oldData.productColor) ? 'selected' : null %> >
             <%= colour.colour %>
           </option>
           <% }) %>
         </select>
       </section>
+      <!-- BACKEND COLOR ERROR -->
+	  <% if (locals.errors && errors.productColor ) { %>
+      <div class="text-danger"><%= errors.productColor.msg %></div>
+      <% } %> 
       <!-- FRONTEND COLOR ERROR -->
       <div class="text-danger" id="productColorError"></div>
       <!--SIZE-->
       <label class="createProduct-info" for="productSize">Talle</label>
       <section class="createProduct-main-option">
-        <select name="productSize" id="size" required>
+        <select name="productSize" id="size" class="input <%= locals.errors && errors.productSize ? 'is-invalid' : null %>" required>
           <option value="Talle" selected disabled>Talle</option>
           <% sizes.forEach(size => { %>
-          <option class="createProduct-option" value="<%= size.id_size %>">
+          <option class="createProduct-option" value="<%= size.size %>" <%= locals.oldData && (size.size === oldData.productSize) ? 'selected' : null %>>
             <%= size.size %>
           </option>
           <% }) %>
         </select>
       </section>
+      <!-- BACKEND SIZE ERROR -->
+	    <% if (locals.errors && errors.productSize ) { %>
+      <div class="text-danger"><%= errors.productSize.msg %></div>
+      <% } %> 
       <!-- FRONTEND SIZE ERROR -->
       <div class="text-danger" id="sizeError"></div>
       <!--PRICE-->
       <label class="createProduct-info" for="productPrice">Precio</label>
 	  <input id="productPrice" class="input <%= locals.errors && errors.productPrice ? 'is-invalid' : null %>" 
-	  type="number" name="productPrice" required 
+	  type="number" name="productPrice" 
 	  value="<%= locals.oldData ? oldData.productPrice : null %>" /> 
     <!-- BACKEND PRICE ERROR -->
 	  <% if (locals.errors && errors.productPrice ) { %>
@@ -63,8 +69,8 @@
       <!--DESCRIPTION-->
       <label class="createProduct-info" for="productDescription">Descripción</label>
 	  <input id="createProduct-information-product" class=" <%= locals.errors && errors.productPrice ? 'is-invalid' : null %>" 
-	  type="text" name="productDescription" required 
-	  value="<%= locals.oldData ? oldData.productDescription : null %>" />
+	  type="text" name="productDescription" 
+	  value="<%= locals.oldData ? oldData.productDescription : null %>" required/>
     <!-- BACKEND DESCRIPTION ERROR -->
 	  <% if (locals.errors && errors.productDescription ) { %>
 	  <div class="text-danger"><%= errors.productDescription.msg %></div>
@@ -74,7 +80,11 @@
       <div class="text-danger" id="createProduct-information-productError"></div>
       <!--STOCK-->
       <label class="createProduct-info" for="productStock">Cantidad disponible</label>
-      <input type="number" id="productStock" name="productStock" required />
+      <input type="number" id="productStock" name="productStock" class="input <%= locals.errors && errors.productStock ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.productStock : null %>" />
+      <!-- BACKEND STOCK ERROR -->
+	  <% if (locals.errors && errors.productStock ) { %>
+      <div class="text-danger"><%= errors.productStock.msg %></div>
+      <% } %>
       <!-- FRONTEND STOCK ERROR -->
       <div class="text-danger" id="productStockError"></div>
       <!--IMAGES-->

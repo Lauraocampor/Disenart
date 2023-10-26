@@ -16,6 +16,7 @@ const productValidations = [
     .withMessage('Debes elegir o crear un talle'),
 	body('productPrice').notEmpty().withMessage('Tienes que escribir un precio'),
 	body('productDescription').notEmpty().isLength({ min: 20 }).withMessage('Tienes que escribir una descripción de al menos 20 caracteres'),
+    body('productStock').notEmpty().withMessage('Tienes que escribir una cantidad'),
     body('productImages').custom((value, {req}) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
