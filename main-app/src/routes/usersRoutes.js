@@ -10,6 +10,7 @@ const uploadFile = require('../middlewares/multerMiddleware');
 const validations = require('../middlewares/validateRegisterMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const editValidations = require('../middlewares/validateEditUserMiddleware');
 
 // @GET REGISTER FORM
 router.get('/register', guestMiddleware, usersController.register);
@@ -38,7 +39,7 @@ router.get('/profile/edit', authMiddleware, usersController.editProfile);
 router.put(
 	'/profile/edit',
 	uploadFile.single('avatar'),
-	validations,
+	editValidations,
 	usersController.updateProfile,
 );
 

@@ -151,14 +151,26 @@ const controller = {
 	},
 
 	updateProfile: async (req, res) => {
+
+	// hago las validaciones 
+	const resultValidation = validationResult(req);
+	if (resultValidation.errors.length > 0) {
+		return res.render('editProfile', {
+			errors: resultValidation.mapped(),
+			oldData: req.body,
+			user: req.session.userLogged,
+		})
+
+	};
 		try {
+		
 			// console.log({ user: req.session.userLogged });
 
 			let updatedProfile = {
 				id_user: req.session.userLogged.id_user,
 			};
 
-			const profileImage = req.file
+		const profileImage = req.file
 				? req.file.filename
 				: req.session.userLogged.image_user;
 
@@ -176,7 +188,7 @@ const controller = {
 				},
 			});
 
-			return res.redirect('/users/Profile');
+			return res.redirect('/users/profile');
 		} catch (error) {
 			console.log(error);
 		}

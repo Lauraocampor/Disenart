@@ -28,27 +28,37 @@
           </div>
           <div class="edit-profile-user-eachData">
             <p class="edit-profile-user-data">
-              <input class="edit-profile-input" type="text" value="<%=user.lastname_user.charAt(0).toUpperCase() + user.lastname_user.slice(1).toLowerCase()  %>" name="lastName" />
+              <input class="edit-profile-input <%= locals.errors && errors.lastName ? 'is-invalid' : null %>" type="text" value="<%=user.lastname_user.charAt(0).toUpperCase() + user.lastname_user.slice(1).toLowerCase()  %>" name="lastName" />
+              <!-- BACKEND LAST NAME ERROR -->
+              <% if (locals.errors && errors.lastName ) { %>
+                <div class="text-danger"><%= errors.lastName.msg %></div>
+                <% } %>
+              </p>
+          </div>
+          <div class="edit-profile-user-eachData">
+            <p class="edit-profile-user-data">
+              <input class="edit-profile-input <%= locals.errors && errors.password ? 'is-invalid' : null %>" type="password" placeholder="Contraseña" name="password" required />
+               <!-- BACKEND PASSWORD ERROR -->
+            <% if (locals.errors && errors.password ) { %>
+              <div class="text-danger"><%= errors.password.msg %></div>
+              <% } %>
             </p>
           </div>
           <div class="edit-profile-user-eachData">
             <p class="edit-profile-user-data">
-              <input class="edit-profile-input" type="password" placeholder="Contraseña" name="password" required />
-            </p>
-          </div>
-          <div class="edit-profile-user-eachData">
-            <p class="edit-profile-user-data">
-              <input class="edit-profile-input" type="email" value=" <%=user.email_user %>" name="email" />
+              <input class="edit-profile-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="email" value=" <%=user.email_user %>" name="email" />
+              <!-- BACKEND MAIL ERROR -->
+            <% if (locals.errors && errors.email ) { %>
+              <div class="text-danger"><%= errors.email.msg %></div>
+              <% } %>
             </p>
             <p>
               <label for="avatar">Imagen de perfil</label>
               <input class="input" type="file" name="avatar" accept=".jpg, .jpeg, .png, .gif" title="Editar" />
             </p>
           </div>
-          <a href="http://localhost:8080/users/profile">
             <input id="profile-edit-button" type="submit" value="Guardar datos" />
-          </a>
-        </section>
+              </section>
       </section>
     </form>
     <a href="http://localhost:8080/users/profile">
