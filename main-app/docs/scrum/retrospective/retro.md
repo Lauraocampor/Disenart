@@ -1,5 +1,17 @@
 # Resumenes de Scrum Retrospective
 
+> SPRINT #7
+
+El equipo #6 se ha reunido el primero de noviembre para discutir sus experiencias en este sprint.
+
+1. Queremos llevar el trello al día para saber cómo va el proyecto.
+
+2. Evitaremos añadir funciones adicionales a nuestro código hasta que terminemos con las historias de usuario solicitadas.
+
+3. Queremos retomar las tareas que tenemos pendientes y, de ser posible, empezarle a dar usabilidad al sitio con el fin de tenerlo listo para el demo.
+
+4. Es importante que dejemos nuestro código comentado para que nuestros compañeros lo puedan entender.
+
 > SPRINT #6
 
 El equipo #6 se ha reunido el día diecisiete de octubre para ver qué aprendizajes nos ha dejado el sprint.
