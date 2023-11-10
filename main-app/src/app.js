@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 // MIDDLEWARE REQUIRE'S
-require('dotenv').config(); // I'll setup an special secret for our sessions!
+require('dotenv').config();
 const session = require('express-session');
 const cookies = require('cookie-parser');
 const path = require('path');

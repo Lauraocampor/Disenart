@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-
 // Controller
 const usersController = require('../controllers/usersController');
 
@@ -10,7 +9,7 @@ const uploadFile = require('../middlewares/multerMiddleware');
 const validations = require('../middlewares/validateRegisterMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
-const editValidations = require('../middlewares/validateEditUserMiddleware');
+const editValidations = require('../middlewares/validateEditUserMiddleware.js');
 
 // @GET REGISTER FORM
 router.get('/register', guestMiddleware, usersController.register);
