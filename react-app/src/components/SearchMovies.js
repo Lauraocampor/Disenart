@@ -1,26 +1,34 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 //import noPoster from '../assets/images/no-poster.jpg';
 
 function SearchMovies(){
-
-	const movies = [
-		{
-			"Title": "Parchís",
-			"Year": "1983",
-			"Poster": "https://m.media-amazon.com/images/M/MV5BYTgxNjg2MTAtYjhmYS00NjQwLTk1YTMtNmZmOTMyNTAwZWUwXkEyXkFqcGdeQXVyMTY5MDE5NA@@._V1_SX300.jpg"
-		},
-		{
-			"Title": "Brigada en acción",
-			"Year": "1977",
-			"Poster": "N/A"
-		},
-	];
-
-	const keyword = 'PELÍCULA DEMO';
+	
+	const keyword = 'action'
 
 	// Credenciales de API
-	const apiKey = 'X'; // Intenta poner cualquier cosa antes para probar
+	const apiKey = '27768b76'; // Intenta poner cualquier cosa antes para probar
+
+	const [movies, setMovies] = useState([])
+
+	useEffect(() => {
+        const fetchData = async () => {
+			console.log('%c se montó el componente', 'color: green');
+            try {
+                const response = await fetch('http://www.omdbapi.com/?s=' + keyword +'&apikey=' + apiKey);
+                //const response = await fetch('http://www.omdbapi.com/?s=action&apikey=27768b76');
+                if(!response.ok){
+                    throw new Error('Error al obtener datos');
+                }
+                const data = await response.json()
+				//console.log(data.Search);
+                setMovies(data.Search);
+            } catch (error) {
+                console.error(error)
+            }
+        }
+        fetchData()
+    }, [])
 
 	return(
 		<div className="container-fluid">

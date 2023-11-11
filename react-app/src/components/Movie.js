@@ -6,7 +6,7 @@ function Movie(){
 	const [movies, setMovies] = useState([]);
 
 	useEffect(() => {
-		console.log('%c se montó el componente', 'color: green');
+		//console.log('%c se montó el componente', 'color: green');
 		const moviesFetch = async() => {
 			try {
 				const response = await fetch('/api/movies');
@@ -14,7 +14,7 @@ function Movie(){
 					throw new Error('Error al obtener datos');
 				}
 				const data = await response.json();
-				console.log(data.data);
+				//console.log(data.data);
 				setMovies(data.data)
 			} catch (error) {
 				console.error(error);
