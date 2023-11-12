@@ -14,6 +14,7 @@ const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const mainRouter = require('./routes/mainRoutes');
 const productRouter = require('./routes/productRoutes');
 const usersRouter = require('./routes/usersRoutes');
+const apiProductRouter = require('./routes/api/apiProductRoutes')
 
 // VIEW ENGINE CONFIG
 app.set('view engine', 'ejs');
@@ -41,6 +42,7 @@ app.use(userLoggedMiddleware); // debe estar después del session secret
 app.use('/', mainRouter);
 app.use('/products', productRouter);
 app.use('/users', usersRouter);
+app.use('/api/products', apiProductRouter);
 app.use((req, res) => {
 	res.render('404');
 });
