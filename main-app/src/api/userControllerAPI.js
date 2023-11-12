@@ -1,19 +1,19 @@
 const db = require('../../database/models');
 
 module.exports = {
-    getProducts: async (req, res) => {
+    getUsers: async (req, res) => {
         try {
             let statusCode = 200;
-            const products = await db.Product.findAll();
+            const users = await db.User.findAll();
 
-            statusCode = products.length > 0 ? statusCode : 204;
+            statusCode = users.length > 0 ? statusCode : 204;
 
             const response = {
-                data: products,
+                data: users,
                 meta: {
                     status: statusCode,
                     path: req.baseUrl,
-                    quantity: products.length,
+                    quantity: users.length,
                     query: req.query
                 }
             }
@@ -25,10 +25,10 @@ module.exports = {
         }
     },
     
-    getProductById: async (req, res) => {
+    getUserById: async (req, res) => {
         try {
-            const product = await db.Product.findByPk(req.params.id);
-            res.json(product);
+            const user = await db.User.findByPk(req.params.id);
+            res.json(user);
         } catch (error) {
             console.error(error);
             res.json({error: 'Server error', code: '504'});
