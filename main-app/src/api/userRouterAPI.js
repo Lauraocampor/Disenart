@@ -10,7 +10,7 @@ router.get('/', controller.getUsers);
 // @GET - /api/users/:id/detail
 router.get('/:id/detail', controller.getUserById);
 
-// @GET - /api/users/:id/profile-image/:filename
+// @GET - /api/users/profile-image/:id
 router.get('/profile-image/:id', controller.profileImage);
 
 
