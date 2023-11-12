@@ -45,7 +45,7 @@ app.use('/', mainRouter);
 app.use('/products', productRouter);
 app.use('/users', usersRouter);
 app.use('/api/products', apiProductRouter);
-app.user('/api/users', apiUserRouter)
+app.use('/api/users', apiUserRouter)
 app.use((req, res) => {
 	res.render('404');
 });
