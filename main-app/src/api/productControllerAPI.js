@@ -29,7 +29,7 @@ const controller = {
 			// URL ADDITION
 			info[index][
 				'details_url'
-			] = `http://localhost:8080/products/${info[index]['id_product']}/details`;
+			] = `http://localhost:${(process.env.PORT || 3000)}/products/${info[index]['id_product']}/details`;
 		}
 		// ENDING
 		return info;
