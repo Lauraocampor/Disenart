@@ -27,9 +27,9 @@ const controller = {
 				}
 			}
 			// URL ADDITION
-			info[index][
-				'details_url'
-			] = `http://localhost:${(process.env.PORT || 3000)}/products/${info[index]['id_product']}/details`;
+			info[index]['details_url'] = `http://localhost:${
+				process.env.PORT || 3000
+			}/products/${info[index]['id_product']}/details`;
 		}
 		// ENDING
 		return info;
@@ -52,11 +52,22 @@ const controller = {
 			};
 			res.json(data);
 		} catch (error) {
-			console.log(error);
+			res.json(error);
 		}
 	},
-	getById: (req, res) => {
-		res.json({ status: 200 });
+	getById: async (req, res) => {
+		try {
+			const product = await Product.findByPk(req.params.id);
+			if (product === null) {
+				throw new Error('No product has been found!');
+			} else {
+				res.json(product);
+			}
+		} catch (error) {
+			res.status(404).json({
+				error: error.message,
+			});
+		}
 	},
 };
 
