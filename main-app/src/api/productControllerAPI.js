@@ -1,5 +1,6 @@
 const DB = require('../database/models');
 const Product = DB.Product;
+const path = require('path');
 
 const controller = {
 	// MAIN UTILITIES
@@ -34,6 +35,9 @@ const controller = {
 		// ENDING
 		return info;
 	},
+	productImage: (product) => {
+		return JSON.parse(product['image_product'])[0];
+	},
 	// MAIN METHODS
 	all: async (req, res) => {
 		try {
@@ -57,13 +61,22 @@ const controller = {
 	},
 	getById: async (req, res) => {
 		try {
-			const product = await Product.findByPk(req.params.id);
+			// PRODUCT GETTER
+			let product = await Product.findByPk(req.params.id);
+			//VERIFIER
 			if (product === null) {
 				throw new Error('No product has been found!');
 			} else {
+				// IMG URL CREATION
+				product = product.dataValues;
+				product['img_url'] = `http://localhost:${
+					process.env.PORT || 3000
+				}/images/productos/${controller.productImage(product)}`;
+				// SUCCESSFUL RESPONSE
 				res.json(product);
 			}
 		} catch (error) {
+			// ERR STATEMENT
 			res.status(404).json({
 				error: error.message,
 			});
