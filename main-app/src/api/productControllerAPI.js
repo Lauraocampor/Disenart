@@ -35,7 +35,9 @@ const controller = {
 		return info;
 	},
 	productImage: (product) => {
-		return JSON.parse(product['image_product'])[0];
+		return `http://localhost:${process.env.PORT || 3000}/images/productos/${
+			JSON.parse(product['image_product'])[0]
+		}`;
 	},
 	// MAIN METHODS
 	all: async (req, res) => {
@@ -66,11 +68,11 @@ const controller = {
 			if (product === null) {
 				throw new Error('No product has been found!');
 			} else {
-				// IMG URL CREATION
 				product = product.dataValues;
-				product['img_url'] = `http://localhost:${
-					process.env.PORT || 3000
-				}/images/productos/${controller.productImage(product)}`;
+				// IMG URL CREATION
+				product['img_url'] = controller.productImage(product);
+				// RELATIONS
+				product['relations'] = ['colour', 'size'];
 				// SUCCESSFUL RESPONSE
 				res.json(product);
 			}
