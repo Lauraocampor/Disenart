@@ -39,25 +39,63 @@ const controller = {
 			JSON.parse(product['image_product'])[0]
 		}`;
 	},
+	formatterPagination: (info) => {
+		// MAIN LOOP
+		for (let index = 0; index < info.length; index++) {
+			// CLEANING INFO
+			info[index] = info[index].dataValues;
+			delete info[index]['colour_id'];
+			delete info[index]['size_id'];
+			delete info[index]['price_product'];
+			delete info[index]['quantity_product'];
+			delete info[index]['image_product'];
+			// URL ADDITION
+			info[index]['details_url'] = `http://localhost:${
+				process.env.PORT || 3000
+			}/products/${info[index]['id_product']}/details`;
+		}
+		// ENDING
+		return info;
+	},
 	// MAIN METHODS
 	all: async (req, res) => {
-		try {
-			const inventory = await Product.findAll();
-			const data = {
-				count: inventory.length,
-				countByCategory: {
-					remera: controller.categoryCount('remera', inventory),
-					buzo: controller.categoryCount('buzo', inventory),
-					termo: controller.categoryCount('termo', inventory),
-					taza: controller.categoryCount('taza', inventory),
-					gorra: controller.categoryCount('gorra', inventory),
-					mate: controller.categoryCount('mate', inventory),
-				},
-				products: controller.resultFormatter(inventory),
-			};
-			res.json(data);
-		} catch (error) {
-			res.json(error);
+		// CHECK IF URL HAS ANY VALID PAGINATION REQUEST
+		if (
+			Object.keys(req.query).length > 0 &&
+			typeof req.query.page === 'string' &&
+			req.query.page > 0
+		) {
+			try {
+				const pageNum = req.query.page;
+				const inventory = await Product.findAll({
+					limit: 10,
+					offset: (parseInt(pageNum) - 1) * 10,
+				});
+				const data = controller.formatterPagination(inventory);
+				res.json(data);
+			} catch (error) {
+				res.json(error);
+			}
+		} else {
+			// IF WRONG QUERY OR NO PAGINATION THEN EXECUTE
+			try {
+				const inventory = await Product.findAll();
+				const data = {
+					count: inventory.length,
+					countByCategory: {
+						remera: controller.categoryCount('remera', inventory),
+						buzo: controller.categoryCount('buzo', inventory),
+						termo: controller.categoryCount('termo', inventory),
+						taza: controller.categoryCount('taza', inventory),
+						gorra: controller.categoryCount('gorra', inventory),
+						mate: controller.categoryCount('mate', inventory),
+					},
+					products: controller.resultFormatter(inventory),
+				};
+				res.json(data);
+			} catch (error) {
+				res.json(error);
+			}
 		}
 	},
 	getById: async (req, res) => {
