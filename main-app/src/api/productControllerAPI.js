@@ -49,10 +49,6 @@ const controller = {
 			delete info[index]['price_product'];
 			delete info[index]['quantity_product'];
 			delete info[index]['image_product'];
-			// URL ADDITION
-			info[index]['details_url'] = `http://localhost:${
-				process.env.PORT || 3000
-			}/products/${info[index]['id_product']}/details`;
 		}
 		// ENDING
 		return info;
@@ -60,19 +56,46 @@ const controller = {
 	// MAIN METHODS
 	all: async (req, res) => {
 		// CHECK IF URL HAS ANY VALID PAGINATION REQUEST
+		let pager = parseInt(req.query.page);
 		if (
 			Object.keys(req.query).length > 0 &&
 			typeof req.query.page === 'string' &&
-			req.query.page > 0
+			pager >= 0
 		) {
 			try {
-				const pageNum = req.query.page;
+				// ERROR FOR PAGE ZERO
+				const pageNum = parseInt(req.query.page);
+				if (pageNum === 0) {
+					res.status(404).json({
+						errMsg: 'Page zero has no products!',
+					});
+				}
+				// INVENTORY CREATION
 				const inventory = await Product.findAll({
 					limit: 10,
-					offset: (parseInt(pageNum) - 1) * 10,
+					offset: (pageNum - 1) * 10,
 				});
-				const data = controller.formatterPagination(inventory);
-				res.json(data);
+				let data = controller.formatterPagination(inventory);
+				// PAGE ADDITION
+				data = { products: data };
+				if (pageNum >= 2) {
+					data.back = `http://localhost:${
+						process.env.PORT || 3000
+					}/api/products/?page=${pageNum - 1}`;
+				}
+				if (pageNum >= 1 && inventory.length == 10) {
+					data.next = `http://localhost:${
+						process.env.PORT || 3000
+					}/api/products/?page=${pageNum + 1}`;
+				}
+				// ERROR FOR VOID PAGE
+				if (data.products.length == 0) {
+					res.status(404).json({
+						errMsg: 'This page has no products!',
+					});
+				} else {
+					res.json(data);
+				}
 			} catch (error) {
 				res.json(error);
 			}
