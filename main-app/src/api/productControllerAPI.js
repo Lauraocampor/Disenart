@@ -1,6 +1,5 @@
 const DB = require('../database/models');
 const Product = DB.Product;
-const path = require('path');
 
 const controller = {
 	// MAIN UTILITIES
