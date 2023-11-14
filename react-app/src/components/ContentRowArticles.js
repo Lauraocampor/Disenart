@@ -1,38 +1,67 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import SmallCard from './SmallCard';
 
 /*  Cada set de datos es un objeto literal */
-
-/* <!-- Articles in DB --> */
-
-let articlesInDB = {
-    title: 'Artículos en la base de datos',
-    color: 'primary', 
-    cuantity: 21,
-    icon: 'fa-clipboard-list'
-}
 
 /* <!-- Total --> */
 
 let total = {
     title:'Cantidad de ventas?', 
     color:'success', 
-    cuantity: '79',
+    cuantity: '20',
     icon:'fa-award'
 }
 
-/* <!-- Users quantity --> */
-
-let usersQuantity = {
-    title:'Cantidad de usuarios' ,
-    color:'warning',
-    cuantity:'49',
-    icon:'fa-user-check'
-}
-
-let cartProps = [articlesInDB, total, usersQuantity];
-
 function ContentRowArticles(){
+
+    /* <!-- Articles in DB --> */
+    const [productsList, setProductsList] = useState([])
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('/api/products');
+                if(!response.ok){
+                    throw new Error('Error al obtener datos');
+                }
+                const data = await response.json()
+                setProductsList({
+                    title: 'Artículos en la base de datos',
+                    color: 'primary', 
+                    cuantity: data.count,
+                    icon: 'fa-clipboard-list'
+                });
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        fetchData()
+    }, [])
+
+    /* <!-- Users quantity --> */
+    const [usersList, setUsersList] = useState([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('/api/users');
+                if(!response.ok){
+                    throw new Error('Error al obtener datos');
+                }
+                const data = await response.json()
+                setUsersList({title:'Cantidad de usuarios',
+                color:'warning',
+                cuantity: data.count,
+                icon:'fa-user-check'});
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        fetchData()
+    }, [])
+
+    const cartProps = [productsList, total, usersList];
+
     return (
     
         <div className="row">
