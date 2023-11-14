@@ -1,7 +1,7 @@
 import React from 'react';
 import imagenFondo from '../assets/images/productos/1697401079769remera1 (3).jpg';
 
-function LastMovieInDb(){
+function LastArticleInDb(){
     return(
         <div className="col-lg-6 mb-4">
             <div className="card shadow mb-4">
@@ -20,4 +20,4 @@ function LastMovieInDb(){
     )
 }
 
-export default LastMovieInDb;
+export default LastArticleInDb;

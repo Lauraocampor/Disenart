@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
 const app = express();
-const cors = require ("cors")
+//const cors = require ("cors")
 
 
 
@@ -33,7 +33,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
 //Aquí estoy disponiendo la posibilidad para utilizar cors para fechear cualquier origen al servidor
-app.use(cors({origin: "http//localhost:3001"}));
+//app.use(cors())
+
 
 app.use('/', indexRouter);
 app.use(moviesRoutes);

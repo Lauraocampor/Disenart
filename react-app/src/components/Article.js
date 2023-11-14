@@ -1,26 +1,26 @@
 import React, {useEffect, useState} from 'react';
-import MovieList from './MovieList';
+import ArticlesList from './ArticlesList';
 
-function Movie(){
+function Article(){
 
-	const [movies, setMovies] = useState([]);
+	const [articles, setArticles] = useState([]);
 
 	useEffect(() => {
 		//console.log('%c se montó el componente', 'color: green');
-		const moviesFetch = async() => {
+		const articlesFetch = async() => {
 			try {
-				const response = await fetch('/api/movies');
+				const response = await fetch('/api/products');
 				if(!response.ok){
 					throw new Error('Error al obtener datos');
 				}
 				const data = await response.json();
-				//console.log(data.data);
-				setMovies(data.data)
+				//console.log(data);
+				setArticles(data.products)
 			} catch (error) {
 				console.error(error);
 			}
 		}
-		moviesFetch()
+		articlesFetch()
 	}, [])
 
     return(
@@ -39,7 +39,7 @@ function Movie(){
                                             <th>Nombre</th>
                                             <th>Cantidad</th>
                                             <th>Precio</th>
-                                            <th>Espacificaciones</th>
+                                            <th>Especificaciones</th>
 										</tr>
 									</thead>
 									<tfoot>
@@ -48,12 +48,12 @@ function Movie(){
                                             <th>Nombre</th>
                                             <th>Cantidad</th>
                                             <th>Precio</th>
-                                            <th>Espacificaciones</th>
+                                            <th>Especificaciones</th>
 										</tr>
 									</tfoot>
 									<tbody>
-										{movies.map((movie,index)=>{
-											return <MovieList {...movie} key={index} />
+										{articles.map((article,index)=>{
+											return <ArticlesList {...article} key={index} />
 										})}
 									</tbody>
 								</table>
@@ -63,4 +63,4 @@ function Movie(){
         </React.Fragment>
     )
 }
-export default Movie;
+export default Article;
