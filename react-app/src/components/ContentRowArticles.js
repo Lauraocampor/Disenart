@@ -1,20 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import SmallCard from './SmallCard';
 
-/*  Cada set de datos es un objeto literal */
-
-/* <!-- Total --> */
-
-let total = {
-    title:'Cantidad de ventas?', 
-    color:'success', 
-    cuantity: '20',
-    icon:'fa-award'
-}
 
 function ContentRowArticles(){
+    /*  Cada set de datos es un objeto literal */
 
-    /* <!-- Articles in DB --> */
+    /* <!-- Total Products--> */
     const [productsList, setProductsList] = useState([])
     
     useEffect(() => {
@@ -26,7 +17,7 @@ function ContentRowArticles(){
                 }
                 const data = await response.json()
                 setProductsList({
-                    title: 'Artículos en la base de datos',
+                    title: 'Cantidad de productos',
                     color: 'primary', 
                     cuantity: data.count,
                     icon: 'fa-clipboard-list'
@@ -38,7 +29,31 @@ function ContentRowArticles(){
         fetchData()
     }, [])
 
-    /* <!-- Users quantity --> */
+    /* <!-- Total Categories --> */
+    const [categoryList, setCategoryList] = useState([])
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('/api/products');
+                if(!response.ok){
+                    throw new Error('Error al obtener datos');
+                }
+                const data = await response.json()
+                setCategoryList({
+                    title: 'Cantidad de categorías',
+                    color: 'success', 
+                    cuantity: Object.getOwnPropertyNames(data.countByCategory).length,
+                    icon: 'fa-list-ol'
+                });
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        fetchData()
+    }, []) 
+
+    /* <!-- Total Users --> */
     const [usersList, setUsersList] = useState([])
 
     useEffect(() => {
@@ -60,7 +75,7 @@ function ContentRowArticles(){
         fetchData()
     }, [])
 
-    const cartProps = [productsList, total, usersList];
+    const cartProps = [productsList, categoryList, usersList];
 
     return (
     
