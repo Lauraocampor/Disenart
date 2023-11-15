@@ -1,5 +1,29 @@
 # Resúmenes de Scrum Weekly
 
+> SPRINT #8_01
+
+- Desiree Holowiniec
+
+1. Creé los dos enpoints pedidos para la API de usuarios. Aún me faltan algunos detalles, usaré el código de uno de mis compañeros como base para continuar.
+
+2. Seguiré avanzando con los adicionales para pulir el proyecto pues estamos a puerta de la entrega final.
+
+- Juan Diego Marín
+
+1. Terminé de implementar la API de productos con su paginado.
+
+2. De ser posible me gustaría añadir funcionalidades adicionales, pero también quiero dedicarme a preparar la presentación este fin de semana.
+
+- Laura Ocampo
+
+1. Estamos en proceso de implementar las APIs construidas por los compañeros a el dashboard de react. Tuvimos problemas al usar la librería Cors, así que buscamos un proceso alternativo.
+
+- Mercedes Lavezzolo
+
+1. Seguimos trabajando en el dashboards. La parte visual del listado de productos está terminada y queda pendiente la vista de detalles del producto.
+
+2. Ahora me cuesta un poco de trabajar usar react, pero voy adecuando el código de a pocos.
+
 > SPRINT #7_01
 
 - Desiree Holowiniec
