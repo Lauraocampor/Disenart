@@ -69,6 +69,7 @@ const controller = {
 					res.status(404).json({
 						errMsg: 'Page zero has no products!',
 					});
+					return;
 				}
 				// INVENTORY CREATION
 				const inventory = await Product.findAll({
@@ -93,11 +94,14 @@ const controller = {
 					res.status(404).json({
 						errMsg: 'This page has no products!',
 					});
+					return;
 				} else {
 					res.json(data);
+					return;
 				}
 			} catch (error) {
 				res.json(error);
+				return;
 			}
 		} else {
 			// IF WRONG QUERY OR NO PAGINATION THEN EXECUTE
@@ -116,8 +120,10 @@ const controller = {
 					products: controller.resultFormatter(inventory),
 				};
 				res.json(data);
+				return;
 			} catch (error) {
 				res.json(error);
+				return;
 			}
 		}
 	},
@@ -136,12 +142,14 @@ const controller = {
 				product['relations'] = ['colour', 'size'];
 				// SUCCESSFUL RESPONSE
 				res.json(product);
+				return;
 			}
 		} catch (error) {
 			// ERR STATEMENT
 			res.status(404).json({
 				error: error.message,
 			});
+			return;
 		}
 	},
 };
