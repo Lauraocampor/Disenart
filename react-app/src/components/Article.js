@@ -6,27 +6,47 @@ function Article(){
 	const [articles, setArticles] = useState([]);
 
 	useEffect(() => {
-		//console.log('%c se montó el componente', 'color: green');
-		const articlesFetch = async() => {
+		console.log('%c Se montó el componente', 'color: green');
+
+		const articlesFetch = async () => {
 			try {
 				const response = await fetch('/api/products');
-				if(!response.ok){
+				if (!response.ok) {
 					throw new Error('Error al obtener datos');
 				}
+				
 				const data = await response.json();
-				//console.log(data);
-				setArticles(data.products)
+				const products = data.products;
+				const productsId = products.map(product => product.id_product);
+				
+				const articlesArray = [];
+				
+				for (const id of productsId) {
+					const apiUrl = `/api/products/${id}`;
+					const apiResponse = await fetch(apiUrl);
+					
+					if (!apiResponse.ok) {
+						throw new Error('Error al obtener datos para el producto con ID ' + id);
+					}
+					
+					const responseData = await apiResponse.json();
+					articlesArray.push(responseData);
+				}
+				console.log(articlesArray)
+				// Después de completar todas las solicitudes, actualiza el estado
+				setArticles(articlesArray);
 			} catch (error) {
-				console.error(error);
+			console.error(error);
 			}
-		}
-		articlesFetch()
-	}, [])
+		};
+		
+		articlesFetch();
+		}, []);
 
     return(
         <React.Fragment>
 				    {/*<!-- PRODUCTS LIST -->*/}
-					<h1 className="h3 mb-2 text-gray-800">Todos los artículos en la base de datos</h1>
+					<h1 className="h3 mb-2 text-gray-800">Todos los productos en la base de datos</h1>
 					
 					{/*<!-- DataTales Example -->*/}
 					<div className="card shadow mb-4">
@@ -39,7 +59,7 @@ function Article(){
                                             <th>Nombre</th>
                                             <th>Cantidad</th>
                                             <th>Precio</th>
-                                            <th>Especificaciones</th>
+                                            <th>Detalle</th>
 										</tr>
 									</thead>
 									<tfoot>
@@ -48,7 +68,7 @@ function Article(){
                                             <th>Nombre</th>
                                             <th>Cantidad</th>
                                             <th>Precio</th>
-                                            <th>Especificaciones</th>
+                                            <th>Detalle</th>
 										</tr>
 									</tfoot>
 									<tbody>

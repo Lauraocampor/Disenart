@@ -6,8 +6,8 @@ function ArticlesList(props){
             <tr>
                 <td>{props.id_product}</td>
                 <td>{props.name_product}</td>
-                <td>{props.rating}</td>
-                <td>{props.awards}</td>
+                <td>{props.quantity_product}</td>
+                <td>{props.price_product}</td>
                 <td>{props.description_product}</td>
             </tr>    
         </React.Fragment>
