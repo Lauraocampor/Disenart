@@ -6,7 +6,7 @@ function Article(){
 	const [articles, setArticles] = useState([]);
 
 	useEffect(() => {
-		console.log('%c Se montó el componente', 'color: green');
+		//console.log('%c Se montó el componente', 'color: green');
 
 		const articlesFetch = async () => {
 			try {
@@ -52,7 +52,7 @@ function Article(){
 					<div className="card shadow mb-4">
 						<div className="card-body">
 							<div className="table-responsive">
-								<table className="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+								<table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
 									<thead>
 										<tr>
                                             <th>Id</th>
@@ -72,6 +72,7 @@ function Article(){
 										</tr>
 									</tfoot>
 									<tbody>
+										{articles.length === 0 && <p>Cargando...</p>}
 										{articles.map((article,index)=>{
 											return <ArticlesList {...article} key={index} />
 										})}

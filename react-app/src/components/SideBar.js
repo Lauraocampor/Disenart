@@ -33,9 +33,9 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Search -->*/}
                 <li className="nav-item">
-                <Link className="nav-link" to="/SearchArticles">
+                <Link className="nav-link" to="/search">
                         <i className="fas fa-fw fa-search"></i>
-                        <span> Buscar artículo</span>
+                        <span> Buscar producto</span>
                     </Link>
                 </li>
 
