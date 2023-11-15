@@ -11,7 +11,7 @@ function SideBar(){
                 {/*<!-- Sidebar - Brand -->*/}
                 <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/">
                     <div className="sidebar-brand-icon">
-                        <img className="w-50" src={image} alt="Digital House"/>
+                        <img className="w-50" src={image} alt="Diseñart"/>
                     </div>
                 </Link>
 

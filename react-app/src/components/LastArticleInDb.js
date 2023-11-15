@@ -55,7 +55,7 @@ function LastArticleInDb() {
                   />
                 </div>
                 <p>{lastProduct.description_product}</p>
-                <a className="btn btn-danger" target="_blank" rel="noreferrer" href={`/detail/${lastProduct.id_product}`}>
+                <a className="btn btn-danger" target="_blank" rel="noreferrer" href={`/products/detail/${lastProduct.id_product}`}>
                   Ver detalle del producto
                 </a>
               </>
