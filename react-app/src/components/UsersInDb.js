@@ -13,7 +13,26 @@ function UsersInDb (){
                     throw new Error('Error al obtener datos');
                 }
                 const data = await response.json()
-                setUsersList(data.users);
+
+                const users = data.users;
+				const usersId = users.map(user => user.id);
+				
+				const usersArray = [];
+				
+				for (const id of usersId) {
+					const apiUrl = `/api/users/${id}/detail`;
+					const apiResponse = await fetch(apiUrl);
+					
+					if (!apiResponse.ok) {
+						throw new Error('Error al obtener datos para el producto con ID ' + id);
+					}
+					
+					const responseData = await apiResponse.json();
+					usersArray.push(responseData);
+				}
+				console.log(usersArray)
+				// Después de completar todas las solicitudes, actualiza el estado
+				setUsersList(usersArray);
             } catch (error) {
                 console.error(error);
             }
