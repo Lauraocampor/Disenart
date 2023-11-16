@@ -11,7 +11,7 @@ function SideBar(){
                 {/*<!-- Sidebar - Brand -->*/}
                 <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/">
                     <div className="sidebar-brand-icon">
-                        <img className="w-50" src={image} alt="Digital House"/>
+                        <img className="w-50" src={image} alt="Diseñart"/>
                     </div>
                 </Link>
 
@@ -33,32 +33,39 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Search -->*/}
                 <li className="nav-item">
-                <Link className="nav-link" to="/SearchArticles">
+                <Link className="nav-link" to="/products">
                         <i className="fas fa-fw fa-search"></i>
-                        <span> Buscar artículo</span>
+                        <span> Buscar producto</span>
                     </Link>
                 </li>
 
-                {/*<!-- Nav Item - Pages -->*/}
+                {/*<!-- Nav Item - Users -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link collapsed" to="/pages">
+                    <Link className="nav-link collapsed" to="/users">
                         <i className="fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
+                        <span>Usuarios</span>
                     </Link>
                 </li>
 
-                {/*<!-- Nav Item - Charts -->*/}
+                {/*<!-- Nav Item - Last Products -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="/charts">
+                    <Link className="nav-link" to="/lastProducts">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Charts</span></Link>
+                        <span>Destacados</span></Link>
                 </li>
 
-                {/*<!-- Nav Item - Tables -->*/}
+                {/*<!-- Nav Item - Products -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="/tables">
+                    <Link className="nav-link" to="/productsList">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></Link>
+                        <span>Listado de productos</span></Link>
+                </li>
+
+                {/*<!-- Nav Item - Create -->*/}
+                <li className="nav-item">
+                    <Link className="nav-link" to="/products/create">
+                        <i className="fas fa-fw fa-plus"></i>
+                        <span>Crear producto</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}

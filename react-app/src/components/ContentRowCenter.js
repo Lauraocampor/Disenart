@@ -1,6 +1,6 @@
 import React from 'react';
 import LastArticleInDb from './LastArticleInDb';
-import UsersInDb from './UsersInDb';
+import ProductsInDb from './ProductsInDb';
 
 function ContentRowCenter(){
     return (
@@ -11,7 +11,7 @@ function ContentRowCenter(){
             {/*<!-- End content row last movie in Data Base -->*/}
 
             {/*<!-- Genres in DB -->*/}
-            <UsersInDb />
+            <ProductsInDb />
 
         </div>
     )
