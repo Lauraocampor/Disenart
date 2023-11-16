@@ -61,8 +61,8 @@ function LastArticlesInDb() {
                         />
                     </div>
                     <p>{product.description_product}</p>
-                    <a className="btn btn-danger" target="_blank" rel="noreferrer" href={`/products/${product.id_product}/details`}>
-                        Ver detalle del producto
+                    <a className="btn btn-danger" target="_blank" rel="noreferrer" href={`/products/detail/${product.id_product}`}>
+                        Ver detalle del producto 
                     </a>
                     {index < lastProducts.length - 1 && <hr />} {/* Agregar separador entre productos */}
                     </div>

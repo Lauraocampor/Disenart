@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useState, useRef, Link} from 'react';
 
 //import noPoster from '../assets/images/no-poster.jpg';
 
@@ -99,6 +99,9 @@ function SearchArticles(){
 															/>
 														</div>
 														<p>{article.price_product}</p>
+														<Link className="btn btn-info" target="_blank" rel="noreferrer" to={`/products/detail/${article.id_product}`}>
+															Ver detalle del producto 
+														</Link>
 													</div>
 												</div>
 											</div>
@@ -134,6 +137,9 @@ function SearchArticles(){
 													/>
 													</div>
 													<p>{article.price_product}</p>
+													<a className="btn btn-info" target="_blank" rel="noreferrer" href={`/products/detail/${article.id_product}`}>
+															Ver detalle del producto 
+													</a>
 												</div>
 												</div>
 											</div>

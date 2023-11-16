@@ -33,32 +33,39 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Search -->*/}
                 <li className="nav-item">
-                <Link className="nav-link" to="/search">
+                <Link className="nav-link" to="/products">
                         <i className="fas fa-fw fa-search"></i>
                         <span> Buscar producto</span>
                     </Link>
                 </li>
 
-                {/*<!-- Nav Item - Pages -->*/}
+                {/*<!-- Nav Item - Users -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link collapsed" to="/pages">
+                    <Link className="nav-link collapsed" to="/users">
                         <i className="fas fa-fw fa-folder"></i>
                         <span>Usuarios</span>
                     </Link>
                 </li>
 
-                {/*<!-- Nav Item - Charts -->*/}
+                {/*<!-- Nav Item - Last Products -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="/charts">
+                    <Link className="nav-link" to="/lastProducts">
                         <i className="fas fa-fw fa-chart-area"></i>
                         <span>Destacados</span></Link>
                 </li>
 
-                {/*<!-- Nav Item - Tables -->*/}
+                {/*<!-- Nav Item - Products -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="/tables">
+                    <Link className="nav-link" to="/productsList">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Productos</span></Link>
+                        <span>Listado de productos</span></Link>
+                </li>
+
+                {/*<!-- Nav Item - Create -->*/}
+                <li className="nav-item">
+                    <Link className="nav-link" to="/products/create">
+                        <i className="fas fa-fw fa-plus"></i>
+                        <span>Crear producto</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
