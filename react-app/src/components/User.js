@@ -1,7 +1,6 @@
 import React from 'react';
 
 function User(props){
-    console.log(props.image)
     return (
         <React.Fragment>
         <div className="col-lg-6 mb-4">

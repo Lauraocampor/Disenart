@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef, Link} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 
 //import noPoster from '../assets/images/no-poster.jpg';
 
@@ -49,7 +49,6 @@ function SearchArticles(){
 		const resultados = articles.filter(producto =>
 			producto.name_product.toLowerCase().includes(keyword.toLowerCase())
 		);
-		console.log(resultados)
 		setResultados(resultados);
 	};
 	
@@ -99,9 +98,9 @@ function SearchArticles(){
 															/>
 														</div>
 														<p>{article.price_product}</p>
-														<Link className="btn btn-info" target="_blank" rel="noreferrer" to={`/products/detail/${article.id_product}`}>
+														<a className="btn btn-info" target="_blank" rel="noreferrer" href={`/products/detail/${article.id_product}`}>
 															Ver detalle del producto 
-														</Link>
+														</a>
 													</div>
 												</div>
 											</div>

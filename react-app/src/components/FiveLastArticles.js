@@ -16,8 +16,6 @@ function LastArticlesInDb() {
             // Obtengo últimos 5 productos de la lista
             const lastProductsFromList = data.products.slice(-5);
 
-            console.log(lastProductsFromList)
-
             // Fetch los últimos 5 productos
             const productPromises = lastProductsFromList.map(async (product) => {
             const productResponse = await fetch(`/api/products/${product.id_product}`);

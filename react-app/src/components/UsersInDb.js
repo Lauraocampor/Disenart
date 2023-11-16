@@ -30,7 +30,6 @@ function UsersInDb (){
 					const responseData = await apiResponse.json();
 					usersArray.push(responseData);
 				}
-				console.log(usersArray)
 				// Después de completar todas las solicitudes, actualiza el estado
 				setUsersList(usersArray);
             } catch (error) {

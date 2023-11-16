@@ -32,7 +32,6 @@ function Article(){
 					const responseData = await apiResponse.json();
 					articlesArray.push(responseData);
 				}
-				console.log(articlesArray)
 				// Después de completar todas las solicitudes, actualiza el estado
 				setArticles(articlesArray);
 			} catch (error) {
@@ -72,7 +71,7 @@ function Article(){
 										</tr>
 									</tfoot>
 									<tbody>
-										{articles.length === 0 && <p>Cargando...</p>}
+										{articles.length === 0 && <tr><td>Cargando...</td></tr>}
 										{articles.map((article,index)=>{
 											return <ArticlesList {...article} key={index} />
 										})}
