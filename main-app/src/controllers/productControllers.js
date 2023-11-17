@@ -163,10 +163,32 @@ const controller = {
 			filenames.push(imagenDefault);
 		}
 
+		const colour = req.body.productColor
+
+		let colourInDb = await Colour.findOne({
+			where: { colour: colour },
+			raw: true,
+		});
+
+		let colourId = colourInDb.id_colour
+
+		const size = req.body.productSize
+
+		let sizeInDb = await Size.findOne({
+			where: { size: size },
+			raw: true,
+		});
+
+		console.log(sizeInDb)
+
+		let sizeId = sizeInDb.id_size
+
+
+
 		const newProduct = {
 			name_product: req.body.productName,
-			colour_id: req.body.productColor,
-			size_id: req.body.productSize,
+			colour_id: colourId,
+			size_id: sizeId,
 			price_product: req.body.productPrice,
 			quantity_product: req.body.productStock,
 			description_product: req.body.productDescription,
