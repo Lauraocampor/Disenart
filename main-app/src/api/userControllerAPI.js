@@ -83,7 +83,7 @@ const userControllerAPI = {
             last_name: user.lastname_user,
             email: user.email_user,
             birthday: user.bdate_user,
-            image: '/api/users/profile-image/${userId}',
+            image: `/api/users/profile-image/${userId}`,
           };
     
           res.json(response);
