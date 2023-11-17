@@ -214,6 +214,7 @@ const controller = {
 			const createdProduct = await Product.create(newProduct);
 			
 			const productId = createdProduct.get('id_product');
+			console.log(newProduct)
 			
 
 			res.redirect('/products/' + productId + '/details');
@@ -278,9 +279,9 @@ const controller = {
 				const updatedImages = imagesToKeep.concat(imagesToUpdate);
 				const updatedProduct = {
 					name_product: req.body.productName,
-					colour_id: req.body.productColor,
-					size_id: req.body.productSize,
-					price_product: req.body.productPrice,
+					colour_id: Number(req.body.productColor),
+					size_id: Number(req.body.productSize),
+					price_product: (req.body.productPrice),
 					quantity_product: req.body.productStock,
 					description_product: req.body.productDescription,
 					image_product: JSON.stringify(updatedImages),
@@ -291,6 +292,7 @@ const controller = {
 						id_product: req.params.id,
 					},
 				});
+				console.log(updatedProduct)
 
 				// Redirige al producto actualizado
 				res.redirect('/products/' + req.params.id + '/details');
