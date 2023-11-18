@@ -2,12 +2,15 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 
+// Controller
 const productController = require('../controllers/productControllers');
+
+// Middlewares
 const validateProductMiddleware = require('../middlewares/validateProductMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
-
+// Multer
 const storage = multer.diskStorage({
 	destination: (req, file, cb) => {
 		cb(null, './public/images/productos');
@@ -33,20 +36,20 @@ router.get(
 );
 
 
-//@GET products/:id/details -> products/2/details
+//@GET products/:id/details -> products/2/details detalle de producto del usuario
 router.get(
 	'/:id/details', 
 	authMiddleware, 
 	productController.details); 
 	
 
-//@GET /products/cart
+//@GET /products/cart -> carrito
 router.get(
 	'/cart', 
 	productController.cart); 
 
 
-//@GET /products/createProduct
+//@GET /products/createProduct 
 router.get(
 	'/createProduct', 
 	authMiddleware, 

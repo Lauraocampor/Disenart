@@ -6,10 +6,13 @@ const uuid = require('uuid');
 const User = db.User;
 
 const controller = {
+
+	//@GET /users/register
 	register: (req, res) => {
 		res.render('register', { user: req.session.userLogged });
 	},
 
+	// @POST /users/register
 	processRegister: async (req, res) => {
 		try {
 			const resultValidation = validationResult(req);
@@ -61,10 +64,12 @@ const controller = {
 		}
 	},
 
+	// @GET LOGIN FORM  /users/login
 	login: (req, res) => {
 		res.render('login', { user: req.session.userLogged });
 	},
 
+	// @POST LOGIN FORM /users/login
 	loginProcess: async (req, res) => {
 		try {
 			const email = req.body.email;
@@ -134,6 +139,7 @@ const controller = {
 		}
 	},
 
+	// @GET PROFILE USER EDIT -> /users/profile/edit
 	editProfile: async (req, res) => {
 		try {
 			// console.log({ user: req.session.userLogged });
@@ -150,6 +156,7 @@ const controller = {
 		}
 	},
 
+	//@PUT PROFILE USER EDIT /users/profile/edit
 	updateProfile: async (req, res) => {
 
 	// hago las validaciones 
@@ -200,6 +207,7 @@ const controller = {
 		return res.redirect('/');
 	},
 
+	//@DELETE user /users/profile/delete
 	delete: async (req, res) => {
 		try {
 			console.log('usuario a eliminar' + { user: req.session.userLogged });
@@ -219,6 +227,7 @@ const controller = {
 		}
 	},
 
+	//@GET ALL USERS /users/allProfiles
 	allProfiles: async (req, res) => {
 		try {
 			const allUsers = await User.findAll({ raw: true });
@@ -233,6 +242,7 @@ const controller = {
 		}
 	},
 
+	//@GET USER DETAIL  /users/profile/:id/detail
 	profileDetail: async (req, res) => {
 		try {
 			const allUsers = await User.findAll();
