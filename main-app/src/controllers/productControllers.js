@@ -4,6 +4,7 @@ const { validationResult } = require ("express-validator")
 
 const controller = {
 
+	//@GET /searching/searchResults/:category?
 	searchResults: async (req, res) => {
 		try {
 			// CATEGORY SEARCH
@@ -68,6 +69,7 @@ const controller = {
 		}
 	},
 
+	// @GET - products/:id/customer
 	customerProduct: async (req, res) => {
 		try {
 			const product = await Product.findByPk(req.params.id, {
@@ -84,7 +86,7 @@ const controller = {
 		}
 	},
 
-
+	//@GET products/:id/details
 	details: async (req, res) => {
 		try {
 			const product = await Product.findByPk(req.params.id, {
@@ -104,12 +106,14 @@ const controller = {
 		}
 	},
 
+	//@GET /products/cart
 	cart: (req, res) => {
 		res.render('cart', { user: req.session.userLogged });
 	},
 
+	//@GET /products/createProduct
 	createProduct: async (req, res) => {
-		//get
+	
 
 		try {
 			const sizes = await Size.findAll({ raw: true });
@@ -125,6 +129,7 @@ const controller = {
 		}
 	},
 
+	// @GET - /products/:id/edit
 	editProduct: async (req, res) => {
 		try {
 			const product = await Product.findByPk(req.params.id, {
@@ -148,7 +153,7 @@ const controller = {
 		}
 	},
 
-
+	// @GET /products/searching/searchResultsUser/:category?
 	searchResultsUser: async (req, res) => {
 		try {
 			// CATEGORY SEARCH
@@ -203,7 +208,7 @@ const controller = {
 			req.params.category
 				? (searchResults = await categoryResults(req.params.category))
 				: (searchResults = await queryResults(req.query.searchinfo));
-				console.log(searchResults);
+				//console.log(searchResults);
 			// RENDERER
 			res.render('searchResultsUser', {
 				searchResults,
@@ -216,7 +221,6 @@ const controller = {
 
 
 	// @POST /products
-
 	store: async (req, res) => {
 		const filenames = req.files.map((file) => file.filename);
 		let imagenDefault = 'imagen-no-disponible.jpg';
@@ -248,7 +252,7 @@ const controller = {
 			raw: true,
 		});
 
-		console.log(sizeInDb)
+		//console.log(sizeInDb)
 
 		let sizeId = sizeInDb.id_size
 
@@ -283,7 +287,7 @@ const controller = {
 			const createdProduct = await Product.create(newProduct);
 			
 			const productId = createdProduct.get('id_product');
-			console.log(newProduct)
+			//console.log(newProduct)
 			
 
 			res.redirect('/products/' + productId + '/details');
@@ -292,6 +296,7 @@ const controller = {
 		}
 	},
 
+	// @PUT /products/:id/editProduct
 	updateProduct: async (req, res) => {
 
 		// busco el producto para poder volver a mandar la vista edit en caso de error
@@ -361,7 +366,7 @@ const controller = {
 						id_product: req.params.id,
 					},
 				});
-				console.log(updatedProduct)
+				//console.log(updatedProduct)
 
 				// Redirige al producto actualizado
 				res.redirect('/products/' + req.params.id + '/details');
@@ -371,6 +376,7 @@ const controller = {
 		}
 	},
 
+	//@DELETE - /products/:id/delete
 	deleteProduct: async (req, res) => {
 		const id = Number(req.params.id);
 		try {
@@ -384,9 +390,10 @@ const controller = {
 		}
 
 		
-		res.redirect('/products//searching/searchResults');
+		res.redirect('/products/searching/searchResultsUser');
 	},
 
+	// @GET /products/color
 	createColour: async (req, res) => {
 		try {
 			const colours = await Colour.findAll({ raw: true });
@@ -400,6 +407,7 @@ const controller = {
 		}
 	},
 
+	// @POST  /products/color
 	createdColour: async (req, res) => {
 		const newColour = {
 			colour: req.body.productColor,
@@ -417,6 +425,7 @@ const controller = {
 		}
 	},
 
+	// @GET  /products/size
 	createSize: async (req, res) => {
 		try {
 			const sizes = await Size.findAll({ raw: true });
@@ -430,6 +439,7 @@ const controller = {
 		}
 	},
 
+	//  @POST /products/size
 	createdSize: async (req, res) => {
 		
 		const newSize = {

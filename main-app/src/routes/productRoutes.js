@@ -34,39 +34,90 @@ router.get(
 
 
 //@GET products/:id/details -> products/2/details
-router.get('/:id/details', authMiddleware, productController.details); // cambiado
-router.get('/cart', productController.cart); // no cambiado
+router.get(
+	'/:id/details', 
+	authMiddleware, 
+	productController.details); 
+	
+
+//@GET /products/cart
+router.get(
+	'/cart', 
+	productController.cart); 
 
 
-/*** CREATE ONE PRODUCT ***/
-router.get('/createProduct', authMiddleware, productController.createProduct); // cambiado
-router.post('/', upload.any('productImages'), validateProductMiddleware, productController.store); // cambiado
+//@GET /products/createProduct
+router.get(
+	'/createProduct', 
+	authMiddleware, 
+	productController.createProduct); 
+
+
+//@POST /products
+router.post(
+	'/', 
+	upload.any('productImages'), 
+	validateProductMiddleware, 
+	productController.store);
+
 
 // @GET - /products/:id/edit
-router.get('/:id/editProduct', authMiddleware, productController.editProduct); // cambiado
+router.get(
+	'/:id/editProduct', 
+	authMiddleware, 
+	productController.editProduct);
+
+
+// @PUT /products/:id/editProduct
 router.put(
 	'/:id/editProduct',
 	upload.any('productImages'), 
 	validateProductMiddleware, 
 	productController.updateProduct,
 );
+
+
 //@DELETE - /products/:id/delete --
-router.delete('/:id/delete', authMiddleware, productController.deleteProduct); // cambiado
+router.delete(
+	'/:id/delete', 
+	authMiddleware, 
+	productController.deleteProduct);
 
 
-// @GET - LISTA DE PRODUCTS USER - VER PRODUCTO
+// @GET /products/searching/searchResultsUser/:category? -
+// LISTA DE PRODUCTS USER - VER PRODUCTO
 router.get(
-	'/searching/searchResultsUser/:category?', authMiddleware,
+	'/searching/searchResultsUser/:category?', 
+	authMiddleware,
 	productController.searchResultsUser,
 ); 
 
 
-// @GET y @POST - color
-router.get('/colours', authMiddleware, productController.createColour);
-router.post('/colours', authMiddleware, productController.createdColour);
+// @GET  /products/color
+router.get(
+	'/colours', 
+	authMiddleware, 
+	productController.createColour);
 
-// @GET y @POST - size
-router.get('/sizes', authMiddleware, productController.createSize);
-router.post('/sizes', authMiddleware, productController.createdSize);
+
+// @POST - /products/color
+router.post(
+	'/colours', 
+	authMiddleware, 
+	productController.createdColour);
+
+
+// @GET /products/size
+router.get(
+	'/sizes', 
+	authMiddleware, 
+	productController.createSize);
+
+
+// @POST - /products/size
+router.post(
+	'/sizes', 
+	authMiddleware, 
+	productController.createdSize);
 
 module.exports = router;
