@@ -20,9 +20,9 @@
   <main class="itemBox">
     <% for( let i = 0; i < searchResults.length; i++ ) { %>
     <article class="itemBox--product">
-      <a href="/products/<%= searchResults[i].id_product %>/customer" class="itemBox--anchor">
+      <a href="/products/<%= searchResults[i].id_product %>/details" class="itemBox--anchor">
         <img src="/../images/productos/<%= searchResults[i].image_product[0] %>" alt="<%= searchResults[i].name_product %>" class="itemBox--image" />
-        <h4 class="search-buyBottom">COMPRAR</h4>
+        <h4 class="search-buyBottom">VER PRODUCTO</h4>
       </a>
       <h2 class="search-nameProduct"><%= searchResults[i].name_product %></h2>
       <p class="price-description">
