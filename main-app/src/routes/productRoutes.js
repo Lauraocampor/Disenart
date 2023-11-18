@@ -19,10 +19,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// @GET - LISTA DE PRODUCTS CLIENTE - COMPRAR
+// @GET - LISTA DE PRODUCTS CLIENTE - COMPRAR - chequear si authdmiddleware esta ok acá
 router.get(
 	'/searching/searchResults/:category?', 
-	productController.searchResults,
+	productController.searchResults, 
 ); 
 
 // @GET - products/:id/customer -> products/1/customer visualizacion de productos del lado del cliente
