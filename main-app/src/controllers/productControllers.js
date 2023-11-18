@@ -3,84 +3,6 @@ const { Product, Colour, Size } = require('../database/models');
 const { validationResult } = require ("express-validator")
 
 const controller = {
-	details: async (req, res) => {
-		try {
-			const product = await Product.findByPk(req.params.id, {
-				raw: true,
-				include: ['size', 'colour'],
-				nest: true,
-			});
-
-			product.image_product = JSON.parse(product.image_product);
-			//console.log(product);
-			res.render('createdProductDetail', {
-				product,
-				user: req.session.userLogged,
-			});
-		} catch (error) {
-			console.log(error);
-		}
-	},
-
-	cart: (req, res) => {
-		res.render('cart', { user: req.session.userLogged });
-	},
-
-	createProduct: async (req, res) => {
-		//get
-
-		try {
-			const sizes = await Size.findAll({ raw: true });
-			const colours = await Colour.findAll({ raw: true });
-			//console.log(colours);
-			res.render('createProduct', {
-				sizes,
-				colours,
-				user: req.session.userLogged,
-			});
-		} catch (error) {
-			console.log(error);
-		}
-	},
-
-	editProduct: async (req, res) => {
-		try {
-			const product = await Product.findByPk(req.params.id, {
-				raw: true,
-				include: ['size', 'colour'],
-				nest: true,
-			});
-			const colours = await Colour.findAll();
-			const sizes = await Size.findAll();
-			product.image_product = JSON.parse(product.image_product);
-
-			res.render('editProduct', {
-				product,
-				colours,
-				sizes,
-				oldData: req.body,
-				user: req.session.userLogged,
-			});
-		} catch (error) {
-			console.log(error);
-		}
-	},
-
-	userProduct: async (req, res) => {
-		try {
-			const product = await Product.findByPk(req.params.id, {
-				raw: true,
-				include: ['size', 'colour'],
-				nest: true,
-			});
-
-			product.image_product = JSON.parse(product.image_product);
-
-			res.render('details', { product, user: req.session.userLogged });
-		} catch (error) {
-			console.log(error);
-		}
-	},
 
 	searchResults: async (req, res) => {
 		try {
@@ -146,6 +68,153 @@ const controller = {
 		}
 	},
 
+	customerProduct: async (req, res) => {
+		try {
+			const product = await Product.findByPk(req.params.id, {
+				raw: true,
+				include: ['size', 'colour'],
+				nest: true,
+			});
+	
+			product.image_product = JSON.parse(product.image_product);
+	
+			res.render('details', { product });
+		} catch (error) {
+			console.log(error);
+		}
+	},
+
+
+	details: async (req, res) => {
+		try {
+			const product = await Product.findByPk(req.params.id, {
+				raw: true,
+				include: ['size', 'colour'],
+				nest: true,
+			});
+
+			product.image_product = JSON.parse(product.image_product);
+			//console.log(product);
+			res.render('createdProductDetail', {
+				product,
+				user: req.session.userLogged,
+			});
+		} catch (error) {
+			console.log(error);
+		}
+	},
+
+	cart: (req, res) => {
+		res.render('cart', { user: req.session.userLogged });
+	},
+
+	createProduct: async (req, res) => {
+		//get
+
+		try {
+			const sizes = await Size.findAll({ raw: true });
+			const colours = await Colour.findAll({ raw: true });
+			//console.log(colours);
+			res.render('createProduct', {
+				sizes,
+				colours,
+				user: req.session.userLogged,
+			});
+		} catch (error) {
+			console.log(error);
+		}
+	},
+
+	editProduct: async (req, res) => {
+		try {
+			const product = await Product.findByPk(req.params.id, {
+				raw: true,
+				include: ['size', 'colour'],
+				nest: true,
+			});
+			const colours = await Colour.findAll();
+			const sizes = await Size.findAll();
+			product.image_product = JSON.parse(product.image_product);
+
+			res.render('editProduct', {
+				product,
+				colours,
+				sizes,
+				oldData: req.body,
+				user: req.session.userLogged,
+			});
+		} catch (error) {
+			console.log(error);
+		}
+	},
+
+
+	searchResultsUser: async (req, res) => {
+		try {
+			// CATEGORY SEARCH
+			const categoryResults = async (category) => {
+				// category normalization
+				category = category.toLowerCase();
+				// product list invocation and image name organizing
+				const products = await Product.findAll();
+				products.forEach((product) => {
+					product.image_product = JSON.parse(product.image_product);
+				});
+				// product list selection
+				let productsFiltered = products.filter((product) => {
+					let searchTerm = product.dataValues.name_product.toLowerCase(); // db name normalization
+					return searchTerm.includes(category);
+				});
+				// response formatting
+				for (let index = 0; index < productsFiltered.length; index++) {
+					productsFiltered[index] = productsFiltered[index].dataValues;
+				}
+				// ending
+				return productsFiltered;
+			};
+			// QUERY SEARCH
+			const queryResults = async (query) => {
+				// product list invocation and image name organizing
+				const products = await Product.findAll();
+				products.forEach((product) => {
+					product.image_product = JSON.parse(product.image_product);
+				});
+				// product list formatting
+				for (let index = 0; index < products.length; index++) {
+					products[index] = products[index].dataValues;
+				}
+				// value regex
+				const valueCheck = (product, query) => {
+					const regex = new RegExp(query, 'i');
+					return (
+						product.name_product.match(regex) ||
+						product.description_product.match(regex)
+					);
+				};
+				// product filtering
+				const productsFiltered = products.filter((product) =>
+					valueCheck(product, query),
+				);
+				// ending
+				return productsFiltered;
+			};
+			// VALUE CREATOR
+			let searchResults = [];
+			req.params.category
+				? (searchResults = await categoryResults(req.params.category))
+				: (searchResults = await queryResults(req.query.searchinfo));
+				console.log(searchResults);
+			// RENDERER
+			res.render('searchResultsUser', {
+				searchResults,
+				user: req.session.userLogged,
+			});
+		} catch (error) {
+			console.log(error);
+		}
+	},
+
+
 	// @POST /products
 
 	store: async (req, res) => {
@@ -163,10 +232,32 @@ const controller = {
 			filenames.push(imagenDefault);
 		}
 
+		const colour = req.body.productColor
+
+		let colourInDb = await Colour.findOne({
+			where: { colour: colour },
+			raw: true,
+		});
+
+		let colourId = colourInDb.id_colour
+
+		const size = req.body.productSize
+
+		let sizeInDb = await Size.findOne({
+			where: { size: size },
+			raw: true,
+		});
+
+		console.log(sizeInDb)
+
+		let sizeId = sizeInDb.id_size
+
+
+
 		const newProduct = {
 			name_product: req.body.productName,
-			colour_id: req.body.productColor,
-			size_id: req.body.productSize,
+			colour_id: colourId,
+			size_id: sizeId,
 			price_product: req.body.productPrice,
 			quantity_product: req.body.productStock,
 			description_product: req.body.productDescription,
@@ -192,6 +283,7 @@ const controller = {
 			const createdProduct = await Product.create(newProduct);
 			
 			const productId = createdProduct.get('id_product');
+			console.log(newProduct)
 			
 
 			res.redirect('/products/' + productId + '/details');
@@ -256,9 +348,9 @@ const controller = {
 				const updatedImages = imagesToKeep.concat(imagesToUpdate);
 				const updatedProduct = {
 					name_product: req.body.productName,
-					colour_id: req.body.productColor,
-					size_id: req.body.productSize,
-					price_product: req.body.productPrice,
+					colour_id: Number(req.body.productColor),
+					size_id: Number(req.body.productSize),
+					price_product: (req.body.productPrice),
 					quantity_product: req.body.productStock,
 					description_product: req.body.productDescription,
 					image_product: JSON.stringify(updatedImages),
@@ -269,6 +361,7 @@ const controller = {
 						id_product: req.params.id,
 					},
 				});
+				console.log(updatedProduct)
 
 				// Redirige al producto actualizado
 				res.redirect('/products/' + req.params.id + '/details');
@@ -279,7 +372,7 @@ const controller = {
 	},
 
 	deleteProduct: async (req, res) => {
-		const id = req.params.id;
+		const id = Number(req.params.id);
 		try {
 			await Product.destroy({
 				where: {

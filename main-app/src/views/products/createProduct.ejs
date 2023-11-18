@@ -30,6 +30,7 @@
           </option>
           <% }) %>
         </select>
+        <button class="create-color-size-button" onclick="redireccionarColor()" >Crear color</button>
       </section>
       <!-- BACKEND COLOR ERROR -->
 	  <% if (locals.errors && errors.productColor ) { %>
@@ -48,6 +49,7 @@
           </option>
           <% }) %>
         </select>
+          <button class="create-color-size-button" onclick="redireccionarTalle()" >Crear talle</button>
       </section>
       <!-- BACKEND SIZE ERROR -->
 	    <% if (locals.errors && errors.productSize ) { %>
@@ -102,7 +104,7 @@
       <!--SUBMIT-->
       <input id="createProduct-finish" type="submit" value="Crear producto" />
     </form>
-    <div class="buttons-color-size">
+<!--     <div class="buttons-color-size">
       <a href="/products/colours">
         <button class="create-color-size-button">Crear color</button>
       </a>
@@ -110,7 +112,7 @@
       <a href="/products/sizes">
         <button class="create-color-size-button">Crear talle</button>
       </a>
-    </div>
+    </div> -->
   </main>
 
   <!-- FOOTER -->
@@ -118,6 +120,16 @@
   <!-- SCRIPT -->
   <script src="/js/header.js"></script>
   <script src="/js/createProduct.js"></script>
+          <script>
+            function redireccionarTalle() {
+                window.location.href = "/products/sizes";
+            }
+        </script>
+        <script>
+          function redireccionarColor() {
+              window.location.href = "/products/colours";
+          }
+      </script>
 </body>
 
 </html>

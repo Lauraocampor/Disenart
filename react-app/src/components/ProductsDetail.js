@@ -67,14 +67,14 @@ function ProductsDetail() {
       <p>ESPECIFICACIONES: {products.description_product}</p>
       <br />
       <section>
-        <a className="botonModificar" href={`/products/edit/${products.id}`}>
+        <a className="botonModificar" href={`/products/edit/${products.id_product}`}>
           Modificar
         </a>
-        <a className="botonBorrar" href={`/products/delete/${products.id}`}>
+        <a className="botonBorrar" href={`/products/delete/${products.id_product}`}>
           Borrar
         </a>
         <a className="botonVolver" href="/products">
-          Listado de Productos
+          Productos
         </a>
       </section>
     </div>

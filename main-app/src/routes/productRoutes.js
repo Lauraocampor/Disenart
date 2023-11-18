@@ -4,6 +4,9 @@ const multer = require('multer');
 
 const productController = require('../controllers/productControllers');
 const validateProductMiddleware = require('../middlewares/validateProductMiddleware');
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
+
 
 const storage = multer.diskStorage({
 	destination: (req, file, cb) => {
@@ -16,17 +19,31 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
+// @GET - LISTA DE PRODUCTS CLIENTE - COMPRAR
+router.get(
+	'/searching/searchResults/:category?', 
+	productController.searchResults,
+); 
+
+// @GET - products/:id/customer -> products/1/customer visualizacion de productos del lado del cliente
+router.get(
+	'/:id/customer',
+	upload.any('productImages'), guestMiddleware,
+	productController.customerProduct,
+);
+
+
 //@GET products/:id/details -> products/2/details
-router.get('/:id/details', productController.details); // cambiado
+router.get('/:id/details', authMiddleware, productController.details); // cambiado
 router.get('/cart', productController.cart); // no cambiado
 
 
 /*** CREATE ONE PRODUCT ***/
-router.get('/createProduct', productController.createProduct); // cambiado
+router.get('/createProduct', authMiddleware, productController.createProduct); // cambiado
 router.post('/', upload.any('productImages'), validateProductMiddleware, productController.store); // cambiado
 
 // @GET - /products/:id/edit
-router.get('/:id/editProduct', productController.editProduct); // cambiado
+router.get('/:id/editProduct', authMiddleware, productController.editProduct); // cambiado
 router.put(
 	'/:id/editProduct',
 	upload.any('productImages'), 
@@ -34,31 +51,22 @@ router.put(
 	productController.updateProduct,
 );
 //@DELETE - /products/:id/delete --
-router.delete('/:id/delete', productController.deleteProduct); // cambiado
+router.delete('/:id/delete', authMiddleware, productController.deleteProduct); // cambiado
 
-// @GET - products/:id/cliente -> products/1 visualizacion de productos del lado del cliente
-router.get(
-	'/:id/cliente',
-	upload.any('productImages'),
-	productController.userProduct,
-); // cambiado
 
-// @GET - LISTA DE PRODUCTS
+// @GET - LISTA DE PRODUCTS USER - VER PRODUCTO
 router.get(
-	'/searching/searchResults/:category?',
-	productController.searchResults,
-); // ok cambiado el ejs, no el controller
+	'/searching/searchResultsUser/:category?', authMiddleware,
+	productController.searchResultsUser,
+); 
+
 
 // @GET y @POST - color
-router.get('/colours', productController.createColour);
-router.post('/colours', productController.createdColour);
-
-// @GET y @POST - color
-router.get('/colours', productController.createColour);
-router.post('/colours', productController.createdColour);
+router.get('/colours', authMiddleware, productController.createColour);
+router.post('/colours', authMiddleware, productController.createdColour);
 
 // @GET y @POST - size
-router.get('/sizes', productController.createSize);
-router.post('/sizes', productController.createdSize);
+router.get('/sizes', authMiddleware, productController.createSize);
+router.post('/sizes', authMiddleware, productController.createdSize);
 
 module.exports = router;

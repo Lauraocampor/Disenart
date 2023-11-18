@@ -99,7 +99,7 @@ body {
 }
 
 .create-color-size-button {
-	width: 80%;
+/* 	width: 80%;
 	margin-left: 10%;
 	background-color: #bf9a51;
 	color: #0d3a61;
@@ -108,7 +108,16 @@ body {
 	border: none;
 	border-radius: 5px;
 	margin-top: 20px;
-	transition: all 500ms;
+	transition: all 500ms; */
+
+	width: 150px;
+    margin-left: 20%;
+    color: #0d3a61;
+    font-weight: bolder;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    transition: all 500ms
 }
 
 .create-color-size-button:hover {

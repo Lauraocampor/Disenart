@@ -92,7 +92,7 @@ const controller = {
 						});
 					}
 
-					return res.redirect('/');
+					return res.redirect('/users/profile');
 				}
 
 				return res.render('login', {

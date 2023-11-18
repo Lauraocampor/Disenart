@@ -21,8 +21,8 @@ const userControllerAPI = {
         const totalCount = await db.User.count();
         const totalPages = Math.ceil(totalCount / itemsPerPage);
   
-        const nextPage = page < totalPages ? 'http://localhost:${(process.env.PORT || 3000)}/api/users/?page=${page + 1}' : null;
-        const prevPage = page > 1 ? 'http://localhost:${(process.env.PORT || 3000)}/api/users/?page=${page - 1}' : null;
+        const nextPage = page < totalPages ? `http://localhost:${(process.env.PORT || 3000)}/api/users/?page=${page + 1}` : null;
+        const prevPage = page > 1 ? `http://localhost:${(process.env.PORT || 3000)}/api/users/?page=${page - 1}` : null;
   
         statusCode = users.length > 0 ? statusCode : 204;
   
@@ -32,7 +32,7 @@ const userControllerAPI = {
             id: user.id_user,
             name: user.name_user,
             email: user.email_user,
-            detail: 'http://localhost:${(process.env.PORT || 3000)}/api/users/${user.id_user}/detail',
+            detail: `http://localhost:${(process.env.PORT || 3000)}/api/users/${user.id_user}/detail`,
           })),
           meta: {
             status: statusCode,
@@ -83,7 +83,7 @@ const userControllerAPI = {
             last_name: user.lastname_user,
             email: user.email_user,
             birthday: user.bdate_user,
-            image: '/api/users/profile-image/${userId}',
+            image: `/api/users/profile-image/${userId}`,
           };
     
           res.json(response);

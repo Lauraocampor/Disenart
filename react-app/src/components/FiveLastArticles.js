@@ -16,8 +16,6 @@ function LastArticlesInDb() {
             // Obtengo últimos 5 productos de la lista
             const lastProductsFromList = data.products.slice(-5);
 
-            console.log(lastProductsFromList)
-
             // Fetch los últimos 5 productos
             const productPromises = lastProductsFromList.map(async (product) => {
             const productResponse = await fetch(`/api/products/${product.id_product}`);
@@ -61,8 +59,8 @@ function LastArticlesInDb() {
                         />
                     </div>
                     <p>{product.description_product}</p>
-                    <a className="btn btn-danger" target="_blank" rel="noreferrer" href={`/products/${product.id_product}/details`}>
-                        Ver detalle del producto
+                    <a className="btn btn-danger" target="_blank" rel="noreferrer" href={`/products/detail/${product.id_product}`}>
+                        Ver detalle del producto 
                     </a>
                     {index < lastProducts.length - 1 && <hr />} {/* Agregar separador entre productos */}
                     </div>

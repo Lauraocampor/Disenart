@@ -13,7 +13,7 @@
             <!--NAME-->
             <div class="editProduct-title-productName">
                 <label class="editProduct-name" for="productName">Nombre del producto</label>
-                <i class="fa-solid fa-pen-to-square editButton"></i></button>
+                <i class="fa-solid fa-pen-to-square editButton"></i>
             </div>
             <input id="editProduct-name" type="text" name="productName" required
             <% if (locals.errors && errors.productName) { %>
@@ -41,6 +41,7 @@
                             <% } %>
                         <% }) %>
                 </select>
+                <button class="create-color-size-button" onclick="redireccionarColor()" >Crear color</button>
             </section>
             <!-- FRONTEND COLOR ERROR -->
             <div class="text-danger" id="editProduct-colorError"></div>
@@ -59,6 +60,7 @@
                         <% } %>
                     <% }) %>
                 </select>
+                <button class="create-color-size-button" onclick="redireccionarTalle()" >Crear talle</button>
             </section>
             <!-- FRONTEND SIZE ERROR -->
             <div class="text-danger" id="editProduct-sizeError"></div>
@@ -134,7 +136,7 @@
             <input id="editProduct-finish" type="submit" value="Producto editado">
         </form>
         
-        <div class="buttons-color-size">
+<!--         <div class="buttons-color-size">
             <a href="/products/colours">
                 <button class="create-color-size-button">Crear color</button>
             </a>
@@ -142,7 +144,7 @@
             <a href="/products/sizes">
                 <button class="create-color-size-button">Crear talle</button>
             </a>
-        </div>
+        </div> -->
     </main>
 
     <!-- FOOTER -->
@@ -151,6 +153,17 @@
     <!-- SCRIPT -->
     <script src="js/header.js"></script>
     <script src="js/editProduct.js"></script>
+    <script src="/js/createProduct.js"></script>
+    <script>
+      function redireccionarTalle() {
+          window.location.href = "/products/sizes";
+      }
+  </script>
+  <script>
+    function redireccionarColor() {
+        window.location.href = "/products/colours";
+    }
+</script>
 </body>
 
 </html>

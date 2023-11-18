@@ -53,6 +53,11 @@
           <a href="/products/<%= product.id_product%>/editProduct">
             <button id="edit-delete-button">Editar producto</button>
           </a>
+          <a href="//products/searching/searchResultsUser">
+            <button id="edit-delete-button">Ver todos los productos</button>
+          </a>
+          <br>
+           <br>
           <form action="/products/<%= product.id_product%>/delete?_method=DELETE" method="post">
             <input id="edit-delete-button" type="submit" value="Eliminar producto" />
           </form>
