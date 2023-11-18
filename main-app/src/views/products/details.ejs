@@ -50,8 +50,17 @@
 								<button class="option"><%- product.size.size %></button>
 							</section>
 							<h3 id="precio">$<%= product.price_product %></h3>
+
+							<h4 class="info">Imagen personalizada </h4>
+							<section class="main-option">
+								<input
+								type="file" name="productDesign"
+								accept=".jpg, .jpeg, .png, .gif" 
+								 />
+							</section>
 						</section>
-						<a href="#" onclick="openModal('modal3')">
+						<br>
+						<a href="/products/cart" >
 							<button id="finish">Comprar</button></a
 						>
 						<h2 id="description">Descripción del Producto</h2>

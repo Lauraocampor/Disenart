@@ -73,7 +73,7 @@ body{
 }
 
 #name{
-     font-size: 40px;
+     font-size: 35px;
      margin-bottom: 5px;
      display: flex;
     justify-content:center;
@@ -116,7 +116,7 @@ margin-right: 10%;
 #precio{
     margin-left: 10%;
     margin-top: 10px;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 
@@ -141,12 +141,12 @@ margin-right: 10%;
 }
 #description{
     margin-left: 10%;
-    font-size: 15px;
+    font-size:20px;
 }
 
 #information-product{
     margin: 0 10%;
-    font-size: 10px;
+    font-size: 15px;
     margin-bottom: 20px;
  
 }
@@ -249,7 +249,7 @@ margin-right: 10%;
     
     .info{
         width: 50%;
-        font-size: 15px;
+        font-size: 20px;
         margin-bottom: 1px;
         margin-top: 5px;
         font-family: 'Roboto Condensed';
@@ -309,7 +309,7 @@ margin-right: 10%;
     
     #information-product{
         margin: 0 10%;
-        font-size: 10px;
+        font-size: 13px;
      
     }
 }
