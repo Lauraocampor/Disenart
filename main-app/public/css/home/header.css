@@ -140,16 +140,21 @@
 
 .about-user__listWrap {
 	z-index: 1;
-	position: absolute;
+	position: relative;
 	background-color: var(--oliveCream);
-	top: 12vh;
+	top: 20vh;
 	right: 0vw;
 	height: max-content;
 	width: max-content;
 }
 
+.about-user__wrap {
+	margin: 12%;
+	margin-bottom: 15%;
+}
+
 .about-user-toggler {
-	visibility: hidden;
+	display: none;
 }
 
 .about-user__listOfLinks {
