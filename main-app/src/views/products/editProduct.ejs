@@ -1,142 +1,123 @@
 <!-- HTML -->
 <!DOCTYPE html>
 <html lang="es">
-    <%- include("../partials/head") %>
-    <body class="bodyXL">
-    <!-- HEADER -->
-    <% const headerData = {linkHead_01: {name: "Twitter", url: "https://twitter.com/"}, linkHead_02: {name: "Instagram", url: "https://instagram.com/"}, linkHead_03: {name: "Google Maps", url: "https://www.google.com/maps/"},  linkHead_04: {name: "Youtube", url: "https://youtube.com/"}, linkHead_05: {name: "Facebook", url: "https://facebook.com/"},}; %>
-    <%- include('../partials/header', headerData) %>
-    <!-- MAIN -->
-    <main class="main-editProduct">
-        <!-- FORMULARIO EDIT PRODUCT -->
-        <form id="editProductForm" class="editProduct" action="/products/<%=product.id_product%>/editProduct?_method=PUT" method="post" enctype="multipart/form-data">
-            <!--NAME-->
-            <div class="editProduct-title-productName">
-                <label class="editProduct-name" for="productName">Nombre del producto</label>
-                <i class="fa-solid fa-pen-to-square editButton"></i>
-            </div>
-            <input id="editProduct-name" type="text" name="productName" required
-            <% if (locals.errors && errors.productName) { %>
-                class="is-invalid"
-            <% } %>
-            value="<%= locals.errors && errors.productName ? (oldData ? oldData.productName : product.name_product) : product.name_product %>" />
-        <!-- BACKEND NAME ERROR -->
-            <% if (locals.errors && errors.productName) { %>
-            <div class="text-danger"><%= errors.productName.msg %></div>
-        <% } %>            
-        <!-- FRONTEND NAME ERROR -->
-            <div class="text-danger" id="editProduct-nameError"></div>
-            <!--COLOR-->
-            <div class="editProduct-title">
-                <label class="editProduct-info" for="productColor1">Color</label>
-                <i class="fa-solid fa-pen-to-square editButton"></i></button>
-            </div>
-            <section class="editProduct-main-option">
-                <select class="editProduct-main-option-size" name="productColor" id="editProduct-color" required>
-                        <% colours.forEach(colour => { %>
-                            <% if (colour.id_colour === product.colour_id) { %>
-                                <option selected value="<%= colour.id_colour %>"><%= colour.colour %></option>
-                            <% } else { %>
-                                <option value="<%= colour.id_colour %>"><%= colour.colour %></option>
-                            <% } %>
-                        <% }) %>
-                </select>
-                <button class="create-color-size-button" onclick="redireccionarColor()" >Crear color</button>
-            </section>
-            <!-- FRONTEND COLOR ERROR -->
-            <div class="text-danger" id="editProduct-colorError"></div>
-            <!--SIZE-->
-            <div class="editProduct-title">
-                <label class="editProduct-info" for="productSize">Talle</label>
-                <i class="fa-solid fa-pen-to-square editButton"></i></button>
-            </div>
-            <section class="editProduct-main-option">
-                <select class="editProduct-main-option-size" name="productSize" id="editProduct-size" required>
-                    <% sizes.forEach(size => { %>
-                        <% if (size.id_size === product.size_id) { %>
-                            <option selected value="<%= size.id_size %>"><%= size.size %></option>
-                        <% } else { %>
-                            <option value="<%= size.id_size %>"><%= size.size %></option>
-                        <% } %>
-                    <% }) %>
-                </select>
-                <button class="create-color-size-button" onclick="redireccionarTalle()" >Crear talle</button>
-            </section>
-            <!-- FRONTEND SIZE ERROR -->
-            <div class="text-danger" id="editProduct-sizeError"></div>
-            <!--PRICE-->
-            <div class="editProduct-title">
-                <label class="editProduct-info" for="productPrice">Precio</label>
-                <i class="fa-solid fa-pen-to-square editButton"></i></button>
-            </div>
-            <input id="productPrice" type="number" name="productPrice" required
-            <% if (locals.errors && errors.productPrice) { %>
-                class="is-invalid"
-            <% } %>
-            value="<%= locals.errors && errors.productPrice ? (oldData ? oldData.productPrice : product.price_product) : product.price_product %>" />
-        <!-- BACKEND PRICE ERROR -->
-            <% if (locals.errors && errors.productPrice) { %>
-            <div class="text-danger"><%= errors.productPrice.msg %></div>
-        <% } %>             
-        <!-- FRONTEND PRICE ERROR -->
-            <div class="text-danger" id="productPriceError"></div>
-            <!--DESCRIPTION-->
-            <div class="editProduct-title">
-                <label class="editProduct-info" for="productDescription">Descripción</label>
-                <i class="fa-solid fa-pen-to-square editButton"></i></button>
-            </div>
-            <textarea id="editProduct-information-product" name="productDescription" required
-            <% if (locals.errors && errors.productDescription) { %>
-                class="is-invalid"
-            <% } %>
-        ><%= locals.errors && errors.productDescription ? (oldData ? oldData.productDescription : product.description_product) : product.description_product %></textarea>
-        <!-- BACKEND DESCRIPTION ERROR -->
-        <% if (locals.errors && errors.productDescription) { %>
-            <div class="text-danger"><%= errors.productDescription.msg %></div>
-        <% } %>             
-        <!-- FRONTEND DESCRIPTION ERROR -->
-            <div class="text-danger" id="editProduct-information-productError"></div>
-            <!--STOCK-->
-            <div class="editProduct-title">
-                <label class="editProduct-info" for="productStock">Cantidad disponible</label>
-                <i class="fa-solid fa-pen-to-square editButton"></i></button>
-            </div>
-            <input type="number" value="<%- product.quantity_product %>" name="productStock" placeholder="12" id="editProduct-stock">
-            <!-- FRONTEND STOCK ERROR -->
-            <div class="text-danger" id="editProduct-stockError"></div>
-            <!--IMAGES-->
-            <div class="editProduct-title">
-                <label class="editProduct-info" for="productImages">Fotos del producto</label>
-                <i class="fa-solid fa-pen-to-square editButton"></i></button>
+<%- include("../partials/head") %>
 
-                <section class="createdProduct-img">
-                    <% product.image_product.forEach(filename=> { %>
-                    <img
-                        class="createdProduct-img-files"
-                        src="/images/productos/<%= filename %>"
-                        width="20%"
-                    />
-                    <% }) %>
-                </section>
+<body class="bodyXL">
+  <!-- HEADER -->
+  <% const headerData = {linkHead_01: {name: "Twitter", url: "https://twitter.com/"}, linkHead_02: {name: "Instagram", url: "https://instagram.com/"}, linkHead_03: {name: "Google Maps", url: "https://www.google.com/maps/"},  linkHead_04: {name: "Youtube", url: "https://youtube.com/"}, linkHead_05: {name: "Facebook", url: "https://facebook.com/"},}; %>
+  <%- include('../partials/header', headerData) %>
+  <!-- MAIN -->
+  <main class="main-editProduct">
+    <!-- FORMULARIO EDIT PRODUCT -->
+    <form id="editProductForm" class="editProduct" action="/products/<%=product.id_product%>/editProduct?_method=PUT" method="post" enctype="multipart/form-data">
+      <!--NAME-->
+      <div class="editProduct-title-productName">
+        <label class="editProduct-name" for="productName">Nombre del producto</label>
+        <i class="fa-solid fa-pen-to-square editButton"></i>
+      </div>
+      <input id="editProduct-name" type="text" name="productName" required <% if (locals.errors && errors.productName) { %> class="is-invalid" <% } %> value="<%= locals.errors && errors.productName ? (oldData ? oldData.productName : product.name_product) : product.name_product %>" />
+      <!-- BACKEND NAME ERROR -->
+      <% if (locals.errors && errors.productName) { %>
+      <div class="text-danger"><%= errors.productName.msg %></div>
+      <% } %>
+      <!-- FRONTEND NAME ERROR -->
+      <div class="text-danger" id="editProduct-nameError"></div>
+      <!--COLOR-->
+      <div class="editProduct-title">
+        <label class="editProduct-info" for="productColor1">Color</label>
+        <i class="fa-solid fa-pen-to-square editButton"></i></button>
+      </div>
+      <section class="editProduct-main-option">
+        <select class="editProduct-main-option-size" name="productColor" id="editProduct-color" required>
+          <% colours.forEach(colour => { %>
+          <% if (colour.id_colour === product.colour_id) { %>
+          <option selected value="<%= colour.id_colour %>"><%= colour.colour %></option>
+          <% } else { %>
+          <option value="<%= colour.id_colour %>"><%= colour.colour %></option>
+          <% } %>
+          <% }) %>
+        </select>
+        <button class="create-color-size-button" onclick="redireccionarColor()">Crear color</button>
+      </section>
+      <!-- FRONTEND COLOR ERROR -->
+      <div class="text-danger" id="editProduct-colorError"></div>
+      <!--SIZE-->
+      <div class="editProduct-title">
+        <label class="editProduct-info" for="productSize">Talle</label>
+        <i class="fa-solid fa-pen-to-square editButton"></i></button>
+      </div>
+      <section class="editProduct-main-option">
+        <select class="editProduct-main-option-size" name="productSize" id="editProduct-size" required>
+          <% sizes.forEach(size => { %>
+          <% if (size.id_size === product.size_id) { %>
+          <option selected value="<%= size.id_size %>"><%= size.size %></option>
+          <% } else { %>
+          <option value="<%= size.id_size %>"><%= size.size %></option>
+          <% } %>
+          <% }) %>
+        </select>
+        <button class="create-color-size-button" onclick="redireccionarTalle()">Crear talle</button>
+      </section>
+      <!-- FRONTEND SIZE ERROR -->
+      <div class="text-danger" id="editProduct-sizeError"></div>
+      <!--PRICE-->
+      <div class="editProduct-title">
+        <label class="editProduct-info" for="productPrice">Precio</label>
+        <i class="fa-solid fa-pen-to-square editButton"></i></button>
+      </div>
+      <input id="productPrice" type="number" name="productPrice" required <% if (locals.errors && errors.productPrice) { %> class="is-invalid" <% } %> value="<%= locals.errors && errors.productPrice ? (oldData ? oldData.productPrice : product.price_product) : product.price_product %>" />
+      <!-- BACKEND PRICE ERROR -->
+      <% if (locals.errors && errors.productPrice) { %>
+      <div class="text-danger"><%= errors.productPrice.msg %></div>
+      <% } %>
+      <!-- FRONTEND PRICE ERROR -->
+      <div class="text-danger" id="productPriceError"></div>
+      <!--DESCRIPTION-->
+      <div class="editProduct-title">
+        <label class="editProduct-info" for="productDescription">Descripción</label>
+        <i class="fa-solid fa-pen-to-square editButton"></i></button>
+      </div>
+      <textarea id="editProduct-information-product" name="productDescription" required <% if (locals.errors && errors.productDescription) { %> class="is-invalid" <% } %>><%= locals.errors && errors.productDescription ? (oldData ? oldData.productDescription : product.description_product) : product.description_product %></textarea>
+      <!-- BACKEND DESCRIPTION ERROR -->
+      <% if (locals.errors && errors.productDescription) { %>
+      <div class="text-danger"><%= errors.productDescription.msg %></div>
+      <% } %>
+      <!-- FRONTEND DESCRIPTION ERROR -->
+      <div class="text-danger" id="editProduct-information-productError"></div>
+      <!--STOCK-->
+      <div class="editProduct-title">
+        <label class="editProduct-info" for="productStock">Cantidad disponible</label>
+        <i class="fa-solid fa-pen-to-square editButton"></i></button>
+      </div>
+      <input type="number" value="<%- product.quantity_product %>" name="productStock" placeholder="12" id="editProduct-stock">
+      <!-- FRONTEND STOCK ERROR -->
+      <div class="text-danger" id="editProduct-stockError"></div>
+      <!--IMAGES-->
+      <div class="editProduct-title">
+        <label class="editProduct-info" for="productImages">Fotos del producto</label>
+        <i class="fa-solid fa-pen-to-square editButton"></i></button>
 
-            </div>            
-            <input type="file"  name="productImages" accept=".jpg, .jpeg, .png, .gif" id="editProduct-images" multiple 
-            <% if (locals.errors && errors.productImages) { %>
-                class="is-invalid"
-            <% } %>
-            value="<%= locals.errors && errors.productImages ? (oldData ? oldData.productImages : product.image_product) : product.image_product %>" />
-        <!-- BACKEND IMAGES ERROR -->
-            <% if (locals.errors && errors.productImages) { %>
-            <div class="text-danger"><%= errors.productImages.msg %></div>
-        <% } %>            
+        <section class="createdProduct-img">
+          <% product.image_product.forEach(filename=> { %>
+          <img class="createdProduct-img-files" src="/images/productos/<%= filename %>" width="20%" />
+          <% }) %>
+        </section>
 
-            <!-- FRONTEND IMAGES ERROR -->
-            <div class="text-danger" id="editProduct-imagesError"></div>
-            <!--SUBMIT-->
-            <input id="editProduct-finish" type="submit" value="Producto editado">
-        </form>
-        
-<!--         <div class="buttons-color-size">
+      </div>
+      <input type="file" name="productImages" accept=".jpg, .jpeg, .png, .gif" id="editProduct-images" multiple <% if (locals.errors && errors.productImages) { %> class="is-invalid" <% } %> value="<%= locals.errors && errors.productImages ? (oldData ? oldData.productImages : product.image_product) : product.image_product %>" />
+      <!-- BACKEND IMAGES ERROR -->
+      <% if (locals.errors && errors.productImages) { %>
+      <div class="text-danger"><%= errors.productImages.msg %></div>
+      <% } %>
+
+      <!-- FRONTEND IMAGES ERROR -->
+      <div class="text-danger" id="editProduct-imagesError"></div>
+      <!--SUBMIT-->
+      <input id="editProduct-finish" type="submit" value="Producto editado">
+    </form>
+
+    <!--         <div class="buttons-color-size">
             <a href="/products/colours">
                 <button class="create-color-size-button">Crear color</button>
             </a>
@@ -145,25 +126,24 @@
                 <button class="create-color-size-button">Crear talle</button>
             </a>
         </div> -->
-    </main>
+  </main>
 
-    <!-- FOOTER -->
-<% const footerData = { link_01: {name: "Twitter", url: "https://twitter.com/"}, link_02: {name: "Instagram", url: "https://instagram.com/"}, link_03: {name: "Google Maps", url: "https://www.google.com/maps/"},  link_04: {name: "Youtube", url: "https://youtube.com/"}, link_05: {name: "Facebook", url: "https://facebook.com/"},} %>
-<%- include("../partials/footer", footerData); %>
-    <!-- SCRIPT -->
-    <script src="js/header.js"></script>
-    <script src="js/editProduct.js"></script>
-    <script src="/js/createProduct.js"></script>
-    <script>
-      function redireccionarTalle() {
-          window.location.href = "/products/sizes";
-      }
+  <!-- FOOTER -->
+  <% const footerData = { link_01: {name: "Twitter", url: "https://twitter.com/"}, link_02: {name: "Instagram", url: "https://instagram.com/"}, link_03: {name: "Google Maps", url: "https://www.google.com/maps/"},  link_04: {name: "Youtube", url: "https://youtube.com/"}, link_05: {name: "Facebook", url: "https://facebook.com/"},} %>
+  <%- include("../partials/footer", footerData); %>
+  <!-- SCRIPT -->
+  <script src="/js/header.js"></script>
+  <script src="/js/editProduct.js"></script>
+  <script>
+    function redireccionarTalle() {
+      window.location.href = "/products/sizes";
+    }
   </script>
   <script>
     function redireccionarColor() {
-        window.location.href = "/products/colours";
+      window.location.href = "/products/colours";
     }
-</script>
+  </script>
 </body>
 
 </html>
