@@ -1,12 +1,4 @@
 <header class="header">
-  <% const linkHead_01 = {name: "Tazas", url: "http://localhost:8080/products/searching/searchResults/Taza"} %>
-  <% const linkHead_02 = {name: "Termos", url: "http://localhost:8080/products/searching/searchResults/Termo"} %>
-  <% const linkHead_03 = {name: "Buzos", url: "http://localhost:8080/products/searching/searchResults/Buzo"} %>
-  <% const linkHead_04 = {name: "Remeras", url: "http://localhost:8080/products/searching/searchResults/Remera"} %>
-  <% const linkHead_05 = {name: "Gorras", url: "http://localhost:8080/products/searching/searchResults/Gorra"} %>
-  <% const linkHead_06 = {name: "Mates", url: "http://localhost:8080/products/searching/searchResults/Mate"} %>
-  <% const linkHead_07 = {name: "Todos los productos", url: "http://localhost:8080/products/searching/searchResults/"} %>
-
   <!-- HAMBURGER -->
   <nav class="about-nav">
     <!-- ICON -->
@@ -16,6 +8,15 @@
       </a>
     </div>
     <!-- LIST -->
+    <% if (locals.isLogged) { %>
+    <!-- VARS -->
+    <% const linkHead_01 = {name: "Tazas", url: "http://localhost:8080/products/searching/searchResultsUser/Taza"} %>
+    <% const linkHead_02 = {name: "Termos", url: "http://localhost:8080/products/searching/searchResultsUser/Termo"} %>
+    <% const linkHead_03 = {name: "Buzos", url: "http://localhost:8080/products/searching/searchResultsUser/Buzo"} %>
+    <% const linkHead_04 = {name: "Remeras", url: "http://localhost:8080/products/searching/searchResultsUser/Remera"} %>
+    <% const linkHead_05 = {name: "Gorras", url: "http://localhost:8080/products/searching/searchResultsUser/Gorra"} %>
+    <% const linkHead_06 = {name: "Mates", url: "http://localhost:8080/products/searching/searchResultsUser/Mate"} %>
+    <% const linkHead_07 = {name: "Todos los productos", url: "http://localhost:8080/products/searchingUser/searchResults/"} %>
     <div class="about-nav__listWrap about-nav-toggler" id="hamburgerList">
       <ul class="about-nav__listOfLinks">
         <li class="about-nav__listItems">
@@ -41,6 +42,41 @@
         </li>
       </ul>
     </div>
+    <% } else { %>
+    <!-- VARS -->
+    <% const linkHead_01 = {name: "Tazas", url: "http://localhost:8080/products/searching/searchResults/Taza"} %>
+    <% const linkHead_02 = {name: "Termos", url: "http://localhost:8080/products/searching/searchResults/Termo"} %>
+    <% const linkHead_03 = {name: "Buzos", url: "http://localhost:8080/products/searching/searchResults/Buzo"} %>
+    <% const linkHead_04 = {name: "Remeras", url: "http://localhost:8080/products/searching/searchResults/Remera"} %>
+    <% const linkHead_05 = {name: "Gorras", url: "http://localhost:8080/products/searching/searchResults/Gorra"} %>
+    <% const linkHead_06 = {name: "Mates", url: "http://localhost:8080/products/searching/searchResults/Mate"} %>
+    <% const linkHead_07 = {name: "Todos los productos", url: "http://localhost:8080/products/searching/searchResults/"} %>
+    <div class="about-nav__listWrap about-nav-toggler" id="hamburgerList">
+      <ul class="about-nav__listOfLinks">
+        <li class="about-nav__listItems">
+          <a href="<%= linkHead_01.url %>" class="about-nav__listAnchor"><%= linkHead_01.name %></a>
+        </li>
+        <li class="about-nav__listItems">
+          <a href="<%= linkHead_02.url %>" class="about-nav__listAnchor"><%= linkHead_02.name %></a>
+        </li>
+        <li class="about-nav__listItems">
+          <a href="<%= linkHead_03.url %>" class="about-nav__listAnchor"><%= linkHead_03.name %></a>
+        </li>
+        <li class="about-nav__listItems">
+          <a href="<%= linkHead_04.url %>" class="about-nav__listAnchor"><%= linkHead_04.name %></a>
+        </li>
+        <li class="about-nav__listItems">
+          <a href="<%= linkHead_05.url %>" class="about-nav__listAnchor"><%= linkHead_05.name %></a>
+        </li>
+        <li class="about-nav__listItems">
+          <a href="<%= linkHead_06.url %>" class="about-nav__listAnchor"><%= linkHead_06.name %></a>
+        </li>
+        <li class="about-nav__listItems">
+          <a href="<%= linkHead_07.url %>" class="about-nav__listAnchor"><%= linkHead_07.name %></a>
+        </li>
+      </ul>
+    </div>
+    <% } %>
   </nav>
   <!-- LOGO -->
   <div class="logo">
@@ -75,6 +111,7 @@
             </li>
           </a>
         </div>
+        <!-- LIST USER -->
         <div class="about-user__listWrap about-user-toggler" id="userList">
           <ul class="user_listOfLinks">
             <li class="user_nav_options__listItems">
@@ -108,7 +145,6 @@
           </ul>
         </div>
       </nav>
-      <!-- LIST USER -->
       <%} else {%>
       <!-- LOGIN -->
       <nav class="account-nav__noLogged">
