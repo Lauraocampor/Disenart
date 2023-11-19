@@ -139,11 +139,12 @@
 /* USER NAV */
 
 .about-user__listWrap {
-	z-index: 1;
-	position: relative;
+	z-index: 10;
+	position: absolute;
+	display: block;
 	background-color: var(--oliveCream);
-	top: 20vh;
-	right: 0vw;
+	top: 12vh;
+	right: 0.5vw;
 	height: max-content;
 	width: max-content;
 }
@@ -344,6 +345,10 @@
 
 	.icon--bigger-alt {
 		font-size: 2rem;
+	}
+
+	.about-user__listWrap {
+		top: 10vh;
 	}
 }
 
