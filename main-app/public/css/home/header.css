@@ -92,6 +92,11 @@
 	width: 40%;
 }
 
+.account-nav__noLogged {
+	padding-left: 15%;
+	padding-right: 10%;
+}
+
 .account__anchor {
 	display: inline-block;
 	width: 100%;
@@ -123,7 +128,7 @@
 
 .li {
 	display: inline;
-	margin-left: 25%;
+	margin-left: 15%;
 }
 
 .li__anchor {
