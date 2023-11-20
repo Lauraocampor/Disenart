@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
 function LastArticleInDb() {
@@ -36,7 +37,7 @@ function LastArticleInDb() {
   
       fetchData();
     }, []);
-  
+
     return (
       <div className="col-lg-6 mb-4">
         <div className="card shadow mb-4">
@@ -55,9 +56,9 @@ function LastArticleInDb() {
                   />
                 </div>
                 <p>{lastProduct.description_product}</p>
-                <a className="btn btn-danger" target="_blank" rel="noreferrer" href={`/products/detail/${lastProduct.id_product}`}>
+                <Link className="btn btn-danger" to={lastProduct ? `/products/detail/${lastProduct.id_product}` : '/'}>
                   Ver detalle del producto
-                </a>
+                </Link>
               </>
             )}
           </div>

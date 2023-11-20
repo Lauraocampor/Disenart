@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function LastArticlesInDb() {
     const [lastProducts, setLastProducts] = useState([]);
@@ -39,6 +40,7 @@ function LastArticlesInDb() {
     fetchData();
     }, []);
 
+
     return (
         <div className="container">
         <div className="row justify-content-center">
@@ -60,9 +62,9 @@ function LastArticlesInDb() {
                         />
                     </div>
                     <p>{product.description_product}</p>
-                    <a className="btn btn-danger btn-sm" target="_blank" rel="noreferrer" href={`/products/detail/${product.id_product}`}>
+                    <Link className="btn btn-danger btn-sm" to={product.id_product ? `/products/detail/${product.id_product}` : '/'}>
                         Ver detalle del producto 
-                    </a>
+                    </Link>
                     {index < lastProducts.length - 1 && <hr />} {/* Agregar separador entre productos */}
                     </div>
                 ))}

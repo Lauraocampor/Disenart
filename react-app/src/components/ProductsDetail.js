@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 
 function ProductsDetail() {
@@ -73,15 +73,15 @@ function ProductsDetail() {
                         <p>ESPECIFICACIONES: {products.description_product}</p>
                       </div>
                       <section>
-                        <a className="btn btn-info" style={{ marginRight: '10px' }} href={`/products/edit/${products.id_product}`}>
+                        <Link className="btn btn-info" style={{ marginRight: '10px' }} to={`/products/edit/${products.id_product}`}>
                           Modificar
-                        </a>
-                        <a className="btn btn-danger" style={{ marginRight: '10px' }} href={`/products/delete/${products.id_product}`}>
+                        </Link>
+                        <Link className="btn btn-danger" style={{ marginRight: '10px' }} to={`/products/delete/${products.id_product}`}>
                           Borrar
-                        </a>
-                        <a className="btn btn-info" href="/products">
+                        </Link>
+                        <Link className="btn btn-info" to="/products">
                           Productos
-                        </a>
+                        </Link>
                       </section>
                     </div>
                   </div>

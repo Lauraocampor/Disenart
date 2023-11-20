@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 function EditProduct(){
     const [products, setProduct] = useState(null);
     const { id } = useParams();
-    console.log(id)
-
-    function handleSubmit(e) {
-        // Previene que el navegador recargue la página
-        e.preventDefault();
-    }
 
     useEffect(() => {
         const fetchEdit = async () => {
@@ -64,7 +58,7 @@ function EditProduct(){
                 <h5 className="m-0 font-weight-bold text-gray-800">Edición de producto</h5>
                 </div>
                 <div className="card-body">
-                <form method="GET" onSubmit={handleSubmit}>
+                <form method="GET">
 								<div className="form-group">
 									<label htmlFor="">Nombre:</label>
 									<input type="text" className="form-control" required value={products.name_product}/>
@@ -86,9 +80,9 @@ function EditProduct(){
 									<input type="file" accept=".jpg, .jpeg, .png, .gif" className="form-control" />
 								</div>
                                 <button className="btn btn-info" style={{ marginRight: '10px' }}>Enviar</button>
-                                <a className="btn btn-danger" style={{ marginRight: '10px' }} href={`/products/detail/${products.id_product}`}>
+                                <Link className="btn btn-danger" style={{ marginRight: '10px' }} to={`/products/detail/${products.id_product}`}>
                                     Atrás
-                                </a>
+                                </Link>
 							</form>
                 </div>
             </div>
