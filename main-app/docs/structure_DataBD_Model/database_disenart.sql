@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2023 a las 21:22:31
+-- Tiempo de generación: 20-11-2023 a las 01:27:02
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -209,10 +209,11 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id_user`, `name_user`, `lastname_user`, `email_user`, `password_user`, `bdate_user`, `image_user`, `category_id`) VALUES
 ('02a3129a-d313-440f-b5cb-bf418346402b', 'Belinda', 'Shearme', 'bshearme9@github.io', '$2a$04$tUUY0LK9OicVH13jRM3uIu0I6bdZHtG8XAQq3Nymwqkq803euoDEy', '2003-01-03', 'default.png', 1),
 ('1ead7088-25d1-4701-943e-d8d6e972f960', 'Laura', 'Ocampo', 'laura_ocampo5@hotmail.com', '$2a$10$dNCpfb00q3g50Q0QZmBzK.fas9Swna7pb0gq2hZPoGdPuQoD5cxmC', '1996-07-05', '1692915888742IMG_20191028_112748_889.jpg', 1),
-('26e20834-eb33-48fd-a8cc-f74ed528895d', 'mercedes', 'lavezzolo', 'mer.lavezzolo@gmail.com', '$2a$10$ymG3iYO4rxFUQQxZZVNu8eqwMMuVkVBwSIiMAKGSDX4K5dVEfzjQS', '2020-12-15', '1693877859754foto carnet mercedes lavezzolo.JPG', 2),
+('26e20834-eb33-48fd-a8cc-f74ed528895d', 'Mercedes', 'Lavezzolo', 'mer.lavezzolo@gmail.com', '$2a$10$ZAVu0rUFvtwrBHU0MkQrLuxD58RBZRi1biKIRoRhMXuKtc7Qo67H.', '2020-12-15', '1698367692356foto carnet mercedes lavezzolo.JPG', 2),
 ('285c3ff5-f2a0-4fbd-b7db-58a0c022274b', 'Donni', 'Banstead', 'dbanstead5@parallels.com', '$2a$04$94F7Yl/y051xKDQp7T0Yv.1z7G7Tlp.pttk8fdiPhDt60nADboBci', '1998-12-16', 'default.png', 1),
 ('2f3f8601-5714-453b-828f-ac9a7873abbc', 'hola', 'hola', 'hola@gmail.com', '$2a$10$EELCAPnR.tERXnbMhaD9iOJdTldSFZTHuEJVuN4WXq3YRRFfMhUuu', '1994-11-02', 'default.png', 1),
 ('3d691728-f188-4aeb-ae12-e77a7f443dd6', 'Sergeant', 'Eagle', 'seagle7@ftc.gov', '$2a$04$GbIQirv/5VYG9/QMwvcJHeBMKRuD73uhZQTGXTzsCIZpoMhDiRKca', '2010-12-16', 'default.png', 1),
+('5d47b6ee-7a20-4fb0-997a-a659f6ccf5ee', 'mercedes', 'lavezzolo', 'mer.lavezzolfo@gmail.com', '$2a$10$mibE1LALOSxEBY4IzhJGL.Zh./3bg3hEuE0XCqJ7cbF1s7SVwprn.', '2020-12-22', '1698326141206Octubre_23_cbc.csv', 1),
 ('6b7256aa-c0e6-468c-9640-34a2c3753554', 'Freedman', 'Goldine', 'fgoldine6@taobao.com', '$2a$04$AdoU8jUGoFaVcgoJdCJNY.RbJ0CrYNcH9roGMht11oLVdwL4OAQ.2', '1970-11-16', 'default.png', 1),
 ('7a3cb01c-96b4-494c-aa0a-2f5c06a1d1ba', 'Sofia', 'Holowiniec', 'sofia.holowiniec@hotmail.com', '$2a$10$OmBwVwJDA7f6ilcptXHXAuQJWD37mb0wEz.A5PLvFblemVOcmt7Ra', '1996-12-03', '1693876586368est-taza.jpg', 1),
 ('99a5a4b0-c74c-4c6f-bc7c-fcb0c4a842db', 'Desiree', 'Holowiniec', 'holowiniec.desiree@gmail.com', '$2a$10$TyV52Qi5pEggfhRuqJiVHuzzCOqgAjiYXTkd92txEzXrErqNEz35W', '1994-11-02', '1693874656297IMG_5062.jpg', 2),
@@ -309,7 +310,7 @@ ALTER TABLE `colours`
 -- AUTO_INCREMENT de la tabla `products_data`
 --
 ALTER TABLE `products_data`
-  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `product_sales`
