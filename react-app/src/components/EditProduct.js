@@ -85,7 +85,10 @@ function EditProduct(){
 									<label htmlFor="">Foto del producto:</label>
 									<input type="file" accept=".jpg, .jpeg, .png, .gif" className="form-control" />
 								</div>
-                                <button className="btn btn-info">Enviar</button>
+                                <button className="btn btn-info" style={{ marginRight: '10px' }}>Enviar</button>
+                                <a className="btn btn-danger" style={{ marginRight: '10px' }} href={`/products/detail/${products.id_product}`}>
+                                    Atrás
+                                </a>
 							</form>
                 </div>
             </div>

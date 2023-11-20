@@ -83,7 +83,7 @@ function SearchArticles(){
 								{
 									resultados  && resultados.map((article, i) => {
 										return (
-											<div className="col-sm-6 col-md-3 my-4" key={i}>
+											<div className="col-sm-6 col-md-3 my-2" key={i}>
 												<div className="card shadow mb-4">
 													<div className="card-header py-3">
 														<h5 className="m-0 font-weight-bold text-gray-800">{article.name_product}</h5>
@@ -136,7 +136,7 @@ function SearchArticles(){
 													/>
 													</div>
 													<p>{article.price_product}</p>
-													<a className="btn btn-info" target="_blank" rel="noreferrer" href={`/products/detail/${article.id_product}`}>
+													<a className="btn btn-info btn-sm" target="_blank" rel="noreferrer" href={`/products/detail/${article.id_product}`}>
 															Ver detalle del producto 
 													</a>
 												</div>

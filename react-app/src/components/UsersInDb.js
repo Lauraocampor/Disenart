@@ -51,7 +51,6 @@ function UsersInDb (){
                                 </div>
                                 <div className="card-body fondoCaja bg-secondary">
                                     <div className="row">
-                                        {usersList.length === 0 && <p>Cargando...</p>}
                                         {usersList.map((user,index)=>{
                                             return <User {...user} key={index} />
                                         })}

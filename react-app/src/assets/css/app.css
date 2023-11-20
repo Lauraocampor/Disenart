@@ -1073,7 +1073,7 @@ pre code {
     }
 }
 
-@media (min-width:768px) {
+@media (min-width:800px) {
     .col-md {
         flex-basis: 0;
         flex-grow: 1;

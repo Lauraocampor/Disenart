@@ -48,6 +48,7 @@ function LastArticlesInDb() {
                 <h5 className="m-0 font-weight-bold text-gray-800">Últimos 5 artículos agregados</h5>
                 </div>
                 <div className="card-body">
+                {lastProducts.length === 0 && <p>Cargando...</p>}
                 {lastProducts.map((product, index) => (
                     <div key={index}>
                     <div className="text-center">
@@ -59,7 +60,7 @@ function LastArticlesInDb() {
                         />
                     </div>
                     <p>{product.description_product}</p>
-                    <a className="btn btn-danger" target="_blank" rel="noreferrer" href={`/products/detail/${product.id_product}`}>
+                    <a className="btn btn-danger btn-sm" target="_blank" rel="noreferrer" href={`/products/detail/${product.id_product}`}>
                         Ver detalle del producto 
                     </a>
                     {index < lastProducts.length - 1 && <hr />} {/* Agregar separador entre productos */}
