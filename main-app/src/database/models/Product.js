@@ -84,7 +84,7 @@ module.exports = (sequelize, DataTypes) => {
 			timestamps: false,
 			foreignKey: 'product_id',
 		});
-		console.log(Product)
+		//console.log(Product)
 	};
 
 	return Product;

@@ -77,6 +77,11 @@ const controller = {
 				include: ['size', 'colour'],
 				nest: true,
 			});
+
+			if (!product) {
+				res.status(404).render('404');
+				return;
+			}
 	
 			product.image_product = JSON.parse(product.image_product);
 	
@@ -94,6 +99,14 @@ const controller = {
 				include: ['size', 'colour'],
 				nest: true,
 			});
+
+		
+			if (!product) {
+					res.status(404).render('404', {
+					  user: req.session.userLogged,
+					});
+					return;
+				}
 
 			product.image_product = JSON.parse(product.image_product);
 			//console.log(product);
@@ -137,6 +150,14 @@ const controller = {
 				include: ['size', 'colour'],
 				nest: true,
 			});
+
+			if (!product) {
+				res.status(404).render('404', {
+				  user: req.session.userLogged,
+				});
+				return;
+			}
+
 			const colours = await Colour.findAll();
 			const sizes = await Size.findAll();
 			product.image_product = JSON.parse(product.image_product);

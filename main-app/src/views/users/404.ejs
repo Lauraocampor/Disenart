@@ -9,9 +9,22 @@
       <p id="notfound-text">Lamentablemente no encontramos la página que buscas porque ha cambiado de nombre o no está
         disponible temporalmente</p>
 
-      <a id="buttonBackHome" href="/">
-        <button id="backHome"> Volver al inicio </button>
+      <% if (locals.isLogged) { %>
+      <a class="buttonsBack404" href="/users/profile">
+        <button class="button404"> Ir a mi perfil </button>
       </a>
+      <a class="buttonsBack404" href="/products/searching/searchResultsUser">
+        <button class="button404"> Ir a productos </button>
+      </a>
+      <% } else { %>
+        <a class="buttonsBack404" href="/">
+          <button class="button404"> Volver al inicio </button>
+        </a>
+        <a class="buttonsBack404" href="/products/searching/searchResults">
+          <button class="button404"> Ir a productos </button>
+        </a>
+        <% } %>
+
     </div>
   </body>
 

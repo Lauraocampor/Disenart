@@ -45,12 +45,20 @@ router.put(
 );
 
 //@DELETE user /users/profile/delete
-router.delete('/profile/delete', usersController.delete);
+router.delete(
+	'/profile/delete', 
+	usersController.delete);
 
 //@GET ALL USERS /users/allProfiles
-router.get('/allProfiles', usersController.allProfiles);
+router.get(
+	'/allProfiles', 
+	authMiddleware, 
+	usersController.allProfiles);
 
 //@GET USER DETAIL  /users/profile/:id/detail
-router.get('/profile/:id/detail', usersController.profileDetail);
+router.get(
+	'/profile/:id/detail', 
+	authMiddleware,  
+	usersController.profileDetail);
 
 module.exports = router;
