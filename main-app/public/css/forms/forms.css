@@ -77,8 +77,8 @@
 .modal-form .input{
     margin: 5px 0;
     padding: 5px;
-    background-color: var(--azulOscuro);
-    color: var(--beige);
+    background-color: var(--verdeClaro);
+    color: var(--azulOscuro);
     font-size: 15px;
     border-radius: 5px;
 }
@@ -94,7 +94,7 @@
 .modal-submit{
     margin: 5px 0;
     padding: 5px;
-    background-color: var(--azulOscuro);
+    background-color: var(--mostaza);
     color: var(--beige);
     font-size: 15px;
     margin-top: 20px;
@@ -107,10 +107,9 @@
 .modal:focus{
     cursor: pointer;
     color: var(--verdeClaro);
-    background-color: var(--mostaza);
-    border: none;
+    background-color: var(--azulOscuro);
+    border: var(--verdeClaro) 1px solid;
 }
-  
 .close {
     color: var(--beige);
     position: absolute;
@@ -192,9 +191,7 @@
         border: 0;
     }
     .modal-form .input{
-        background-color: var(--verdeClaro);
         margin: 8px 0;
-        color: var(--azulOscuro);
         font-size: 18px;
     }
     .modal-form p{
@@ -204,18 +201,9 @@
         font-size: 15px;
     }
     .modal-submit{
-        background-color: var(--mostaza);
-        color: var(--azulOscuro);
         border: 0;
         font-size: 15px;
         transition: all 500ms;
-    }
-    .modal-submit:hover,
-    .modal:focus{
-        cursor: pointer;
-        color: var(--verdeClaro);
-        background-color: var(--azulOscuro);
-        border: var(--verdeClaro) 1px solid;
     }
     .close {
         border: none;
