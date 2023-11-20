@@ -122,11 +122,13 @@
   <script src="/js/createProduct.js"></script>
           <script>
             function redireccionarTalle() {
+              event.preventDefault()
                 window.location.href = "/products/sizes";
             }
         </script>
         <script>
           function redireccionarColor() {
+            event.preventDefault()
               window.location.href = "/products/colours";
           }
       </script>
