@@ -97,15 +97,15 @@
       <div class="editProduct-title">
         <label class="editProduct-info" for="productImages">Fotos del producto</label>
         <i class="fa-solid fa-pen-to-square editButton"></i></button>
-
-        <section class="createdProduct-img">
+      </div>
+      <input type="file" name="productImages" accept=".jpg, .jpeg, .png, .gif" id="editProduct-images" multiple <% if (locals.errors && errors.productImages) { %> class="is-invalid" <% } %> value="<%= locals.errors && errors.productImages ? (oldData ? oldData.productImages : product.image_product) : product.image_product %>" />
+      <br> 
+      <section class="createdProduct-img">
           <% product.image_product.forEach(filename=> { %>
           <img class="createdProduct-img-files" src="/images/productos/<%= filename %>" width="20%" />
           <% }) %>
         </section>
 
-      </div>
-      <input type="file" name="productImages" accept=".jpg, .jpeg, .png, .gif" id="editProduct-images" multiple <% if (locals.errors && errors.productImages) { %> class="is-invalid" <% } %> value="<%= locals.errors && errors.productImages ? (oldData ? oldData.productImages : product.image_product) : product.image_product %>" />
       <!-- BACKEND IMAGES ERROR -->
       <% if (locals.errors && errors.productImages) { %>
       <div class="text-danger"><%= errors.productImages.msg %></div>
@@ -116,16 +116,6 @@
       <!--SUBMIT-->
       <input id="editProduct-finish" type="submit" value="Producto editado">
     </form>
-
-    <!--         <div class="buttons-color-size">
-            <a href="/products/colours">
-                <button class="create-color-size-button">Crear color</button>
-            </a>
-
-            <a href="/products/sizes">
-                <button class="create-color-size-button">Crear talle</button>
-            </a>
-        </div> -->
   </main>
 
   <!-- FOOTER -->

@@ -20,6 +20,7 @@ body {
 	flex-direction: column;
 	margin: 20px;
 	width: 80%;
+	max-width: 800px;
 }
 
 .editProduct-name {
@@ -151,7 +152,6 @@ body {
 	.editProduct {
 		justify-content: center;
 		display: flex;
-		width: 60%;
 		flex-direction: column;
 		margin: 5px;
 	}

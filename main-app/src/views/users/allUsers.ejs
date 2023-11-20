@@ -6,7 +6,7 @@
   <!-- HEADER -->
   <%- include('../partials/header') %>
   <!-- MAIN -->
-  <main>
+  <main id="allUsers">
     <h2 class="userList-title">Usuarios activos</h2>
     <section class="userList">
       <% allUsers.forEach(users=> { %>
@@ -16,13 +16,13 @@
         <p class="userList-data">
           <%= users.name_user %> <%= users.lastname_user %>
         </p>
-        <a href="/users/profile/<%=users.id_user%>/detail">
-          <button id="edit-delete-button">Ver datos</button>
+        <a id="user-data-href" href="/users/profile/<%=users.id_user%>/detail">
+          <button id="user-data-button">Ver datos</button>
         </a>
       </article>
       <% }); %>
     </section>
-  </main>
+  </main> 
   <!-- FOOTER -->
   <%- include("../partials/footer"); %>
   <!-- SCRIPT -->

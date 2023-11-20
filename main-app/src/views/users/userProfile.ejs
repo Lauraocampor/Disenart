@@ -10,7 +10,7 @@
     <div>
       <h2 id="user-profile-welcome">Bienvenido <%= user.name_user.charAt(0).toUpperCase() + user.name_user.slice(1).toLowerCase() %>!</h2>
     </div>
-    <section class="profile-data-img">
+    <section id="profile-data-img">
       <section class="profile-user-img-section">
         <img class="profile-user-img" src="/images/users/<%=user.image_user%>" />
       </section>
@@ -28,13 +28,13 @@
       </section>
     </section>
     <a href="/users/profile/edit">
-      <button id="edit-delete-button">Editar datos</button>
+      <button class="profile-button">Editar datos</button>
     </a>
     <a href="/products/createProduct">
-      <button id="edit-delete-button">Crear producto</button>
+      <button class="profile-button">Crear producto</button>
     </a>
     <a href="/products//searching/searchResultsUser">
-      <button id="edit-delete-button">Ver productos</button>
+      <button class="profile-button">Ver productos</button>
     </a>
   </main>
   <!-- FOOTER -->
