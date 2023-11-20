@@ -7,6 +7,14 @@
   <%- include('../partials/header') %>
   <!-- MAIN -->
   <h2 class="search-title">DISEÑART</h2>
+  <div class="sort-dropdown">
+    <label for="sort-select">Ordenar por:</label>
+    <select id="sort-select" onchange="sortProducts(searchResults)">
+      <option value="name">Nombre</option>
+      <option value="priceLow">Precio más bajo</option>
+      <option value="priceHigh">Precio más alto</option>
+    </select>
+  </div>
   <% if (searchResults.length === 0) { %>
   <main class="itemBox">
     <p class="itemBox--searchError">
@@ -35,6 +43,60 @@
   <%- include("../partials/footer"); %>
   <!-- SCRIPT -->
   <script src="/../js/header.js"></script>
+  <script>
+    var searchResults = <%- JSON.stringify(searchResults) %>;
+       
+    function sortProducts() {
+       var select = document.getElementById("sort-select");
+       var selectedValue = select.options[select.selectedIndex].value;
+   
+       var sortedResults = [];
+   
+       // Sort the searchResults based on the selected value
+       if (selectedValue === "name") {
+         sortedResults = searchResults.sort(function (a, b) {
+           return a.name_product.localeCompare(b.name_product);
+         });
+       } else if (selectedValue === "priceLow") {
+         sortedResults = searchResults.sort(function (a, b) {
+           return a.price_product - b.price_product;
+         });
+       } else if (selectedValue === "priceHigh") {
+         sortedResults = searchResults.sort(function (a, b) {
+           return b.price_product - a.price_product;
+         });
+       }
+         // Update the DOM with the sorted results
+         var itemBox = document.querySelector(".itemBox");
+         itemBox.innerHTML = ""; // Limpiar el contenido existente
+   
+         if (sortedResults.length === 0) {
+           itemBox.innerHTML = `
+             <p class="itemBox--searchError">
+               Lo sentimos, no encontramos información relacionada a tu búsqueda. Presiona
+               <a href="/" class="itemBox--backText">aquí</a>
+               para volver al inicio.
+             </p>
+             <img src="/../images/misc/product-notfound.png" alt="error image" class="itemBox-imgError">
+           `;
+         } else {
+           for (let i = 0; i < sortedResults.length; i++) {
+             var productHtml = `
+               <article class="itemBox--product">
+                 <a href="/products/${sortedResults[i].id_product}/customer" class="itemBox--anchor">
+                   <img src="/../images/productos/${sortedResults[i].image_product[0]}" alt="${sortedResults[i].name_product}" class="itemBox--image" />
+                   <h4 class="search-buyBottom">COMPRAR</h4>
+                 </a>
+                 <h2 class="search-nameProduct">${sortedResults[i].name_product}</h2>
+                 <p class="price-description">$${sortedResults[i].price_product}</p>
+               </article>
+             `;
+             itemBox.innerHTML += productHtml;
+           }
+         }
+   
+       }
+     </script>
 </body>
 
 </html>
