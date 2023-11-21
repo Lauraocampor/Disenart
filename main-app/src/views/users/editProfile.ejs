@@ -46,7 +46,7 @@
           </div>
           <div class="edit-profile-user-eachData">
             <p class="edit-profile-user-data">
-              <input class="edit-profile-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="email" value=" <%=user.email_user %>" name="email" disabled />
+              <input class="edit-profile-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="email" value=" <%=user.email_user %>" name="email" />
               <!-- BACKEND MAIL ERROR -->
             <% if (locals.errors && errors.email ) { %>
               <div class="text-danger"><%= errors.email.msg %></div>
