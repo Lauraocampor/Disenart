@@ -468,24 +468,25 @@ const controller = {
 		  const { id, index } = req.params;
 		  const product = await Product.findByPk(id);
 		  const images = JSON.parse(product.image_product);
-		  const deletedImage = images.splice(index, 1)[0]; // Elimina la imagen del array
+		  const deletedImage = images.splice(index, 1)[0]; // elimina la imagen del array
 	  
-		  // Actualiza el producto en la base de datos
+		  // actualiza el producto en la base de datos
 		  await Product.update({ 
 			image_product: JSON.stringify(images) 
 			}, 
 			{ where: { id_product: id } 
 		});
 	  
-		  // Elimina el archivo de la carpeta de imágenes
-		  try {
+		
+        // elimina el archivo de la carpeta de imágenes
+        try {
+            const filePath = path.join(__dirname, '../../public/images/productos', deletedImage)
+			//console.log(filePath)
 			//fs.unlinkSync se utiliza para eliminar un archivo del sistema de archivos de manera sincrónica, por eso se mete adentro de un try catch
-			fs.unlinkSync(
-			  path.join(__dirname, '../../../public/images/productos', deletedImage)
-			);
-		  } catch (error) {
-			console.error(error);
-		  }
+            fs.unlinkSync(filePath);
+        } catch (error) {
+            console.error(error);
+        }
 	  
 	
 		  res.redirect(`/products/${id}/details`);

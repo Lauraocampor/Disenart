@@ -14,7 +14,9 @@ window.addEventListener('load', () => {
     let stockError = document.querySelector('#editProduct-stockError');
 /*     let images = document.querySelector('#editProduct-images');
     let imagesError = document.querySelector('#editProduct-imagesError'); */
+	const deleteButtons = document.querySelectorAll('.delete-image-button');
     let submit = document.querySelector('#editProduct-finish');
+	
 
 
     submit.addEventListener('click', (event) => {
@@ -75,5 +77,34 @@ window.addEventListener('load', () => {
 			form.submit();
 		}
     })
+
+	deleteButtons.forEach(button => {
+        button.addEventListener('click', async (event) => {
+            event.preventDefault();
+
+			// event.target.closest('form') busca el elemento padre más cercano que sea un formulario (<form>).
+            const form = event.target.closest('form');
+
+			// propiedad action de un formulario especifica a dónde se enviará el formulario cuando se envíe.
+            const url = form.action;
+
+            try {
+				// se usa fetch para hacer una solicitud DELETE al servidor en la URL del form 
+                const response = await fetch(url, { method: 'DELETE' });
+
+                if (response.ok) {
+                    const container = event.target.closest('.image-container');
+                    container.remove();
+                    
+                } else {
+                    const errorData = await response.json();
+                    console.error(errorData.error);
+                    
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        });
+    });
 
 })
