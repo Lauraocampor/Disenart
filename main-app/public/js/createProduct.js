@@ -91,6 +91,9 @@ window.addEventListener('load', () => {
 		if (images.value.length < 1) {
 			errors.images = 'Ingresa imágenes de tipo .jpg, .jpeg, .png, .gif';
 		}
+		if (images.files.length > 5) {
+			errors.images = 'Solo podés cargar hasta 4 imágenes';
+		}
 		if (Object.keys(errors).length > 0) {
 			imagesError.innerText = errors.images ? errors.images : '';
 		}

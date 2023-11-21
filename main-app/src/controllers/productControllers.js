@@ -241,13 +241,19 @@ const controller = {
 	},
 
 
+
 	// @POST /products
 	store: async (req, res) => {
 		const filenames = req.files.map((file) => file.filename);
-		let imagenDefault = 'imagen-no-disponible.jpg';
-
-		// Verificar cuántas imágenes cargo el usuario
 		const numUserImages = filenames.length;
+
+   		 // Verificar si se supera el límite de 4 imágenes
+    	if (numUserImages > 4) {
+        // Eliminar las imágenes excedentes
+        filenames.splice(4);
+    	}
+
+		let imagenDefault = 'imagen-no-disponible.jpg';
 
 		// calcular cuantas se deben agregar x default
 		const numDefaultImagesToAdd = 4 - numUserImages;
@@ -274,10 +280,7 @@ const controller = {
 		});
 
 		//console.log(sizeInDb)
-
 		let sizeId = sizeInDb.id_size
-
-
 
 		const newProduct = {
 			name_product: req.body.productName,
