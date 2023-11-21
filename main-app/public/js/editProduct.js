@@ -25,8 +25,8 @@ window.addEventListener('load', () => {
         let errors = {}
         
         // NAME
-		if (name.value.length <= 5) {
-			errors.name = 'Debes ingresar un nombre de al menos 5 caracteres';
+		if (name.value.length <= 4) {
+			errors.name = 'Debes ingresar un nombre de al menos 4 caracteres';
 		}
 		if (Object.keys(errors).length > 0) {
 			nameError.innerText = errors.name ? errors.name : '';
