@@ -46,11 +46,9 @@
           <h3 class="specific-info-createdProduct">Fotos del producto</h3>
           <section class="createdProduct-img">
 
-            <% const lastFourImages = product.image_product.slice(-4);
-            lastFourImages.forEach(filename => { %>
-            <img class="createdProduct-img-files" src="/images/productos/<%= filename %>" width="20%" />
-            <% }) %>
-      
+            <% product.image_product.forEach(filename=> { %>
+              <img class="createdProduct-img-files" src="/images/productos/<%= filename %>" width="20%" />
+              <% }) %>
           </section>
 
           <a href="/products/<%= product.id_product%>/editProduct">

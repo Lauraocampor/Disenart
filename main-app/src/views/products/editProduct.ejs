@@ -101,9 +101,11 @@
       <input type="file" name="productImages" accept=".jpg, .jpeg, .png, .gif" id="editProduct-images" multiple <% if (locals.errors && errors.productImages) { %> class="is-invalid" <% } %> value="<%= locals.errors && errors.productImages ? (oldData ? oldData.productImages : product.image_product) : product.image_product %>" />
       <br> 
       <section class="createdProduct-img">
-        <% const lastFourImages = product.image_product.slice(-4);
-        lastFourImages.forEach(filename => { %>
-        <img class="createdProduct-img-files" src="/images/productos/<%= filename %>" width="20%" />
+        <% product.image_product.forEach((filename, index) => { %>
+          <img class="createdProduct-img-files" src="/images/productos/<%= filename %>" width="20%" />
+          <form method="POST" action="/products/<%= product.id_product %>/deleteImage/<%= index %>?_method=DELETE">
+            <button type="submit">Eliminar</button>
+          </form>
         <% }) %>
         </section>
 

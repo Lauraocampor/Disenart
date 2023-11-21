@@ -1,6 +1,8 @@
 //const productModel = require('../models/productModel'); // sacar despues de hacer todo
 const { Product, Colour, Size } = require('../database/models');
-const { validationResult } = require ("express-validator")
+const { validationResult } = require ("express-validator");
+const fs = require('fs');
+const path = require('path');
 
 const controller = {
 
@@ -460,6 +462,38 @@ const controller = {
 			console.log(error);
 		}
 	},
+
+	deleteImage: async (req, res) => {
+		try {
+		  const { id, index } = req.params;
+		  const product = await Product.findByPk(id);
+		  const images = JSON.parse(product.image_product);
+		  const deletedImage = images.splice(index, 1)[0]; // Elimina la imagen del array
+	  
+		  // Actualiza el producto en la base de datos
+		  await Product.update({ 
+			image_product: JSON.stringify(images) 
+			}, 
+			{ where: { id_product: id } 
+		});
+	  
+		  // Elimina el archivo de la carpeta de imágenes
+		  try {
+			//fs.unlinkSync se utiliza para eliminar un archivo del sistema de archivos de manera sincrónica, por eso se mete adentro de un try catch
+			fs.unlinkSync(
+			  path.join(__dirname, '../../../public/images/productos', deletedImage)
+			);
+		  } catch (error) {
+			console.error(error);
+		  }
+	  
+	
+		  res.redirect(`/products/${id}/details`);
+		} catch (error) {
+		  console.error(error);
+
+		}
+	  }
 };
 
 module.exports = controller;

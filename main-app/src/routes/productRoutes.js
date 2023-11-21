@@ -88,4 +88,7 @@ router.get('/sizes', authMiddleware, productController.createSize);
 // @POST - /products/size
 router.post('/sizes', authMiddleware, productController.createdSize);
 
+// @DELETE /products/:id/deleteImage/:index
+router.delete('/:id/deleteImage/:index', productController.deleteImage)
+
 module.exports = router;
