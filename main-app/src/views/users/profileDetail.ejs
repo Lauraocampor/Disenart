@@ -10,25 +10,25 @@
     <div>
       <h2 id="user-profile-welcome">Perfil de <%=users.name_user %></h2>
     </div>
-    <section class="profile-data-img">
+    <section id="profile-data-img">
       <section class="profile-user-img-section">
-        <img class="profile-user-img" src="/images/users/<%=users.image_user%>" />
+        <img class="profile-user-img" src="/images/users/<%=user.image_user%>" />
       </section>
       <section class="profile-user-Alldata">
         <h2 class>Datos registrados</h2>
         <div class="profile-usereachData">
-          <p class="profile-user-data"><%= users.name_user %></p>
+          <p class="profile-user-data"><%= user.name_user.charAt(0).toUpperCase() + user.name_user.slice(1).toLowerCase() %></p>
         </div>
         <div class="profile-user-eachData">
-          <p class="profile-user-data"><%= users.lastname_user %></p>
+          <p class="profile-user-data"><%= user.lastname_user.charAt(0).toUpperCase() + user.lastname_user.slice(1).toLowerCase() %></p>
         </div>
         <div class="profile-user-eachData">
-          <p class="profile-user-data"><%= users.email_user %></p>
+          <p class="profile-user-data"><%= user.email_user %></p>
         </div>
       </section>
     </section>
     <a href="/users/allProfiles">
-      <button class="edit-delete-button">Ver todos los usuarios</button>
+      <button class="profile-button">Ver todos los usuarios</button>
     </a>
   </main>
   <!-- FOOTER -->

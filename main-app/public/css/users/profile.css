@@ -63,6 +63,25 @@
     scale: 1.2;
 }
 
+.allUsers-button{
+    width: 80%;
+    background-color: #bf9a51;
+    color: #0d3a61;
+    font-weight: bolder;
+    font-size: 20px;
+    border: none;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    transition: all 500ms;
+
+}
+
+.allUsers-button:hover{
+    background-color: #0d3a61;
+    color: #bcd1bd;
+    scale: 1.2;
+}
+
 /* BREAK #2 */
 @media (min-width: 481px) {
   
