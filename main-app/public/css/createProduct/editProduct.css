@@ -20,7 +20,7 @@ body {
 	flex-direction: column;
 	margin: 20px;
 	width: 80%;
-	max-width: 800px;
+	max-width: 1000px;
 }
 
 .editProduct-name {
@@ -109,7 +109,7 @@ body {
 
 #editProduct-finish {
 	width: 80%;
-	margin-left: 10%;
+	/* margin-left: 10%; */
 	background-color: #bf9a51;
 	color: #0d3a61;
 	font-weight: bolder;
@@ -134,6 +134,54 @@ body {
 	background-color: rgb(244, 236, 236);
 }
 
+.editProduct-img {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+  
+  
+  .image-container {
+	position: relative;
+	margin: 10px; /* Espaciado entre cada imagen y su botón */
+  }
+  
+  .editProduct-img-files{
+    padding: 5px;
+	width: 100%;
+    max-width: 200px;
+    background-color: #eef0de;
+    border: 2px #0d3a61 solid;
+    margin: 5px;
+    transition: all 500ms;
+
+}
+  
+  .delete-image-button {
+
+		font-size: 1.2em;
+		background-color: #bf9a51;
+		color: #0d3a61;
+		font-family: 'Nunito Sans';
+		font-weight: bolder;
+		/* width: 50%; */
+		border-radius: 5px;
+		position: absolute;
+		bottom: 15px;
+		left: 50%;
+		transform: translateX(-50%);
+		text-align: center;
+		transition: opacity 0.5s, background-color 0.5s, color 0.5s;
+	
+  }
+  
+  .delete-image-button:hover {
+	background-color: #0d3a61;
+	color: #bcd1bd;
+	/* transform: scale(1.2); */
+  }
+
 /* BREAK #2 */
 @media (min-width: 481px) {
 	.main-editProduct {
@@ -155,10 +203,29 @@ body {
 		flex-direction: column;
 		margin: 5px;
 	}
+
+	.editProduct-img-files{
+    padding: 5px;
+	width: 100%;
+    max-width: 200px;
+    background-color: #eef0de;
+    border: 2px #0d3a61 solid;
+    margin: 5px;
+    transition: all 500ms;
+
+}
 }
 
 /* BREAK #3 */
 @media (min-width: 769px) {
+
+	.editProduct-img-files{
+    max-width: 310px; 
+    }
+
+	.editProduct-img{
+	width: 100%;   
+    }
 }
 
 /* BREAK #4 */
@@ -166,7 +233,7 @@ body {
 	.editProduct {
 		justify-content: flex-start;
 		display: flex;
-		width: 50%;
+		width: 60%;
 		flex-direction: column;
 		margin: 5px;
 	}
@@ -188,5 +255,13 @@ body {
 		justify-content: center;
 		margin-left: 25%;
 		align-content: center;
+	}
+
+	.editProduct-img {
+		display: flex;
+		flex-wrap: nowrap;
+	}
+	#editProduct-finish {
+		max-width: 700px;
 	}
 }
