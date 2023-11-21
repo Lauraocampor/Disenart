@@ -1,4 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react';
+import { Link } from 'react-router-dom';
 
 //import noPoster from '../assets/images/no-poster.jpg';
 
@@ -136,9 +137,9 @@ function SearchArticles(){
 													/>
 													</div>
 													<p>{article.price_product}</p>
-													<a className="btn btn-info btn-sm" target="_blank" rel="noreferrer" href={`/products/detail/${article.id_product}`}>
+													<Link className="btn btn-info btn-sm" to={`/products/detail/${article.id_product}`}>
 															Ver detalle del producto 
-													</a>
+													</Link>
 												</div>
 												</div>
 											</div>

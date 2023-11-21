@@ -39,6 +39,10 @@ function UsersInDb (){
         fetchData()
     }, [])
 
+    if (!usersList) {
+        return <p>Cargando...</p>;
+    }
+
     return (
             <React.Fragment>
                     {/*<!-- Categories in DB -->*/}

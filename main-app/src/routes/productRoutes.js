@@ -24,103 +24,68 @@ const upload = multer({ storage });
 
 // @GET - LISTA DE PRODUCTS CLIENTE - COMPRAR - chequear si authdmiddleware esta ok acá
 router.get(
-	'/searching/searchResults/:category?', 
-	productController.searchResults, 
-); 
+	'/searching/searchResults/:category?',
+	guestMiddleware,
+	productController.searchResults,
+);
 
 // @GET - products/:id/customer -> products/1/customer visualizacion de productos del lado del cliente
 router.get(
 	'/:id/customer',
-	upload.any('productImages'), guestMiddleware,
+	upload.any('productImages'),
+	guestMiddleware,
 	productController.customerProduct,
 );
 
-
 //@GET products/:id/details -> products/2/details detalle de producto del usuario
-router.get(
-	'/:id/details', 
-	authMiddleware, 
-	productController.details); 
-	
+router.get('/:id/details', authMiddleware, productController.details);
 
 //@GET /products/cart -> carrito
-router.get(
-	'/cart', 
-	productController.cart); 
+router.get('/cart', productController.cart);
 
-
-//@GET /products/createProduct 
-router.get(
-	'/createProduct', 
-	authMiddleware, 
-	productController.createProduct); 
-
+//@GET /products/createProduct
+router.get('/createProduct', authMiddleware, productController.createProduct);
 
 //@POST /products
 router.post(
-	'/', 
-	upload.any('productImages'), 
-	validateProductMiddleware, 
-	productController.store);
-
+	'/',
+	upload.any('productImages'),
+	validateProductMiddleware,
+	productController.store,
+);
 
 // @GET - /products/:id/edit
-router.get(
-	'/:id/editProduct', 
-	authMiddleware, 
-	productController.editProduct);
-
+router.get('/:id/editProduct', authMiddleware, productController.editProduct);
 
 // @PUT /products/:id/editProduct
 router.put(
 	'/:id/editProduct',
-	upload.any('productImages'), 
-	validateProductMiddleware, 
+	upload.any('productImages'),
+	validateProductMiddleware,
 	productController.updateProduct,
 );
 
-
 //@DELETE - /products/:id/delete --
-router.delete(
-	'/:id/delete', 
-	authMiddleware, 
-	productController.deleteProduct);
-
+router.delete('/:id/delete', authMiddleware, productController.deleteProduct);
 
 // @GET /products/searching/searchResultsUser/:category? -
 // LISTA DE PRODUCTS USER - VER PRODUCTO
 router.get(
-	'/searching/searchResultsUser/:category?', 
+	'/searching/searchResultsUser/:category?',
 	authMiddleware,
 	productController.searchResultsUser,
-); 
-
+);
 
 // @GET  /products/color
-router.get(
-	'/colours', 
-	authMiddleware, 
-	productController.createColour);
-
+router.get('/colours', authMiddleware, productController.createColour);
 
 // @POST - /products/color
-router.post(
-	'/colours', 
-	authMiddleware, 
-	productController.createdColour);
-
+router.post('/colours', authMiddleware, productController.createdColour);
 
 // @GET /products/size
-router.get(
-	'/sizes', 
-	authMiddleware, 
-	productController.createSize);
-
+router.get('/sizes', authMiddleware, productController.createSize);
 
 // @POST - /products/size
-router.post(
-	'/sizes', 
-	authMiddleware, 
-	productController.createdSize);
+router.post('/sizes', authMiddleware, productController.createdSize);
 
 module.exports = router;

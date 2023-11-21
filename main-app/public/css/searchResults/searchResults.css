@@ -119,12 +119,41 @@ transition: opacity 0.5s, scale 1s, background-color 1s, color 1s;
   color: var(--mustard);
 }
 
+body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sort-dropdown {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; 
+  margin-right: 20px; 
+}
+
+
+.sort-dropdown select {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+}
+
+.sort-dropdown select option {
+  background-color: #fff;
+  color: #333;
+}
+
 @media (min-width: 600px) {
   .itemBox {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
+
+  
 }
 
 @media (min-width: 1200px) {
